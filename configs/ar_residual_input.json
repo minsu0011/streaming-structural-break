@@ -1,0 +1,7 @@
+{
+  "order": 4,
+  "ridge_trace_fraction": 0.001,
+  "coefficient_l2_limit": 4.0,
+  "normalization_and_clip": "inherit_authoritative_feature_config",
+  "coefficient_fit": "historical_values_only_no_online_refit"
+}

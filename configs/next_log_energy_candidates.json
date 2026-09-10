@@ -1,0 +1,134 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:04:30.158698+00:00",
+  "generation": 11,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "parent_result_sha256": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+  "candidate_capacity_and_loss_unchanged": true,
+  "sequential_summaries": "Exactly the existing 13 channel summaries; 26 new features and 51 unchanged old ABCD features for every variant.",
+  "candidates": [
+    {
+      "experiment_id": "Z001_LOG_ENERGY_CURRENT",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 11,
+      "phase": "LOG_ENERGY_MECHANISM",
+      "hypothesis": "ARCH1 forecast evidence is a monotone compression of lagged clipped energy when alpha is positive. Test whether robust energy compression or forecasting alignment accounts for the gain.",
+      "change": "Retain raw energy and replace log ARCH variance forecast with current log1p(energy/H_variance); historical 99th-percentile clipping=False.",
+      "expected_effect": "Compress rare large residuals before sequential aggregation; current alignment may improve response without the one-point forecasting lag.",
+      "risks": "Log energy changes the null distribution and can lose scale sensitivity. These are prospective mechanism tests motivated by prior DEV results, with the original screen and promotion gates retained.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "ENERGY_LOCAL",
+        "ENERGY_GLR",
+        "ENERGY_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "log_energy",
+        "settings": {
+          "order": 8,
+          "alignment": "current",
+          "cap_at_h99": false,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "d4ca7418ebb2c7aaccbf5f1db645930d98b1caff7b2603b23efa39ae7518994b",
+      "base_family_selection": "ABCD",
+      "extension_registration": {
+        "kind": "log_energy",
+        "module": "log_energy_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "Z002_LOG_ENERGY_LAGGED",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 11,
+      "phase": "LOG_ENERGY_MECHANISM",
+      "hypothesis": "ARCH1 forecast evidence is a monotone compression of lagged clipped energy when alpha is positive. Test whether robust energy compression or forecasting alignment accounts for the gain.",
+      "change": "Retain raw energy and replace log ARCH variance forecast with lagged log1p(energy/H_variance); historical 99th-percentile clipping=False.",
+      "expected_effect": "Compress rare large residuals before sequential aggregation; current alignment may improve response without the one-point forecasting lag.",
+      "risks": "Log energy changes the null distribution and can lose scale sensitivity. These are prospective mechanism tests motivated by prior DEV results, with the original screen and promotion gates retained.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "ENERGY_LOCAL",
+        "ENERGY_GLR",
+        "ENERGY_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "log_energy",
+        "settings": {
+          "order": 8,
+          "alignment": "lagged",
+          "cap_at_h99": false,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b047714d0a6aa0041a64c0583cd8b9ce3420863bea749c91c7bc2c7ce42c5b39",
+      "base_family_selection": "ABCD",
+      "extension_registration": {
+        "kind": "log_energy",
+        "module": "log_energy_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "Z003_LOG_ENERGY_CAPPED",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 11,
+      "phase": "LOG_ENERGY_MECHANISM",
+      "hypothesis": "ARCH1 forecast evidence is a monotone compression of lagged clipped energy when alpha is positive. Test whether robust energy compression or forecasting alignment accounts for the gain.",
+      "change": "Retain raw energy and replace log ARCH variance forecast with current log1p(energy/H_variance); historical 99th-percentile clipping=True.",
+      "expected_effect": "Compress rare large residuals before sequential aggregation; current alignment may improve response without the one-point forecasting lag.",
+      "risks": "Log energy changes the null distribution and can lose scale sensitivity. These are prospective mechanism tests motivated by prior DEV results, with the original screen and promotion gates retained.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "ENERGY_LOCAL",
+        "ENERGY_GLR",
+        "ENERGY_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "log_energy",
+        "settings": {
+          "order": 8,
+          "alignment": "current",
+          "cap_at_h99": true,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "9105dfca99bd170f1a78baa957b3be0510a6f4185b405bc1fe8822ca283e0f02",
+      "base_family_selection": "ABCD",
+      "extension_registration": {
+        "kind": "log_energy",
+        "module": "log_energy_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    }
+  ]
+}

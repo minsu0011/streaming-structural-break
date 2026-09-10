@@ -1,0 +1,154 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T22:36:28.414008+00:00",
+  "generation": 18,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "parent_results_sha256": {
+    "V007_VARIANCE_FORECAST": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+    "Y001_LONG_VARIANCE_ARCH1": "7a937f53e3d439f94c69538688c521a13fe7e593f606ed7552abc79b22a4228a"
+  },
+  "historical_estimator": "Pearson lag-1 correlation of each H-calibrated channel after the unchanged H burn-in and [-12,12] clipping; clamp rho to [-.95,.95], use zero for a constant H channel.",
+  "sum_variance": "v(n)=n+2*sum_{k=1}^{n-1}(n-k)*rho^k; strictly positive for the stationary AR(1) approximation.",
+  "bayes_summary": "For S~N(n*mu,v(n)) and mu~N(0,s2), log B=-.5*log(1+s2*n*n/v)+.5*s2*(n/v)^2*S*S/(1+s2*n*n/v), using the unchanged s2=.25/1 tau mixtures.",
+  "numerical_anchor": "Synthetic rho=0 is bitwise equal to every original channel statistic over 1100 points with age grid through 512; H channel calibration and all local statistics also match the parent exactly.",
+  "maximum_new_candidates": 2,
+  "candidates": [
+    {
+      "experiment_id": "J101_SERIAL_VARIANCE_128",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 18,
+      "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+      "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+      "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+      "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+      "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "serial_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "bc3e03ac809a28b23e30897c37b27e8d6b6e5b50d845ca546953152ea36fb8d4",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "serial_variance__raw_energy_current",
+        "serial_variance__raw_energy_ewma8",
+        "serial_variance__raw_energy_ewma32",
+        "serial_variance__raw_energy_ewma128",
+        "serial_variance__raw_energy_cusum_positive",
+        "serial_variance__raw_energy_cusum_negative",
+        "serial_variance__raw_energy_glr_max",
+        "serial_variance__raw_energy_glr_logmean",
+        "serial_variance__raw_energy_glr_logage",
+        "serial_variance__raw_energy_bayes025",
+        "serial_variance__raw_energy_bayes1",
+        "serial_variance__raw_energy_memory_max",
+        "serial_variance__raw_energy_memory_decay",
+        "serial_variance__log_variance_forecast_current",
+        "serial_variance__log_variance_forecast_ewma8",
+        "serial_variance__log_variance_forecast_ewma32",
+        "serial_variance__log_variance_forecast_ewma128",
+        "serial_variance__log_variance_forecast_cusum_positive",
+        "serial_variance__log_variance_forecast_cusum_negative",
+        "serial_variance__log_variance_forecast_glr_max",
+        "serial_variance__log_variance_forecast_glr_logmean",
+        "serial_variance__log_variance_forecast_glr_logage",
+        "serial_variance__log_variance_forecast_bayes025",
+        "serial_variance__log_variance_forecast_bayes1",
+        "serial_variance__log_variance_forecast_memory_max",
+        "serial_variance__log_variance_forecast_memory_decay"
+      ],
+      "extension_registration": {
+        "kind": "serial_variance",
+        "module": "serial_variance_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "J102_SERIAL_VARIANCE_512",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 18,
+      "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+      "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+      "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+      "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+      "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "serial_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "serial_variance__raw_energy_current",
+        "serial_variance__raw_energy_ewma8",
+        "serial_variance__raw_energy_ewma32",
+        "serial_variance__raw_energy_ewma128",
+        "serial_variance__raw_energy_cusum_positive",
+        "serial_variance__raw_energy_cusum_negative",
+        "serial_variance__raw_energy_glr_max",
+        "serial_variance__raw_energy_glr_logmean",
+        "serial_variance__raw_energy_glr_logage",
+        "serial_variance__raw_energy_bayes025",
+        "serial_variance__raw_energy_bayes1",
+        "serial_variance__raw_energy_memory_max",
+        "serial_variance__raw_energy_memory_decay",
+        "serial_variance__log_variance_forecast_current",
+        "serial_variance__log_variance_forecast_ewma8",
+        "serial_variance__log_variance_forecast_ewma32",
+        "serial_variance__log_variance_forecast_ewma128",
+        "serial_variance__log_variance_forecast_cusum_positive",
+        "serial_variance__log_variance_forecast_cusum_negative",
+        "serial_variance__log_variance_forecast_glr_max",
+        "serial_variance__log_variance_forecast_glr_logmean",
+        "serial_variance__log_variance_forecast_glr_logage",
+        "serial_variance__log_variance_forecast_bayes025",
+        "serial_variance__log_variance_forecast_bayes1",
+        "serial_variance__log_variance_forecast_memory_max",
+        "serial_variance__log_variance_forecast_memory_decay"
+      ],
+      "extension_registration": {
+        "kind": "serial_variance",
+        "module": "serial_variance_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    }
+  ]
+}

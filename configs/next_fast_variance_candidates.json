@@ -1,0 +1,142 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:09:07.898979+00:00",
+  "generation": 13,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "role_policy_sha256": "994aef28253ff0e33fa1eb0385951ec08ef722706a3df17aa13b02dc453f5cfb",
+  "parent_result_sha256": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+  "grid": "Exactly 25 and 50 trees; reuse the already completed 100-tree parent. No learning-rate, depth, leaf-count or weight tuning.",
+  "candidates": [
+    {
+      "experiment_id": "F101_VARIANCE_TREES50",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 13,
+      "phase": "VARIANCE_TREE_BUDGET",
+      "hypothesis": "The two-channel variance improvement may permit a smaller tree ensemble while retaining most of its DEV gain.",
+      "change": "Only n_estimators changes from 100 to 50; exact same 77 features, H model, W3 weights and tree structure constraints.",
+      "expected_effect": "Reduce scalar tree prediction cost and artifact size.",
+      "risks": "Underfitting may reduce mean or collapse a fold. The fixed screen and every NEXT promotion gate remain unchanged.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {
+        "n_estimators": 50
+      },
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "F102_VARIANCE_TREES25",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 13,
+      "phase": "VARIANCE_TREE_BUDGET",
+      "hypothesis": "The two-channel variance improvement may permit a smaller tree ensemble while retaining most of its DEV gain.",
+      "change": "Only n_estimators changes from 100 to 25; exact same 77 features, H model, W3 weights and tree structure constraints.",
+      "expected_effect": "Reduce scalar tree prediction cost and artifact size.",
+      "risks": "Underfitting may reduce mean or collapse a fold. The fixed screen and every NEXT promotion gate remain unchanged.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {
+        "n_estimators": 25
+      },
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    }
+  ]
+}

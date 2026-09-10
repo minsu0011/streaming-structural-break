@@ -1,0 +1,80 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:20:23.457996+00:00",
+  "seed": 202609099,
+  "regimes": [
+    {
+      "name": "IID_GAUSSIAN",
+      "phi": 0.0,
+      "arch_alpha": 0.0,
+      "tail_df": 0
+    },
+    {
+      "name": "AR06_GAUSSIAN",
+      "phi": 0.6,
+      "arch_alpha": 0.0,
+      "tail_df": 0
+    },
+    {
+      "name": "AR09_STUDENT5",
+      "phi": 0.9,
+      "arch_alpha": 0.0,
+      "tail_df": 5
+    },
+    {
+      "name": "AR03_ARCH065_GAUSSIAN",
+      "phi": 0.3,
+      "arch_alpha": 0.65,
+      "tail_df": 0
+    },
+    {
+      "name": "AR_MINUS04_ARCH04_STUDENT5",
+      "phi": -0.4,
+      "arch_alpha": 0.4,
+      "tail_df": 5
+    }
+  ],
+  "scenarios": [
+    "NO_CHANGE",
+    "MEAN_SHIFT",
+    "SCALE_SHIFT",
+    "DEPENDENCE_SHIFT",
+    "TAIL_SHIFT",
+    "VARIANCE_PERSISTENCE_SHIFT",
+    "MIXED_SHIFT"
+  ],
+  "historical_points": 2048,
+  "online_points": 1024,
+  "burn_points": 512,
+  "break_times": [
+    128,
+    256,
+    512
+  ],
+  "calibration_series_per_regime": 1000,
+  "evaluation_series_per_regime": 1000,
+  "alphas": [
+    0.01,
+    0.05
+  ],
+  "models": {
+    "PRIMARY": "artifacts/models/real/M7_cross_order_AR4_LGB_AR8_HGB_equal/fold_0.joblib",
+    "HIGHEST_MEAN": "artifacts/models/real/M4_lightgbm_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae/fold_0.joblib",
+    "V007_VARIANCE_FORECAST": "artifacts/next/experiments/V007_VARIANCE_FORECAST/full/fold_0.joblib"
+  },
+  "model_sha256": {
+    "PRIMARY": "f3ef30512c3e37104fbff96361ec0ba78435daa183cbd1a9fe4854f4925cd60b",
+    "HIGHEST_MEAN": "0e6e1a453487298798370b6ebc2c93f660b2ec9d11e1141fc62b10fea4b39660",
+    "V007_VARIANCE_FORECAST": "887f04a0e3687e94defa6fcf3c05bfa15e52ca49bb1b4fcf52fc04adb2714cf8"
+  },
+  "generator_sha256": "457501d373db40fa6eece1518d355021b55bf3485b8c18684a254a448c8ded33",
+  "alarm_code_sha256": "266d761e31eb8b35e01bff852879664be95d3386f809e793823c47e01372d6dc",
+  "randomness": "Independent SeedSequence([seed, partition, regime_index, index]); partition 0 calibration, partition 1 evaluation. Same historical prefix and future noise across shift alternatives for each evaluation index.",
+  "null_calibration": "One common threshold per model/alpha from 5000 independent stationary null-series maxima pooled equally across the five regimes; freeze before evaluating changed series.",
+  "shifts": "Mean +/-0.5 stationary SD; observed scale x1.5 or /1.5; AR coefficient becomes -0.6 for nonnegative baseline or +0.6 otherwise, with innovation correction; tail becomes variance-normalized Student-t3; ARCH alpha becomes .85; mixed applies mean+scale+dependence.",
+  "polarity": "Even/odd series indices balance mean and scale directions. Break time cycles independently across 128/256/512.",
+  "historical_reuse": "Fit H once per model/index. Deep-copy every state/tree array for each synthetic future. Verify clones against fresh constructors on all scenarios for the first two indices of every regime.",
+  "precision_rationale": "1000 evaluation sequences per controlled cell provide interpretable false-alarm and detection counts; report Wilson intervals and actual event counts rather than optimize synthetic scores.",
+  "authority": "Controlled mechanism and null-alarm diagnostic only; no official DEV score, no screen/promotion authority, no model fitting or threshold deployment.",
+  "limitations": "Simple stationary AR/ARCH and Student noise are a chosen simulation family, not an inferred competition generator. Model fold zero is fixed from earlier engineering work. These results cannot certify real-world false-alarm guarantees."
+}

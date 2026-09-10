@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "scales": [5, 20, 80],
+  "alpha_rule": "1/scale",
+  "lags": [1, 2, 4, 8],
+  "tail_thresholds": [2.0, 3.0],
+  "quantile_probabilities": [0.2, 0.4, 0.6, 0.8],
+  "clip_z": 20.0,
+  "scale_floor": 1e-8,
+  "moment_floor": 1e-8,
+  "rate_variance_floor": 0.01,
+  "cusum_drift": 0.25,
+  "memory_decay": 0.99,
+  "ar_phi_limit": 0.99,
+  "mad_consistency_factor": 1.4826,
+  "mad_min_std_fraction": 0.01,
+  "normalization": "mean_std",
+  "finite_value_bound": 1e100
+}

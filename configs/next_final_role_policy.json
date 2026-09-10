@@ -1,0 +1,14 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:09:07.894068+00:00",
+  "old_role_policy_sha256": "29f8895a70859bb6d8dbd10de684992c99d61faf7901970c84c41cc14b2eb00f",
+  "promotion_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "primary": "Among candidates passing every unchanged NEXT promotion and engineering gate, maximize full original-CV mean; ties by worst fold then median then lexical ID. If none passes, retain the frozen PRIMARY.",
+  "robust": "Among other eligible fully evaluated and independently reproduced candidates, require mean >= selected primary mean - .005 and median >= selected primary median - .005; maximize worst original-CV fold, then minimize fold standard deviation, then lexical ID.",
+  "fast": "Among other eligible fully evaluated and independently reproduced candidates, require mean >= selected primary mean - .010 and worst >= selected primary worst - .010. Shortlist at most five by verified isolated production latency. Select lowest measured scalar-call median, then H-amortized cost, then highest mean.",
+  "backup_eligibility": "New candidates must also pass the unchanged NEXT promotion gates before a final role; existing frozen artifacts remain preserved. All finalist runtime, causality, determinism and reproduction requirements apply.",
+  "backup_tolerances": "The .005 robust and .010 fast relative-score tolerances are inherited verbatim from the previous frozen role policy; they are not selected from NEXT candidate outcomes.",
+  "maximum_roles": 3,
+  "fallback": "If no distinct backup satisfies all requirements, record none instead of inventing an additional candidate.",
+  "authority": "DEV only. Seal, reduced and public results cannot enter selection."
+}

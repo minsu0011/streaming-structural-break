@@ -1,0 +1,247 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T19:21:34.704645+00:00",
+  "generation": 5,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "forensic_input": "K008 full mean improves +0.001294 but misses the +0.0015 primary promotion gate; no promotion or new-generation claim.",
+  "candidates": [
+    {
+      "experiment_id": "D001_SCORE_COORD_STANDALONE",
+      "parent_id": "S001_ARSCORE_STANDALONE",
+      "generation": 5,
+      "phase": "SCORE_DIRECTION",
+      "hypothesis": "Aggregated score energy, maximum and signed sum can discard which AR lag changes; individual EWMA coordinates may expose stable directional evidence.",
+      "change": "Expose the 24 existing AR8 EWMA score coordinates; aggregate features are bitwise unchanged. Matched aggregate-removal, covariance and ranking variants are explicit.",
+      "expected_effect": "Let a fixed small learner distinguish conditional mean-change directions without estimating online AR coefficients.",
+      "risks": "Coordinates are noisier than pooled energy; tree selection can overfit correlated lag directions; full historical covariance is fitted in-sample.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE",
+        "COORDINATE"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "score_coordinates",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "416825cf95c0c65536a5fd01bb8a5ac2b97babf5e4b5024fe48b4672a54fe6c9",
+      "extension_registration": {
+        "kind": "score_coordinates",
+        "module": "score_coordinates"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "D002_SCORE_COORD_ARCH",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 5,
+      "phase": "SCORE_DIRECTION",
+      "hypothesis": "Aggregated score energy, maximum and signed sum can discard which AR lag changes; individual EWMA coordinates may expose stable directional evidence.",
+      "change": "Expose the 24 existing AR8 EWMA score coordinates; aggregate features are bitwise unchanged. Matched aggregate-removal, covariance and ranking variants are explicit.",
+      "expected_effect": "Let a fixed small learner distinguish conditional mean-change directions without estimating online AR coefficients.",
+      "risks": "Coordinates are noisier than pooled energy; tree selection can overfit correlated lag directions; full historical covariance is fitted in-sample.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE",
+        "COORDINATE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "score_coordinates",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "416825cf95c0c65536a5fd01bb8a5ac2b97babf5e4b5024fe48b4672a54fe6c9",
+      "extension_registration": {
+        "kind": "score_coordinates",
+        "module": "score_coordinates"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "D003_SCORE_COORD_ONLY_ARCH",
+      "parent_id": "D002_SCORE_COORD_ARCH",
+      "generation": 5,
+      "phase": "SCORE_DIRECTION",
+      "hypothesis": "Aggregated score energy, maximum and signed sum can discard which AR lag changes; individual EWMA coordinates may expose stable directional evidence.",
+      "change": "Expose the 24 existing AR8 EWMA score coordinates; aggregate features are bitwise unchanged. Matched aggregate-removal, covariance and ranking variants are explicit.",
+      "expected_effect": "Let a fixed small learner distinguish conditional mean-change directions without estimating online AR coefficients.",
+      "risks": "Coordinates are noisier than pooled energy; tree selection can overfit correlated lag directions; full historical covariance is fitted in-sample.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "COORDINATE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "score_coordinates",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "416825cf95c0c65536a5fd01bb8a5ac2b97babf5e4b5024fe48b4672a54fe6c9",
+      "extension_registration": {
+        "kind": "score_coordinates",
+        "module": "score_coordinates"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "D004_SCORE_COORD_RANK",
+      "parent_id": "K008_RANK_SCORE_HIST128",
+      "generation": 5,
+      "phase": "SCORE_DIRECTION",
+      "hypothesis": "Aggregated score energy, maximum and signed sum can discard which AR lag changes; individual EWMA coordinates may expose stable directional evidence.",
+      "change": "Expose the 24 existing AR8 EWMA score coordinates; aggregate features are bitwise unchanged. Matched aggregate-removal, covariance and ranking variants are explicit.",
+      "expected_effect": "Let a fixed small learner distinguish conditional mean-change directions without estimating online AR coefficients.",
+      "risks": "Coordinates are noisier than pooled energy; tree selection can overfit correlated lag directions; full historical covariance is fitted in-sample.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE",
+        "COORDINATE"
+      ],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "score_coordinates",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "416825cf95c0c65536a5fd01bb8a5ac2b97babf5e4b5024fe48b4672a54fe6c9",
+      "extension_registration": {
+        "kind": "score_coordinates",
+        "module": "score_coordinates"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "D005_SCORE_COORD_DIAGONAL",
+      "parent_id": "D002_SCORE_COORD_ARCH",
+      "generation": 5,
+      "phase": "SCORE_DIRECTION",
+      "hypothesis": "Aggregated score energy, maximum and signed sum can discard which AR lag changes; individual EWMA coordinates may expose stable directional evidence.",
+      "change": "Expose the 24 existing AR8 EWMA score coordinates; aggregate features are bitwise unchanged. Matched aggregate-removal, covariance and ranking variants are explicit.",
+      "expected_effect": "Let a fixed small learner distinguish conditional mean-change directions without estimating online AR coefficients.",
+      "risks": "Coordinates are noisier than pooled energy; tree selection can overfit correlated lag directions; full historical covariance is fitted in-sample.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE",
+        "COORDINATE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "score_coordinates",
+        "settings": {
+          "order": 8,
+          "covariance": "diagonal",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "45e4e02dc9493a4d049b9dc8b6e8e83d27f5105ad1d55c0a108f4679686fc49f",
+      "extension_registration": {
+        "kind": "score_coordinates",
+        "module": "score_coordinates"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "D006_SCORE_COORD_ONLY_RANK",
+      "parent_id": "D004_SCORE_COORD_RANK",
+      "generation": 5,
+      "phase": "SCORE_DIRECTION",
+      "hypothesis": "Aggregated score energy, maximum and signed sum can discard which AR lag changes; individual EWMA coordinates may expose stable directional evidence.",
+      "change": "Expose the 24 existing AR8 EWMA score coordinates; aggregate features are bitwise unchanged. Matched aggregate-removal, covariance and ranking variants are explicit.",
+      "expected_effect": "Let a fixed small learner distinguish conditional mean-change directions without estimating online AR coefficients.",
+      "risks": "Coordinates are noisier than pooled energy; tree selection can overfit correlated lag directions; full historical covariance is fitted in-sample.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "COORDINATE"
+      ],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "score_coordinates",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "416825cf95c0c65536a5fd01bb8a5ac2b97babf5e4b5024fe48b4672a54fe6c9",
+      "extension_registration": {
+        "kind": "score_coordinates",
+        "module": "score_coordinates"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

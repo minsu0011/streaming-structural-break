@@ -1,0 +1,12 @@
+{
+  "input_ar_order": 8,
+  "magnitude_lag": 1,
+  "squared_residual_winsor_quantile": 0.99,
+  "family_scopes": ["ABCDV", "V"],
+  "model": "M4_lightgbm",
+  "maximum_candidates": 2,
+  "anchor": "M4_ar_order8_ABCD_S3_242216e87a34",
+  "features": "historically centered and scaled absolute and winsorized-square lag1 products, with the existing three EWMA scales and historical MAD output calibration",
+  "replaced_slots": "old E/F/Q slots 51 through 56, with explicit new V feature names",
+  "historical_parameters_frozen_online": true
+}

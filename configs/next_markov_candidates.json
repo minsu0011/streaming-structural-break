@@ -1,0 +1,366 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T19:12:37.605735+00:00",
+  "generation": 4,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "categorical_policy": "Four raw-value bins from H-only 25/50/75% quantiles; right insertion at ties; lags 1/2/4/8; H transition counts plus 0.5 per cell.",
+  "null_model": "Integrate per-row transition probabilities under Dirichlet(H_counts + 0.5).",
+  "alternative_model": "Integrate under Dirichlet(strength * null_posterior_row_mean), strength 16 primary or 4 ablation.",
+  "age_policy": "Powers of two 1..512 primary, 1..128 ablation; mixture weights are successive age widths. Online windows contain online transition endpoints, with past-H lagged origins permitted.",
+  "streaming_policy": "Incremental table-count, log-gamma-ratio lookup and n*log(n) updates; fixed arrays; O(lags * ages) per point. No online model refit.",
+  "mathematical_tests": "Direct full Dirichlet marginal likelihood and conditional saturated GLR comparisons pass through ring wraparound; unchanged-marginal AR-sign change responds; exact prefix and batch/stream parity pass.",
+  "candidates": [
+    {
+      "experiment_id": "T001_MARKOV_STANDALONE",
+      "parent_id": "N021_STANDALONE_S3",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Replace innovation-product summaries by raw-input quartile transition evidence.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "TRANSITION",
+        "GLR",
+        "BAYES"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 16.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "b3ee890e0c72d3d65559c8f4ae1caa577036f5301c435785abf5b0f6b86dc9c9",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "T002_MARKOV_ARCH",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Append 40 conditional-transition statistics to unchanged ARCH8 ABCD.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "TRANSITION",
+        "GLR",
+        "BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 16.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "b3ee890e0c72d3d65559c8f4ae1caa577036f5301c435785abf5b0f6b86dc9c9",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "T003_MARKOV_ARCH_GLR",
+      "parent_id": "T002_MARKOV_ARCH",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Remove Bayes-factor and transition-surprise families; retain conditional GLR only.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "GLR"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 16.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "b3ee890e0c72d3d65559c8f4ae1caa577036f5301c435785abf5b0f6b86dc9c9",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "T004_MARKOV_ARCH_BAYES",
+      "parent_id": "T002_MARKOV_ARCH",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Remove GLR and transition-surprise families; retain integrated Bayes-factor evidence only.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 16.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "b3ee890e0c72d3d65559c8f4ae1caa577036f5301c435785abf5b0f6b86dc9c9",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "T005_MARKOV_ARCH_LAG1",
+      "parent_id": "T002_MARKOV_ARCH",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Only remove lags 2, 4 and 8.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "TRANSITION",
+        "GLR",
+        "BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1
+          ],
+          "prior_strength": 16.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "42adffefb82dd4ff220982155ead5b183c75db433db9dabaa10fd6c64f92c906",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "T006_MARKOV_ARCH_PRIOR4",
+      "parent_id": "T002_MARKOV_ARCH",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Only decrease alternative Dirichlet row concentration from 16 to 4.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "TRANSITION",
+        "GLR",
+        "BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 4.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "621f62ded9d98e3204b03f93312e50e057e46bc33a158d03532d4b913e27ff87",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "T007_MARKOV_ARCH_AGE128",
+      "parent_id": "T002_MARKOV_ARCH",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Only remove age hypotheses 256 and 512.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "TRANSITION",
+        "GLR",
+        "BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 16.0,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "4b53a9523154c0234349f54ef68cb92c3682b7d93862068e0ff49ac79cc0348a",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "T008_MARKOV_ARCH_RANK",
+      "parent_id": "T002_MARKOV_ARCH",
+      "generation": 4,
+      "phase": "TRANSITION",
+      "hypothesis": "Conditional transition probabilities can change while marginal moments stay stable; H-posterior predictive evidence may capture this missed dependence.",
+      "change": "Only replace W3 binary loss by the already audited 128-cell same-time ranking surrogate.",
+      "expected_effect": "Detect nonlinear transition-pattern changes with a fixed H-only reference and bounded rolling state.",
+      "risks": "Quartile quantization loses amplitude information; overlapping Markov transitions are dependent; Bayes factors are features and are not calibrated posterior probabilities or anytime-valid tests.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "TRANSITION",
+        "GLR",
+        "BAYES"
+      ],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "markov_transition",
+        "settings": {
+          "lags": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "prior_strength": 16.0,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "b3ee890e0c72d3d65559c8f4ae1caa577036f5301c435785abf5b0f6b86dc9c9",
+      "extension_registration": {
+        "kind": "markov_transition",
+        "module": "markov_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

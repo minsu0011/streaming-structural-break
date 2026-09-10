@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-09-08T12:32:21.245297+00:00",
+  "maximum_new_candidates": 2,
+  "entries": [
+    {
+      "anchor": "M4_ar_residual_input_ABCD_S3_9f68be316ea3",
+      "candidate": {
+        "model": "M4_lightgbm",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {},
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "The full DEV feature audit found frequent tail-statistic saturation at the historical-normalization bound. Double only that existing output clip from 12 to 24, retaining input clipping, historical fitting, model and S3 weights.",
+        "phase": "output_saturation_followup",
+        "representation": "ar_residual_input_historical_median_mad_clip24"
+      },
+      "identity": "5e144a855744"
+    },
+    {
+      "anchor": "M4_ar_order8_ABCD_S3_242216e87a34",
+      "candidate": {
+        "model": "M4_lightgbm",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {},
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "The full DEV feature audit found frequent tail-statistic saturation at the historical-normalization bound. Double only that existing output clip from 12 to 24, retaining input clipping, historical fitting, model and S3 weights.",
+        "phase": "output_saturation_followup",
+        "representation": "ar_order8_historical_median_mad_clip24"
+      },
+      "identity": "9c687a3fed8a"
+    }
+  ],
+  "frozen_before_followup_scores": true,
+  "selection_gate_unchanged": true,
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_targets_used": false
+}

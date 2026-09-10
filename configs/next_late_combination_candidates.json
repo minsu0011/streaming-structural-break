@@ -1,0 +1,103 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T19:29:54.389517+00:00",
+  "generation": 7,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "score_evaluation_not_before_utc": "2026-09-09T01:10:01+00:00",
+  "late_stage_rule": "The user requested ensemble work in the latter session stage. Freeze the eligible finite grid after forensic evidence, but do not inspect any combination scores before elapsed research hour 8.",
+  "thresholds_splits_seeds_unchanged": true,
+  "complementarity": {
+    "mean_within_time_rank_correlation": 0.8661197519806627,
+    "supported_positive_delta_at_least_0_002": true,
+    "supported_negative_delta_at_most_minus_0_002": true,
+    "admitted_for_predeclared_fixed_late_combination": true
+  },
+  "candidates": [
+    {
+      "experiment_id": "L001_PRIMARY_K008_50",
+      "parent_id": "K008_RANK_SCORE_HIST128",
+      "generation": 7,
+      "phase": "LATE_COMBINATION",
+      "hypothesis": "The frozen primary offsets the ranking partner mixed-change/early-time weakness, while the partner adds scale/dependence and late-time strength.",
+      "change": "Fixed 50/50 primary/partner float32 score average; no fitted blend weight.",
+      "expected_effect": "Combine documented complementary rankings at bounded additional latency.",
+      "risks": "Adds model and feature work; score scales differ; complementarity was identified adaptively in DEV and is not an independent discovery.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "fixed_components",
+      "learner": "fixed_late_blend",
+      "weighting": "inherited fixed component recipes",
+      "params": {},
+      "late_blend": {
+        "primary": "PRIMARY",
+        "partner": "K008_RANK_SCORE_HIST128",
+        "primary_weight": 0.5,
+        "method": "score_average"
+      },
+      "late_blend_source_sha256": "ab23bafe07581c3cab053fa5b872779af027422acd4e4208f1a77e924d7a9c3a",
+      "forensic_evidence_sha256": "aecb41384d95eee5e1d57a92d62649a64b810ae11528cd71e477c0a7529a41b5"
+    },
+    {
+      "experiment_id": "L002_PRIMARY_K008_67",
+      "parent_id": "K008_RANK_SCORE_HIST128",
+      "generation": 7,
+      "phase": "LATE_COMBINATION",
+      "hypothesis": "The frozen primary offsets the ranking partner mixed-change/early-time weakness, while the partner adds scale/dependence and late-time strength.",
+      "change": "Fixed 67/33 primary/partner float32 score average; no fitted blend weight.",
+      "expected_effect": "Combine documented complementary rankings at bounded additional latency.",
+      "risks": "Adds model and feature work; score scales differ; complementarity was identified adaptively in DEV and is not an independent discovery.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "fixed_components",
+      "learner": "fixed_late_blend",
+      "weighting": "inherited fixed component recipes",
+      "params": {},
+      "late_blend": {
+        "primary": "PRIMARY",
+        "partner": "K008_RANK_SCORE_HIST128",
+        "primary_weight": 0.67,
+        "method": "score_average"
+      },
+      "late_blend_source_sha256": "ab23bafe07581c3cab053fa5b872779af027422acd4e4208f1a77e924d7a9c3a",
+      "forensic_evidence_sha256": "aecb41384d95eee5e1d57a92d62649a64b810ae11528cd71e477c0a7529a41b5"
+    },
+    {
+      "experiment_id": "L003_PRIMARY_K008_33",
+      "parent_id": "K008_RANK_SCORE_HIST128",
+      "generation": 7,
+      "phase": "LATE_COMBINATION",
+      "hypothesis": "The frozen primary offsets the ranking partner mixed-change/early-time weakness, while the partner adds scale/dependence and late-time strength.",
+      "change": "Fixed 33/67 primary/partner float32 score average; no fitted blend weight.",
+      "expected_effect": "Combine documented complementary rankings at bounded additional latency.",
+      "risks": "Adds model and feature work; score scales differ; complementarity was identified adaptively in DEV and is not an independent discovery.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "fixed_components",
+      "learner": "fixed_late_blend",
+      "weighting": "inherited fixed component recipes",
+      "params": {},
+      "late_blend": {
+        "primary": "PRIMARY",
+        "partner": "K008_RANK_SCORE_HIST128",
+        "primary_weight": 0.33,
+        "method": "score_average"
+      },
+      "late_blend_source_sha256": "ab23bafe07581c3cab053fa5b872779af027422acd4e4208f1a77e924d7a9c3a",
+      "forensic_evidence_sha256": "aecb41384d95eee5e1d57a92d62649a64b810ae11528cd71e477c0a7529a41b5"
+    }
+  ]
+}

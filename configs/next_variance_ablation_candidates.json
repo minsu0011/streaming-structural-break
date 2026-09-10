@@ -1,0 +1,535 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T20:07:13.102258+00:00",
+  "generation": 10,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "parent_result_sha256": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+  "parent_mean": 0.6192972579897369,
+  "candidate_capacity_and_loss_unchanged": true,
+  "baseline_full_ablation": "Frozen HIGHEST_MEAN plus E001 exact five-fold reference-adapter refit is the 51-feature matched no-new-statistic baseline. Its full predictions predate V007.",
+  "candidates": [
+    {
+      "experiment_id": "Q001_VARIANCE_RAW_ONLY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep only raw-energy channels; remove variance-forecast channels.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "Q002_VARIANCE_FORECAST_ONLY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep only variance-forecast channels; remove raw-energy channels.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "Q003_VARIANCE_NO_GLR_MEMORY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Remove explicit GLR summaries and all GLR-derived persistent-memory features; keep local and Bayes summaries.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1"
+      ]
+    },
+    {
+      "experiment_id": "Q004_VARIANCE_NO_BAYES",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Remove only conjugate mean-Bayes summaries; GLR-derived memory remains.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "Q005_VARIANCE_NO_MEMORY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Remove only persistent/decayed GLR memory; current GLR and Bayes summaries remain.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1"
+      ]
+    },
+    {
+      "experiment_id": "Q006_VARIANCE_LOCAL_ONLY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep instantaneous, EWMA and CUSUM summaries only.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative"
+      ]
+    },
+    {
+      "experiment_id": "Q007_VARIANCE_GLR_ONLY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep only explicit fixed-age GLR max/logmean/argage summaries.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage"
+      ]
+    },
+    {
+      "experiment_id": "Q008_VARIANCE_BAYES_ONLY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep only fixed-age analytic Gaussian mean-prior Bayes summaries.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1"
+      ]
+    },
+    {
+      "experiment_id": "Q009_VARIANCE_ARCH2_PAIR",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep the same two channels and only change the H variance normalizer from ARCH1 to ARCH2.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch2",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "00b9e0a5456289c92b275f448a56107167f4abe26eaf23755c787d8320875fb5",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "Q010_VARIANCE_EWMA_PAIR",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 10,
+      "phase": "VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "Determine which of raw-energy evidence, variance-forecast evidence, tau integration and persistent memory accounts for V007 improvement.",
+      "change": "Keep the same two channels and only change the variance forecasting rule from ARCH1 to fixed EWMA.",
+      "expected_effect": "Attribute gains or remove unnecessary work without changing split, loss, tree capacity or selection gates.",
+      "risks": "Ablations are adaptively motivated after observing V007; each still needs its own unchanged screen gate. Failed-screen ablations receive no full-CV extrapolation.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "ewma",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "c8ed3b872945d738135d0574e3f152e517e745c05805d1cc20bb96950e7fab5f",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    }
+  ]
+}

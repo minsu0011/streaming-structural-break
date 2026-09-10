@@ -1,0 +1,150 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T22:30:22.952630+00:00",
+  "candidates": [
+    "PRIMARY",
+    "HIGHEST_MEAN",
+    "V007_VARIANCE_FORECAST",
+    "Q005_VARIANCE_NO_MEMORY",
+    "Y001_LONG_VARIANCE_ARCH1",
+    "F101_VARIANCE_TREES50"
+  ],
+  "candidate_reports_sha256": {
+    "V007_VARIANCE_FORECAST": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+    "Q005_VARIANCE_NO_MEMORY": "4c092c02678562070172d655a33c9e9912f69107a7d776aff495c4fad9358dfe",
+    "Y001_LONG_VARIANCE_ARCH1": "7a937f53e3d439f94c69538688c521a13fe7e593f606ed7552abc79b22a4228a",
+    "F101_VARIANCE_TREES50": "b7ce084294290cb068ef25590d28405b59961fd08763162ef75f669ed0f7d31e"
+  },
+  "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "seal_lock_sha256": "8f166eefb4d4bde3523681167f54b42c9e0c4f54b8606ad1e30eb805d8faac55",
+  "files_sha256": {
+    "src/next/nested_menu.py": "9a285f71802c852ae3eb81f722ba46a88299d44e39447ffba3c71f07de8f9e18",
+    "src/next/diagnostic_training.py": "0d862f3f9d9b68571c19dde4e3e0f0fa2c53be64bbc7090d72a89f342c94d422",
+    "scripts/nested_next_menu.py": "cab4ce66ed0f5ba0e2ef75a813a9fd8dfdc8c900a9ac403df7288583cb7fb762",
+    "src/next/fitting.py": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+    "src/next/candidate_io.py": "919abc6138d609f3c9132d20ae21abf939e0171a33780d95d71b6eaeb5ed9274",
+    "src/next/bootstrap.py": "dbc6ffb4b96bfb68c8bb2e83b9656d02803f5236c06bb3d121dc9af8d4192421",
+    "src/validation/group_bootstrap.py": "dca1eb3cb4124ab08196eb392e045679b28d27b849819fd2eba8dddbbaf06c40",
+    "src/scoring/ts_auc.py": "b100b52db4da9e6aeffdbb565ad8ac2148615bfcea2bb837e110b6913c5263a8"
+  },
+  "tasks_per_candidate": [
+    {
+      "held_out_folds": [
+        0,
+        1
+      ],
+      "training_folds": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "held_out_folds": [
+        0,
+        2
+      ],
+      "training_folds": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "held_out_folds": [
+        0,
+        3
+      ],
+      "training_folds": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "held_out_folds": [
+        0,
+        4
+      ],
+      "training_folds": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "held_out_folds": [
+        1,
+        2
+      ],
+      "training_folds": [
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "held_out_folds": [
+        1,
+        3
+      ],
+      "training_folds": [
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "held_out_folds": [
+        1,
+        4
+      ],
+      "training_folds": [
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "held_out_folds": [
+        2,
+        3
+      ],
+      "training_folds": [
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "held_out_folds": [
+        2,
+        4
+      ],
+      "training_folds": [
+        0,
+        1,
+        3
+      ]
+    },
+    {
+      "held_out_folds": [
+        3,
+        4
+      ],
+      "training_folds": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "unique_fits": 60,
+  "held_out_inner_score_cells": 120,
+  "partitioning": "Use original fold k as outer holdout. Four original remaining folds are inner folds; train on the other three. No new fold assignment or split seed is introduced.",
+  "reuse": "The same three-fold training set occurs twice with outer/inner roles swapped; fit it once and predict both excluded folds. Original four-fold-trained outer OOF is reused only after the inner choice.",
+  "selection": "Highest unweighted mean of four inner TS-AUC scores; ties by higher worst inner fold, then lexical candidate ID.",
+  "capacity_and_weighting": "Every candidate retains its complete frozen feature/loss/tree recipe; all train-derived weights and constant-column removal use only its three training folds.",
+  "nomination_limitation": "The finite menu was nominated adaptively using full DEV results before this diagnostic. Therefore the nested outer score is not an unbiased or independent estimate of the whole historical research process.",
+  "authority": "DEV-only secondary menu-stability diagnostic; cannot replace original CV, change final-role gates or open a seal."
+}

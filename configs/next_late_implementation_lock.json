@@ -1,0 +1,35 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T22:18:49.776339+00:00",
+  "research_elapsed_at_lock": 18528.857918499998,
+  "files_sha256": {
+    "src/next/late_evaluation.py": "ebf4001e8b18b5057c7c780360cb49f2f54031afeeb554a09fe9c1cfb0f9fbc1",
+    "src/next/late_blend.py": "ab23bafe07581c3cab053fa5b872779af027422acd4e4208f1a77e924d7a9c3a",
+    "src/next/paired_blend.py": "67bfb82949811d8436efda3d6c6e3856a9e14d2ea510cefd2d88d2a07d5f61a8",
+    "src/next/paired_variance_runtime.py": "a90ba28432a3423db2ff464fa8585cdecad2a46da19e55070b987f16b09466df",
+    "scripts/run_next_late_research.py": "0f8573f430cc767aaccbefa8f0aa6804e4ea3c8200ab1748b8ff79332a867978",
+    "scripts/robustness_next_late.py": "aa27cef2f621726c1fdf845d5161ace43ee030ec2f1d20f2c0707e8b99e386d2",
+    "scripts/forensic_next_late.py": "8016df53f8452a8840a5f2f47a81b8c9658ddcb2d324acce6ed033a5cf679e9a",
+    "scripts/forensic_next_candidate.py": "8d72bed864662cbf993acd2f1bdefd11cbeee3ef4c085c8e380038fa704fb03b",
+    "scripts/run_next_research.py": "c774836f360ef7c5227dec679b44be9d14632fc57c3cbe79b7c2e751f6edaa6e",
+    "src/next/candidate_io.py": "919abc6138d609f3c9132d20ae21abf939e0171a33780d95d71b6eaeb5ed9274",
+    "src/next/bootstrap.py": "dbc6ffb4b96bfb68c8bb2e83b9656d02803f5236c06bb3d121dc9af8d4192421",
+    "src/next/research_clock.py": "0725516a121a11c2de3048cd2539efb7a9175bc64bed917910092a8d0307dc55",
+    "configs/next_late_combination_candidates.json": "0f156cc60bd2fdc9ae993d6e712c30576d79df42e7d40f85b3c600b1f23686ad",
+    "configs/next_late_pair_candidates.json": "9d47163afde59e8177d82e99ea14688a9c738bf79ed01628364c8fe4796b4c62",
+    "src/validation/group_bootstrap.py": "dca1eb3cb4124ab08196eb392e045679b28d27b849819fd2eba8dddbbaf06c40",
+    "src/scoring/ts_auc.py": "b100b52db4da9e6aeffdbb565ad8ac2148615bfcea2bb837e110b6913c5263a8",
+    "ROBUSTNESS_SPLIT_LOCK.json": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d"
+  },
+  "no_real_combined_predictions_formed": true,
+  "first_permitted_combined_score_elapsed_seconds": 28800,
+  "queues": [
+    "configs/next_late_combination_candidates.json",
+    "configs/next_late_pair_candidates.json"
+  ],
+  "fitting": "No additional component fits or fitted blend weights",
+  "forensic_adapter": "Explicit replacement of the frozen forensic script OOF loader only. Both adapter and unchanged engine are pinned; all comparisons, support rules, resampling and output schemas remain identical.",
+  "marginal_gate": "Only L101-L103 inherit the separately preregistered +.0005 marginal complexity threshold.",
+  "seal_rows": 0,
+  "reduced_new_uses": 0
+}

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "anchor": "M4_ar_residual_input_ABCD_S3_9f68be316ea3",
+  "base_representation": "ar_residual_input_historical_median_mad",
+  "context_columns": [
+    "historical_log_length",
+    "historical_log_mad_to_std",
+    "historical_lag1",
+    "historical_log_ar_coefficient_norm",
+    "historical_log_innovation_energy_ratio",
+    "historical_log_positive_kurtosis"
+  ],
+  "candidate_families": ["ABCDG", "G"],
+  "maximum_candidates": 2,
+  "slot_policy": "First 51 ABCD features unchanged; replace the six unused E/F/Q slots with six historical-only G columns.",
+  "normalization": "Explicit bounded historical statistics, no learned transform and no online outcomes."
+}

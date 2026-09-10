@@ -1,0 +1,36 @@
+{
+  "competition": "structural-break-real-time",
+  "seed": 20260908,
+  "seal_fraction": 0.2,
+  "development_folds": 5,
+  "split_algorithm": "historical-group-aware SHA256; seed unchanged; see GROUP_POLICY and SPLIT_LOCK_REAL",
+  "seal_evaluation_permitted": false,
+  "reduced_diagnostic_max_uses": 2,
+  "threads": 4,
+  "infer_parallelism": 1,
+  "sampling_policies": {
+    "S0": "all rows",
+    "S1": "deterministic cap 256 per series, uniform positions",
+    "S2": "deterministic time strata; cap 32 per bucket per series",
+    "S3": "all rows; training-fold-only opposite-class count per time; mean-one weights",
+    "S3_sqrt": "all rows; sqrt of training opposite-class count per time; mean-one weights"
+  },
+  "promotion": {
+    "min_median_gain": 0.001,
+    "max_worst_fold_loss": 0.002,
+    "max_latency_multiplier_without_review": 5,
+    "large_latency_gain_exception": 0.01
+  },
+  "historical_only_normalization": true,
+  "feature_config": "configs/features.json",
+  "sampling_policy_version": 2,
+  "sampling_legacy_version_1": {
+    "S1": "every fourth online step",
+    "S2": "cap 256 per series; superseded before real scores"
+  },
+  "real_research_budget": {
+    "hours": 10,
+    "final_audit_buffer_minutes": 45,
+    "start_utc": "2026-09-08T06:49:52+00:00"
+  }
+}

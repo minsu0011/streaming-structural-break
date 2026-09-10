@@ -1,0 +1,209 @@
+{
+  "version": "NEXT2_SCALE_V1",
+  "created_utc": "2026-09-09T08:41:41.007093+00:00",
+  "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+  "hypothesis_sha256": "7745ba9c94d50eb3163a031001e52ca16d30825aa39e7bc9551f60acb5bc5dcf",
+  "candidates": [
+    {
+      "experiment_id": "S201_SCALE_LIKELIHOOD",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_SCALE_V1",
+      "phase": "SCALE_DOWN_LIKELIHOOD",
+      "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+      "change": {
+        "channel_pair": "raw_forecast",
+        "cap": 0,
+        "include_parent": "none"
+      },
+      "counterexample_target": "variance decrease / ARCH / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SCALE_LIKELIHOOD"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_scale_likelihood",
+        "settings": {
+          "channel_pair": "raw_forecast",
+          "cap": 0,
+          "include_parent": "none"
+        }
+      },
+      "extension_frozen_hash": "69f720dc781d2ec4392d3c096600c38dea6d3249e320c3f574357f26d51a70ff",
+      "extension_registration": {
+        "kind": "next2_scale_likelihood",
+        "module": "next2_scale_likelihood"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "S202_SCALE_LIKELIHOOD_CAP4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_SCALE_V1",
+      "phase": "SCALE_DOWN_LIKELIHOOD",
+      "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+      "change": {
+        "channel_pair": "raw_forecast",
+        "cap": 4,
+        "include_parent": "none"
+      },
+      "counterexample_target": "variance decrease / ARCH / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SCALE_LIKELIHOOD"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_scale_likelihood",
+        "settings": {
+          "channel_pair": "raw_forecast",
+          "cap": 4,
+          "include_parent": "none"
+        }
+      },
+      "extension_frozen_hash": "1ac6b051cc4f18b03146a620d6f72d75836781d7703aff43cf2614a3f71cbfbc",
+      "extension_registration": {
+        "kind": "next2_scale_likelihood",
+        "module": "next2_scale_likelihood"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "S203_CONDITIONAL_SCALE_LIKELIHOOD",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_SCALE_V1",
+      "phase": "SCALE_DOWN_LIKELIHOOD",
+      "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+      "change": {
+        "channel_pair": "raw_conditional",
+        "cap": 0,
+        "include_parent": "none"
+      },
+      "counterexample_target": "variance decrease / ARCH / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SCALE_LIKELIHOOD"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_scale_likelihood",
+        "settings": {
+          "channel_pair": "raw_conditional",
+          "cap": 0,
+          "include_parent": "none"
+        }
+      },
+      "extension_frozen_hash": "e568446816d2a514270d90318a55ea672d02dde6f3b6495b05aef167ebf1a429",
+      "extension_registration": {
+        "kind": "next2_scale_likelihood",
+        "module": "next2_scale_likelihood"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "S204_PARENT_PLUS_LOWER",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_SCALE_V1",
+      "phase": "SCALE_DOWN_LIKELIHOOD",
+      "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+      "change": {
+        "channel_pair": "raw_forecast",
+        "cap": 0,
+        "include_parent": "lower"
+      },
+      "counterexample_target": "variance decrease / ARCH / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SCALE_LIKELIHOOD"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_scale_likelihood",
+        "settings": {
+          "channel_pair": "raw_forecast",
+          "cap": 0,
+          "include_parent": "lower"
+        }
+      },
+      "extension_frozen_hash": "97681343ea6fe5a794ebb30f52d240dc4d20f0c3a5738950100a85c941cbb8f8",
+      "extension_registration": {
+        "kind": "next2_scale_likelihood",
+        "module": "next2_scale_likelihood"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "S205_PARENT_PLUS_LOG_RATIOS",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_SCALE_V1",
+      "phase": "SCALE_DOWN_LIKELIHOOD",
+      "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+      "change": {
+        "channel_pair": "raw_forecast",
+        "cap": 0,
+        "include_parent": "ratios"
+      },
+      "counterexample_target": "variance decrease / ARCH / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SCALE_LIKELIHOOD"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_scale_likelihood",
+        "settings": {
+          "channel_pair": "raw_forecast",
+          "cap": 0,
+          "include_parent": "ratios"
+        }
+      },
+      "extension_frozen_hash": "2416ea548f11d8961ff427c7f1f436cc9e7c0f065a56482f2c295903a180f3e0",
+      "extension_registration": {
+        "kind": "next2_scale_likelihood",
+        "module": "next2_scale_likelihood"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    }
+  ],
+  "score_inspected_before_freeze": false
+}

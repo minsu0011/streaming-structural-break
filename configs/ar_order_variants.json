@@ -1,0 +1,7 @@
+{
+  "reference_order": 4,
+  "candidate_orders": [2, 8],
+  "other_parameters": "inherit configs/ar_residual_input.json unchanged",
+  "comparison_anchor": "M4_ar_residual_input_ABCD_S3_9f68be316ea3",
+  "new_candidates": 2
+}

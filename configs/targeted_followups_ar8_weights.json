@@ -1,0 +1,52 @@
+{
+  "timestamp": "2026-09-08T12:11:08.160597+00:00",
+  "maximum_new_candidates": 2,
+  "entries": [
+    {
+      "anchor": "M3_ar_order8_ABCD_S3_242216e87a34",
+      "candidate": {
+        "model": "M3_histgb",
+        "families": "ABCD",
+        "sampling": "S0",
+        "params": {},
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "The AR8 representation improved all five folds but earliest evidence remains weak. Change only the existing predeclared S0 contribution family to test whether weighting transfers across representations.",
+        "phase": "robust_ar8_weight_followup",
+        "representation": "ar_order8_historical_median_mad"
+      },
+      "identity": "0f0a42ad0778"
+    },
+    {
+      "anchor": "M3_ar_order8_ABCD_S3_242216e87a34",
+      "candidate": {
+        "model": "M3_histgb",
+        "families": "ABCD",
+        "sampling": "S3_sqrt",
+        "params": {},
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "The AR8 representation improved all five folds but earliest evidence remains weak. Change only the existing predeclared S3_sqrt contribution family to test whether weighting transfers across representations.",
+        "phase": "robust_ar8_weight_followup",
+        "representation": "ar_order8_historical_median_mad"
+      },
+      "identity": "81e0059b99f1"
+    }
+  ],
+  "frozen_before_followup_scores": true,
+  "selection_gate_unchanged": true,
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_targets_used": false
+}

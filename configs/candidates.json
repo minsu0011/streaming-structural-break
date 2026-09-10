@@ -1,0 +1,16 @@
+{
+  "frozen_before_competition_scores": true,
+  "models": [
+    {"name": "M1_logistic", "families": "ABCD", "sampling": "S2"},
+    {"name": "M2_ridge", "families": "ABCD", "sampling": "S2"},
+    {"name": "M3_histgb", "families": "ABCD", "sampling": "S2"},
+    {"name": "M4_lightgbm", "families": "ABCD", "sampling": "S2"},
+    {"name": "M5_xgboost", "families": "ABCD", "sampling": "S2"}
+  ],
+  "ablations": ["A", "B", "C", "D", "AB", "AD", "BD", "ABCD", "ABCDE", "ABCDF"],
+  "ablation_model": "M1_logistic",
+  "optional_sampling_comparisons": ["S0", "S1", "S2"],
+  "ridge_output": "sigmoid of ridge decision; ranking score, not claimed calibrated probability",
+  "time_buckets": [[0,10],[10,25],[25,50],[50,100],[100,200],[200,400],[400,null]],
+  "evidence_age_buckets": [[0,5],[5,10],[10,20],[20,50],[50,null]]
+}

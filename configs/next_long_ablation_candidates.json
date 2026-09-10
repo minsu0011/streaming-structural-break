@@ -1,0 +1,360 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T22:21:44.697386+00:00",
+  "generation": 17,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "parent_result_sha256": "7a937f53e3d439f94c69538688c521a13fe7e593f606ed7552abc79b22a4228a",
+  "parent_full_mean": 0.621631469960325,
+  "thresholds_splits_seeds_unchanged": true,
+  "maximum_new_candidates": 6,
+  "scope": "Four named feature removals and two preexisting tree budgets, all with identical long-age parent features or strict subsets. No new horizon, decay, depth, leaf, learning-rate, seed or weight grid.",
+  "candidates": [
+    {
+      "experiment_id": "B101_LONG_VARIANCE_NO_MEMORY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 17,
+      "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+      "change": "Remove the two GLR memory features per channel.",
+      "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+      "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1"
+      ]
+    },
+    {
+      "experiment_id": "B102_LONG_VARIANCE_NO_BAYES",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 17,
+      "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+      "change": "Remove the two analytic Bayes tau-mixture features per channel.",
+      "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+      "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "B103_LONG_VARIANCE_FORECAST_ONLY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 17,
+      "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+      "change": "Retain only the variance-forecast evidence channel.",
+      "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+      "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 17,
+      "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+      "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+      "change": "Remove explicit GLR and GLR memory features; retain local and Bayes evidence.",
+      "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+      "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1"
+      ]
+    },
+    {
+      "experiment_id": "F201_LONG_VARIANCE_TREES50",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 17,
+      "phase": "LONG_VARIANCE_TREE_BUDGET",
+      "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+      "change": "Only reduce forest size from 100 to the already frozen 50-tree budget.",
+      "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+      "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {
+        "n_estimators": 50
+      },
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "F202_LONG_VARIANCE_TREES25",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 17,
+      "phase": "LONG_VARIANCE_TREE_BUDGET",
+      "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+      "change": "Only reduce forest size from 100 to the already frozen 25-tree budget.",
+      "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+      "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {
+        "n_estimators": 25
+      },
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    }
+  ]
+}

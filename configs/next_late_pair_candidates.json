@@ -1,0 +1,56 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:58:53.605055+00:00",
+  "not_before_elapsed_seconds": 28800,
+  "session_start_authority": "artifacts/next/SESSION_NEXT.json",
+  "complementarity_sha256": "94a2beba0e7df5e118dfd08b40d042bcb3a96d10cabf0beea43ae5f00f5e0530",
+  "observed_rank_correlation": 0.9568936247793044,
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "marginal_mean_gain_vs_best_component_min": 0.0005,
+  "marginal_gate_rationale": "An extra forest needs at least +.0005 beyond the better component before final-role consideration; a tiny +.0002 improvement has low complexity value. This extra criterion is fixed before combined predictions are formed.",
+  "screen": "Use matching preexisting 3000-series component screen OOFs and the original fixed admission threshold. No full-CV entry after a failed screen.",
+  "authority": "After the late-phase time gate, retain all three weights; no continuous optimization or weight selection using seal/reduced/public evidence.",
+  "component_model_changes_permitted": false,
+  "candidates": [
+    {
+      "experiment_id": "L101_VARIANCE_PAIR_50_50",
+      "parent_id": "Q005_VARIANCE_NO_MEMORY",
+      "generation": 16,
+      "phase": "LATE_SAME_BANK_BLEND",
+      "left": "V007_VARIANCE_FORECAST",
+      "right": "Q005_VARIANCE_NO_MEMORY",
+      "left_weight": 0.5,
+      "right_weight": 0.5,
+      "hypothesis": "Memory-retaining V007 gains more on scale/mixed breaks; memory-removed Q005 gains on dependence and some H regimes. Fixed averaging may reduce their observed complementary errors.",
+      "change": "Two frozen learners share their identical causal feature bank; float32-quantize each probability before the fixed float64 average and final float32 cast.",
+      "risk": "Adaptive DEV nomination; shared training data and feature bank limit independent evidence. Reject marginal improvements that do not justify a second forest."
+    },
+    {
+      "experiment_id": "L102_VARIANCE_PAIR_67_33",
+      "parent_id": "Q005_VARIANCE_NO_MEMORY",
+      "generation": 16,
+      "phase": "LATE_SAME_BANK_BLEND",
+      "left": "V007_VARIANCE_FORECAST",
+      "right": "Q005_VARIANCE_NO_MEMORY",
+      "left_weight": 0.67,
+      "right_weight": 0.32999999999999996,
+      "hypothesis": "Memory-retaining V007 gains more on scale/mixed breaks; memory-removed Q005 gains on dependence and some H regimes. Fixed averaging may reduce their observed complementary errors.",
+      "change": "Two frozen learners share their identical causal feature bank; float32-quantize each probability before the fixed float64 average and final float32 cast.",
+      "risk": "Adaptive DEV nomination; shared training data and feature bank limit independent evidence. Reject marginal improvements that do not justify a second forest."
+    },
+    {
+      "experiment_id": "L103_VARIANCE_PAIR_33_67",
+      "parent_id": "Q005_VARIANCE_NO_MEMORY",
+      "generation": 16,
+      "phase": "LATE_SAME_BANK_BLEND",
+      "left": "V007_VARIANCE_FORECAST",
+      "right": "Q005_VARIANCE_NO_MEMORY",
+      "left_weight": 0.33,
+      "right_weight": 0.6699999999999999,
+      "hypothesis": "Memory-retaining V007 gains more on scale/mixed breaks; memory-removed Q005 gains on dependence and some H regimes. Fixed averaging may reduce their observed complementary errors.",
+      "change": "Two frozen learners share their identical causal feature bank; float32-quantize each probability before the fixed float64 average and final float32 cast.",
+      "risk": "Adaptive DEV nomination; shared training data and feature bank limit independent evidence. Reject marginal improvements that do not justify a second forest."
+    }
+  ]
+}

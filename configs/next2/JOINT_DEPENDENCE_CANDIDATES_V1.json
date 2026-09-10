@@ -1,0 +1,82 @@
+{
+  "version": "NEXT2_JOINT_V1",
+  "created_utc": "2026-09-09T08:50:05.453948+00:00",
+  "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+  "hypothesis_sha256": "bbc1c3c802ab3dbdae730948e7554688ab64ce624e46d488b5abe5713b95cef8",
+  "prior_observations_sha256": {
+    "C205_DEPENDENCE": "510cced3b086066e3266ae3d49233deace5f2d6e0f5ebcc6e140ccde03a871fd",
+    "BL2_C205_DEPENDENCE_80": "acbf15813c4696941e23261eb1daabad625377db6281b88b446a572ac919d85b"
+  },
+  "candidates": [
+    {
+      "experiment_id": "J201_JOINT_DEPENDENCE_EWMA32",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_JOINT_V1",
+      "phase": "ADAPTIVE_SMALL_COMPLEMENT_INTEGRATION",
+      "hypothesis": "Four conditional dependence summaries may exploit the admitted complementary signal with one learner.",
+      "change": "Add lag 1/2/4/8 ewma32 features to exact J102 statistics",
+      "counterexample_target": "dependence / mixed changes",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_JOINT_DEPENDENCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_joint_dependence",
+        "settings": {
+          "summary": "ewma32"
+        }
+      },
+      "extension_frozen_hash": "ae4d4e878cae7da5c9cba63fad24a7d73c37db6a46aa2832a085c2152bd229b9",
+      "extension_registration": {
+        "kind": "next2_joint_dependence",
+        "module": "next2_joint_dependence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "J202_JOINT_DEPENDENCE_BAYES025",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_JOINT_V1",
+      "phase": "ADAPTIVE_SMALL_COMPLEMENT_INTEGRATION",
+      "hypothesis": "Four conditional dependence summaries may exploit the admitted complementary signal with one learner.",
+      "change": "Add lag 1/2/4/8 bayes025 features to exact J102 statistics",
+      "counterexample_target": "dependence / mixed changes",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_JOINT_DEPENDENCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_joint_dependence",
+        "settings": {
+          "summary": "bayes025"
+        }
+      },
+      "extension_frozen_hash": "5b682ab010312147cad035da7a6689766faea8f0159aa91dcf930cd0f8233b6b",
+      "extension_registration": {
+        "kind": "next2_joint_dependence",
+        "module": "next2_joint_dependence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    }
+  ],
+  "adaptive_nomination": true,
+  "new_candidate_predictions_inspected_before_freeze": false
+}

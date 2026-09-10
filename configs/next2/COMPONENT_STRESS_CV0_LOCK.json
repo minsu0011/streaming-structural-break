@@ -1,0 +1,1311 @@
+{
+  "status": "FROZEN_DIAGNOSTIC_MENU",
+  "created_utc": "2026-09-09T09:29:24.458068+00:00",
+  "models": [
+    {
+      "experiment_id": "J102_SERIAL_VARIANCE_512",
+      "candidate": {
+        "experiment_id": "J102_SERIAL_VARIANCE_512",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": 18,
+        "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+        "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+        "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+        "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+        "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "serial_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "serial_variance__raw_energy_current",
+          "serial_variance__raw_energy_ewma8",
+          "serial_variance__raw_energy_ewma32",
+          "serial_variance__raw_energy_ewma128",
+          "serial_variance__raw_energy_cusum_positive",
+          "serial_variance__raw_energy_cusum_negative",
+          "serial_variance__raw_energy_glr_max",
+          "serial_variance__raw_energy_glr_logmean",
+          "serial_variance__raw_energy_glr_logage",
+          "serial_variance__raw_energy_bayes025",
+          "serial_variance__raw_energy_bayes1",
+          "serial_variance__raw_energy_memory_max",
+          "serial_variance__raw_energy_memory_decay",
+          "serial_variance__log_variance_forecast_current",
+          "serial_variance__log_variance_forecast_ewma8",
+          "serial_variance__log_variance_forecast_ewma32",
+          "serial_variance__log_variance_forecast_ewma128",
+          "serial_variance__log_variance_forecast_cusum_positive",
+          "serial_variance__log_variance_forecast_cusum_negative",
+          "serial_variance__log_variance_forecast_glr_max",
+          "serial_variance__log_variance_forecast_glr_logmean",
+          "serial_variance__log_variance_forecast_glr_logage",
+          "serial_variance__log_variance_forecast_bayes025",
+          "serial_variance__log_variance_forecast_bayes1",
+          "serial_variance__log_variance_forecast_memory_max",
+          "serial_variance__log_variance_forecast_memory_decay"
+        ],
+        "extension_registration": {
+          "kind": "serial_variance",
+          "module": "serial_variance_evidence"
+        },
+        "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+      },
+      "full_cv_status": "ROBUSTNESS_PENDING",
+      "model_path": "artifacts/next/experiments/J102_SERIAL_VARIANCE_512/full/fold_0.joblib",
+      "model_sha256": "063644d58a6a47a6d09dc4b6360e41d3e688b1453d249854a34431a80202dc9b",
+      "source_result_sha256": "8380e4db21afef86b92cf9871b308b9286bd4b6d9707a559663bca955099c508",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+      "candidate": {
+        "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+        "parent_id": "V007_VARIANCE_FORECAST",
+        "generation": 12,
+        "phase": "VARIANCE_AGE_GRID",
+        "hypothesis": "The variance-pair family gains from sequential integration. Test whether extending the fixed logarithmic age grid captures slower changes beyond 128 points.",
+        "change": "Only max_age changes from 128 to 512; add the preimplemented 256/512 ages. Same channels, H fit, learner and weighting.",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ]
+      },
+      "full_cv_status": "ROBUSTNESS_PENDING",
+      "model_path": "artifacts/next/experiments/Y001_LONG_VARIANCE_ARCH1/full/fold_0.joblib",
+      "model_sha256": "2c3f34b25bf927b64c9a00e09c7a96fca7370d211a9f31f4ecdb4bb2ef3964f6",
+      "source_result_sha256": "7a937f53e3d439f94c69538688c521a13fe7e593f606ed7552abc79b22a4228a",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+      "candidate": {
+        "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": 17,
+        "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+        "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+        "change": "Remove explicit GLR and GLR memory features; retain local and Bayes evidence.",
+        "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+        "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1"
+        ]
+      },
+      "full_cv_status": "ROBUSTNESS_PENDING",
+      "model_path": "artifacts/next/experiments/B104_LONG_VARIANCE_NO_GLR_MEMORY/full/fold_0.joblib",
+      "model_sha256": "d2b1a1d6ae334396fb458f173adaa8762aa65e1b39da03b827226645e37002fd",
+      "source_result_sha256": "4e0f0814096017650b61c3a320fd145d16a33861a417ebadd432d2e44b909463",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "Y002_LONG_VARIANCE_ARCH2",
+      "candidate": {
+        "experiment_id": "Y002_LONG_VARIANCE_ARCH2",
+        "parent_id": "Q009_VARIANCE_ARCH2_PAIR",
+        "generation": 12,
+        "phase": "VARIANCE_AGE_GRID",
+        "hypothesis": "The variance-pair family gains from sequential integration. Test whether extending the fixed logarithmic age grid captures slower changes beyond 128 points.",
+        "change": "Only max_age changes from 128 to 512; add the preimplemented 256/512 ages. Same channels, H fit, learner and weighting.",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch2",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "9a695bf1e742cc5487bc84baecf70f40ed893494a8c2f82fb864a06958bd63c1",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ]
+      },
+      "full_cv_status": "ROBUSTNESS_PENDING",
+      "model_path": "artifacts/next/experiments/Y002_LONG_VARIANCE_ARCH2/full/fold_0.joblib",
+      "model_sha256": "3f782eefa48dda7d34763194017ab682a7d28d65a3df6d9db994f73a21b596ce",
+      "source_result_sha256": "0cb17b96bb521695982a38c400ef8601b00874eaa4ddb8f9725584d74941f158",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "Y003_LONG_VARIANCE_EWMA",
+      "candidate": {
+        "experiment_id": "Y003_LONG_VARIANCE_EWMA",
+        "parent_id": "Q010_VARIANCE_EWMA_PAIR",
+        "generation": 12,
+        "phase": "VARIANCE_AGE_GRID",
+        "hypothesis": "The variance-pair family gains from sequential integration. Test whether extending the fixed logarithmic age grid captures slower changes beyond 128 points.",
+        "change": "Only max_age changes from 128 to 512; add the preimplemented 256/512 ages. Same channels, H fit, learner and weighting.",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "ewma",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "6c1aa6273e03afac3552f3719ab840f3c525e41ad730367f562ccf550ca5dbd5",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ]
+      },
+      "full_cv_status": "ROBUSTNESS_PENDING",
+      "model_path": "artifacts/next/experiments/Y003_LONG_VARIANCE_EWMA/full/fold_0.joblib",
+      "model_sha256": "3e4668dd43226d3c32497de83e3fd74e2bd94597cf544b1289fc810979161668",
+      "source_result_sha256": "f8f3ee1522618cb256176fa437ea439e4c052fcf9e22ae63cac11193a83e3944",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "M2_EWMA",
+      "candidate": {
+        "experiment_id": "M2_EWMA",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+        "change": {
+          "memory": "ewma"
+        },
+        "counterexample_target": "long-null / late-break",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "all",
+            "memory": "ewma",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "af4a66fa84bbf5ba5f030b4778c45a31e456605472673db3f0d2690c6d6bb8f2",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/M2_EWMA/full/fold_0.joblib",
+      "model_sha256": "d59ffc7d9a794c0c364f5a4b0ad6cfcd49e96ac70097be983a121aa592507e85",
+      "source_result_sha256": "3e2cdd65a7475a990101d1e2bf229af95556dae28f6c9b6d7efb7d04dc3c72f3",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "M2_LEAKY",
+      "candidate": {
+        "experiment_id": "M2_LEAKY",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+        "change": {
+          "memory": "leaky"
+        },
+        "counterexample_target": "long-null / late-break",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "all",
+            "memory": "leaky",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "d73a10110962ee250df53dfc39a90c8b0476c1fb73c3a71e2a53d68f83a5c851",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/M2_LEAKY/full/fold_0.joblib",
+      "model_sha256": "7db128dfb8444f5366e97b4aa3bc0a87877a019e0d1ca98283ba86174e093d95",
+      "source_result_sha256": "50c8b09e37eddf86b831cfadbaccfc9acd21ca4923b8a778c7658761046191c9",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "M2_POSTERIOR_LIKE",
+      "candidate": {
+        "experiment_id": "M2_POSTERIOR_LIKE",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+        "change": {
+          "memory": "posterior_like"
+        },
+        "counterexample_target": "long-null / late-break",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "all",
+            "memory": "posterior_like",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "8c57e34d4b921263e81e3b19012613faf35001ac1dde72e36d111f985d129869",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/M2_POSTERIOR_LIKE/full/fold_0.joblib",
+      "model_sha256": "3b96c491023430c1518608ef79e659733c8fa108122c992d1b12bc7ed8172c2b",
+      "source_result_sha256": "a63e67a69450e0d36eb18824e90052eeb398fcc0b44fb12ddd11b0a0c0d5dd1d",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "M2_DECAYED_ONLY",
+      "candidate": {
+        "experiment_id": "M2_DECAYED_ONLY",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+        "change": {
+          "memory": "decayed_only"
+        },
+        "counterexample_target": "long-null / late-break",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "all",
+            "memory": "decayed_only",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "8520690d4e5716bd2b25f74c10ef2c2ad438d282b04268ddd4f8ae4955395c22",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FINALIST_DIAGNOSTICS_PENDING",
+      "model_path": "artifacts/next2/experiments/M2_DECAYED_ONLY/full/fold_0.joblib",
+      "model_sha256": "48a27ad1d61d218a21d83596650756784a2759d79a30eede17efe8dbf385ee5a",
+      "source_result_sha256": "26981ebcee9b3e3ea48da814e47bd233645e003341b8b77d7065f32a9ba5c18d",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "N2_LOG_AGE",
+      "candidate": {
+        "experiment_id": "N2_LOG_AGE",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Normalize age-specific GLR/Bayes evidence before aggregation",
+        "change": {
+          "age_normalization": "log_age"
+        },
+        "counterexample_target": "long-null maximum growth",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "log_age"
+          }
+        },
+        "extension_frozen_hash": "cc209f8ff41ee136af89b8f74c5466a99cb7bf5c91357c030ec18862fb14da1f",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/N2_LOG_AGE/full/fold_0.joblib",
+      "model_sha256": "ac702b6ccd76f27c52ea7276cda04cd3d4a02dbe4c16ea94c4d77b6fb0a0a4c5",
+      "source_result_sha256": "1d82c316db5c6d54e0b1f1bf9cc168bbacb26ac5c3b2470db5e4fdda851351fc",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "A2_SHORT",
+      "candidate": {
+        "experiment_id": "A2_SHORT",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+        "change": {
+          "ages": "short"
+        },
+        "counterexample_target": "long-age necessity",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "short",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "4d414c35394a5cffa237e538cd64a425404f99d1afaaa0de3a6e6a8f5b4622fa",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/A2_SHORT/full/fold_0.joblib",
+      "model_sha256": "3a81e121f7c741006af3a28d986d5c1c1edb5feda6ea081ebe44b0be4de517ad",
+      "source_result_sha256": "d2128dc5fac3973178eb7bfdfc3ca01b137b505ee8a1559620d64a2f16abac66",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "A2_LONG",
+      "candidate": {
+        "experiment_id": "A2_LONG",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+        "change": {
+          "ages": "long"
+        },
+        "counterexample_target": "long-age necessity",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "long",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "204a49b5fb22dd50aca5e0cb0e49999e61d21ca89df9a80cc362e33982362e8d",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/A2_LONG/full/fold_0.joblib",
+      "model_sha256": "3ac3a6f559704f5661b1734222073d2cfd9f0af2eeba9a9b95759bd950dbddee",
+      "source_result_sha256": "8d47f833c969d6f68062909dab5c0f7e52e885f2c38e2b5573fd5c7177560688",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "A2_SPARSE64",
+      "candidate": {
+        "experiment_id": "A2_SPARSE64",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+        "change": {
+          "ages": "sparse64"
+        },
+        "counterexample_target": "long-age necessity",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "sparse64",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "3968e2e79e1a2a965a18d8f008b1da6447543ea396b655d6c9d8fc489ddfb037",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/A2_SPARSE64/full/fold_0.joblib",
+      "model_sha256": "e9b3492decb8df7e65d2265bce42f34bac7f0623d42cd4744fb9786f55f5f7c5",
+      "source_result_sha256": "5a45bc3c0899c6d314b69d782b5bcf7d9b6170f130d2da7d4e4483eb50bc535f",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "V2_WINSOR_3",
+      "candidate": {
+        "experiment_id": "V2_WINSOR_3",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+        "change": {
+          "energy": "winsor",
+          "cap": 3
+        },
+        "counterexample_target": "heavy tail / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "winsor",
+            "cap": 3,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "40c8f8ba5da5ee016c72fa5d44aa12b5a7a3e2818397ac89d8f913d56054e2a8",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/V2_WINSOR_3/full/fold_0.joblib",
+      "model_sha256": "94246b4cc4f7decfd95c2be662fc90ffc8216883228746f2c2a43d93131cdc5d",
+      "source_result_sha256": "793accf642d86486d80084985203aed56fc5d9559d0e6212317052c3ad5a985e",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "V2_HUBER_4",
+      "candidate": {
+        "experiment_id": "V2_HUBER_4",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+        "change": {
+          "energy": "huber",
+          "cap": 4
+        },
+        "counterexample_target": "heavy tail / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "huber",
+            "cap": 4,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "5507ed11e2bc4f06d8a7399d20fdd85c01b43abed4fca1bf875ecb5e9eebb91c",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/V2_HUBER_4/full/fold_0.joblib",
+      "model_sha256": "ead87dd747927b2531f2c89b620b6df0b3b8eec00d9867fe01654e7fa2e33878",
+      "source_result_sha256": "7d4ec81d02d5a478131c89f970e5b4056165858c6d384d39e3f3d873a6db2d0c",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "V2_LOG1P_4",
+      "candidate": {
+        "experiment_id": "V2_LOG1P_4",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+        "change": {
+          "energy": "log1p",
+          "cap": 4
+        },
+        "counterexample_target": "heavy tail / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "log1p",
+            "cap": 4,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "ca1c3e5a707180124b82ae6778e20633eedcfec194bc318a651d39baa27275be",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/V2_LOG1P_4/full/fold_0.joblib",
+      "model_sha256": "b28ca73cbceb1cc0d83ff8667139e7311df99d13c874842a011ad421ce299738",
+      "source_result_sha256": "a8ecf375157bf47b45842081d616ff67a93d2f111d148e60de44e9a0bcee8ee9",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "V2_ROBUST_SCALE_4",
+      "candidate": {
+        "experiment_id": "V2_ROBUST_SCALE_4",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+        "change": {
+          "energy": "robust_scale",
+          "cap": 4
+        },
+        "counterexample_target": "heavy tail / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "robust_scale",
+            "cap": 4,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "679ef459bd5094128c621ddc7917dcc2ae49f2dc768a75c0d069e85e12921d6b",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/V2_ROBUST_SCALE_4/full/fold_0.joblib",
+      "model_sha256": "4b3fae15558120c444ff62d3b12206a41fab1a64e64b9a88d921ba43af76b8d2",
+      "source_result_sha256": "60f3a2a86f4b7d82380d3ecc8c8689853cb33262b500779bceab9898be59f1ca",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "V2_ECDF_TAIL_4",
+      "candidate": {
+        "experiment_id": "V2_ECDF_TAIL_4",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+        "change": {
+          "energy": "ecdf_tail",
+          "cap": 4
+        },
+        "counterexample_target": "heavy tail / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "energy": "ecdf_tail",
+            "cap": 4,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "16621e0ef178538228d29b9b85c89787bb3411499d4b98ec72e308bd69b82190",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/V2_ECDF_TAIL_4/full/fold_0.joblib",
+      "model_sha256": "75448cf9f77f0486d287b0211fc12a08f2a1a28ab8d8b3e1552c6b5e84512794",
+      "source_result_sha256": "28020093fc5afe4a9e982a7c311f602b978c0c55391a7401c2cd34857c42d3f5",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "D208_NO_ARCH",
+      "candidate": {
+        "experiment_id": "D208_NO_ARCH",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "VARIANCE_MECHANISM",
+        "hypothesis": "Remove new-bank ARCH forecasting; preserve old ABCD feature base",
+        "change": {
+          "normalization": "none"
+        },
+        "counterexample_target": "ARCH necessity",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_VARIANCE"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "none",
+            "energy": "raw",
+            "cap": 4,
+            "ages": "all",
+            "memory": "original",
+            "age_normalization": "none"
+          }
+        },
+        "extension_frozen_hash": "e6182da66c3e644c5271dabbf70acddeabc614538b8993d9b2777713127fc1c1",
+        "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+        "parity_reference": null
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/D208_NO_ARCH/full/fold_0.joblib",
+      "model_sha256": "b1bfd667c7da43f4489a0a1d7a328de3e6601768f21379db1b7af43d9ff65739",
+      "source_result_sha256": "a7d94e19ad6663930b832e02b648be2af41b0cc93d56131bc23ab555930d7b99",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "D210_NO_FORECAST",
+      "candidate": {
+        "experiment_id": "D210_NO_FORECAST",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "DISTILLATION",
+        "hypothesis": "Remove conditional variance forecast channel",
+        "change": "Remove conditional variance forecast channel",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay"
+        ],
+        "counterexample_target": "component attribution"
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/D210_NO_FORECAST/full/fold_0.joblib",
+      "model_sha256": "cf9ddd296d1a27024c05e161a47eb49cd21c645e5a5a086481ccd91cab16f84f",
+      "source_result_sha256": "1805aba3984bc52ae15c58483bbe7f7fa37ef623268082f5aac99f49cdaf9e3a",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "D202_NO_EXPLICIT_GLR",
+      "candidate": {
+        "experiment_id": "D202_NO_EXPLICIT_GLR",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "DISTILLATION",
+        "hypothesis": "Remove explicit GLR columns, retain GLR memory",
+        "change": "Remove explicit GLR columns, retain GLR memory",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ],
+        "counterexample_target": "component attribution"
+      },
+      "full_cv_status": "FINALIST_DIAGNOSTICS_PENDING",
+      "model_path": "artifacts/next2/experiments/D202_NO_EXPLICIT_GLR/full/fold_0.joblib",
+      "model_sha256": "b613baf42b076e6a2d3f19fa01670f5875b026b2bd9c9b8aef20008c558e52eb",
+      "source_result_sha256": "c175fd63e2e31739ee8649464fe7d806633c055d03313ac2e1f9f9b629a36f73",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "D205_NO_CUSUM_MEMORY",
+      "candidate": {
+        "experiment_id": "D205_NO_CUSUM_MEMORY",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_V1",
+        "phase": "DISTILLATION",
+        "hypothesis": "Remove positive and negative local CUSUM columns",
+        "change": "Remove positive and negative local CUSUM columns",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ],
+        "counterexample_target": "component attribution"
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/D205_NO_CUSUM_MEMORY/full/fold_0.joblib",
+      "model_sha256": "e95301b535a53b93be9ed5a10180db0b4d214f1a189755579bacd25533f865c1",
+      "source_result_sha256": "8e7bc437f41ac483284eee0925e2219baad25e0dda43cd78c801c9a65f0b4fad",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "S205_PARENT_PLUS_LOG_RATIOS",
+      "candidate": {
+        "experiment_id": "S205_PARENT_PLUS_LOG_RATIOS",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_SCALE_V1",
+        "phase": "SCALE_DOWN_LIKELIHOOD",
+        "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+        "change": {
+          "channel_pair": "raw_forecast",
+          "cap": 0,
+          "include_parent": "ratios"
+        },
+        "counterexample_target": "variance decrease / ARCH / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_SCALE_LIKELIHOOD"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_scale_likelihood",
+          "settings": {
+            "channel_pair": "raw_forecast",
+            "cap": 0,
+            "include_parent": "ratios"
+          }
+        },
+        "extension_frozen_hash": "2416ea548f11d8961ff427c7f1f436cc9e7c0f065a56482f2c295903a180f3e0",
+        "extension_registration": {
+          "kind": "next2_scale_likelihood",
+          "module": "next2_scale_likelihood"
+        },
+        "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+      },
+      "full_cv_status": "FINALIST_DIAGNOSTICS_PENDING",
+      "model_path": "artifacts/next2/experiments/S205_PARENT_PLUS_LOG_RATIOS/full/fold_0.joblib",
+      "model_sha256": "e6dc26d1950a01f25df10af770d73354d9a3d0c002f6224fc6c31550c4f7a2b8",
+      "source_result_sha256": "6d744cf2fbdfaaa932f554c72f056575f652983b6763edd39d2a14c5b74b8d18",
+      "outer_fold_model": 0
+    },
+    {
+      "experiment_id": "S203_CONDITIONAL_SCALE_LIKELIHOOD",
+      "candidate": {
+        "experiment_id": "S203_CONDITIONAL_SCALE_LIKELIHOOD",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": "NEXT2_SCALE_V1",
+        "phase": "SCALE_DOWN_LIKELIHOOD",
+        "hypothesis": "Directional Gaussian variance likelihood may recover decreases obscured by standardized squared-energy mean evidence.",
+        "change": {
+          "channel_pair": "raw_conditional",
+          "cap": 0,
+          "include_parent": "none"
+        },
+        "counterexample_target": "variance decrease / ARCH / isolated outlier",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "NEXT2_SCALE_LIKELIHOOD"
+        ],
+        "base": "arch8",
+        "base_family_selection": "ABCD",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "next2_scale_likelihood",
+          "settings": {
+            "channel_pair": "raw_conditional",
+            "cap": 0,
+            "include_parent": "none"
+          }
+        },
+        "extension_frozen_hash": "e568446816d2a514270d90318a55ea672d02dde6f3b6495b05aef167ebf1a429",
+        "extension_registration": {
+          "kind": "next2_scale_likelihood",
+          "module": "next2_scale_likelihood"
+        },
+        "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+      },
+      "full_cv_status": "FULL_GATE_FAIL",
+      "model_path": "artifacts/next2/experiments/S203_CONDITIONAL_SCALE_LIKELIHOOD/full/fold_0.joblib",
+      "model_sha256": "cfa022f6d584513f5d2b4e8aec17f3066aad5b3edc37ed7eedf6cecb07e8c779",
+      "source_result_sha256": "fda6383464edad1b602e6a36dafcb9f86e4247692fe9b2d49a760a614bc70f5a",
+      "outer_fold_model": 0
+    }
+  ],
+  "counterexample_lock_sha256": "7909cd898580bb26e2489e5ba39fe649c7ac3ac441feaff3b3050cfeb2cca956",
+  "scope": "All 9 independent calibration cohorts, 18 fixed counterexamples and 4 fixed long-null regimes",
+  "model_training": "Existing original full-CV fold-0 models; matched training partition, no synthetic refitting",
+  "new_fits": 0,
+  "failed_screen_candidates_admitted": 0,
+  "authority": "Exploratory component diagnostics; all models use fold 0, distinct from all-DEV primary/finalist counterexample tables.",
+  "purpose": "Explain memory, age-grid, energy, ARCH and scale-likelihood failure modes. Preserve fixed DEV admission failures.",
+  "selection": "No synthetic result can promote a candidate, waive a DEV gate, or change this menu.",
+  "primary_comparison": "Y001 fold-0 for direct descendants; J102 fold-0 also reported",
+  "seal_rows": 0,
+  "reduced_new_usage": 0
+}

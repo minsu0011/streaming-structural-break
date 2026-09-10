@@ -1,0 +1,8 @@
+{
+  "quantile_knots": 257,
+  "lower_probability": 0.001,
+  "upper_probability": 0.999,
+  "interpolation": "linear_in_observed_value",
+  "outside_historical_quantile_range": "clip_to_endpoint_normal_score",
+  "nonfinite_online": "preserve_for_existing_missing_value_policy"
+}

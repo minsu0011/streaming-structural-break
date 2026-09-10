@@ -1,0 +1,37 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-09T01:00:59.279234+00:00",
+  "seed": 202609109,
+  "historical_lengths": [
+    128,
+    1024,
+    4096
+  ],
+  "online_points": 1024,
+  "historical_cases": [
+    "constant_zero",
+    "constant_one",
+    "nearly_constant",
+    "large_location_small_scale",
+    "tiny_scale",
+    "alternating_large",
+    "isolated_historical_spike"
+  ],
+  "online_cases": [
+    "zero",
+    "unit_normal",
+    "extreme_suffix"
+  ],
+  "candidates": [
+    "V007_VARIANCE_FORECAST",
+    "Y001_LONG_VARIANCE_ARCH1",
+    "Q005_VARIANCE_NO_MEMORY",
+    "F101_VARIANCE_TREES50",
+    "Z001_LOG_ENERGY_CURRENT",
+    "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+    "F201_LONG_VARIANCE_TREES50",
+    "J102_SERIAL_VARIANCE_512"
+  ],
+  "driver_sha256": "fca1a86693a1e19d948be2f1b0c7c4d1a18c504d3d09b3ab55932bf0b17df2e0",
+  "purpose": "Fixed finite synthetic historical-state edge contract; no quality scores, selection change or retraining."
+}

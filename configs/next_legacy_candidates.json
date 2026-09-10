@@ -1,0 +1,292 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T19:42:44.310329+00:00",
+  "generation": 9,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "anchor": "AR8/ARCH1 reproduces all 51 original ABCD features over the complete 3000-series fixed screen. R013 and E001 already establish the unchanged learner behavior; no duplicate anchor fit.",
+  "AR12_policy": "Separate extension of the old ridge 0.001 * trace / order and coefficient L2 <=4 formulas; no protected source edit and no online refit.",
+  "ARCH2_policy": "H-only squared-innovation lag-1/2 joint ridge fit, 99% winsor cap, nonnegative slopes with sum <=0.95, mean*(1-sum) intercept, fixed H parameters and two prior squared innovations online.",
+  "Gaussian_policy": "Apply the unchanged historical quantile-knot mapping to AR innovations before the original feature engine; H only, binary-search interpolation online.",
+  "candidates": [
+    {
+      "experiment_id": "P001_LEGACY_AR12_ARCH1",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 12,
+          "normalization": "arch1"
+        }
+      },
+      "extension_frozen_hash": "85c14db9a756e73681ab54d03bdc743f32f97e0be13e80827ccb1b183cb3842a",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P002_LEGACY_AR12_NONE",
+      "parent_id": "P001_LEGACY_AR12_ARCH1",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 12,
+          "normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "144371bd506e08cbb94c029faf81c57e1cb38141618341f5fe5084fdc5fa4141",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P003_LEGACY_AR8_ARCH2",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 8,
+          "normalization": "arch2"
+        }
+      },
+      "extension_frozen_hash": "48d4068750c4459d1d2c7dc300da656a774c32d1cac85bd94866a1b39fa13726",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P004_LEGACY_AR12_ARCH2",
+      "parent_id": "P001_LEGACY_AR12_ARCH1",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 12,
+          "normalization": "arch2"
+        }
+      },
+      "extension_frozen_hash": "08952852407eb448cdeab85c3fce9dabbd7dc851af21e0676ea91fc175005bb2",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P005_LEGACY_AR8_GAUSSIAN",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 8,
+          "normalization": "gaussian"
+        }
+      },
+      "extension_frozen_hash": "102a6a46eb132b0ac94da76dc097d128de7ad5942e9abefe99a898ec33af9de8",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P006_LEGACY_AR12_GAUSSIAN",
+      "parent_id": "P001_LEGACY_AR12_ARCH1",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 12,
+          "normalization": "gaussian"
+        }
+      },
+      "extension_frozen_hash": "70e7f145de3088f69061a39774760f62c78a77ae48962fe58fed3284626b554e",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P007_LEGACY_AR12_HISTGB",
+      "parent_id": "P001_LEGACY_AR12_ARCH1",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "M3_histgb",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 12,
+          "normalization": "arch1"
+        }
+      },
+      "extension_frozen_hash": "85c14db9a756e73681ab54d03bdc743f32f97e0be13e80827ccb1b183cb3842a",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d"
+    },
+    {
+      "experiment_id": "P008_LEGACY_AR12_RANK",
+      "parent_id": "P001_LEGACY_AR12_ARCH1",
+      "generation": 9,
+      "phase": "LEGACY_WHITENING_EXTENSION",
+      "hypothesis": "The original ABCD feature bank and H median/MAD calibration may express improved whitening more effectively than the new standalone sequential bank.",
+      "change": "Keep the exact legacy 51 ABCD features and H calibration. Change only input AR order, variance normalization or learner as explicitly identified by the parent comparison.",
+      "expected_effect": "Isolate AR12/ARCH2/innovation-Gaussian effects from simultaneous changes in the downstream statistic bank.",
+      "risks": "Legacy AR fits constrain coefficient L2 rather than poles; H-fit optimism persists; ARCH2 or Gaussian mapping can remove change signal.",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "base": "none",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "legacy_bank",
+        "settings": {
+          "order": 12,
+          "normalization": "arch1"
+        }
+      },
+      "extension_frozen_hash": "85c14db9a756e73681ab54d03bdc743f32f97e0be13e80827ccb1b183cb3842a",
+      "legacy_anchor_parity_sha256": "bfc88222a00f2ca158dd2ca61f3a125fefbc6346e6caa93ca446162ec3db7d2d",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

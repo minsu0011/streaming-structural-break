@@ -1,0 +1,1158 @@
+{
+  "version": "NEXT2_VARIANCE_V1",
+  "created_utc": "2026-09-09T08:11:51.731323+00:00",
+  "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+  "candidates": [
+    {
+      "experiment_id": "D202_NO_EXPLICIT_GLR",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "DISTILLATION",
+      "hypothesis": "Remove explicit GLR columns, retain GLR memory",
+      "change": "Remove explicit GLR columns, retain GLR memory",
+      "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+      "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ],
+      "counterexample_target": "component attribution"
+    },
+    {
+      "experiment_id": "D205_NO_CUSUM_MEMORY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "DISTILLATION",
+      "hypothesis": "Remove positive and negative local CUSUM columns",
+      "change": "Remove positive and negative local CUSUM columns",
+      "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+      "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ],
+      "counterexample_target": "component attribution"
+    },
+    {
+      "experiment_id": "D210_NO_FORECAST",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "DISTILLATION",
+      "hypothesis": "Remove conditional variance forecast channel",
+      "change": "Remove conditional variance forecast channel",
+      "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+      "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay"
+      ],
+      "counterexample_target": "component attribution"
+    },
+    {
+      "experiment_id": "E201_BANK_PARITY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Exact raw/ARCH1 512-age bridge",
+      "change": "adapter only",
+      "counterexample_target": "adapter parity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "22696e950b2e7b11edd8b1938999c8e81bd8f95ef2f2f1bd4f54a4a64318f5a4",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": "Y001_LONG_VARIANCE_ARCH1"
+    },
+    {
+      "experiment_id": "V2_WINSOR_3",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "winsor",
+        "cap": 3
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "winsor",
+          "cap": 3,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "40c8f8ba5da5ee016c72fa5d44aa12b5a7a3e2818397ac89d8f913d56054e2a8",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_WINSOR_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "winsor",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "winsor",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "d708a76beb0d79877989e94f7ffa307100f88b526dc72765d2b11fa8bbcf834f",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_WINSOR_6",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "winsor",
+        "cap": 6
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "winsor",
+          "cap": 6,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "d2b391989d3a6b8751293f9ff3c4c9649a59a269bb9f8b70e7048d5d20714040",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_HUBER_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "huber",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "huber",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "5507ed11e2bc4f06d8a7399d20fdd85c01b43abed4fca1bf875ecb5e9eebb91c",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_LOG1P_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "log1p",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "log1p",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "ca1c3e5a707180124b82ae6778e20633eedcfec194bc318a651d39baa27275be",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_ABS_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "abs",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "abs",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "e70ee0e20b32cbfe0378c5d23435d97ecdca31ed21efe7c0a3fb31fd062fd97b",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_CLIPPED_ABS_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "clipped_abs",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "clipped_abs",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "99babbdf416edb16d0de7b7a4119f902baa0b7b118b2e855caf9aa5fe7450443",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_ROBUST_SCALE_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "robust_scale",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "robust_scale",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "679ef459bd5094128c621ddc7917dcc2ae49f2dc768a75c0d069e85e12921d6b",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_ECDF_TAIL_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "ecdf_tail",
+        "cap": 4
+      },
+      "counterexample_target": "heavy tail / isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "ecdf_tail",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "16621e0ef178538228d29b9b85c89787bb3411499d4b98ec72e308bd69b82190",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_LOG_RATIO_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "log_ratio",
+        "cap": 4
+      },
+      "counterexample_target": "variance decrease / ARCH forecast error",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "log_ratio",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "d5e7f10c6810be4554500c91203808e28127550f7345ad0d6c233bb316d2e0f3",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "V2_LOG_RAW_4",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Change only the raw-energy coordinate; H calibration and two-sided sequential bank are retained",
+      "change": {
+        "energy": "log_raw",
+        "cap": 4
+      },
+      "counterexample_target": "variance decrease / ARCH forecast error",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "log_raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "b13d3d1046d2381a3fab2570d1ca7670f3eae87f241980d8dcecc10e8bcddae8",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "A2_SHORT",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+      "change": {
+        "ages": "short"
+      },
+      "counterexample_target": "long-age necessity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "short",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "4d414c35394a5cffa237e538cd64a425404f99d1afaaa0de3a6e6a8f5b4622fa",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "A2_MEDIUM",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+      "change": {
+        "ages": "medium"
+      },
+      "counterexample_target": "long-age necessity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "medium",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "c2756fd302939ef5d079d4f9e8014d0a08a543c05cf22c61685a031c09cb7b07",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "A2_LONG",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+      "change": {
+        "ages": "long"
+      },
+      "counterexample_target": "long-age necessity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "long",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "204a49b5fb22dd50aca5e0cb0e49999e61d21ca89df9a80cc362e33982362e8d",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "A2_SPARSE32",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+      "change": {
+        "ages": "sparse32"
+      },
+      "counterexample_target": "long-age necessity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "sparse32",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "09637034e7ad92c605c0e0851c2e91f533d6fd2571bb08c887e950fa0a90d2bb",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "A2_SPARSE64",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Retain a prospective age subgrid with width-normalized Bayes integration",
+      "change": {
+        "ages": "sparse64"
+      },
+      "counterexample_target": "long-age necessity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "sparse64",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "3968e2e79e1a2a965a18d8f008b1da6447543ea396b655d6c9d8fc489ddfb037",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "M2_EWMA",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+      "change": {
+        "memory": "ewma"
+      },
+      "counterexample_target": "long-null / late-break",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "ewma",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "af4a66fa84bbf5ba5f030b4778c45a31e456605472673db3f0d2690c6d6bb8f2",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "M2_LEAKY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+      "change": {
+        "memory": "leaky"
+      },
+      "counterexample_target": "long-null / late-break",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "leaky",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "d73a10110962ee250df53dfc39a90c8b0476c1fb73c3a71e2a53d68f83a5c851",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "M2_RESETTABLE",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+      "change": {
+        "memory": "resettable"
+      },
+      "counterexample_target": "long-null / late-break",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "resettable",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "824dfb9af563f21f77d475a81ee8ae3a49ee98e20a31d045f7987cdbe3e1b7a7",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "M2_POSTERIOR_LIKE",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+      "change": {
+        "memory": "posterior_like"
+      },
+      "counterexample_target": "long-null / late-break",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "posterior_like",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "8c57e34d4b921263e81e3b19012613faf35001ac1dde72e36d111f985d129869",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "M2_DECAYED_ONLY",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Replace only the two GLR memory coordinates with a bounded or forgetting alternative",
+      "change": {
+        "memory": "decayed_only"
+      },
+      "counterexample_target": "long-null / late-break",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "decayed_only",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "8520690d4e5716bd2b25f74c10ef2c2ad438d282b04268ddd4f8ae4955395c22",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "N2_SQRT_AGE",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Normalize age-specific GLR/Bayes evidence before aggregation",
+      "change": {
+        "age_normalization": "sqrt_age"
+      },
+      "counterexample_target": "long-null maximum growth",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "sqrt_age"
+        }
+      },
+      "extension_frozen_hash": "47bd97ce013514c1304dfae7ca5573ac44f6f498eed35e0083a007b20d94554c",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "N2_LOG_AGE",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Normalize age-specific GLR/Bayes evidence before aggregation",
+      "change": {
+        "age_normalization": "log_age"
+      },
+      "counterexample_target": "long-null maximum growth",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "log_age"
+        }
+      },
+      "extension_frozen_hash": "cc209f8ff41ee136af89b8f74c5466a99cb7bf5c91357c030ec18862fb14da1f",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    },
+    {
+      "experiment_id": "D208_NO_ARCH",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": "NEXT2_V1",
+      "phase": "VARIANCE_MECHANISM",
+      "hypothesis": "Remove new-bank ARCH forecasting; preserve old ABCD feature base",
+      "change": {
+        "normalization": "none"
+      },
+      "counterexample_target": "ARCH necessity",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_VARIANCE"
+      ],
+      "base": "arch8",
+      "base_family_selection": "ABCD",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "next2_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "none",
+          "energy": "raw",
+          "cap": 4,
+          "ages": "all",
+          "memory": "original",
+          "age_normalization": "none"
+        }
+      },
+      "extension_frozen_hash": "e6182da66c3e644c5271dabbf70acddeabc614538b8993d9b2777713127fc1c1",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f",
+      "parity_reference": null
+    }
+  ],
+  "bridge_policy": "E201 verifies full feature parity on all DEV against Y001; reuses Y001 fitted quality, never retrains the exact same design."
+}

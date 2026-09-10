@@ -1,0 +1,683 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T18:33:59.995942+00:00",
+  "generation": 2,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "forensic_inputs": [
+    "CURRENT_TOP_FORENSIC.md",
+    "artifacts/next/historical_holdout/SUMMARY.csv",
+    "MODEL_RESULTS_NEXT.csv"
+  ],
+  "thresholds_splits_seeds_unchanged": true,
+  "historical_null_policy": {
+    "replay": "full H through a clone of its H-fitted initial state",
+    "burn_in": 160,
+    "center": "median",
+    "scale": "1.4826 * MAD, floor 0.05",
+    "output_clip": 12,
+    "excluded": "elapsed time, hypothetical maximizing age, persistent memory"
+  },
+  "ar_score_policy": {
+    "regressors": "lagged original robust-standardized input, not lagged innovations",
+    "covariance": "empirical H score covariance plus 1% trace ridge",
+    "online_refitting": false,
+    "online_complexity": "O(p^2 + number_of_fixed_ages*p), p <=12; AR filtering itself O(p)",
+    "null_distribution_claim": "No calibrated chi-square, posterior or e-value claim; empirical ranking evidence only"
+  },
+  "candidates": [
+    {
+      "experiment_id": "C001_HCAL_CORE",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only H-null median/MAD feature scaling is added",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d"
+    },
+    {
+      "experiment_id": "C002_HCAL_SCALE",
+      "parent_id": "N020_STANDALONE_S2",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only H-null scaling of the instantaneous and scale feature family",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S2"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d"
+    },
+    {
+      "experiment_id": "C003_HCAL_AR12",
+      "parent_id": "N005_WHITEN_AR12",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only H-null scaling on the fixed AR12 core",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 12,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "ceeafba84609023ca81ff207a82b957349f5905484acad5ef30bfe80a1263b41"
+    },
+    {
+      "experiment_id": "C004_HCAL_GAUSSIAN",
+      "parent_id": "N012_NORM_GAUSSIAN",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only H-null scaling on the Gaussian innovation core",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "gaussian",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "gaussian",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "96efdc85ad873b4f7ae1a1ac25c213316a9519fdfe0a0209d8d282334f95d36d"
+    },
+    {
+      "experiment_id": "C005_HCAL_ARCH_CORE",
+      "parent_id": "R036_ARCH_ADD_CORE",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only the appended new statistics receive H-null calibration; ARCH8 ABCD base remains unchanged",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "C006_HCAL_ARCH_DEPENDENCE",
+      "parent_id": "R031_ARCH_ADD_S3",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only the appended new statistics receive H-null calibration; ARCH8 ABCD base remains unchanged",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "S3"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "C007_HCAL_ARCH_GLR",
+      "parent_id": "R033_ARCH_ADD_G",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only the appended new statistics receive H-null calibration; ARCH8 ABCD base remains unchanged",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "G"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "C008_HCAL_ARCH_BAYES",
+      "parent_id": "R034_ARCH_ADD_B",
+      "generation": 2,
+      "hypothesis": "IID analytic scaling leaves temporal and heavy-tail nuisance across series; historical-null median/MAD scaling may improve cross-series comparability.",
+      "change": "Only the appended new statistics receive H-null calibration; ARCH8 ABCD base remains unchanged",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "B"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "HCAL",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "S001_ARSCORE_STANDALONE",
+      "parent_id": "N021_STANDALONE_S3",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Replace the dependence bank with the fixed H-covariance-normalized AR score vector",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464"
+    },
+    {
+      "experiment_id": "S002_ARSCORE_DIAGONAL",
+      "parent_id": "S001_ARSCORE_STANDALONE",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Only historical score covariance normalization changes from full to diagonal",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "diagonal",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "0a2204da607e4d3ba372cb0da870c7aa231111b8ce08cb8ab2ddbc126db7a38e"
+    },
+    {
+      "experiment_id": "S003_ARSCORE_ARCH",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Append only the 19 AR coefficient score summaries to frozen ARCH8 ABCD",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "S004_ARSCORE_ARCH_DIAGONAL",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Only score covariance normalization changes to diagonal",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "diagonal",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "0a2204da607e4d3ba372cb0da870c7aa231111b8ce08cb8ab2ddbc126db7a38e",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "S005_ARSCORE_ARCH_P4",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Only auxiliary AR score order changes from 8 to 4",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 4,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 4,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "fe49f25782fd49ae2f507d60a3bf92d1a8d703808c49ae06645bd9a54b394bef",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "S006_ARSCORE_ARCH_P12",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Only auxiliary AR score order changes from 8 to 12",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 12,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "11260228307d4a2f89f0500c5a8bba24989e9634d3c862f19d5e347e907e50a4",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "S007_ARSCORE_ARCH_HISTGB",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Only the small tree learner changes to HistGB",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M3_histgb",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "S008_ARSCORE_ARCH_EWMA",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Keep only instantaneous and EWMA AR score summaries",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "ar_score__score_instant_q",
+        "ar_score__score_ewma_q_8",
+        "ar_score__score_ewma_max_abs_8",
+        "ar_score__score_ewma_signed_sum_8",
+        "ar_score__score_ewma_q_32",
+        "ar_score__score_ewma_max_abs_32",
+        "ar_score__score_ewma_signed_sum_32",
+        "ar_score__score_ewma_q_128",
+        "ar_score__score_ewma_max_abs_128",
+        "ar_score__score_ewma_signed_sum_128"
+      ]
+    },
+    {
+      "experiment_id": "S009_ARSCORE_ARCH_NO_BAYES",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Remove only the AR-score Bayes mixture summaries",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "ar_score__score_instant_q",
+        "ar_score__score_ewma_q_8",
+        "ar_score__score_ewma_max_abs_8",
+        "ar_score__score_ewma_signed_sum_8",
+        "ar_score__score_ewma_q_32",
+        "ar_score__score_ewma_max_abs_32",
+        "ar_score__score_ewma_signed_sum_32",
+        "ar_score__score_ewma_q_128",
+        "ar_score__score_ewma_max_abs_128",
+        "ar_score__score_ewma_signed_sum_128",
+        "ar_score__score_cusum_max",
+        "ar_score__score_cusum_energy",
+        "ar_score__score_glr_max",
+        "ar_score__score_glr_logmean",
+        "ar_score__score_glr_argmax_logage",
+        "ar_score__score_memory_max",
+        "ar_score__score_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "S010_ARSCORE_ARCH_NO_GLR",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 2,
+      "hypothesis": "For an AR coefficient change, innovation times past original regressors is a direct conditional-mean score; innovation-times-innovation autocorrelation may discard this direction.",
+      "change": "Remove only the AR-score GLR summaries",
+      "expected_effect": "Reduce H-regime nuisance or directly detect conditional AR coefficient changes",
+      "risks": "H-fit covariance and calibration can be optimistic; short-context signal loss; fixed DEV screening uncertainty",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARSCORE",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "ar_score__score_instant_q",
+        "ar_score__score_ewma_q_8",
+        "ar_score__score_ewma_max_abs_8",
+        "ar_score__score_ewma_signed_sum_8",
+        "ar_score__score_ewma_q_32",
+        "ar_score__score_ewma_max_abs_32",
+        "ar_score__score_ewma_signed_sum_32",
+        "ar_score__score_ewma_q_128",
+        "ar_score__score_ewma_max_abs_128",
+        "ar_score__score_ewma_signed_sum_128",
+        "ar_score__score_cusum_max",
+        "ar_score__score_cusum_energy",
+        "ar_score__score_bayes025",
+        "ar_score__score_bayes1",
+        "ar_score__score_memory_max",
+        "ar_score__score_memory_decay"
+      ]
+    }
+  ]
+}

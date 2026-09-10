@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-09-09T12:14:06.462484+00:00",
+  "identity": {
+    "candidate": {
+      "experiment_id": "C211_SIGN_DEPENDENCE",
+      "parent_id": "C205_DEPENDENCE",
+      "generation": "NEXT2_SIGN_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Remove amplitude from conditional-normalized lag products to reduce the C205 scale-down counterexample while retaining dependence information.",
+      "change": "Sign conversion before the same four centered lag products; unchanged 24 evidence features and fixed learner.",
+      "counterexample_target": "dependence versus scale decrease and isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SIGN_DEPENDENCE"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_sign_dependence__sign_dependence__lag1_ewma8",
+        "next2_sign_dependence__sign_dependence__lag1_ewma32",
+        "next2_sign_dependence__sign_dependence__lag1_cusum_positive",
+        "next2_sign_dependence__sign_dependence__lag1_cusum_negative",
+        "next2_sign_dependence__sign_dependence__lag1_bayes025",
+        "next2_sign_dependence__sign_dependence__lag1_bayes1",
+        "next2_sign_dependence__sign_dependence__lag2_ewma8",
+        "next2_sign_dependence__sign_dependence__lag2_ewma32",
+        "next2_sign_dependence__sign_dependence__lag2_cusum_positive",
+        "next2_sign_dependence__sign_dependence__lag2_cusum_negative",
+        "next2_sign_dependence__sign_dependence__lag2_bayes025",
+        "next2_sign_dependence__sign_dependence__lag2_bayes1",
+        "next2_sign_dependence__sign_dependence__lag4_ewma8",
+        "next2_sign_dependence__sign_dependence__lag4_ewma32",
+        "next2_sign_dependence__sign_dependence__lag4_cusum_positive",
+        "next2_sign_dependence__sign_dependence__lag4_cusum_negative",
+        "next2_sign_dependence__sign_dependence__lag4_bayes025",
+        "next2_sign_dependence__sign_dependence__lag4_bayes1",
+        "next2_sign_dependence__sign_dependence__lag8_ewma8",
+        "next2_sign_dependence__sign_dependence__lag8_ewma32",
+        "next2_sign_dependence__sign_dependence__lag8_cusum_positive",
+        "next2_sign_dependence__sign_dependence__lag8_cusum_negative",
+        "next2_sign_dependence__sign_dependence__lag8_bayes025",
+        "next2_sign_dependence__sign_dependence__lag8_bayes1"
+      ],
+      "extension": {
+        "kind": "next2_sign_dependence",
+        "settings": {
+          "version": "sign_dependence_v1",
+          "order": 8
+        }
+      },
+      "extension_frozen_hash": "724be1407cd0a035c777cb65942a2f33eb98f1c71e1d08b020f590f4fd3be99c",
+      "extension_registration": {
+        "kind": "next2_sign_dependence",
+        "module": "next2_sign_dependence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b",
+      "adapter_repair_of": "C210_SIGN_DEPENDENCE",
+      "adapter_repair": "Use extension-prefixed canonical names; feature mathematics and all gate settings unchanged."
+    },
+    "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+    "original_nomination_sha256": "d7d788d055984c2a60cb612988691dcf29912ed17e8f0ebdeea94e949f470b4d",
+    "original_failure_sha256": "c8eda8f7634449a3d93e384e7ed32d8aaec99e6d9388a3b995275abd7899b73a",
+    "original_script_sha256": "42b4d9733efe7d37ace2db774ac8b91ffb172ed92f42a712708c70c97281e053",
+    "script_sha256": "8089515e3d63c10e071ed12a52567494afb911081c51b8c7c2b4b3894dcde17a",
+    "hypothesis_sha256": "2645f55e021fcf6c028462a27b15496a2084f5fcc21709dbce8952bfd7e951e5",
+    "prior_training_events": 0,
+    "prior_candidate_predictions_available": false,
+    "new_statistical_hypotheses": 0,
+    "repair_scope": "Canonical feature-name selection only"
+  }
+}

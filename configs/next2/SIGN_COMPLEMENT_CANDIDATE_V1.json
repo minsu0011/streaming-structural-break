@@ -1,0 +1,71 @@
+{
+  "created_utc": "2026-09-09T12:11:26.705112+00:00",
+  "identity": {
+    "candidate": {
+      "experiment_id": "C210_SIGN_DEPENDENCE",
+      "parent_id": "C205_DEPENDENCE",
+      "generation": "NEXT2_SIGN_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Remove amplitude from conditional-normalized lag products to reduce the C205 scale-down counterexample while retaining dependence information.",
+      "change": "Sign conversion before the same four centered lag products; unchanged 24 evidence features and fixed learner.",
+      "counterexample_target": "dependence versus scale decrease and isolated outlier",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_SIGN_DEPENDENCE"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "sign_dependence__lag1_ewma8",
+        "sign_dependence__lag1_ewma32",
+        "sign_dependence__lag1_cusum_positive",
+        "sign_dependence__lag1_cusum_negative",
+        "sign_dependence__lag1_bayes025",
+        "sign_dependence__lag1_bayes1",
+        "sign_dependence__lag2_ewma8",
+        "sign_dependence__lag2_ewma32",
+        "sign_dependence__lag2_cusum_positive",
+        "sign_dependence__lag2_cusum_negative",
+        "sign_dependence__lag2_bayes025",
+        "sign_dependence__lag2_bayes1",
+        "sign_dependence__lag4_ewma8",
+        "sign_dependence__lag4_ewma32",
+        "sign_dependence__lag4_cusum_positive",
+        "sign_dependence__lag4_cusum_negative",
+        "sign_dependence__lag4_bayes025",
+        "sign_dependence__lag4_bayes1",
+        "sign_dependence__lag8_ewma8",
+        "sign_dependence__lag8_ewma32",
+        "sign_dependence__lag8_cusum_positive",
+        "sign_dependence__lag8_cusum_negative",
+        "sign_dependence__lag8_bayes025",
+        "sign_dependence__lag8_bayes1"
+      ],
+      "extension": {
+        "kind": "next2_sign_dependence",
+        "settings": {
+          "version": "sign_dependence_v1",
+          "order": 8
+        }
+      },
+      "extension_frozen_hash": "724be1407cd0a035c777cb65942a2f33eb98f1c71e1d08b020f590f4fd3be99c",
+      "extension_registration": {
+        "kind": "next2_sign_dependence",
+        "module": "next2_sign_dependence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+    "hypothesis_sha256": "2645f55e021fcf6c028462a27b15496a2084f5fcc21709dbce8952bfd7e951e5",
+    "script_sha256": "42b4d9733efe7d37ace2db774ac8b91ffb172ed92f42a712708c70c97281e053",
+    "prior_counterexample_fit_sensitivity_sha256": "e5f9c234f5df4dc407a838bc4f89f331daffdf66bbcef3983e26c4f6de96c6fe",
+    "adaptive_nomination": true,
+    "new_candidate_predictions_inspected_before_freeze": false
+  }
+}

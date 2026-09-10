@@ -1,0 +1,425 @@
+{
+  "created_utc": "2026-09-09T08:24:00.336106+00:00",
+  "version": "NEXT2_COMPLEMENT_V1",
+  "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+  "candidates": [
+    {
+      "experiment_id": "C201_MEAN_LOCAL",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized mean evidence may carry information independent of the variance primary.",
+      "change": "Standalone small mean bank, feature subset local",
+      "counterexample_target": "mean",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__mean_0_current",
+        "next2_complement__mean_0_ewma8",
+        "next2_complement__mean_0_ewma32",
+        "next2_complement__mean_0_ewma128",
+        "next2_complement__mean_0_cusum_positive",
+        "next2_complement__mean_0_cusum_negative"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "mean",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "7006aaa51f5ea63e2661689e34d29f8871d15d10a2f1019cc777735321a2ff62",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C202_MEAN_BAYES",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized mean evidence may carry information independent of the variance primary.",
+      "change": "Standalone small mean bank, feature subset bayes",
+      "counterexample_target": "mean",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__mean_0_cusum_positive",
+        "next2_complement__mean_0_cusum_negative",
+        "next2_complement__mean_0_bayes025",
+        "next2_complement__mean_0_bayes1"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "mean",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "7006aaa51f5ea63e2661689e34d29f8871d15d10a2f1019cc777735321a2ff62",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C203_RANK_SIGN",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized rank_sign evidence may carry information independent of the variance primary.",
+      "change": "Standalone small rank_sign bank, feature subset local",
+      "counterexample_target": "rank_sign",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__rank_sign_0_current",
+        "next2_complement__rank_sign_0_ewma8",
+        "next2_complement__rank_sign_0_ewma32",
+        "next2_complement__rank_sign_0_ewma128",
+        "next2_complement__rank_sign_0_cusum_positive",
+        "next2_complement__rank_sign_0_cusum_negative"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "rank_sign",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "2d8ab7c6d49ff4cabad25f754bc361cab19e2b1d2cd6abb21199ab48bf2a8289",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C204_PAGE_HINKLEY",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized page_hinkley evidence may carry information independent of the variance primary.",
+      "change": "Standalone small page_hinkley bank, feature subset all",
+      "counterexample_target": "page_hinkley",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__ph01_positive",
+        "next2_complement__ph01_negative",
+        "next2_complement__ph025_positive",
+        "next2_complement__ph025_negative"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "page_hinkley",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "6aab528cf491e480163478dc416790950760a78e36e261d6ff6b7a391d26692b",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C205_DEPENDENCE",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized dependence evidence may carry information independent of the variance primary.",
+      "change": "Standalone small dependence bank, feature subset compact",
+      "counterexample_target": "dependence",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__dependence_0_ewma8",
+        "next2_complement__dependence_0_ewma32",
+        "next2_complement__dependence_0_cusum_positive",
+        "next2_complement__dependence_0_cusum_negative",
+        "next2_complement__dependence_0_bayes025",
+        "next2_complement__dependence_0_bayes1",
+        "next2_complement__dependence_1_ewma8",
+        "next2_complement__dependence_1_ewma32",
+        "next2_complement__dependence_1_cusum_positive",
+        "next2_complement__dependence_1_cusum_negative",
+        "next2_complement__dependence_1_bayes025",
+        "next2_complement__dependence_1_bayes1",
+        "next2_complement__dependence_2_ewma8",
+        "next2_complement__dependence_2_ewma32",
+        "next2_complement__dependence_2_cusum_positive",
+        "next2_complement__dependence_2_cusum_negative",
+        "next2_complement__dependence_2_bayes025",
+        "next2_complement__dependence_2_bayes1",
+        "next2_complement__dependence_3_ewma8",
+        "next2_complement__dependence_3_ewma32",
+        "next2_complement__dependence_3_cusum_positive",
+        "next2_complement__dependence_3_cusum_negative",
+        "next2_complement__dependence_3_bayes025",
+        "next2_complement__dependence_3_bayes1"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "dependence",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "f1d18def87c5f458093d5a4edfc1915c113210b151b0221b5773e82e8253e418",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C206_SQUARED_DEPENDENCE",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized squared_dependence evidence may carry information independent of the variance primary.",
+      "change": "Standalone small squared_dependence bank, feature subset compact",
+      "counterexample_target": "squared_dependence",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__squared_dependence_0_ewma8",
+        "next2_complement__squared_dependence_0_ewma32",
+        "next2_complement__squared_dependence_0_cusum_positive",
+        "next2_complement__squared_dependence_0_cusum_negative",
+        "next2_complement__squared_dependence_0_bayes025",
+        "next2_complement__squared_dependence_0_bayes1",
+        "next2_complement__squared_dependence_1_ewma8",
+        "next2_complement__squared_dependence_1_ewma32",
+        "next2_complement__squared_dependence_1_cusum_positive",
+        "next2_complement__squared_dependence_1_cusum_negative",
+        "next2_complement__squared_dependence_1_bayes025",
+        "next2_complement__squared_dependence_1_bayes1"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "squared_dependence",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "f9bbd3cd85c16db92213ecb037b18bac378047c5774184a226b45fa564bdd317",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C207_ABSOLUTE_DEPENDENCE",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized absolute_dependence evidence may carry information independent of the variance primary.",
+      "change": "Standalone small absolute_dependence bank, feature subset compact",
+      "counterexample_target": "absolute_dependence",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__absolute_dependence_0_ewma8",
+        "next2_complement__absolute_dependence_0_ewma32",
+        "next2_complement__absolute_dependence_0_cusum_positive",
+        "next2_complement__absolute_dependence_0_cusum_negative",
+        "next2_complement__absolute_dependence_0_bayes025",
+        "next2_complement__absolute_dependence_0_bayes1",
+        "next2_complement__absolute_dependence_1_ewma8",
+        "next2_complement__absolute_dependence_1_ewma32",
+        "next2_complement__absolute_dependence_1_cusum_positive",
+        "next2_complement__absolute_dependence_1_cusum_negative",
+        "next2_complement__absolute_dependence_1_bayes025",
+        "next2_complement__absolute_dependence_1_bayes1"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "absolute_dependence",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "e4f72e1fa7cc33eb0199f2c25a0a0f157ed0b44561b851f1684f617a45678490",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C208_CDF8",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized cdf evidence may carry information independent of the variance primary.",
+      "change": "Standalone small cdf bank, feature subset all",
+      "counterexample_target": "cdf",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__cdf8_8_chi_square",
+        "next2_complement__cdf8_8_cvm",
+        "next2_complement__cdf8_8_tail_mass",
+        "next2_complement__cdf8_8_center_mass",
+        "next2_complement__cdf8_8_imbalance",
+        "next2_complement__cdf8_8_max_bin",
+        "next2_complement__cdf8_32_chi_square",
+        "next2_complement__cdf8_32_cvm",
+        "next2_complement__cdf8_32_tail_mass",
+        "next2_complement__cdf8_32_center_mass",
+        "next2_complement__cdf8_32_imbalance",
+        "next2_complement__cdf8_32_max_bin",
+        "next2_complement__cdf8_128_chi_square",
+        "next2_complement__cdf8_128_cvm",
+        "next2_complement__cdf8_128_tail_mass",
+        "next2_complement__cdf8_128_center_mass",
+        "next2_complement__cdf8_128_imbalance",
+        "next2_complement__cdf8_128_max_bin"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "cdf",
+          "order": 8,
+          "cdf_bins": 8,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "e1ee6205f29b618d0ba6fc88b5d8c591ab4e5f0d4981a9527be3d5d4b364b219",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    },
+    {
+      "experiment_id": "C209_CDF16",
+      "parent_id": "J102_SERIAL_VARIANCE_512",
+      "generation": "NEXT2_COMPLEMENT_V1",
+      "phase": "STANDALONE_COMPLEMENT",
+      "hypothesis": "Conditional-variance-normalized cdf evidence may carry information independent of the variance primary.",
+      "change": "Standalone small cdf bank, feature subset all",
+      "counterexample_target": "cdf",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "NEXT2_COMPLEMENT"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "keep_names": [
+        "next2_complement__cdf16_8_chi_square",
+        "next2_complement__cdf16_8_cvm",
+        "next2_complement__cdf16_8_tail_mass",
+        "next2_complement__cdf16_8_center_mass",
+        "next2_complement__cdf16_8_imbalance",
+        "next2_complement__cdf16_8_max_bin",
+        "next2_complement__cdf16_32_chi_square",
+        "next2_complement__cdf16_32_cvm",
+        "next2_complement__cdf16_32_tail_mass",
+        "next2_complement__cdf16_32_center_mass",
+        "next2_complement__cdf16_32_imbalance",
+        "next2_complement__cdf16_32_max_bin",
+        "next2_complement__cdf16_128_chi_square",
+        "next2_complement__cdf16_128_cvm",
+        "next2_complement__cdf16_128_tail_mass",
+        "next2_complement__cdf16_128_center_mass",
+        "next2_complement__cdf16_128_imbalance",
+        "next2_complement__cdf16_128_max_bin"
+      ],
+      "extension": {
+        "kind": "next2_complement",
+        "settings": {
+          "family": "cdf",
+          "order": 8,
+          "cdf_bins": 16,
+          "cap": 4
+        }
+      },
+      "extension_frozen_hash": "e03f1016250e338c13887d7f289d8b6b0d898ccbf48735cddbd04e7d77f949c4",
+      "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+    }
+  ],
+  "promotion": "Standalone screen > .54 and mean matched within-time rank correlation < .95; full standalone > .54 and correlation < .95 before blend evaluation",
+  "blend_grid": [
+    0.9,
+    0.8,
+    0.67,
+    0.5
+  ],
+  "meta_training": false
+}

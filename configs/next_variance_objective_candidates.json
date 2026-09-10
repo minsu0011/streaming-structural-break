@@ -1,0 +1,267 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:43:32.031151+00:00",
+  "generation": 15,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "parent_result_sha256": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+  "feature_bank_and_capacity_unchanged": true,
+  "grid": "Only the previously frozen W0/W1/W2 rules and 128-bin time-aligned rank loss. The completed W3 parent is reused.",
+  "candidates": [
+    {
+      "experiment_id": "O101_VARIANCE_UNWEIGHTED",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 15,
+      "phase": "VARIANCE_MATCHED_OBJECTIVE",
+      "hypothesis": "Earlier weighting and rank-loss results used weaker or larger feature banks. Isolate the training objective on the successful 77-feature variance-pair design.",
+      "change": "Only training weights change from W3 to the previously frozen W0 rule.",
+      "expected_effect": "Test whether row density or pointwise calibration limits the independent variance evidence.",
+      "risks": "TS-AUC contribution weighting may already be preferable; inverse-series length changes time emphasis. No validation prevalence, target, total length or mechanism labels enter training weights.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W0",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "O102_VARIANCE_SERIES_BALANCED",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 15,
+      "phase": "VARIANCE_MATCHED_OBJECTIVE",
+      "hypothesis": "Earlier weighting and rank-loss results used weaker or larger feature banks. Isolate the training objective on the successful 77-feature variance-pair design.",
+      "change": "Only training weights change from W3 to the previously frozen W1 rule.",
+      "expected_effect": "Test whether row density or pointwise calibration limits the independent variance evidence.",
+      "risks": "TS-AUC contribution weighting may already be preferable; inverse-series length changes time emphasis. No validation prevalence, target, total length or mechanism labels enter training weights.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W1",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "O103_VARIANCE_PAIR_DENSITY",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 15,
+      "phase": "VARIANCE_MATCHED_OBJECTIVE",
+      "hypothesis": "Earlier weighting and rank-loss results used weaker or larger feature banks. Isolate the training objective on the successful 77-feature variance-pair design.",
+      "change": "Only training weights change from W3 to the previously frozen W2 rule.",
+      "expected_effect": "Test whether row density or pointwise calibration limits the independent variance evidence.",
+      "risks": "TS-AUC contribution weighting may already be preferable; inverse-series length changes time emphasis. No validation prevalence, target, total length or mechanism labels enter training weights.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W2",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "O104_VARIANCE_RANK128",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 15,
+      "phase": "VARIANCE_MATCHED_OBJECTIVE",
+      "hypothesis": "Earlier weighting and rank-loss results used weaker or larger feature banks. Isolate the training objective on the successful 77-feature variance-pair design.",
+      "change": "Replace binary W3 with fixed time-aligned histogram RankNet at 128 bins.",
+      "expected_effect": "Test whether row density or pointwise calibration limits the independent variance evidence.",
+      "risks": "TS-AUC contribution weighting may already be preferable; inverse-series length changes time emphasis. No validation prevalence, target, total length or mechanism labels enter training weights.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ],
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

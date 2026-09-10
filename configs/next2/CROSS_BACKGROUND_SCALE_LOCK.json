@@ -1,0 +1,284 @@
+{
+  "created_utc": "2026-09-09T10:54:13.545326+00:00",
+  "identity": {
+    "models": [
+      {
+        "candidate": {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+          "generation": 18,
+          "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+          "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+          "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+          "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+          "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          },
+          "groups": [
+            "VARIANCE_LOCAL",
+            "VARIANCE_GLR",
+            "VARIANCE_BAYES"
+          ],
+          "base": "arch8",
+          "learner": "M4_lightgbm",
+          "weighting": "W3",
+          "params": {},
+          "extension": {
+            "kind": "serial_variance",
+            "settings": {
+              "order": 8,
+              "normalization": "arch1",
+              "max_age": 512
+            }
+          },
+          "extension_frozen_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+          "base_family_selection": "ABCD",
+          "keep_names": [
+            "serial_variance__raw_energy_current",
+            "serial_variance__raw_energy_ewma8",
+            "serial_variance__raw_energy_ewma32",
+            "serial_variance__raw_energy_ewma128",
+            "serial_variance__raw_energy_cusum_positive",
+            "serial_variance__raw_energy_cusum_negative",
+            "serial_variance__raw_energy_glr_max",
+            "serial_variance__raw_energy_glr_logmean",
+            "serial_variance__raw_energy_glr_logage",
+            "serial_variance__raw_energy_bayes025",
+            "serial_variance__raw_energy_bayes1",
+            "serial_variance__raw_energy_memory_max",
+            "serial_variance__raw_energy_memory_decay",
+            "serial_variance__log_variance_forecast_current",
+            "serial_variance__log_variance_forecast_ewma8",
+            "serial_variance__log_variance_forecast_ewma32",
+            "serial_variance__log_variance_forecast_ewma128",
+            "serial_variance__log_variance_forecast_cusum_positive",
+            "serial_variance__log_variance_forecast_cusum_negative",
+            "serial_variance__log_variance_forecast_glr_max",
+            "serial_variance__log_variance_forecast_glr_logmean",
+            "serial_variance__log_variance_forecast_glr_logage",
+            "serial_variance__log_variance_forecast_bayes025",
+            "serial_variance__log_variance_forecast_bayes1",
+            "serial_variance__log_variance_forecast_memory_max",
+            "serial_variance__log_variance_forecast_memory_decay"
+          ],
+          "extension_registration": {
+            "kind": "serial_variance",
+            "module": "serial_variance_evidence"
+          },
+          "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+        },
+        "model_path": "artifacts/next/refits/J102_SERIAL_VARIANCE_512/cache_research_v1/model.joblib",
+        "model_sha256": "dbce67d2cf6a89bfa8544780b784fd643212a5141726e8c503870d26b1b605ab"
+      },
+      {
+        "candidate": {
+          "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+          "parent_id": "V007_VARIANCE_FORECAST",
+          "generation": 12,
+          "phase": "VARIANCE_AGE_GRID",
+          "hypothesis": "The variance-pair family gains from sequential integration. Test whether extending the fixed logarithmic age grid captures slower changes beyond 128 points.",
+          "change": "Only max_age changes from 128 to 512; add the preimplemented 256/512 ages. Same channels, H fit, learner and weighting.",
+          "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+          "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          },
+          "groups": [
+            "VARIANCE_LOCAL",
+            "VARIANCE_GLR",
+            "VARIANCE_BAYES"
+          ],
+          "base": "arch8",
+          "learner": "M4_lightgbm",
+          "weighting": "W3",
+          "params": {},
+          "extension": {
+            "kind": "conditional_variance",
+            "settings": {
+              "order": 8,
+              "normalization": "arch1",
+              "max_age": 512
+            }
+          },
+          "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+          "base_family_selection": "ABCD",
+          "keep_names": [
+            "conditional_variance__raw_energy_current",
+            "conditional_variance__raw_energy_ewma8",
+            "conditional_variance__raw_energy_ewma32",
+            "conditional_variance__raw_energy_ewma128",
+            "conditional_variance__raw_energy_cusum_positive",
+            "conditional_variance__raw_energy_cusum_negative",
+            "conditional_variance__raw_energy_glr_max",
+            "conditional_variance__raw_energy_glr_logmean",
+            "conditional_variance__raw_energy_glr_logage",
+            "conditional_variance__raw_energy_bayes025",
+            "conditional_variance__raw_energy_bayes1",
+            "conditional_variance__raw_energy_memory_max",
+            "conditional_variance__raw_energy_memory_decay",
+            "conditional_variance__log_variance_forecast_current",
+            "conditional_variance__log_variance_forecast_ewma8",
+            "conditional_variance__log_variance_forecast_ewma32",
+            "conditional_variance__log_variance_forecast_ewma128",
+            "conditional_variance__log_variance_forecast_cusum_positive",
+            "conditional_variance__log_variance_forecast_cusum_negative",
+            "conditional_variance__log_variance_forecast_glr_max",
+            "conditional_variance__log_variance_forecast_glr_logmean",
+            "conditional_variance__log_variance_forecast_glr_logage",
+            "conditional_variance__log_variance_forecast_bayes025",
+            "conditional_variance__log_variance_forecast_bayes1",
+            "conditional_variance__log_variance_forecast_memory_max",
+            "conditional_variance__log_variance_forecast_memory_decay"
+          ]
+        },
+        "model_path": "artifacts/next/refits/Y001_LONG_VARIANCE_ARCH1/cache_research_v1/model.joblib",
+        "model_sha256": "dc0772fd96cf973c0bd930045ad4b2ba6ce5a8b5fb72d4931100ccc86c658383"
+      },
+      {
+        "candidate": {
+          "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+          "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+          "generation": 17,
+          "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+          "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+          "change": "Remove explicit GLR and GLR memory features; retain local and Bayes evidence.",
+          "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+          "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          },
+          "groups": [
+            "VARIANCE_LOCAL",
+            "VARIANCE_GLR",
+            "VARIANCE_BAYES"
+          ],
+          "base": "arch8",
+          "learner": "M4_lightgbm",
+          "weighting": "W3",
+          "params": {},
+          "extension": {
+            "kind": "conditional_variance",
+            "settings": {
+              "order": 8,
+              "normalization": "arch1",
+              "max_age": 512
+            }
+          },
+          "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+          "base_family_selection": "ABCD",
+          "keep_names": [
+            "conditional_variance__raw_energy_current",
+            "conditional_variance__raw_energy_ewma8",
+            "conditional_variance__raw_energy_ewma32",
+            "conditional_variance__raw_energy_ewma128",
+            "conditional_variance__raw_energy_cusum_positive",
+            "conditional_variance__raw_energy_cusum_negative",
+            "conditional_variance__raw_energy_bayes025",
+            "conditional_variance__raw_energy_bayes1",
+            "conditional_variance__log_variance_forecast_current",
+            "conditional_variance__log_variance_forecast_ewma8",
+            "conditional_variance__log_variance_forecast_ewma32",
+            "conditional_variance__log_variance_forecast_ewma128",
+            "conditional_variance__log_variance_forecast_cusum_positive",
+            "conditional_variance__log_variance_forecast_cusum_negative",
+            "conditional_variance__log_variance_forecast_bayes025",
+            "conditional_variance__log_variance_forecast_bayes1"
+          ]
+        },
+        "model_path": "artifacts/next/refits/B104_LONG_VARIANCE_NO_GLR_MEMORY/cache_research_v1/model.joblib",
+        "model_sha256": "56390986dfd3f4577b36bc316fed983cdb8924634e390b41341baf6d4d360c1e"
+      },
+      {
+        "candidate": {
+          "experiment_id": "C205_DEPENDENCE",
+          "parent_id": "J102_SERIAL_VARIANCE_512",
+          "generation": "NEXT2_COMPLEMENT_V1",
+          "phase": "STANDALONE_COMPLEMENT",
+          "hypothesis": "Conditional-variance-normalized dependence evidence may carry information independent of the variance primary.",
+          "change": "Standalone small dependence bank, feature subset compact",
+          "counterexample_target": "dependence",
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          },
+          "groups": [
+            "NEXT2_COMPLEMENT"
+          ],
+          "base": "none",
+          "learner": "M4_lightgbm",
+          "weighting": "W3",
+          "params": {},
+          "keep_names": [
+            "next2_complement__dependence_0_ewma8",
+            "next2_complement__dependence_0_ewma32",
+            "next2_complement__dependence_0_cusum_positive",
+            "next2_complement__dependence_0_cusum_negative",
+            "next2_complement__dependence_0_bayes025",
+            "next2_complement__dependence_0_bayes1",
+            "next2_complement__dependence_1_ewma8",
+            "next2_complement__dependence_1_ewma32",
+            "next2_complement__dependence_1_cusum_positive",
+            "next2_complement__dependence_1_cusum_negative",
+            "next2_complement__dependence_1_bayes025",
+            "next2_complement__dependence_1_bayes1",
+            "next2_complement__dependence_2_ewma8",
+            "next2_complement__dependence_2_ewma32",
+            "next2_complement__dependence_2_cusum_positive",
+            "next2_complement__dependence_2_cusum_negative",
+            "next2_complement__dependence_2_bayes025",
+            "next2_complement__dependence_2_bayes1",
+            "next2_complement__dependence_3_ewma8",
+            "next2_complement__dependence_3_ewma32",
+            "next2_complement__dependence_3_cusum_positive",
+            "next2_complement__dependence_3_cusum_negative",
+            "next2_complement__dependence_3_bayes025",
+            "next2_complement__dependence_3_bayes1"
+          ],
+          "extension": {
+            "kind": "next2_complement",
+            "settings": {
+              "family": "dependence",
+              "order": 8,
+              "cdf_bins": 8,
+              "cap": 4
+            }
+          },
+          "extension_frozen_hash": "f1d18def87c5f458093d5a4edfc1915c113210b151b0221b5773e82e8253e418",
+          "next2_registration_sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+        },
+        "model_path": "artifacts/next2/refits/C205_DEPENDENCE/cache_v1/model.joblib",
+        "model_sha256": "314baefedcc44d084eada2de2313aba227d136748ed7c0c83b5f1e080d2cbc89"
+      }
+    ],
+    "factors": [
+      1.5,
+      2.0,
+      0.7,
+      0.5
+    ],
+    "backgrounds": [
+      "N0",
+      "N1",
+      "N2",
+      "N3"
+    ],
+    "partition": 3,
+    "counterexample_lock_sha256": "7909cd898580bb26e2489e5ba39fe649c7ac3ac441feaff3b3050cfeb2cca956",
+    "generator_sha256": "fa51acb8c15bb785e26d39b18a682defa77db7eeb8216cc8aaf8b95c3f99b08e",
+    "crossing_source_sha256": "466ea0cb161f3b0d9b3216d80d0110f6aabb8bdba4122dda26a9f3001512c4e9",
+    "runtime_sha256": "ebdb1687a67644a3d972af26cce4eab0cfd0e6936d40cca4a184ea8efc58f57a",
+    "script_sha256": "e118310b503d419b23e0020ff96e1b1389eca2c22c78da2327cb58f722180006",
+    "protocol_sha256": "e40a7b5ff8721aa4081dfe5d18bb69c95cb2f9e8145577ecc07e8151b1901bb6",
+    "new_fits": 0,
+    "primary_suite_unchanged": true,
+    "promotion_authority": false
+  }
+}

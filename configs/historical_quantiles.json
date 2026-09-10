@@ -1,0 +1,11 @@
+{
+  "input_ar_order": 8,
+  "probabilities": [0.001, 0.005, 0.01, 0.025, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.975, 0.99, 0.995, 0.999],
+  "family_scopes": ["C", "ABCD"],
+  "model": "M4_lightgbm",
+  "maximum_candidates": 2,
+  "anchor": "M4_ar_order8_ABCD_S3_242216e87a34",
+  "mapping": "piecewise linear normal scores of historical mid-CDF knot ranks, endpoint clamp; collapsed knots use original MAD calibration",
+  "nonstationary_columns_excluded": [3, 4, 5],
+  "parameters_fit_from": "the series historical AR8 feature replay only"
+}

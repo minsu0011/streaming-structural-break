@@ -1,0 +1,359 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T19:33:46.785100+00:00",
+  "generation": 8,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "H_model": "Existing frozen NEXT AR8 and ARCH1/ARCH2/EWMA normalizers; no online coefficient fitting.",
+  "causality": "Forecast variance uses previous capped squared innovations only; current residual updates conditional state after current evidence is computed.",
+  "channel_calibration": "Replay H with H-fitted parameters, burn min(160, H_residual_length // 4), center by H mean and divide by H SD floored at 1e-6; channel evidence clips at +/-12.",
+  "score_identity": "Gaussian log-likelihood derivatives with respect to omega/H_variance, alpha1, alpha2; finite-difference checks passed.",
+  "interpretation": "Features only; no formal likelihood validity or posterior probability claim under non-Gaussian/serially dependent innovations.",
+  "candidates": [
+    {
+      "experiment_id": "V001_VARIANCE_STANDALONE",
+      "parent_id": "N020_STANDALONE_S2",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05"
+    },
+    {
+      "experiment_id": "V002_VARIANCE_ARCH",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "V003_VARIANCE_ARCH2",
+      "parent_id": "V002_VARIANCE_ARCH",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch2",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "00b9e0a5456289c92b275f448a56107167f4abe26eaf23755c787d8320875fb5",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "V004_VARIANCE_EWMA",
+      "parent_id": "V002_VARIANCE_ARCH",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "ewma",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "c8ed3b872945d738135d0574e3f152e517e745c05805d1cc20bb96950e7fab5f",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "V005_VARIANCE_LOCAL",
+      "parent_id": "V002_VARIANCE_ARCH",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "V006_VARIANCE_SCORES",
+      "parent_id": "V002_VARIANCE_ARCH",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__variance_intercept_score_current",
+        "conditional_variance__variance_intercept_score_ewma8",
+        "conditional_variance__variance_intercept_score_ewma32",
+        "conditional_variance__variance_intercept_score_ewma128",
+        "conditional_variance__variance_intercept_score_cusum_positive",
+        "conditional_variance__variance_intercept_score_cusum_negative",
+        "conditional_variance__variance_intercept_score_glr_max",
+        "conditional_variance__variance_intercept_score_glr_logmean",
+        "conditional_variance__variance_intercept_score_glr_logage",
+        "conditional_variance__variance_intercept_score_bayes025",
+        "conditional_variance__variance_intercept_score_bayes1",
+        "conditional_variance__variance_intercept_score_memory_max",
+        "conditional_variance__variance_intercept_score_memory_decay",
+        "conditional_variance__variance_lag1_score_current",
+        "conditional_variance__variance_lag1_score_ewma8",
+        "conditional_variance__variance_lag1_score_ewma32",
+        "conditional_variance__variance_lag1_score_ewma128",
+        "conditional_variance__variance_lag1_score_cusum_positive",
+        "conditional_variance__variance_lag1_score_cusum_negative",
+        "conditional_variance__variance_lag1_score_glr_max",
+        "conditional_variance__variance_lag1_score_glr_logmean",
+        "conditional_variance__variance_lag1_score_glr_logage",
+        "conditional_variance__variance_lag1_score_bayes025",
+        "conditional_variance__variance_lag1_score_bayes1",
+        "conditional_variance__variance_lag1_score_memory_max",
+        "conditional_variance__variance_lag1_score_memory_decay",
+        "conditional_variance__variance_lag2_score_current",
+        "conditional_variance__variance_lag2_score_ewma8",
+        "conditional_variance__variance_lag2_score_ewma32",
+        "conditional_variance__variance_lag2_score_ewma128",
+        "conditional_variance__variance_lag2_score_cusum_positive",
+        "conditional_variance__variance_lag2_score_cusum_negative",
+        "conditional_variance__variance_lag2_score_glr_max",
+        "conditional_variance__variance_lag2_score_glr_logmean",
+        "conditional_variance__variance_lag2_score_glr_logage",
+        "conditional_variance__variance_lag2_score_bayes025",
+        "conditional_variance__variance_lag2_score_bayes1",
+        "conditional_variance__variance_lag2_score_memory_max",
+        "conditional_variance__variance_lag2_score_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "V007_VARIANCE_FORECAST",
+      "parent_id": "V002_VARIANCE_ARCH",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "conditional_variance__raw_energy_current",
+        "conditional_variance__raw_energy_ewma8",
+        "conditional_variance__raw_energy_ewma32",
+        "conditional_variance__raw_energy_ewma128",
+        "conditional_variance__raw_energy_cusum_positive",
+        "conditional_variance__raw_energy_cusum_negative",
+        "conditional_variance__raw_energy_glr_max",
+        "conditional_variance__raw_energy_glr_logmean",
+        "conditional_variance__raw_energy_glr_logage",
+        "conditional_variance__raw_energy_bayes025",
+        "conditional_variance__raw_energy_bayes1",
+        "conditional_variance__raw_energy_memory_max",
+        "conditional_variance__raw_energy_memory_decay",
+        "conditional_variance__log_variance_forecast_current",
+        "conditional_variance__log_variance_forecast_ewma8",
+        "conditional_variance__log_variance_forecast_ewma32",
+        "conditional_variance__log_variance_forecast_ewma128",
+        "conditional_variance__log_variance_forecast_cusum_positive",
+        "conditional_variance__log_variance_forecast_cusum_negative",
+        "conditional_variance__log_variance_forecast_glr_max",
+        "conditional_variance__log_variance_forecast_glr_logmean",
+        "conditional_variance__log_variance_forecast_glr_logage",
+        "conditional_variance__log_variance_forecast_bayes025",
+        "conditional_variance__log_variance_forecast_bayes1",
+        "conditional_variance__log_variance_forecast_memory_max",
+        "conditional_variance__log_variance_forecast_memory_decay"
+      ]
+    },
+    {
+      "experiment_id": "V008_VARIANCE_RANK",
+      "parent_id": "V002_VARIANCE_ARCH",
+      "generation": 8,
+      "phase": "CONDITIONAL_VARIANCE",
+      "hypothesis": "Conditioning residuals on changing volatility can absorb a true scale break. Preserve the forecast state and conditional likelihood score, not only its standardized residual.",
+      "change": "Add H-calibrated raw energy, forecast log variance, standardized energy and intercept/lag1/lag2 Gaussian variance scores; normalizer, feature-removal and ranking variants are explicit.",
+      "expected_effect": "Retain variance-model mismatch and adapted variance-level evidence under bounded causal updates.",
+      "risks": "Historical residuals fit both AR and variance reference; conditional Gaussian scores need not be well calibrated under tails; correlated evidence is learned as features and never multiplied as independent probabilities.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "conditional_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

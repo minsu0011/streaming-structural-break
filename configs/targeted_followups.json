@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-09-08T11:51:33.562821+00:00",
+  "maximum_new_candidates": 2,
+  "entries": [
+    {
+      "anchor": "M3_ar_order8_ABCD_S3_242216e87a34",
+      "candidate": {
+        "model": "M3_histgb",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {
+          "max_iter": 120
+        },
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "The AR8 HistGB backup improved all five folds; modestly increase boosting iterations to test residual underfitting.",
+        "phase": "robust_ar8_followup",
+        "representation": "ar_order8_historical_median_mad"
+      },
+      "identity": "7b99b70cb3a5"
+    },
+    {
+      "anchor": "M3_ar_order8_ABCD_S3_242216e87a34",
+      "candidate": {
+        "model": "M3_histgb",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {
+          "max_depth": 3
+        },
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "The AR8 HistGB backup improved the worst fold; reduce tree depth to test whether a simpler, faster decision rule preserves that robustness.",
+        "phase": "robust_ar8_followup",
+        "representation": "ar_order8_historical_median_mad"
+      },
+      "identity": "29d6e9efea0a"
+    }
+  ],
+  "frozen_before_followup_scores": true,
+  "selection_gate_unchanged": true,
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_targets_used": false
+}

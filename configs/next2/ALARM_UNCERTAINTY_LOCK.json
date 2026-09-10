@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-09-09T12:03:44.707390+00:00",
+  "identity": {
+    "late_lock_sha256": "d4cd5a1eef8f1ef88a2a390d6560b2e36350e96cff2c6b8a711dcde3ec9cfc32",
+    "replicates": 2000,
+    "calibration_seed": 2026090953,
+    "evaluation_seed": 2026090957,
+    "models": [
+      "J102_SERIAL_VARIANCE_512",
+      "Y001_LONG_VARIANCE_ARCH1",
+      "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+      "C205_DEPENDENCE",
+      "BL2_C205_DEPENDENCE_80"
+    ],
+    "betas": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "alphas": [
+      0.01,
+      0.05
+    ],
+    "source_sha256": {
+      "src/next2/alarm_uncertainty.py": "45ad994e153b0f2fe7a6e400e7e8e7c15b0d0126b4d36d25991e7cad9e47e910",
+      "src/next2/synthetic_analysis.py": "b7afd41a456962b0423fb75baa5355b9a46372cf5695313f6ec2355d39a01470",
+      "docs/NEXT2_ALARM_UNCERTAINTY_PROTOCOL.md": "d86b154237dcdd154c7b831ad2652d39a5b4923fa4ed0926ebb619be23bc900f",
+      "scripts/bootstrap_next2_alarm_uncertainty.py": "22c1384fbaaf80cc851a105817df0f40d0198ea31b956cdafa23764049fcc800"
+    },
+    "new_fits": 0,
+    "promotion_authority": false,
+    "registered_after_point_estimates": true
+  }
+}

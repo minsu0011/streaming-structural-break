@@ -1,0 +1,150 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T21:12:54.542825+00:00",
+  "generation": 14,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "parent_result_sha256": "a033ce53e4f94400af6cbb75c0e7c0c18fd409c7cf366bb9c3dde6836dc6ec3e",
+  "sequential_summaries_and_learner_unchanged": true,
+  "calibration_burn": "Discard min(32, tail_length//4) points from the observed H tail only.",
+  "candidates": [
+    {
+      "experiment_id": "H101_FORWARD_VARIANCE_HALF",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 14,
+      "phase": "FORWARD_H_CALIBRATION",
+      "hypothesis": "Reusing H to fit both AR/ARCH parameters and null channel calibration can underestimate forward uncertainty. Hold out a chronological H tail to calibrate the new channels.",
+      "change": "Fit new AR8/ARCH1 only on the first 50% of H, then causally process the rest of H and calibrate there. The old 51 ABCD features retain their unchanged full-H recipe.",
+      "expected_effect": "Improve comparability of new evidence across unseen series and historical regimes.",
+      "risks": "Fewer H observations estimate parameters and calibration; H itself may drift. No refit after tail calibration, no online parameter updates, and no original split or promotion-gate changes.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "forward_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128,
+          "fit_fraction": 0.5
+        }
+      },
+      "extension_frozen_hash": "9d13eeaa8891988c24d356742030f68f8df670ad8327c51833fbef55b97db9ca",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "forward_variance__raw_energy_current",
+        "forward_variance__raw_energy_ewma8",
+        "forward_variance__raw_energy_ewma32",
+        "forward_variance__raw_energy_ewma128",
+        "forward_variance__raw_energy_cusum_positive",
+        "forward_variance__raw_energy_cusum_negative",
+        "forward_variance__raw_energy_glr_max",
+        "forward_variance__raw_energy_glr_logmean",
+        "forward_variance__raw_energy_glr_logage",
+        "forward_variance__raw_energy_bayes025",
+        "forward_variance__raw_energy_bayes1",
+        "forward_variance__raw_energy_memory_max",
+        "forward_variance__raw_energy_memory_decay",
+        "forward_variance__log_variance_forecast_current",
+        "forward_variance__log_variance_forecast_ewma8",
+        "forward_variance__log_variance_forecast_ewma32",
+        "forward_variance__log_variance_forecast_ewma128",
+        "forward_variance__log_variance_forecast_cusum_positive",
+        "forward_variance__log_variance_forecast_cusum_negative",
+        "forward_variance__log_variance_forecast_glr_max",
+        "forward_variance__log_variance_forecast_glr_logmean",
+        "forward_variance__log_variance_forecast_glr_logage",
+        "forward_variance__log_variance_forecast_bayes025",
+        "forward_variance__log_variance_forecast_bayes1",
+        "forward_variance__log_variance_forecast_memory_max",
+        "forward_variance__log_variance_forecast_memory_decay"
+      ],
+      "extension_registration": {
+        "kind": "forward_variance",
+        "module": "forward_variance_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    {
+      "experiment_id": "H102_FORWARD_VARIANCE_75",
+      "parent_id": "V007_VARIANCE_FORECAST",
+      "generation": 14,
+      "phase": "FORWARD_H_CALIBRATION",
+      "hypothesis": "Reusing H to fit both AR/ARCH parameters and null channel calibration can underestimate forward uncertainty. Hold out a chronological H tail to calibrate the new channels.",
+      "change": "Fit new AR8/ARCH1 only on the first 75% of H, then causally process the rest of H and calibrate there. The old 51 ABCD features retain their unchanged full-H recipe.",
+      "expected_effect": "Improve comparability of new evidence across unseen series and historical regimes.",
+      "risks": "Fewer H observations estimate parameters and calibration; H itself may drift. No refit after tail calibration, no online parameter updates, and no original split or promotion-gate changes.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "forward_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 128,
+          "fit_fraction": 0.75
+        }
+      },
+      "extension_frozen_hash": "4d84cb58b0ca3864031b7e08e10e33ca61b6a5e4487f6c6cbd14de3d311a7b37",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "forward_variance__raw_energy_current",
+        "forward_variance__raw_energy_ewma8",
+        "forward_variance__raw_energy_ewma32",
+        "forward_variance__raw_energy_ewma128",
+        "forward_variance__raw_energy_cusum_positive",
+        "forward_variance__raw_energy_cusum_negative",
+        "forward_variance__raw_energy_glr_max",
+        "forward_variance__raw_energy_glr_logmean",
+        "forward_variance__raw_energy_glr_logage",
+        "forward_variance__raw_energy_bayes025",
+        "forward_variance__raw_energy_bayes1",
+        "forward_variance__raw_energy_memory_max",
+        "forward_variance__raw_energy_memory_decay",
+        "forward_variance__log_variance_forecast_current",
+        "forward_variance__log_variance_forecast_ewma8",
+        "forward_variance__log_variance_forecast_ewma32",
+        "forward_variance__log_variance_forecast_ewma128",
+        "forward_variance__log_variance_forecast_cusum_positive",
+        "forward_variance__log_variance_forecast_cusum_negative",
+        "forward_variance__log_variance_forecast_glr_max",
+        "forward_variance__log_variance_forecast_glr_logmean",
+        "forward_variance__log_variance_forecast_glr_logage",
+        "forward_variance__log_variance_forecast_bayes025",
+        "forward_variance__log_variance_forecast_bayes1",
+        "forward_variance__log_variance_forecast_memory_max",
+        "forward_variance__log_variance_forecast_memory_decay"
+      ],
+      "extension_registration": {
+        "kind": "forward_variance",
+        "module": "forward_variance_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-09T10:32:51.007134+00:00",
+  "identity": {
+    "anchor": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+    "complement": "C205_DEPENDENCE",
+    "quality_reference": "J102_SERIAL_VARIANCE_512",
+    "weights": [
+      0.9,
+      0.8,
+      0.67,
+      0.5
+    ],
+    "combination_sha256": "e2eeccf5d03066f68f6bc1bf37aaa444f68fb3eeb10614a70fd5db39af3e0a9d",
+    "script_sha256": "aa5dd931146d4db635c115cba359b7f007c58cb027e289471c5f86f461e1af35",
+    "hypothesis_sha256": "6355f06d2db5a69a4f1d189f6fb15eb25752d6a538c7b0d0246aa52e3ce5e899",
+    "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+    "new_fits": 0,
+    "source_report_sha256": {
+      "artifacts/next/experiments/B104_LONG_VARIANCE_NO_GLR_MEMORY/RESULTS.json": "4e0f0814096017650b61c3a320fd145d16a33861a417ebadd432d2e44b909463",
+      "artifacts/next/experiments/J102_SERIAL_VARIANCE_512/RESULTS.json": "8380e4db21afef86b92cf9871b308b9286bd4b6d9707a559663bca955099c508",
+      "artifacts/next2/experiments/C205_DEPENDENCE/RESULTS.json": "510cced3b086066e3266ae3d49233deace5f2d6e0f5ebcc6e140ccde03a871fd"
+    }
+  },
+  "prediction_combination_started": false
+}

@@ -1,0 +1,1291 @@
+{
+    "created_utc":  "2026-09-08T19:46:57.026591+00:00",
+    "session_start_is_immutable":  true,
+    "no_sleep_or_repeated_completed_work":  true,
+    "jobs":  [
+                 {
+                     "id":  "next_late_combination_candidates_v1",
+                     "script":  "scripts/run_next_late_research.py",
+                     "queue":  "configs/next_late_combination_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_late_combination_candidates.json"
+                              ],
+                     "not_before_elapsed_seconds":  28800
+                 },
+                 {
+                     "id":  "next_late_pair_candidates_v1",
+                     "script":  "scripts/run_next_late_research.py",
+                     "queue":  "configs/next_late_pair_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_late_pair_candidates.json"
+                              ],
+                     "not_before_elapsed_seconds":  28800
+                 },
+                 {
+                     "id":  "late_finalist_advancement_v1",
+                     "script":  "scripts/advance_next_late_finalists.py",
+                     "args":  [
+
+                              ],
+                     "not_before_elapsed_seconds":  28800,
+                     "completion_artifact":  "artifacts/next/late_finalist_advancement/RESULTS.json"
+                 },
+                 {
+                     "id":  "variance_queue_v1",
+                     "queue":  "configs/next_variance_candidates.json",
+                     "script":  "scripts/run_next_research.py",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_variance_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "legacy_queue_v1",
+                     "queue":  "configs/next_legacy_candidates.json",
+                     "script":  "scripts/run_next_research.py",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_legacy_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "v007_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/V007_VARIANCE_FORECAST/RESULTS.json"
+                 },
+                 {
+                     "id":  "variance_ablation_queue_v1",
+                     "queue":  "configs/next_variance_ablation_candidates.json",
+                     "script":  "scripts/run_next_research.py",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_variance_ablation_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "d004_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "D004_SCORE_COORD_RANK"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/D004_SCORE_COORD_RANK/RESULTS.json"
+                 },
+                 {
+                     "id":  "latency_primary_reference_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "PRIMARY",
+                                  "--runtime",
+                                  "reference"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/PRIMARY_reference.json"
+                 },
+                 {
+                     "id":  "latency_v007_variance_forecast_native_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--runtime",
+                                  "native"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/V007_VARIANCE_FORECAST_native.json"
+                 },
+                 {
+                     "id":  "latency_v007_variance_forecast_fused_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--runtime",
+                                  "fused"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/V007_VARIANCE_FORECAST_fused.json"
+                 },
+                 {
+                     "id":  "latency_v007_variance_forecast_pruned_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--runtime",
+                                  "pruned"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/V007_VARIANCE_FORECAST_pruned.json"
+                 },
+                 {
+                     "id":  "latency_v007_variance_forecast_fast_h_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/V007_VARIANCE_FORECAST_fast_h.json"
+                 },
+                 {
+                     "id":  "latency_fast_reference_reference_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "FAST_REFERENCE",
+                                  "--runtime",
+                                  "reference"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/FAST_REFERENCE_reference.json"
+                 },
+                 {
+                     "id":  "q002_variance_forecast_only_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q002_VARIANCE_FORECAST_ONLY"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Q002_VARIANCE_FORECAST_ONLY/RESULTS.json"
+                 },
+                 {
+                     "id":  "q002_variance_forecast_only_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q002_VARIANCE_FORECAST_ONLY"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Q002_VARIANCE_FORECAST_ONLY/RESULTS.json"
+                 },
+                 {
+                     "id":  "q004_variance_no_bayes_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q004_VARIANCE_NO_BAYES"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Q004_VARIANCE_NO_BAYES/RESULTS.json"
+                 },
+                 {
+                     "id":  "q004_variance_no_bayes_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q004_VARIANCE_NO_BAYES"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Q004_VARIANCE_NO_BAYES/RESULTS.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Q005_VARIANCE_NO_MEMORY/RESULTS.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Q005_VARIANCE_NO_MEMORY/RESULTS.json"
+                 },
+                 {
+                     "id":  "q009_variance_arch2_pair_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q009_VARIANCE_ARCH2_PAIR"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Q009_VARIANCE_ARCH2_PAIR/RESULTS.json"
+                 },
+                 {
+                     "id":  "q009_variance_arch2_pair_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q009_VARIANCE_ARCH2_PAIR"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Q009_VARIANCE_ARCH2_PAIR/RESULTS.json"
+                 },
+                 {
+                     "id":  "q010_variance_ewma_pair_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q010_VARIANCE_EWMA_PAIR"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Q010_VARIANCE_EWMA_PAIR/RESULTS.json"
+                 },
+                 {
+                     "id":  "q010_variance_ewma_pair_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q010_VARIANCE_EWMA_PAIR"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Q010_VARIANCE_EWMA_PAIR/RESULTS.json"
+                 },
+                 {
+                     "id":  "log_energy_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_log_energy_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_log_energy_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "long_variance_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_long_variance_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_long_variance_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "training_size_diagnostic_v1",
+                     "script":  "scripts/learning_curve_next.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/learning_curve/RESULTS.json"
+                 },
+                 {
+                     "id":  "nested_null_alarm_diagnostic_v1",
+                     "script":  "scripts/calibrate_next_alarms.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/alarm_calibration/RESULTS.json"
+                 },
+                 {
+                     "id":  "v007_component_parity_v1",
+                     "script":  "scripts/verify_next_components.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST"
+                              ],
+                     "completion_artifact":  "artifacts/next/runtime_parity/V007_VARIANCE_FORECAST/separate_feature_tree_calls/RESULTS.json"
+                 },
+                 {
+                     "id":  "component_timing_primary_v1",
+                     "script":  "scripts/benchmark_next_components.py",
+                     "args":  [
+                                  "--candidate",
+                                  "PRIMARY",
+                                  "--combined-runtime",
+                                  "reference"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/components_v1/PRIMARY.json"
+                 },
+                 {
+                     "id":  "component_timing_v007_variance_forecast_v1",
+                     "script":  "scripts/benchmark_next_components.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--combined-runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/components_v1/V007_VARIANCE_FORECAST.json"
+                 },
+                 {
+                     "id":  "component_timing_fast_reference_v1",
+                     "script":  "scripts/benchmark_next_components.py",
+                     "args":  [
+                                  "--candidate",
+                                  "FAST_REFERENCE",
+                                  "--combined-runtime",
+                                  "reference"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/components_v1/FAST_REFERENCE.json"
+                 },
+                 {
+                     "id":  "fast_variance_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_fast_variance_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_fast_variance_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "forward_variance_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_forward_variance_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_forward_variance_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "controlled_variance_stress_v1",
+                     "script":  "scripts/stress_next_synthetic_variance.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/synthetic_variance_stress/RESULTS.json"
+                 },
+                 {
+                     "id":  "variance_objectives_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_variance_objective_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_variance_objective_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "paired_learning_curve_v1",
+                     "script":  "scripts/bootstrap_next_learning_curve.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/learning_curve/paired_bootstrap/RESULTS.json"
+                 },
+                 {
+                     "id":  "z001_log_energy_current_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Z001_LOG_ENERGY_CURRENT/RESULTS.json"
+                 },
+                 {
+                     "id":  "z001_log_energy_current_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Z001_LOG_ENERGY_CURRENT/RESULTS.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Y001_LONG_VARIANCE_ARCH1/RESULTS.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Y001_LONG_VARIANCE_ARCH1/RESULTS.json"
+                 },
+                 {
+                     "id":  "y002_long_variance_arch2_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y002_LONG_VARIANCE_ARCH2"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Y002_LONG_VARIANCE_ARCH2/RESULTS.json"
+                 },
+                 {
+                     "id":  "y002_long_variance_arch2_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y002_LONG_VARIANCE_ARCH2"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Y002_LONG_VARIANCE_ARCH2/RESULTS.json"
+                 },
+                 {
+                     "id":  "y003_long_variance_ewma_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y003_LONG_VARIANCE_EWMA"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/Y003_LONG_VARIANCE_EWMA/RESULTS.json"
+                 },
+                 {
+                     "id":  "y003_long_variance_ewma_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y003_LONG_VARIANCE_EWMA"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/Y003_LONG_VARIANCE_EWMA/RESULTS.json"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1"
+                              ],
+                     "script":  "scripts/verify_next_fast_variance.py",
+                     "completion_artifact":  "artifacts/next/runtime_parity/Y001_LONG_VARIANCE_ARCH1/pruned_variance_fast_h/RESULTS.json",
+                     "id":  "y001_long_variance_arch1_fast_parity_v1"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "script":  "scripts/build_next_contract_artifact.py",
+                     "completion_artifact":  "artifacts/next/deployment/contracts/Y001_LONG_VARIANCE_ARCH1/v1/model.json",
+                     "id":  "y001_long_variance_arch1_contract_fixture_v1",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "script":  "scripts/verify_next_inference_contract.py",
+                     "completion_artifact":  "artifacts/next/inference_contract/Y001_LONG_VARIANCE_ARCH1/v1.json",
+                     "id":  "y001_long_variance_arch1_contract_v1"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1"
+                              ],
+                     "script":  "scripts/verify_next_inference_oof.py",
+                     "completion_artifact":  "artifacts/next/inference_oof/Y001_LONG_VARIANCE_ARCH1/RESULTS.json",
+                     "id":  "y001_long_variance_arch1_api_oof_v1"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY"
+                              ],
+                     "script":  "scripts/verify_next_fast_variance.py",
+                     "completion_artifact":  "artifacts/next/runtime_parity/Q005_VARIANCE_NO_MEMORY/pruned_variance_fast_h/RESULTS.json",
+                     "id":  "q005_variance_no_memory_fast_parity_v1"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "script":  "scripts/build_next_contract_artifact.py",
+                     "completion_artifact":  "artifacts/next/deployment/contracts/Q005_VARIANCE_NO_MEMORY/v1/model.json",
+                     "id":  "q005_variance_no_memory_contract_fixture_v1",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "script":  "scripts/verify_next_inference_contract.py",
+                     "completion_artifact":  "artifacts/next/inference_contract/Q005_VARIANCE_NO_MEMORY/v1.json",
+                     "id":  "q005_variance_no_memory_contract_v1"
+                 },
+                 {
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY"
+                              ],
+                     "script":  "scripts/verify_next_inference_oof.py",
+                     "completion_artifact":  "artifacts/next/inference_oof/Q005_VARIANCE_NO_MEMORY/RESULTS.json",
+                     "id":  "q005_variance_no_memory_api_oof_v1"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_fast_parity_v1",
+                     "script":  "scripts/verify_next_fast_variance.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/runtime_parity/F101_VARIANCE_TREES50/pruned_variance_fast_h/RESULTS.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_contract_fixture_v1",
+                     "script":  "scripts/build_next_contract_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/deployment/contracts/F101_VARIANCE_TREES50/v1/model.json",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_contract_v1",
+                     "script":  "scripts/verify_next_inference_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_contract/F101_VARIANCE_TREES50/v1.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_api_oof_v1",
+                     "script":  "scripts/verify_next_inference_oof.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_oof/F101_VARIANCE_TREES50/RESULTS.json"
+                 },
+                 {
+                     "id":  "z001_registered_cv_fixture_v1",
+                     "script":  "scripts/build_next_registered_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/deployment/contracts/Z001_LOG_ENERGY_CURRENT/v1/model.json",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "id":  "z001_registered_cv_contract_v1",
+                     "script":  "scripts/verify_next_registered_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_contract/Z001_LOG_ENERGY_CURRENT/v1.json"
+                 },
+                 {
+                     "id":  "z001_registered_api_oof_v1",
+                     "script":  "scripts/verify_next_registered_oof.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_oof/Z001_LOG_ENERGY_CURRENT/RESULTS.json"
+                 },
+                 {
+                     "id":  "z001_registered_all_dev_contract_v1",
+                     "script":  "scripts/verify_next_registered_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT",
+                                  "--tag",
+                                  "research_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/Z001_LOG_ENERGY_CURRENT/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "z001_registered_all_dev_official_v1",
+                     "script":  "scripts/verify_next_registered_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT",
+                                  "--model-directory",
+                                  "artifacts/next/refits/Z001_LOG_ENERGY_CURRENT/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/Z001_LOG_ENERGY_CURRENT/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_cache_refit_v1",
+                     "script":  "scripts/refit_next_candidate_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+                                  "--source",
+                                  "cache"
+                              ],
+                     "completion_artifact":  "artifacts/next/refits/B104_LONG_VARIANCE_NO_GLR_MEMORY/cache_research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_fast_parity_v1",
+                     "script":  "scripts/verify_next_fast_variance.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/runtime_parity/B104_LONG_VARIANCE_NO_GLR_MEMORY/pruned_variance_fast_h/RESULTS.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_cv_fixture_v1",
+                     "script":  "scripts/build_next_contract_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/deployment/contracts/B104_LONG_VARIANCE_NO_GLR_MEMORY/v1/model.json",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_cv_contract_v1",
+                     "script":  "scripts/verify_next_inference_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_contract/B104_LONG_VARIANCE_NO_GLR_MEMORY/v1.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_api_oof_v1",
+                     "script":  "scripts/verify_next_inference_oof.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_oof/B104_LONG_VARIANCE_NO_GLR_MEMORY/RESULTS.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_all_dev_contract_v1",
+                     "script":  "scripts/verify_next_all_dev_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/B104_LONG_VARIANCE_NO_GLR_MEMORY/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_all_dev_wire_v1",
+                     "script":  "scripts/verify_next_official_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+                                  "--model-directory",
+                                  "artifacts/next/refits/B104_LONG_VARIANCE_NO_GLR_MEMORY/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/B104_LONG_VARIANCE_NO_GLR_MEMORY/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_cache_refit_v1",
+                     "script":  "scripts/refit_next_candidate_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50",
+                                  "--source",
+                                  "cache"
+                              ],
+                     "completion_artifact":  "artifacts/next/refits/F201_LONG_VARIANCE_TREES50/cache_research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_fast_parity_v1",
+                     "script":  "scripts/verify_next_fast_variance.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/runtime_parity/F201_LONG_VARIANCE_TREES50/pruned_variance_fast_h/RESULTS.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_cv_fixture_v1",
+                     "script":  "scripts/build_next_contract_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/deployment/contracts/F201_LONG_VARIANCE_TREES50/v1/model.json",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_cv_contract_v1",
+                     "script":  "scripts/verify_next_inference_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_contract/F201_LONG_VARIANCE_TREES50/v1.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_api_oof_v1",
+                     "script":  "scripts/verify_next_inference_oof.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_oof/F201_LONG_VARIANCE_TREES50/RESULTS.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_all_dev_contract_v1",
+                     "script":  "scripts/verify_next_all_dev_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/F201_LONG_VARIANCE_TREES50/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_all_dev_wire_v1",
+                     "script":  "scripts/verify_next_official_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50",
+                                  "--model-directory",
+                                  "artifacts/next/refits/F201_LONG_VARIANCE_TREES50/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/F201_LONG_VARIANCE_TREES50/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "j102_cache_refit_v1",
+                     "script":  "scripts/refit_next_serial_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512",
+                                  "--source",
+                                  "cache"
+                              ],
+                     "completion_artifact":  "artifacts/next/refits/J102_SERIAL_VARIANCE_512/cache_research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "j102_runtime_parity_v1",
+                     "script":  "scripts/verify_next_serial_runtime.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512"
+                              ],
+                     "completion_artifact":  "artifacts/next/runtime_parity/J102_SERIAL_VARIANCE_512/serial_variance_fast_h/RESULTS.json"
+                 },
+                 {
+                     "id":  "j102_cv_fixture_v1",
+                     "script":  "scripts/build_next_serial_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/deployment/contracts/J102_SERIAL_VARIANCE_512/v1/model.json",
+                     "completion_status":  "CV_FOLD_0_CONTRACT_FIXTURE_NOT_FINAL_SELECTION"
+                 },
+                 {
+                     "id":  "j102_cv_contract_v1",
+                     "script":  "scripts/verify_next_serial_contract.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512",
+                                  "--tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_contract/J102_SERIAL_VARIANCE_512/v1.json"
+                 },
+                 {
+                     "id":  "j102_api_oof_v1",
+                     "script":  "scripts/verify_next_serial_oof.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512"
+                              ],
+                     "completion_artifact":  "artifacts/next/inference_oof/J102_SERIAL_VARIANCE_512/RESULTS.json"
+                 },
+                 {
+                     "id":  "j102_all_dev_contract_v1",
+                     "script":  "scripts/verify_next_serial_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/J102_SERIAL_VARIANCE_512/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "j102_all_dev_wire_v1",
+                     "script":  "scripts/verify_next_serial_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512",
+                                  "--model-directory",
+                                  "artifacts/next/refits/J102_SERIAL_VARIANCE_512/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/J102_SERIAL_VARIANCE_512/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "v007_variance_forecast_all_dev_artifact_contract_v1",
+                     "script":  "scripts/verify_next_all_dev_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--tag",
+                                  "research_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/V007_VARIANCE_FORECAST/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "v007_variance_forecast_all_dev_official_wire_v1",
+                     "script":  "scripts/verify_next_official_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--model-directory",
+                                  "artifacts/next/refits/V007_VARIANCE_FORECAST/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/V007_VARIANCE_FORECAST/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_all_dev_artifact_contract_v1",
+                     "script":  "scripts/verify_next_all_dev_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1",
+                                  "--tag",
+                                  "research_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/Y001_LONG_VARIANCE_ARCH1/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_all_dev_official_wire_v1",
+                     "script":  "scripts/verify_next_official_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1",
+                                  "--model-directory",
+                                  "artifacts/next/refits/Y001_LONG_VARIANCE_ARCH1/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/Y001_LONG_VARIANCE_ARCH1/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_all_dev_artifact_contract_v1",
+                     "script":  "scripts/verify_next_all_dev_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY",
+                                  "--tag",
+                                  "research_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/Q005_VARIANCE_NO_MEMORY/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_all_dev_official_wire_v1",
+                     "script":  "scripts/verify_next_official_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY",
+                                  "--model-directory",
+                                  "artifacts/next/refits/Q005_VARIANCE_NO_MEMORY/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/Q005_VARIANCE_NO_MEMORY/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_all_dev_artifact_contract_v1",
+                     "script":  "scripts/verify_next_all_dev_artifact.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50",
+                                  "--tag",
+                                  "research_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/all_dev_artifact_contract/F101_VARIANCE_TREES50/research_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_all_dev_official_wire_v1",
+                     "script":  "scripts/verify_next_official_runner.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50",
+                                  "--model-directory",
+                                  "artifacts/next/refits/F101_VARIANCE_TREES50/cache_research_v1",
+                                  "--tag",
+                                  "all_dev_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/official_runner/F101_VARIANCE_TREES50/all_dev_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_cv_latency_fast_h_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1",
+                                  "--runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/Y001_LONG_VARIANCE_ARCH1_fast_h.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_cv_latency_fast_h_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY",
+                                  "--runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/Q005_VARIANCE_NO_MEMORY_fast_h.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_cv_latency_fast_h_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50",
+                                  "--runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/F101_VARIANCE_TREES50_fast_h.json"
+                 },
+                 {
+                     "id":  "fixed_history_edge_contract_v1",
+                     "script":  "scripts/audit_next_history_edges.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/history_edge_contract/RESULTS.json"
+                 },
+                 {
+                     "id":  "primary_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "PRIMARY"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/PRIMARY.json"
+                 },
+                 {
+                     "id":  "v007_variance_forecast_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/V007_VARIANCE_FORECAST.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/Y001_LONG_VARIANCE_ARCH1.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/Q005_VARIANCE_NO_MEMORY.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/F101_VARIANCE_TREES50.json"
+                 },
+                 {
+                     "id":  "z001_registered_cv_latency_v1",
+                     "script":  "scripts/benchmark_next_log_energy.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/Z001_LOG_ENERGY_CURRENT_log_energy_fast_h.json"
+                 },
+                 {
+                     "id":  "z001_registered_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_registered_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/Z001_LOG_ENERGY_CURRENT.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_cv_latency_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+                                  "--runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/B104_LONG_VARIANCE_NO_GLR_MEMORY_fast_h.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/B104_LONG_VARIANCE_NO_GLR_MEMORY.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_cv_latency_v1",
+                     "script":  "scripts/benchmark_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50",
+                                  "--runtime",
+                                  "fast_h"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/F201_LONG_VARIANCE_TREES50_fast_h.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/F201_LONG_VARIANCE_TREES50.json"
+                 },
+                 {
+                     "id":  "j102_cv_latency_v1",
+                     "script":  "scripts/benchmark_next_serial.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/research_v1/J102_SERIAL_VARIANCE_512_serial_variance_fast_h.json"
+                 },
+                 {
+                     "id":  "j102_all_dev_latency_v1",
+                     "script":  "scripts/benchmark_next_serial_all_dev.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512"
+                              ],
+                     "completion_artifact":  "artifacts/next/latency/all_dev_v1/J102_SERIAL_VARIANCE_512.json"
+                 },
+                 {
+                     "id":  "j102_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "J102_SERIAL_VARIANCE_512",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_serial_finalist_v1/RESULTS.json"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/J102_SERIAL_VARIANCE_512/RESULTS.json"
+                 },
+                 {
+                     "id":  "b104_long_variance_no_glr_memory_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_long_finalists_v1/RESULTS.json"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/B104_LONG_VARIANCE_NO_GLR_MEMORY/RESULTS.json"
+                 },
+                 {
+                     "id":  "f201_long_variance_trees50_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F201_LONG_VARIANCE_TREES50",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_long_finalists_v1/RESULTS.json"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/F201_LONG_VARIANCE_TREES50/RESULTS.json"
+                 },
+                 {
+                     "id":  "v007_variance_forecast_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "V007_VARIANCE_FORECAST",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_v1/RESULTS.json",
+                                  "--cv-contract-tag",
+                                  "v2"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/V007_VARIANCE_FORECAST/RESULTS.json"
+                 },
+                 {
+                     "id":  "y001_long_variance_arch1_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Y001_LONG_VARIANCE_ARCH1",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_v1/RESULTS.json",
+                                  "--cv-contract-tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/Y001_LONG_VARIANCE_ARCH1/RESULTS.json"
+                 },
+                 {
+                     "id":  "q005_variance_no_memory_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Q005_VARIANCE_NO_MEMORY",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_v1/RESULTS.json",
+                                  "--cv-contract-tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/Q005_VARIANCE_NO_MEMORY/RESULTS.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_v1/RESULTS.json",
+                                  "--cv-contract-tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/F101_VARIANCE_TREES50/RESULTS.json"
+                 },
+                 {
+                     "id":  "z001_log_energy_current_engineering_join_v1",
+                     "script":  "scripts/audit_next_candidate_engineering.py",
+                     "args":  [
+                                  "--candidate",
+                                  "Z001_LOG_ENERGY_CURRENT",
+                                  "--reproduction-report",
+                                  "artifacts/next/independent_raw_validation/research_log_energy_v1/RESULTS.json",
+                                  "--cv-contract-tag",
+                                  "v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/final_engineering/Z001_LOG_ENERGY_CURRENT/RESULTS.json"
+                 },
+                 {
+                     "id":  "long_age_ablation_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_long_ablation_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_long_ablation_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "serial_variance_queue_v1",
+                     "script":  "scripts/run_next_research.py",
+                     "queue":  "configs/next_serial_variance_candidates.json",
+                     "args":  [
+                                  "--queue",
+                                  "configs/next_serial_variance_candidates.json"
+                              ]
+                 },
+                 {
+                     "id":  "nested_menu_diagnostic_v1",
+                     "script":  "scripts/nested_next_menu.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/nested_menu_cv/RESULTS.json"
+                 },
+                 {
+                     "id":  "paired_alarm_forensic_v1",
+                     "script":  "scripts/forensic_next_alarms.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/alarm_calibration/paired_forensic/RESULTS.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/F101_VARIANCE_TREES50/RESULTS.json"
+                 },
+                 {
+                     "id":  "f101_variance_trees50_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "F101_VARIANCE_TREES50"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/F101_VARIANCE_TREES50/RESULTS.json"
+                 },
+                 {
+                     "id":  "long_null_horizon_stress_v1",
+                     "script":  "scripts/stress_next_long_null.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/long_null_stress/RESULTS.json"
+                 },
+                 {
+                     "id":  "synthetic_direction_forensic_v1",
+                     "script":  "scripts/forensic_next_synthetic_directions.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/synthetic_variance_stress/direction_fractures/RESULTS.json"
+                 },
+                 {
+                     "id":  "o104_variance_rank128_robustness_v1",
+                     "script":  "scripts/robustness_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "O104_VARIANCE_RANK128"
+                              ],
+                     "completion_artifact":  "artifacts/next/robustness/candidates/O104_VARIANCE_RANK128/RESULTS.json"
+                 },
+                 {
+                     "id":  "o104_variance_rank128_forensic_v1",
+                     "script":  "scripts/forensic_next_candidate.py",
+                     "args":  [
+                                  "--candidate",
+                                  "O104_VARIANCE_RANK128"
+                              ],
+                     "completion_artifact":  "artifacts/next/forensic/O104_VARIANCE_RANK128/RESULTS.json"
+                 },
+                 {
+                     "id":  "long_and_serial_prospective_advancement_v1",
+                     "script":  "scripts/advance_next_prospective_candidates.py",
+                     "args":  [
+                                  "--queues",
+                                  "configs/next_long_ablation_candidates.json",
+                                  "configs/next_serial_variance_candidates.json",
+                                  "--tag",
+                                  "long_and_serial_v1"
+                              ],
+                     "completion_artifact":  "artifacts/next/prospective_advancement/long_and_serial_v1/RESULTS.json"
+                 },
+                 {
+                     "id":  "secondary_evidence_synthesis_v1",
+                     "script":  "scripts/summarize_next_secondary_evidence.py",
+                     "args":  [
+
+                              ],
+                     "completion_artifact":  "artifacts/next/research_synthesis/RESULTS.json"
+                 }
+             ]
+}

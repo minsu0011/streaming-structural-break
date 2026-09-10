@@ -1,0 +1,59 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T22:41:40.631006+00:00",
+  "parent_policy_sha256": "246ce87228642d3ad84ee02a02371fee332ee69b57ca884b0e5abed8aa8a947c",
+  "models": {
+    "PRIMARY": "artifacts/models/real/M7_cross_order_AR4_LGB_AR8_HGB_equal/fold_0.joblib",
+    "V007_VARIANCE_FORECAST": "artifacts/next/experiments/V007_VARIANCE_FORECAST/full/fold_0.joblib",
+    "Q005_VARIANCE_NO_MEMORY": "artifacts/next/experiments/Q005_VARIANCE_NO_MEMORY/full/fold_0.joblib",
+    "Y001_LONG_VARIANCE_ARCH1": "artifacts/next/experiments/Y001_LONG_VARIANCE_ARCH1/full/fold_0.joblib"
+  },
+  "model_sha256": {
+    "PRIMARY": "f3ef30512c3e37104fbff96361ec0ba78435daa183cbd1a9fe4854f4925cd60b",
+    "V007_VARIANCE_FORECAST": "887f04a0e3687e94defa6fcf3c05bfa15e52ca49bb1b4fcf52fc04adb2714cf8",
+    "Q005_VARIANCE_NO_MEMORY": "5cfdca835756204f434bd23d09d3fff92591fef5ffea0dc3dc3f663644b4eedf",
+    "Y001_LONG_VARIANCE_ARCH1": "2c3f34b25bf927b64c9a00e09c7a96fca7370d211a9f31f4ecdb4bb2ef3964f6"
+  },
+  "primary_runtime_receipt": {
+    "fused_source_hash": "a883756b2e8327402feebcb66bc3e1b69395b622ca03b2176ea1906c174c3d4e",
+    "initialization_source_hash": "5a1dac3263940f22fae038a4c1d38569980a1b46c37d88e1383ab8e823a51a0b",
+    "ar_fused_source_hash": "ba57111ba2b1d386157e85d36196515d2cd65bb0d52493c48f53483c95a99e04",
+    "cross_order_fused_source_hash": "60de51bc6f66f3cbd952c2e88ec9a4b3b3845f01355c0e0e0540bfcbcbc1aaa6",
+    "arch_fused_source_hash": null
+  },
+  "variance_runtime_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e",
+  "source_files_sha256": {
+    "scripts/stress_next_long_null.py": "9692aa932d22a18dc83d0a3864676a9c91ac3136afbae915c3bd46b15c19c11d",
+    "src/next/synthetic_variance_stress.py": "457501d373db40fa6eece1518d355021b55bf3485b8c18684a254a448c8ded33",
+    "src/next/alarm_calibration.py": "266d761e31eb8b35e01bff852879664be95d3386f809e793823c47e01372d6dc",
+    "src/validation/group_bootstrap.py": "dca1eb3cb4124ab08196eb392e045679b28d27b849819fd2eba8dddbbaf06c40",
+    "requirements-lock.txt": "5f0b30ec042966d79b6a1a17a6635750b1156a76c2f88607816de844149904f7"
+  },
+  "evaluation_partition": 2,
+  "online_points": 16384,
+  "evaluation_series_per_regime": 1000,
+  "report_horizons": [
+    128,
+    512,
+    1024,
+    4096,
+    16384
+  ],
+  "alphas": [
+    0.01,
+    0.05
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 202609094,
+  "hypothesis": "Persistent maxima and longer tau windows may improve fixed-horizon AUC while increasing cumulative false alarms when a stream runs much longer than calibration sequences.",
+  "calibration": "Reuse all PRIMARY/V007 calibration predictions and their fixed 5000-null-series maxima thresholds from partition 0. Evaluate Q005/Y001 on exactly the same H/O calibration sequences; their thresholds are locked before partition 2 begins.",
+  "long_evaluation": "Five unchanged AR/ARCH/Student regimes; 1000 new stationary 16384-point futures per regime, generated with independent SeedSequence partition 2. All four models see identical H and O for each index.",
+  "generator_precision": "The original generator draws arrays using a declared simulation horizon. Different requested horizons do not preserve the same Student-noise H prefix; the new partition is a distributional horizon test, not a same-seed cross-horizon replay claim.",
+  "online_contract": "Only H is supplied at initialization; each scalar point is consumed in chronological order. Reporting horizons and maxima are computed outside the detector after causal scores exist.",
+  "model_and_threshold_changes": false,
+  "new_long_scalar_predictions": 327680000,
+  "new_calibration_scalar_predictions": 10240000,
+  "existing_calibration_recomputed": false,
+  "runtime_admission": "All three NEXT models must have exact full 8000-series, 4014405-point production-runtime parity receipts before this script starts.",
+  "authority": "Synthetic null horizon-sensitivity and fixed-state diagnostic only; no selection gate, training objective, raw competition score or production threshold changes."
+}

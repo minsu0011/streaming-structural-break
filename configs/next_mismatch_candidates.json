@@ -1,0 +1,263 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T19:27:34.365283+00:00",
+  "generation": 6,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "thresholds_splits_seeds_unchanged": true,
+  "pairs": [
+    [
+      4,
+      8
+    ],
+    [
+      8,
+      12
+    ]
+  ],
+  "filtering": "Both H-fitted pole-projected AR models remain frozen online.",
+  "H_calibration": "Align residuals on common H endpoints; divide errors by high-order H innovation SD; center each derived channel by H mean and divide by H SD floored at 1e-6; online calibrated channel clips at +/-12.",
+  "sequential_policy": "Half-lives 8/32/128, +/-CUSUM drift .25, fixed mean GLR and integrated zero-centered Gaussian mean priors .25/1; age widths weight the mixture; memory is fixed-size.",
+  "mathematical_tests": "Direct frozen AR predictions, direct suffix GLR/Bayes, ring wrap, unchanged-prefix, fixed-memory, and synthetic lag-8 coefficient sign-change tests passed.",
+  "candidates": [
+    {
+      "experiment_id": "U001_MISMATCH_4_8",
+      "parent_id": "N021_STANDALONE_S3",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_LOCAL",
+        "MISMATCH_GLR",
+        "MISMATCH_BAYES"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 4,
+          "high_order": 8,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "9ccdfbc3e7324532d635da046e42916e45f0603e81e813e459ae44db6e2bd397"
+    },
+    {
+      "experiment_id": "U002_MISMATCH_4_8_ARCH",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_LOCAL",
+        "MISMATCH_GLR",
+        "MISMATCH_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 4,
+          "high_order": 8,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "9ccdfbc3e7324532d635da046e42916e45f0603e81e813e459ae44db6e2bd397",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "U003_MISMATCH_8_12_ARCH",
+      "parent_id": "U002_MISMATCH_4_8_ARCH",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_LOCAL",
+        "MISMATCH_GLR",
+        "MISMATCH_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 8,
+          "high_order": 12,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "b5e387587cde5e0891b1632a9558dc5c36f2208c149f0e70d1f68bf73ad041ea",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "U004_MISMATCH_LONG_ARCH",
+      "parent_id": "U002_MISMATCH_4_8_ARCH",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_LOCAL",
+        "MISMATCH_GLR",
+        "MISMATCH_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 4,
+          "high_order": 8,
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "b50b8b9285351bf0205c0233eb44874328a68a996b4f5dfaa5d10bab221ed393",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "U005_MISMATCH_LOCAL_ARCH",
+      "parent_id": "U002_MISMATCH_4_8_ARCH",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_LOCAL"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 4,
+          "high_order": 8,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "9ccdfbc3e7324532d635da046e42916e45f0603e81e813e459ae44db6e2bd397",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "U006_MISMATCH_GLR_ARCH",
+      "parent_id": "U002_MISMATCH_4_8_ARCH",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_GLR"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 4,
+          "high_order": 8,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "9ccdfbc3e7324532d635da046e42916e45f0603e81e813e459ae44db6e2bd397",
+      "base_family_selection": "ABCD"
+    },
+    {
+      "experiment_id": "U007_MISMATCH_RANK_ARCH",
+      "parent_id": "U002_MISMATCH_4_8_ARCH",
+      "generation": 6,
+      "phase": "AR_MISMATCH",
+      "hypothesis": "A change in dependence can reverse the predictive advantage of two frozen historical AR orders before marginal features respond.",
+      "change": "Append H-normalized forecast-gap, squared-error advantage, log-energy advantage and high-order innovation times forecast-gap evidence; order, age, family-removal and ranking ablations are explicit.",
+      "expected_effect": "Measure loss of historical predictive structure directly without online coefficient fitting.",
+      "risks": "Nearby AR fits can have very small mismatch variance; raw H empirical scaling may be sensitive to outliers; related channels are correlated and are not independent Bayes factors.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "MISMATCH_LOCAL",
+        "MISMATCH_GLR",
+        "MISMATCH_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "ar_mismatch",
+        "settings": {
+          "low_order": 4,
+          "high_order": 8,
+          "max_age": 128
+        }
+      },
+      "extension_frozen_hash": "9ccdfbc3e7324532d635da046e42916e45f0603e81e813e459ae44db6e2bd397",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

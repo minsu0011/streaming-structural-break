@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-09-08T11:02:26.318782+00:00",
+  "maximum_candidates": 1,
+  "anchor": "M4_lightgbm_ABCD_S3_dff6907271de",
+  "anchor_fold_scores": [
+    0.5985560897608665,
+    0.6282451342954589,
+    0.6136573331560286,
+    0.6134794223244725,
+    0.5899951610642387
+  ],
+  "candidate": {
+    "model": "M3_histgb",
+    "families": "ABCD",
+    "sampling": "S3",
+    "params": {},
+    "feature_changes": {
+      "normalization": "median_mad",
+      "scales": [
+        5,
+        20,
+        160
+      ]
+    },
+    "hypothesis": "AR4 historical mean/SD calibration raised the median to 0.613479 but lost the worst fold to 0.589995. Change only LightGBM to the existing small HistGB learner to test whether the alternate tree regularization improves the worst fold.",
+    "phase": "worst_fold_model_followup",
+    "representation": "ar_residual_input_historical_mean_std"
+  },
+  "identity": "b66ff8b9551e",
+  "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "frozen_before_followup_score": true,
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_targets_used": false
+}

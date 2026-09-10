@@ -1,0 +1,282 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T18:58:04.554592+00:00",
+  "generation": 3,
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd",
+  "thresholds_splits_seeds_unchanged": true,
+  "histogram_ranknet": "At each training time, 64/128 adaptive margin cells with separate positive/negative centroids approximate all same-time pair gradients. Exact at common margins or noncolliding cells; no sampled pair matrix. Gradients are scaled by N/(2*total_pair_count).",
+  "metric": "All screening, primary CV and bootstrap use exact float32 TS-AUC; only the training loss gradient is approximated.",
+  "NDCG_policy": "Exploratory only. Fixed lambdarank truncation 64 and binary label gains [0,1]. No NDCG result is a selection authority.",
+  "sources": [
+    {
+      "title": "LightGBM LGBMRanker API",
+      "url": "https://lightgbm.readthedocs.io/en/stable/pythonapi/lightgbm.LGBMRanker.html"
+    },
+    {
+      "title": "Official LightGBM parameters source",
+      "url": "https://github.com/lightgbm-org/LightGBM/blob/main/docs/Parameters.rst"
+    }
+  ],
+  "external_strategy_sources_used": false,
+  "installed_lightgbm_version": "4.7.0",
+  "candidates": [
+    {
+      "experiment_id": "K001_RANK_BINARY_QUERY",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "binary_query_sorted",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "binary_query_sorted"
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K002_RANK_SAMPLE8",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "sampled_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "sampled_ranknet",
+        "pairs_per_positive": 8
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K003_RANK_SAMPLE32",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "sampled_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "sampled_ranknet",
+        "pairs_per_positive": 32
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K004_RANK_HIST64",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 64
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K005_RANK_HIST128",
+      "parent_id": "R013_ARCH_REFERENCE",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K006_RANK_XENDCG",
+      "parent_id": "K001_RANK_BINARY_QUERY",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "rank_xendcg",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "rank_xendcg"
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K007_RANK_LAMBDA64",
+      "parent_id": "K001_RANK_BINARY_QUERY",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "lambdarank",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "lambdarank"
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K008_RANK_SCORE_HIST128",
+      "parent_id": "S003_ARSCORE_ARCH",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "SCORE"
+      ],
+      "base": "arch8",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "extension": {
+        "kind": "ar_score",
+        "settings": {
+          "order": 8,
+          "covariance": "full",
+          "ridge_fraction": 0.01
+        }
+      },
+      "extension_frozen_hash": "4d7ba05983855867a1fef2f94fcc40ea8f820e93ebeff5c2dd8867375955d464",
+      "base_family_selection": "ABCD",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    },
+    {
+      "experiment_id": "K009_RANK_SCALE_HIST128",
+      "parent_id": "C002_HCAL_SCALE",
+      "generation": 3,
+      "hypothesis": "Same-time pairwise ranking loss may improve TS-AUC ordering beyond individually weighted binary loss.",
+      "change": "Only supervised objective changes; query-sorted binary control isolates the mandatory row grouping of built-in ranking.",
+      "expected_effect": "Better within-time ordering without any validation-target statistics entering the objective",
+      "risks": "Histogram or pair-sampling approximation; ranking losses remain surrogates; NDCG positions and query normalization do not exactly match pair-count-weighted AUC.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S2"
+      ],
+      "base": "none",
+      "learner": "histogram_ranknet",
+      "weighting": "W3",
+      "params": {},
+      "phase": "RANKING",
+      "extension": {
+        "kind": "historical_null",
+        "settings": {
+          "engine_config": {
+            "order": 8,
+            "normalization": "sd",
+            "cdf_bins": 16
+          }
+        }
+      },
+      "extension_frozen_hash": "f9da09bee65e21a0d44188b71843441cdc69dd5a4c51e6416e6d7d8b7bef763d",
+      "ranking_objective": {
+        "kind": "histogram_ranknet",
+        "bins": 128
+      },
+      "ranking_source_sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+    }
+  ]
+}

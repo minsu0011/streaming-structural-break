@@ -1,0 +1,1209 @@
+{
+  "status": "LOCKED",
+  "created_utc": "2026-09-08T17:49:00.016485+00:00",
+  "robustness_policy_sha256": "3f77bce6567a66418d41d9bc6fe539ea51fb0c9506d06b5c406697581bdaf42d",
+  "fitting_code_sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c",
+  "predictor_code_sha256": "312308cd93864528e36ccd90f8f49a01ddb69a029b7058d893ca04bd1bf0b6a7",
+  "engine_feature_sha256_default": "9abacc579f232e748d8362a337271ed4efad35042edd252eeb1b1c74b5560d99",
+  "feature_names": [
+    "current_z",
+    "current_abs_z",
+    "current_centered_square",
+    "current_log_energy",
+    "elapsed_log1p",
+    "mean_ewma_signed_8",
+    "mean_ewma_abs_8",
+    "mean_ewma_signed_32",
+    "mean_ewma_abs_32",
+    "mean_ewma_signed_128",
+    "mean_ewma_abs_128",
+    "mean_cusum_positive_010",
+    "mean_cusum_negative_010",
+    "mean_cusum_positive_025",
+    "mean_cusum_negative_025",
+    "mean_cusum_positive_050",
+    "mean_cusum_negative_050",
+    "page_hinkley_positive",
+    "page_hinkley_negative",
+    "log_second_ratio_8",
+    "log_variance_ratio_8",
+    "absolute_moment_delta_8",
+    "log_energy_delta_8",
+    "log_second_ratio_32",
+    "log_variance_ratio_32",
+    "absolute_moment_delta_32",
+    "log_energy_delta_32",
+    "log_second_ratio_128",
+    "log_variance_ratio_128",
+    "absolute_moment_delta_128",
+    "log_energy_delta_128",
+    "scale_cusum_positive_010",
+    "scale_cusum_negative_010",
+    "scale_cusum_positive_025",
+    "scale_cusum_negative_025",
+    "scale_cusum_positive_050",
+    "scale_cusum_negative_050",
+    "signed_innovation_product_lag1_8",
+    "signed_innovation_product_lag2_8",
+    "signed_innovation_product_lag4_8",
+    "signed_innovation_product_lag8_8",
+    "absolute_innovation_product_lag1_8",
+    "absolute_innovation_product_lag2_8",
+    "absolute_innovation_product_lag4_8",
+    "absolute_innovation_product_lag8_8",
+    "squared_innovation_product_lag1_8",
+    "squared_innovation_product_lag2_8",
+    "squared_innovation_product_lag4_8",
+    "squared_innovation_product_lag8_8",
+    "signed_innovation_product_lag1_32",
+    "signed_innovation_product_lag2_32",
+    "signed_innovation_product_lag4_32",
+    "signed_innovation_product_lag8_32",
+    "absolute_innovation_product_lag1_32",
+    "absolute_innovation_product_lag2_32",
+    "absolute_innovation_product_lag4_32",
+    "absolute_innovation_product_lag8_32",
+    "squared_innovation_product_lag1_32",
+    "squared_innovation_product_lag2_32",
+    "squared_innovation_product_lag4_32",
+    "squared_innovation_product_lag8_32",
+    "signed_innovation_product_lag1_128",
+    "signed_innovation_product_lag2_128",
+    "signed_innovation_product_lag4_128",
+    "signed_innovation_product_lag8_128",
+    "absolute_innovation_product_lag1_128",
+    "absolute_innovation_product_lag2_128",
+    "absolute_innovation_product_lag4_128",
+    "absolute_innovation_product_lag8_128",
+    "squared_innovation_product_lag1_128",
+    "squared_innovation_product_lag2_128",
+    "squared_innovation_product_lag4_128",
+    "squared_innovation_product_lag8_128",
+    "cdf_cvm_8",
+    "cdf_ad_8",
+    "lower_tail_delta_8",
+    "upper_tail_delta_8",
+    "central_mass_delta_8",
+    "cdf_cvm_32",
+    "cdf_ad_32",
+    "lower_tail_delta_32",
+    "upper_tail_delta_32",
+    "central_mass_delta_32",
+    "cdf_cvm_128",
+    "cdf_ad_128",
+    "lower_tail_delta_128",
+    "upper_tail_delta_128",
+    "central_mass_delta_128",
+    "glr_mean_max",
+    "glr_variance_max",
+    "glr_joint_max",
+    "glr_mean_log_average",
+    "glr_variance_log_average",
+    "glr_mean_argmax_log_age",
+    "glr_variance_argmax_log_age",
+    "glr_max_multiplicity_corrected",
+    "bayes_mean_prior025",
+    "bayes_mean_prior1",
+    "bayes_mean_amplitude_mixture",
+    "bayes_variance_mixture",
+    "bayes_joint_mixture",
+    "bayes_mixture_bounded_score",
+    "evidence_current",
+    "evidence_cumulative_max",
+    "evidence_decayed_max",
+    "evidence_leaky_accumulator",
+    "evidence_posterior_like_memory",
+    "evidence_hysteresis"
+  ],
+  "feature_groups": [
+    "I",
+    "I",
+    "I",
+    "I",
+    "I",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S1",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S2",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S3",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "S4",
+    "G",
+    "G",
+    "G",
+    "G",
+    "G",
+    "G",
+    "G",
+    "G",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "M",
+    "M",
+    "M",
+    "M",
+    "M",
+    "M"
+  ],
+  "screen_reference": "Fresh refit of frozen PRIMARY recipe on identical fixed 3000-ID subset; validation original folds 0 and 4",
+  "screen_admission": "candidate two-fold mean minus freshly refit PRIMARY screen mean >= -0.002",
+  "screen_bootstrap_replicates": 500,
+  "full_cv_authority": "original five DEV folds only",
+  "mean_glr": "known H-standardized zero mean and unit variance; ages 1,2,4,8,16,32,64,128",
+  "variance_glr": "known mean zero, variance MLE with second-moment floor 1e-8",
+  "joint_glr": "mean and variance MLE only at ages >=4, variance floor 1e-8; avoids one-observation singularity",
+  "bayes_lite": {
+    "mean_prior_variances": [
+      0.25,
+      1.0
+    ],
+    "mean_amplitudes": [
+      -0.25,
+      0.25,
+      -0.5,
+      0.5,
+      -1.0,
+      1.0
+    ],
+    "variance_ratios": [
+      0.5,
+      0.75,
+      1.5,
+      2.0
+    ],
+    "age_prior_cell_widths": [
+      1,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ]
+  },
+  "uncalibrated_statistics_note": "H-fit residuals need not be independent Gaussian. GLR corrections and Bayes-like scores are ranking features, not certified p-values, posterior probabilities or e-values.",
+  "small_grid_controls": "No hyperparameter/seed/gate sweep. Later hypotheses require a new prospective queue with explicit parent and one-factor change.",
+  "complementarity_before_late_ensemble": "within-time rank correlation <0.98 and opposite-sign subgroup deltas of magnitude >=0.002 in supported mechanisms or regimes; score scale alignment must be learned from training only",
+  "candidates": [
+    {
+      "experiment_id": "N001_SEQ_AR8_SD_CORE",
+      "parent_id": "PRIMARY",
+      "generation": 1,
+      "hypothesis": "H-whitened sequential mean/scale/dependence/distribution evidence may rank breaks across heterogeneous series.",
+      "change": "New bounded sequential statistic engine on AR8 SD innovations",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "SEQ"
+    },
+    {
+      "experiment_id": "N002_WHITEN_AR1",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A different fixed AR horizon may better remove stationary historical dependence.",
+      "change": "Only AR order changes from 8 to 1",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 1,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "WHITEN"
+    },
+    {
+      "experiment_id": "N003_WHITEN_AR2",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A different fixed AR horizon may better remove stationary historical dependence.",
+      "change": "Only AR order changes from 8 to 2",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 2,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "WHITEN"
+    },
+    {
+      "experiment_id": "N004_WHITEN_AR4",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A different fixed AR horizon may better remove stationary historical dependence.",
+      "change": "Only AR order changes from 8 to 4",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 4,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "WHITEN"
+    },
+    {
+      "experiment_id": "N005_WHITEN_AR12",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A different fixed AR horizon may better remove stationary historical dependence.",
+      "change": "Only AR order changes from 8 to 12",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 12,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "WHITEN"
+    },
+    {
+      "experiment_id": "N006_NORM_RAW",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to raw",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "raw",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N007_NORM_MAD",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to mad",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "mad",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N008_NORM_ARCH1",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to arch1",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "arch1",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N009_NORM_ARCH2",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to arch2",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "arch2",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N010_NORM_EWMA",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to ewma",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "ewma",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N011_NORM_UNIFORM",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to uniform",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "uniform",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N012_NORM_GAUSSIAN",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Innovation normalization may reduce cross-series nuisance scale, volatility or tail heterogeneity.",
+      "change": "Only innovation normalization changes from SD to gaussian",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "gaussian",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "NORM"
+    },
+    {
+      "experiment_id": "N013_ARCH_REFERENCE",
+      "parent_id": "PRIMARY",
+      "generation": 1,
+      "hypothesis": "The new matrix/training adapter must reproduce the unchanged strongest-mean binary reference.",
+      "change": "No model/statistic change; engineering and screening reference",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N014_SEQ_HISTGB",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A second small tree learner may capture nonlinear sequential evidence differently.",
+      "change": "Only learner changes from LightGBM to HistGB",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M3_histgb",
+      "weighting": "W3",
+      "params": {},
+      "phase": "SEQ"
+    },
+    {
+      "experiment_id": "N015_ABLATE_REMOVE_S1",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A matched removal measures actual marginal utility of the evidence family.",
+      "change": "Remove only S1 from the core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ABLATE"
+    },
+    {
+      "experiment_id": "N016_ABLATE_REMOVE_S2",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A matched removal measures actual marginal utility of the evidence family.",
+      "change": "Remove only S2 from the core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S3",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ABLATE"
+    },
+    {
+      "experiment_id": "N017_ABLATE_REMOVE_S3",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A matched removal measures actual marginal utility of the evidence family.",
+      "change": "Remove only S3 from the core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ABLATE"
+    },
+    {
+      "experiment_id": "N018_ABLATE_REMOVE_S4",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A matched removal measures actual marginal utility of the evidence family.",
+      "change": "Remove only S4 from the core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ABLATE"
+    },
+    {
+      "experiment_id": "N019_STANDALONE_S1",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A small standalone family establishes signal strength before combination.",
+      "change": "Keep instantaneous I and only S1",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N020_STANDALONE_S2",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A small standalone family establishes signal strength before combination.",
+      "change": "Keep instantaneous I and only S2",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S2"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N021_STANDALONE_S3",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A small standalone family establishes signal strength before combination.",
+      "change": "Keep instantaneous I and only S3",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S3"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N022_STANDALONE_S4",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A small standalone family establishes signal strength before combination.",
+      "change": "Keep instantaneous I and only S4",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S4"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N023_STANDALONE_I",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Instantaneous innovation amplitude is a cheap reference for sequential value.",
+      "change": "Keep only instantaneous features",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N024_ADD_G",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Fixed-age likelihood or causal evidence memory can recover persistent weak changes.",
+      "change": "Append only G to core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "G"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ADD"
+    },
+    {
+      "experiment_id": "N025_ADD_B",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Fixed-age likelihood or causal evidence memory can recover persistent weak changes.",
+      "change": "Append only B to core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "B"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ADD"
+    },
+    {
+      "experiment_id": "N026_ADD_M",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "Fixed-age likelihood or causal evidence memory can recover persistent weak changes.",
+      "change": "Append only M to core",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "M"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ADD"
+    },
+    {
+      "experiment_id": "N027_STANDALONE_G",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A compact standalone likelihood detector may carry distinct break evidence.",
+      "change": "Instantaneous I plus only G",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "G"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N028_STANDALONE_B",
+      "parent_id": "N001_SEQ_AR8_SD_CORE",
+      "generation": 1,
+      "hypothesis": "A compact standalone likelihood detector may carry distinct break evidence.",
+      "change": "Instantaneous I plus only B",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "B"
+      ],
+      "base": "none",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "STANDALONE"
+    },
+    {
+      "experiment_id": "N029_ARCH_ADD_S1",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the S1 block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "S1"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N030_ARCH_ADD_S2",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the S2 block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "S2"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N031_ARCH_ADD_S3",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the S3 block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "S3"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N032_ARCH_ADD_S4",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the S4 block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "S4"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N033_ARCH_ADD_G",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the G block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "G"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N034_ARCH_ADD_B",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the B block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "B"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N035_ARCH_ADD_M",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "New evidence may complement the strong ARCH8 representation despite weak standalone ranking.",
+      "change": "Append only the M block to the unchanged ARCH8 model inputs",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "M"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N036_ARCH_ADD_CORE",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "A jointly trained small tree may exploit complementary core innovation statistics.",
+      "change": "Append the already ablated core engine block to ARCH8",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "I",
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "phase": "ARCH"
+    },
+    {
+      "experiment_id": "N037_WEIGHT_ARCH_W0",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "Train-only alternative weighting tests the relation between binary loss and pair-weighted TS-AUC.",
+      "change": "Only weighting changes from W3 to W0",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W0",
+      "params": {},
+      "phase": "WEIGHT"
+    },
+    {
+      "experiment_id": "N038_WEIGHT_ARCH_W1",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "Train-only alternative weighting tests the relation between binary loss and pair-weighted TS-AUC.",
+      "change": "Only weighting changes from W3 to W1",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W1",
+      "params": {},
+      "phase": "WEIGHT"
+    },
+    {
+      "experiment_id": "N039_WEIGHT_ARCH_W2",
+      "parent_id": "N013_ARCH_REFERENCE",
+      "generation": 1,
+      "hypothesis": "Train-only alternative weighting tests the relation between binary loss and pair-weighted TS-AUC.",
+      "change": "Only weighting changes from W3 to W2",
+      "expected_effect": "Improve causal same-time ranking or reveal a matched negative result",
+      "risks": "DEV selection bias; correlated evidence; possible latency cost",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W2",
+      "params": {},
+      "phase": "WEIGHT"
+    }
+  ]
+}

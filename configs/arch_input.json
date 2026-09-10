@@ -1,0 +1,13 @@
+{
+  "input_ar_order": 8,
+  "variance_lag_order": 1,
+  "historical_squared_residual_winsor_quantile": 0.99,
+  "slope_upper_bound": 0.95,
+  "ridge_variance_fraction": 0.001,
+  "maximum_models": 2,
+  "models": ["M4_lightgbm", "M3_histgb"],
+  "anchor": "M4_ar_order8_ABCD_S3_242216e87a34",
+  "parameters_fit_from": "historical AR8 innovations only",
+  "online_parameters_are_frozen": true,
+  "forecast_uses_only_previous_innovation": true
+}
