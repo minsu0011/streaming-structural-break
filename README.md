@@ -62,4 +62,6 @@ python -m pytest tests/test_streaming.py tests/test_models.py tests/test_feature
 
 대표 추론 경로는 [src/streaming/inference.py](src/streaming/inference.py), 학습 경로는 [src/streaming/training.py](src/streaming/training.py)입니다. 이 저장소는 라이브러리와 실험 모듈을 제공하며, 실제 대회 데이터와 공식 runner는 별도로 준비합니다. 위 명령은 연산·순차 처리 예제를 확인하는 시작점입니다.
 
-[개발 과정](docs/wiki/Development-Journey.md) · [모델 구조](docs/wiki/Model-Evolution.md) · [병목](docs/wiki/Bottlenecks-and-Solutions.md) · [결과와 검증](docs/wiki/Validation-and-Results.md)
+[개발 과정](https://github.com/minsu0011/streaming-structural-break/wiki/Development-Journey) · [모델 구조](https://github.com/minsu0011/streaming-structural-break/wiki/Model-Evolution) · [병목](https://github.com/minsu0011/streaming-structural-break/wiki/Bottlenecks-and-Solutions) · [결과와 검증](https://github.com/minsu0011/streaming-structural-break/wiki/Validation-and-Results)
+
+[Wiki 전체 보기](https://github.com/minsu0011/streaming-structural-break/wiki) · [저장소 내 문서 사본](docs/wiki/Home.md)
