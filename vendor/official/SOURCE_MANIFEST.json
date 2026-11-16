@@ -1,0 +1,33 @@
+{
+  "retrieved_utc": "2026-09-07T16:39:18.297353+00:00",
+  "sources": [
+    {
+      "path": "vendor\\official\\runner.py",
+      "url": "https://raw.githubusercontent.com/crunchdao/competitions/ddb0d2240aa885965a0cb5d16df04dae70c66679/competitions/structural-break-real-time/scoring/runner.py",
+      "commit": "ddb0d2240aa885965a0cb5d16df04dae70c66679",
+      "sha256": "6c7e94a9f01198165c988bff7f3a9a9f37b03ba3ad50b67aa0c6eac3590bdef7",
+      "bytes": 25943
+    },
+    {
+      "path": "vendor\\official\\scoring.py",
+      "url": "https://raw.githubusercontent.com/crunchdao/competitions/ddb0d2240aa885965a0cb5d16df04dae70c66679/competitions/structural-break-real-time/scoring/scoring.py",
+      "commit": "ddb0d2240aa885965a0cb5d16df04dae70c66679",
+      "sha256": "c7c95be8b5159d8b932955c62bbfa7a978ab6e847d7637fbbd7d073019585e4b",
+      "bytes": 4787
+    },
+    {
+      "path": "vendor\\official\\baseline.ipynb",
+      "url": "https://raw.githubusercontent.com/crunchdao/competitions/ddb0d2240aa885965a0cb5d16df04dae70c66679/competitions/structural-break-real-time/quickstarters/baseline/baseline.ipynb",
+      "commit": "ddb0d2240aa885965a0cb5d16df04dae70c66679",
+      "sha256": "c47b2cb22fe305a5a9f5d914b64c7d97150bdd67dd06aba2f0a64c291719b5de",
+      "bytes": 31861
+    },
+    {
+      "path": "vendor\\official\\quickstarter.json",
+      "url": "https://raw.githubusercontent.com/crunchdao/competitions/ddb0d2240aa885965a0cb5d16df04dae70c66679/competitions/structural-break-real-time/quickstarters/baseline/quickstarter.json",
+      "commit": "ddb0d2240aa885965a0cb5d16df04dae70c66679",
+      "sha256": "b76d8eca2fe1e398b301ca08f0041bc9d5138e0d8b0a2f3622fde110bf2a7dbc",
+      "bytes": 353
+    }
+  ]
+}

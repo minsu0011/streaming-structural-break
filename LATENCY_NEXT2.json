@@ -1,0 +1,833 @@
+{
+  "status": "MEASURED_RESEARCH_RESULTS",
+  "created_utc": "2026-09-09T12:03:44.294930+00:00",
+  "final_role_selection": false,
+  "policy_sha256": "ab9043bc86d2a2e3c97a9a2458c3d9ab32854255d4692e39a4af4198e1c180bf",
+  "variants": {
+    "J_ORIGINAL": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:35:42.800152+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.0031831000014790334,
+      "first_history_plus_jit_seconds_fresh_process": 8.34171150000111,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.1,
+        "p95_us": 5.6,
+        "p99_us": 6.4,
+        "mean_us": 5.162189570904726
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 7848.3,
+        "p95_us": 12232.59,
+        "p99_us": 12666.969,
+        "mean_us": 7707.611979166667
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 3.9,
+        "p95_us": 4.5,
+        "p99_us": 5.4,
+        "mean_us": 4.043668848507041
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.5,
+        "p99_us": 3.4,
+        "mean_us": 2.1525152194809354
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 20.51544783672307,
+      "h_plus_online_extrapolated_1M_seconds": 20.51544783672307,
+      "h_plus_online_extrapolated_10M_seconds": 205.1544783672307,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 51.647662900000036,
+        "measured_first_million_seconds": 5.251416600000001,
+        "wall_seconds_including_checks": 54.60883950000061,
+        "output_sha256": "591e4c28620ca0841ee21c07cf9420869dd292315b37951edca8bb27fb355177",
+        "state_array_bytes_before": 29789,
+        "state_array_bytes_after": 29789,
+        "rss_before_bytes": 448430080,
+        "rss_peak_bytes": 448430080,
+        "rss_after_bytes": 448512000
+      },
+      "state_array_bytes_min": 29789,
+      "state_array_bytes_max": 29789,
+      "model_file_bytes": 277653,
+      "sample_prediction_sha256": "abf96a4eb80edb507e8b6c7edcfe5714fbb6e5fb7729b124e5694329407895cf",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "J_COMPACT": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:38:35.532796+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.017805700001190417,
+      "first_history_plus_jit_seconds_fresh_process": 8.511844000000565,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.2,
+        "p95_us": 5.9,
+        "p99_us": 7.3,
+        "mean_us": 5.333777838808278
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 7052.799999999999,
+        "p95_us": 11210.55,
+        "p99_us": 12026.464000000002,
+        "mean_us": 6965.416927083333
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 4.1,
+        "p95_us": 4.4,
+        "p99_us": 4.8,
+        "mean_us": 4.111768206161029
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.1,
+        "p95_us": 2.5,
+        "p99_us": 3.1,
+        "mean_us": 2.142387208007202
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 19.242780854732153,
+      "h_plus_online_extrapolated_1M_seconds": 19.242780854732153,
+      "h_plus_online_extrapolated_10M_seconds": 192.42780854732155,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 51.685303400000016,
+        "measured_first_million_seconds": 5.184048900000001,
+        "wall_seconds_including_checks": 54.68339230000129,
+        "output_sha256": "591e4c28620ca0841ee21c07cf9420869dd292315b37951edca8bb27fb355177",
+        "state_array_bytes_before": 12493,
+        "state_array_bytes_after": 12493,
+        "rss_before_bytes": 448483328,
+        "rss_peak_bytes": 448483328,
+        "rss_after_bytes": 449761280
+      },
+      "state_array_bytes_min": 12493,
+      "state_array_bytes_max": 12493,
+      "model_file_bytes": 35180,
+      "sample_prediction_sha256": "abf96a4eb80edb507e8b6c7edcfe5714fbb6e5fb7729b124e5694329407895cf",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "J_USED": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:41:26.396557+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.01868060000197147,
+      "first_history_plus_jit_seconds_fresh_process": 7.93656049999845,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.1,
+        "p95_us": 5.6,
+        "p99_us": 6.5,
+        "mean_us": 5.215646185848044
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 4639.25,
+        "p95_us": 6545.964999999999,
+        "p99_us": 6695.003,
+        "mean_us": 4724.352083333333
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 3.9,
+        "p95_us": 4.3,
+        "p99_us": 5.4,
+        "mean_us": 4.000343296562456
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.5,
+        "p99_us": 3.5,
+        "mean_us": 2.1514212477685724
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 14.761798975704775,
+      "h_plus_online_extrapolated_1M_seconds": 14.761798975704775,
+      "h_plus_online_extrapolated_10M_seconds": 147.61798975704775,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 50.7685899,
+        "measured_first_million_seconds": 5.0390514,
+        "wall_seconds_including_checks": 55.110021600001346,
+        "output_sha256": "591e4c28620ca0841ee21c07cf9420869dd292315b37951edca8bb27fb355177",
+        "state_array_bytes_before": 12213,
+        "state_array_bytes_after": 12213,
+        "rss_before_bytes": 445157376,
+        "rss_peak_bytes": 445157376,
+        "rss_after_bytes": 455135232
+      },
+      "state_array_bytes_min": 12213,
+      "state_array_bytes_max": 12213,
+      "model_file_bytes": 35180,
+      "sample_prediction_sha256": "abf96a4eb80edb507e8b6c7edcfe5714fbb6e5fb7729b124e5694329407895cf",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "Y_ORIGINAL": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:44:17.638299+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.002935999997134786,
+      "first_history_plus_jit_seconds_fresh_process": 8.439477799998713,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.2,
+        "p95_us": 5.7,
+        "p99_us": 6.8,
+        "mean_us": 5.295327098050584
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 6786.5,
+        "p95_us": 10776.06,
+        "p99_us": 11054.846000000001,
+        "mean_us": 6752.427083333333
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 4.0,
+        "p95_us": 4.3,
+        "p99_us": 4.5,
+        "mean_us": 4.044422575181947
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.4,
+        "p99_us": 3.0,
+        "mean_us": 2.096989670587876
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 18.795957237963005,
+      "h_plus_online_extrapolated_1M_seconds": 18.795957237963005,
+      "h_plus_online_extrapolated_10M_seconds": 187.95957237963006,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 51.34276169999997,
+        "measured_first_million_seconds": 5.1069957000000015,
+        "wall_seconds_including_checks": 54.28950099999929,
+        "output_sha256": "8d665881f3ce6cf5975f53d1bfac1a0f621e8c3baffc965d7b17120eb4b00aa3",
+        "state_array_bytes_before": 29309,
+        "state_array_bytes_after": 29309,
+        "rss_before_bytes": 448978944,
+        "rss_peak_bytes": 448978944,
+        "rss_after_bytes": 450789376
+      },
+      "state_array_bytes_min": 29309,
+      "state_array_bytes_max": 29309,
+      "model_file_bytes": 277708,
+      "sample_prediction_sha256": "749af5e168ba24dd17c1bfd57423766983253f411e4ee5c9734e852ce19f19d7",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "Y_COMPACT": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:47:09.567742+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.017832499997894047,
+      "first_history_plus_jit_seconds_fresh_process": 8.836838800001715,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.2,
+        "p95_us": 5.7,
+        "p99_us": 6.6,
+        "mean_us": 5.32207371467224
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 6775.049999999999,
+        "p95_us": 10626.58,
+        "p99_us": 10947.891,
+        "mean_us": 6605.209375000001
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 4.1,
+        "p95_us": 4.5,
+        "p99_us": 5.0,
+        "mean_us": 4.160350009917456
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.4,
+        "p99_us": 3.1,
+        "mean_us": 2.1147602264231544
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 18.530448625033696,
+      "h_plus_online_extrapolated_1M_seconds": 18.530448625033696,
+      "h_plus_online_extrapolated_10M_seconds": 185.30448625033696,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 51.70943209999986,
+        "measured_first_million_seconds": 5.174319000000001,
+        "wall_seconds_including_checks": 54.66613629999847,
+        "output_sha256": "8d665881f3ce6cf5975f53d1bfac1a0f621e8c3baffc965d7b17120eb4b00aa3",
+        "state_array_bytes_before": 12333,
+        "state_array_bytes_after": 12333,
+        "rss_before_bytes": 448618496,
+        "rss_peak_bytes": 448622592,
+        "rss_after_bytes": 450813952
+      },
+      "state_array_bytes_min": 12333,
+      "state_array_bytes_max": 12333,
+      "model_file_bytes": 35177,
+      "sample_prediction_sha256": "749af5e168ba24dd17c1bfd57423766983253f411e4ee5c9734e852ce19f19d7",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "Y_USED": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:50:02.378216+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.017581399999471614,
+      "first_history_plus_jit_seconds_fresh_process": 7.88737730000139,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.2,
+        "p95_us": 5.9,
+        "p99_us": 7.4,
+        "mean_us": 5.282715145227161
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 4613.2,
+        "p95_us": 6542.18,
+        "p99_us": 7931.295000000002,
+        "mean_us": 4726.782291666666
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 4.0,
+        "p95_us": 4.3,
+        "p99_us": 4.7,
+        "mean_us": 4.028974229871379
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.4,
+        "p99_us": 3.1,
+        "mean_us": 2.097030866175371
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 14.814947895210631,
+      "h_plus_online_extrapolated_1M_seconds": 14.814947895210631,
+      "h_plus_online_extrapolated_10M_seconds": 148.1494789521063,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 51.557416099999976,
+        "measured_first_million_seconds": 5.138117299999998,
+        "wall_seconds_including_checks": 55.938441899998,
+        "output_sha256": "8d665881f3ce6cf5975f53d1bfac1a0f621e8c3baffc965d7b17120eb4b00aa3",
+        "state_array_bytes_before": 12224,
+        "state_array_bytes_after": 12224,
+        "rss_before_bytes": 442867712,
+        "rss_peak_bytes": 442867712,
+        "rss_after_bytes": 450248704
+      },
+      "state_array_bytes_min": 12224,
+      "state_array_bytes_max": 12224,
+      "model_file_bytes": 35177,
+      "sample_prediction_sha256": "749af5e168ba24dd17c1bfd57423766983253f411e4ee5c9734e852ce19f19d7",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "B_ORIGINAL": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:52:53.384977+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.0030487000003631692,
+      "first_history_plus_jit_seconds_fresh_process": 8.356021399999008,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 5.2,
+        "p95_us": 5.8,
+        "p99_us": 6.9,
+        "mean_us": 5.299771135625028
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 6817.8,
+        "p95_us": 10729.1,
+        "p99_us": 11074.597,
+        "mean_us": 6713.802604166667
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 4.0,
+        "p95_us": 4.4,
+        "p99_us": 5.5,
+        "mean_us": 4.460772646129904
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.1,
+        "p95_us": 2.5,
+        "p99_us": 3.5,
+        "mean_us": 2.207712729436536
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 18.71652095634794,
+      "h_plus_online_extrapolated_1M_seconds": 18.71652095634794,
+      "h_plus_online_extrapolated_10M_seconds": 187.16520956347938,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 51.33036289999999,
+        "measured_first_million_seconds": 5.202512900000002,
+        "wall_seconds_including_checks": 54.425822100001824,
+        "output_sha256": "a7996c7e2b15d73d187fc8cc0400d533f52950ed99a603bf5f8dc3d7f789a9b2",
+        "state_array_bytes_before": 29189,
+        "state_array_bytes_after": 29189,
+        "rss_before_bytes": 448688128,
+        "rss_peak_bytes": 448688128,
+        "rss_after_bytes": 449880064
+      },
+      "state_array_bytes_min": 29189,
+      "state_array_bytes_max": 29189,
+      "model_file_bytes": 276812,
+      "sample_prediction_sha256": "59a27e00f4dc2218a64462947ca1d8e4c90c0f3823016af1715fe9d3bf38e635",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "B_COMPACT": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:55:41.595791+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.017327300000033574,
+      "first_history_plus_jit_seconds_fresh_process": 8.312625400001707,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 4.9,
+        "p95_us": 5.6,
+        "p99_us": 7.4,
+        "mean_us": 5.084025266626997
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 6805.4,
+        "p95_us": 10698.3,
+        "p99_us": 11768.91400000001,
+        "mean_us": 6717.318750000001
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 3.8,
+        "p95_us": 4.0,
+        "p99_us": 4.5,
+        "mean_us": 3.8292259806838467
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.4,
+        "p99_us": 3.0,
+        "mean_us": 2.110471308036191
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 18.51391393682326,
+      "h_plus_online_extrapolated_1M_seconds": 18.51391393682326,
+      "h_plus_online_extrapolated_10M_seconds": 185.1391393682326,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 48.05861239999997,
+        "measured_first_million_seconds": 4.8015777,
+        "wall_seconds_including_checks": 51.021323799999664,
+        "output_sha256": "a7996c7e2b15d73d187fc8cc0400d533f52950ed99a603bf5f8dc3d7f789a9b2",
+        "state_array_bytes_before": 12141,
+        "state_array_bytes_after": 12141,
+        "rss_before_bytes": 447680512,
+        "rss_peak_bytes": 447680512,
+        "rss_after_bytes": 448344064
+      },
+      "state_array_bytes_min": 12141,
+      "state_array_bytes_max": 12141,
+      "model_file_bytes": 34617,
+      "sample_prediction_sha256": "59a27e00f4dc2218a64462947ca1d8e4c90c0f3823016af1715fe9d3bf38e635",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "B_USED": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T11:58:29.565870+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.018265600003360305,
+      "first_history_plus_jit_seconds_fresh_process": 7.946180799997819,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 4.8,
+        "p95_us": 5.5,
+        "p99_us": 7.3,
+        "mean_us": 4.959694440630038
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 4628.25,
+        "p95_us": 6583.12,
+        "p99_us": 8099.932000000001,
+        "mean_us": 4771.161197916666
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 3.6,
+        "p95_us": 3.9,
+        "p99_us": 4.2,
+        "mean_us": 3.6778306708777713
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.0,
+        "p95_us": 2.4,
+        "p99_us": 3.0,
+        "mean_us": 2.1000305152499963
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 14.578951597727631,
+      "h_plus_online_extrapolated_1M_seconds": 14.578951597727631,
+      "h_plus_online_extrapolated_10M_seconds": 145.78951597727632,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 47.214786500000024,
+        "measured_first_million_seconds": 4.701216200000001,
+        "wall_seconds_including_checks": 51.53781880000315,
+        "output_sha256": "a7996c7e2b15d73d187fc8cc0400d533f52950ed99a603bf5f8dc3d7f789a9b2",
+        "state_array_bytes_before": 12032,
+        "state_array_bytes_after": 12032,
+        "rss_before_bytes": 435752960,
+        "rss_peak_bytes": 435752960,
+        "rss_after_bytes": 446910464
+      },
+      "state_array_bytes_min": 12032,
+      "state_array_bytes_max": 12032,
+      "model_file_bytes": 34617,
+      "sample_prediction_sha256": "59a27e00f4dc2218a64462947ca1d8e4c90c0f3823016af1715fe9d3bf38e635",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    },
+    "BL80_COMPACT": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T12:02:25.146038+00:00",
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.039467499998863786,
+      "first_history_plus_jit_seconds_fresh_process": 12.316163600000436,
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 10.4,
+        "p95_us": 12.1,
+        "p99_us": 17.1,
+        "mean_us": 10.741228137094847
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 8067.05,
+        "p95_us": 12290.03,
+        "p99_us": 12958.784000000005,
+        "mean_us": 8016.048177083333
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 8.0,
+        "p95_us": 8.5,
+        "p99_us": 10.3,
+        "mean_us": 8.030248241558718
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 5.1,
+        "p95_us": 6.3,
+        "p99_us": 8.0,
+        "mean_us": 5.298835843212646
+      },
+      "real_prefix_repeats": 3,
+      "real_series_per_repeat": 128,
+      "h_plus_online_amortized_us_per_point": 26.735975445395503,
+      "h_plus_online_extrapolated_1M_seconds": 26.735975445395503,
+      "h_plus_online_extrapolated_10M_seconds": 267.359754453955,
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 104.59776380000007,
+        "measured_first_million_seconds": 10.436872700000002,
+        "wall_seconds_including_checks": 107.70272660000046,
+        "output_sha256": "d397ca260ac857f444828d12dd138e17045ce3f234770b894a2eb315e33013f2",
+        "state_array_bytes_before": 17741,
+        "state_array_bytes_after": 17741,
+        "rss_before_bytes": 526344192,
+        "rss_peak_bytes": 526344192,
+        "rss_after_bytes": 526483456
+      },
+      "state_array_bytes_min": 17741,
+      "state_array_bytes_max": 17741,
+      "model_file_bytes": 68999,
+      "sample_prediction_sha256": "7ce81c81f78274f658a4e5a2ff859b0f9258cf0126ad62f3d5d3d6502cecfd96",
+      "sampled_bundle_parity": true,
+      "separate_parts_parity": true,
+      "repeated_real_prefix_parity": true,
+      "quality_scores_computed": false,
+      "seal_rows": 0,
+      "new_fits": 0,
+      "limitations": "Fixed 128 DEV probes inherited from old policy; repeated input for direct 10M cost, not a quality test. OS load and power state uncontrolled. Separate calls add dispatch/timer overhead. H amortized 1M/10M costs are extrapolations; continuous 1M/10M are measured."
+    }
+  },
+  "limitations": "All fixed trials retained. Sequential isolated workspace processes; ordinary OS and power conditions uncontrolled. Prefix timer instrumentation and separate feature/tree dispatch add overhead. Direct continuous 1M/10M excludes H; H-inclusive extrapolations are separately labelled. Fixed real buffer repetition measures cost, not quality.",
+  "separate_supplemental_protocols": {
+    "J_PRECOMPUTED": {
+      "status": "PASS",
+      "identity": {
+        "variant": "J_PRECOMPUTED",
+        "inherited_policy_sha256": "ab9043bc86d2a2e3c97a9a2458c3d9ab32854255d4692e39a4af4198e1c180bf",
+        "runtime_sha256": "7984dd2f82b545b453047ac8408d73737b911a5651982a73b47c4a2af503aa84",
+        "script_sha256": "67e7d1eefef3f39e6515aaa084f6fa52f1f310c0d30d0aecc8c852ed46d33b20",
+        "protocol_sha256": "766e81ffbf633bafe9679aecfbb749ede743155037867e8487d19af5cc12e920",
+        "baseline_receipt_sha256": "40a11b3a410207526e60881498a63819897f8bea1a27cfea7e82ed2bef77f4d5",
+        "proofs_sha256": {
+          "artifacts\\next2\\precomputed_runtime\\all_dev\\RESULTS.json": "b03b67cef5b16a2cb1e82b71a33e6a6c64da07937eb6e1fdb8fb404cb5361ff5",
+          "artifacts\\next2\\precomputed_runtime\\oof\\RESULTS.json": "08b6c43aca38f0290f0548cbd1daf9faeb74f40b49c4f24328c8d41e1e4b9cce"
+        },
+        "model_sha256": "27307b578f78bf4bcf11e8fb3011d34f82b14156eae7508b7514177cbc22b15d"
+      },
+      "created_utc": "2026-09-09T12:18:14.783749+00:00",
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 4.8,
+        "p95_us": 5.3,
+        "p99_us": 6.5,
+        "mean_us": 4.92544259827182
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 4723.7,
+        "p95_us": 6586.169999999999,
+        "p99_us": 6946.875000000003,
+        "mean_us": 4821.029687499999
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 3.7,
+        "p95_us": 3.9,
+        "p99_us": 4.4,
+        "mean_us": 3.7087746601364033
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 2.1,
+        "p95_us": 2.5,
+        "p99_us": 3.1,
+        "mean_us": 2.1429608947071297
+      },
+      "model_load_seconds": 0.020678400003816932,
+      "first_history_plus_jit_seconds_fresh_process": 7.743038499997056,
+      "h_plus_online_amortized_us_per_point": 14.655801203318026,
+      "h_plus_online_extrapolated_1M_seconds": 14.655801203318026,
+      "h_plus_online_extrapolated_10M_seconds": 146.55801203318026,
+      "model_file_bytes": 35180,
+      "state_array_bytes_min": 13413,
+      "state_array_bytes_max": 13413,
+      "numerical_memory": {
+        "retained_state_numeric_bytes_including_shared_selectors": 13413,
+        "private_per_series_numeric_bytes": 12929,
+        "shared_selector_bytes_reachable_from_state": 484,
+        "model_and_prepared_shared_numeric_bytes": 97084,
+        "total_one_stream_plus_one_model_numeric_bytes": 110013,
+        "private_allocation_count": 44,
+        "state_allocation_count": 48
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 47.61635499999998,
+        "measured_first_million_seconds": 4.880644099999999,
+        "wall_seconds_including_checks": 49.15059579999797,
+        "output_sha256": "591e4c28620ca0841ee21c07cf9420869dd292315b37951edca8bb27fb355177",
+        "exact_equal_to_J_USED": true,
+        "state_array_bytes_before": 13413,
+        "state_array_bytes_after": 13413,
+        "rss_before_bytes": 449957888,
+        "rss_peak_bytes": 449957888,
+        "rss_after_bytes": 449994752
+      },
+      "sample_prediction_sha256": "abf96a4eb80edb507e8b6c7edcfe5714fbb6e5fb7729b124e5694329407895cf",
+      "engineering_replacement_criteria": {
+        "direct_10M_at_least_10_percent_faster": false,
+        "point_median_nonworse": true,
+        "h_median_within_5_percent": true,
+        "all_dev_and_oof_exact": true,
+        "separate_parts_exact": true,
+        "direct_10M_exact": true,
+        "constant_state": true
+      },
+      "engineering_replacement_eligible": false,
+      "files_sha256": {
+        "SERIES_TIMING.csv": "2250dccc3593386c4239566a90aa2812fb18ced688e0cea4b51b96dd954e50f6",
+        "CONTINUOUS_BLOCKS.csv": "942b43b85321e6450c006dc304a4a9d9e98c0454666ed2a620d83ad9c4943e3b"
+      },
+      "new_fits": 0,
+      "seal_rows": 0,
+      "final_role_selection": false,
+      "limitations": "One registered isolated sequential trial; OS/power uncontrolled. Compares against earlier J_USED trial, with all repetitions retained. Extra H-only tables increase state relative to J_USED. Scientific predictions exactly unchanged."
+    },
+    "BL80_SHARED_V1": {
+      "status": "PASS",
+      "identity": {
+        "variant": "BL80_SHARED_V1",
+        "inherited_policy_sha256": "ab9043bc86d2a2e3c97a9a2458c3d9ab32854255d4692e39a4af4198e1c180bf",
+        "runtime_sha256": "2545e8ff7a6dda5474e5dd6170cd7a15a58edecacfcfe4d0e885d88fbf6cdfd4",
+        "script_sha256": "a6eca290ba2dfd4512d88c3af42a216b4f487b549c38a39c573bf199dfd440b5",
+        "protocol_sha256": "81222a8c17fa15e8ca5813e18cfdb5f1b99be04b97cf3ab4bacfe946b1ced855",
+        "baseline_receipt_sha256": "832cfffe2d51d6962f1ed53e4e53ed571d7186354b8c8871ba53d39c63b4c94e",
+        "baseline_memory_sha256": "f4e1f4aed75be435a168e029532bcb5647117e5a4b5d038f24e0db0b26dd877c",
+        "proofs_sha256": {
+          "artifacts\\next2\\shared_blend_runtime\\all_dev\\RESULTS.json": "39f75501897c090926864a9934526fc506fa3f768ae465367f54b3d113e17f26",
+          "artifacts\\next2\\shared_blend_runtime\\oof\\RESULTS.json": "3921bc4aa09576f7f39040d691db20151d9dfb571ea879ec7f90fca891c98696",
+          "artifacts\\next2\\shared_blend_runtime\\alternate\\RESULTS.json": "a2b742117da57a785c58cc206334ec6aa703d657cca70560f9642872fa577299"
+        },
+        "model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90"
+      },
+      "created_utc": "2026-09-09T13:24:13.832288+00:00",
+      "point_distribution": {
+        "samples": 196623,
+        "median_us": 9.3,
+        "p95_us": 10.7,
+        "p99_us": 12.6,
+        "mean_us": 9.510736282123657
+      },
+      "historical_initialization": {
+        "samples": 384,
+        "median_us": 5140.049999999999,
+        "p95_us": 7191.96,
+        "p99_us": 7443.861000000002,
+        "mean_us": 5230.740885416667
+      },
+      "feature_state_update": {
+        "samples": 65541,
+        "median_us": 6.1,
+        "p95_us": 6.5,
+        "p99_us": 7.2,
+        "mean_us": 6.131830457271021
+      },
+      "model_prediction": {
+        "samples": 65541,
+        "median_us": 3.5,
+        "p95_us": 4.6,
+        "p99_us": 5.8,
+        "mean_us": 3.6985123815626855
+      },
+      "model_load_seconds": 0.045461000001523644,
+      "first_history_plus_jit_seconds_fresh_process": 10.26649449999968,
+      "h_plus_online_amortized_us_per_point": 20.056996383942874,
+      "h_plus_online_extrapolated_1M_seconds": 20.056996383942874,
+      "h_plus_online_extrapolated_10M_seconds": 200.56996383942874,
+      "model_file_bytes": 68999,
+      "state_array_bytes_min": 16925,
+      "state_array_bytes_max": 16925,
+      "numerical_memory": {
+        "retained_state_numeric_bytes_including_shared_selectors": 16925,
+        "private_per_series_numeric_bytes": 16441,
+        "shared_selector_bytes_reachable_from_state": 484,
+        "model_and_prepared_shared_numeric_bytes": 193472,
+        "total_one_stream_plus_one_model_numeric_bytes": 209913,
+        "private_allocation_count": 55,
+        "state_allocation_count": 59
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 93.1921636000001,
+        "measured_first_million_seconds": 9.268868600000001,
+        "wall_seconds_including_checks": 94.71634389999963,
+        "output_sha256": "d397ca260ac857f444828d12dd138e17045ce3f234770b894a2eb315e33013f2",
+        "exact_equal_to_BL80_COMPACT": true,
+        "state_array_bytes_before": 16925,
+        "state_array_bytes_after": 16925,
+        "rss_before_bytes": 471932928,
+        "rss_peak_bytes": 472035328,
+        "rss_after_bytes": 472080384
+      },
+      "sample_prediction_sha256": "7ce81c81f78274f658a4e5a2ff859b0f9258cf0126ad62f3d5d3d6502cecfd96",
+      "engineering_replacement_criteria": {
+        "direct_10M_at_least_10_percent_faster": true,
+        "point_median_nonworse": true,
+        "h_median_within_5_percent": true,
+        "all_dev_oof_and_alternate_exact": true,
+        "private_state_smaller_than_baseline": true,
+        "separate_parts_exact": true,
+        "direct_10M_exact": true,
+        "constant_state": true
+      },
+      "engineering_replacement_eligible": true,
+      "files_sha256": {
+        "SERIES_TIMING.csv": "761fc1e80e2bcf28f392bf78ce1a6d5bb7a3b22c343f8f99a967779289bee316",
+        "CONTINUOUS_BLOCKS.csv": "b1a625b84a76f5d686a272089466c3fd9ff0db971ca263b5e055eb6b51304c8b"
+      },
+      "new_fits": 0,
+      "seal_rows": 0,
+      "final_role_selection": false,
+      "limitations": "One registered isolated sequential trial; OS/power uncontrolled. Compares against earlier BL80_COMPACT trial, with all repetitions retained. Identical new-branch AR/ARCH work is shared; legacy tree-used initialization remains separate. Two frozen tree ensembles and float32 component rounding are retained. Scientific predictions exactly unchanged."
+    }
+  },
+  "supplement_note": "Core ten trials unchanged. Precompute trial failed its 10% replacement criterion; shared blend passed its separate prospectively fixed engineering criteria."
+}

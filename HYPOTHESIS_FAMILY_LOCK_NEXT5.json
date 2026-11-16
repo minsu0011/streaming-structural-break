@@ -1,0 +1,169 @@
+{
+  "status": "FROZEN_NEXT5_FAMILY_MENU",
+  "created_utc": "2026-09-11T05:12:27.085228+00:00",
+  "families": {
+    "S": {
+      "question": "Can directional Gaussian/t scale likelihood and H-relative semitail evidence unify B2/D2 information?",
+      "slots": [
+        "S1_DIRECTIONAL_SCALE",
+        "S2_STUDENT_SCALE",
+        "S4A_AUGMENTED_J_SCALE",
+        "S4B_UNIFIED_SCALE_SPECIALIST"
+      ],
+      "menu": {
+        "variance_ratios": [
+          0.5,
+          0.7,
+          1.5,
+          2.0
+        ],
+        "null_variance_ratio": 1.0,
+        "windows": [
+          8,
+          32,
+          128
+        ],
+        "fixed_t_df": 5.0,
+        "channels": [
+          "raw_AR_innovation",
+          "ARCH_standardized_innovation"
+        ],
+        "S4A": "J10277 plus S2 scale features; replace J at fixed 0.8 with C205 at 0.2",
+        "S4B": "Joint Gaussian/t directional features plus B2 semitail descriptors; fixed 0.1 specialist with ResearchPool BL80",
+        "S3": "Within-time B2/D2 feature/score and conditional pair-order decomposition only; no extra learner or prediction blending search"
+      }
+    },
+    "P": {
+      "question": "Can confirmation distinguish persistent changes from isolated and repeated shocks?",
+      "slots": [
+        "P1_TWO_TIMESCALE_CONFIRMATION",
+        "P2_SOFT_PERSISTENCE_COUNT",
+        "P3_SHOCK_RECOVERY"
+      ],
+      "menu": {
+        "fast_slow_half_lives": [
+          8,
+          64
+        ],
+        "count_window": 32,
+        "threshold": "H-only fixed 0.9 quantile of directional evidence",
+        "shock_half_life": 4,
+        "persistent_half_life": 64,
+        "directions": [
+          "decrease",
+          "increase"
+        ],
+        "no_score_dependent_reset": true
+      }
+    },
+    "W": {
+      "question": "Can bounded recent-window scale estimates recover onset without unbounded contamination?",
+      "slots": [
+        "W1_RECENT_SCALE_RATIO",
+        "W2_TRIMMED_RECENT_ENERGY",
+        "W3_MULTIWINDOW_DISAGREEMENT"
+      ],
+      "menu": {
+        "windows": [
+          16,
+          32,
+          64,
+          128
+        ],
+        "trim_threshold": "H-only 0.95 energy quantile",
+        "pairs": [
+          [
+            16,
+            128
+          ],
+          [
+            32,
+            64
+          ]
+        ],
+        "full_sort_per_point": false
+      }
+    },
+    "E": {
+      "question": "Can fixed mixture evidence represent recent change without the absorbing-hazard null pressure seen in D3?",
+      "slots": [
+        "E1_SCALE_MIXTURE_EVIDENCE",
+        "E2_SPARSE_START_MIXTURE"
+      ],
+      "menu": {
+        "variance_ratios": [
+          0.5,
+          0.7,
+          1.5,
+          2.0
+        ],
+        "ages": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256
+        ],
+        "mixture": "fixed prior logsumexp, no maximum-based tuning",
+        "theoretical_claim": "working likelihood features; no real-DGP anytime validity asserted"
+      }
+    },
+    "R": {
+      "question": "Can H-only tail calibration remove heavy-tail sensitivity without context-only target shortcuts?",
+      "slots": [
+        "R1_H_ADAPTIVE_TAIL",
+        "R2_CONDITIONAL_SCALE_PIT",
+        "R3_QUANTILE_SELF_NORMALIZED"
+      ],
+      "menu": {
+        "tail_df": "deterministic H moment/quantile estimate clipped to [4,30], no outcome use",
+        "PIT": "H empirical innovation-energy CDF, lower/upper surprise separately",
+        "quantile_scale": [
+          0.25,
+          0.5,
+          0.75
+        ],
+        "null_parameters_only": true
+      }
+    },
+    "M": {
+      "question": "Can bounded signed evidence add a location signal distinct from D1 Gaussian-amplitude variants?",
+      "slots": [
+        "M1_ROBUST_LOCATION_LIKELIHOOD",
+        "M2_SIGN_RUN_EVIDENCE"
+      ],
+      "menu": {
+        "M1": "fixed t5 location mixture with shifts [-0.75,0.75]",
+        "M2": "H-relative sign imbalance and run persistence",
+        "half_lives": [
+          8,
+          32,
+          128
+        ],
+        "screen_standalone_min": 0.52
+      }
+    },
+    "X": {
+      "question": "Do independently supported scale/persistence/tail/dependence representations interact?",
+      "slots": [
+        "X1_SCALE_PERSISTENCE",
+        "X2_SCALE_TAIL",
+        "X3_DEPENDENCE_SCALE"
+      ],
+      "menu": {
+        "admission": "Both prerequisite families must show ResearchPool full positive increment >=0.0003 or standalone >=0.54; freeze exact parents before X score.",
+        "parents": "Deterministic highest full mean gain among eligible family members; ties lexicographic experiment ID",
+        "interactions": "A small explicitly registered coordinate set, never all-pairs expansion"
+      }
+    }
+  },
+  "maximum_families": 7,
+  "declared_slots": 20,
+  "policy_sha256": "c7f510226f8dfe800d62c79701bcca212b0a72092d4746d8a99fc3f42a346b43",
+  "each_slot_requires_exact_feature_model_source_registration_before_first_score": true,
+  "unused_or_failed_slots_remain_visible": true
+}

@@ -1,0 +1,31 @@
+{
+  "max_scored_uses": 2,
+  "scored_uses": 2,
+  "entries": [
+    {
+      "kind": "baseline",
+      "timestamp": "2026-09-08T07:47:23.991302+00:00",
+      "status": "SCORED_ONCE",
+      "model_descriptor_sha256": "852b0de5dce30ca22b69955fb5fa7a4785796ac928aae326e74c97c3d4538de9",
+      "prediction_sha256": "2039356f27279828e0f1ac175d0ff6e994e0545b40b83d9fca87cd40cfc3fca6",
+      "scored_once": true,
+      "score_visible_during_research": false,
+      "score_artifact": "artifacts\\reduced_private_until_final\\BASELINE_SCORE.json",
+      "score_artifact_sha256": "7eec0f85ddff75e476d45415d0f350c8d659d84f235e0fed808f10e1a72672e2"
+    },
+    {
+      "kind": "primary",
+      "timestamp": "2026-09-08T16:05:08.678580+00:00",
+      "status": "SCORED_ONCE",
+      "model_descriptor_sha256": "25eb753aef26c555dd1d29a331089ac575fea2b40232b90d9c73d7e52065c619",
+      "prediction_sha256": "4e64908970bd487a26748a71021aeb6c1287c91f4a704437dcf9b87294bcd4a9",
+      "scored_once": true,
+      "score_visible_during_research": false,
+      "score_artifact": "artifacts\\reduced_private_until_final\\PRIMARY_SCORE.json",
+      "score_artifact_sha256": "11257a4bc7141b4b8e320b84f349876d5c8f99de98469efd46b0b07174c00d4e"
+    }
+  ],
+  "file_byte_hash_and_parquet_footer_only_so_far": true,
+  "reduced_target_rows_selected": 0,
+  "tuning_from_reduced_forbidden": true
+}

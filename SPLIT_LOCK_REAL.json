@@ -1,0 +1,48 @@
+{
+  "status": "LOCKED",
+  "seed": 20260908,
+  "folds": 5,
+  "algorithm": "sha256-v2-group; representative=min integer ID; same seed/role/fold hash as v1",
+  "created_utc": "2026-09-08T07:01:57.944452+00:00",
+  "group_policy_sha256": "c30ee82e7df7667607e3bee3da750f90436ae94a3f22ea18daf0463bf07daad8",
+  "raw_sha256": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+  "assignments_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "group_count": 10000,
+  "series_count": 10000,
+  "counts": [
+    {
+      "role": "DEVELOPMENT_POOL",
+      "fold": 0,
+      "count": 1571
+    },
+    {
+      "role": "DEVELOPMENT_POOL",
+      "fold": 1,
+      "count": 1579
+    },
+    {
+      "role": "DEVELOPMENT_POOL",
+      "fold": 2,
+      "count": 1599
+    },
+    {
+      "role": "DEVELOPMENT_POOL",
+      "fold": 3,
+      "count": 1665
+    },
+    {
+      "role": "DEVELOPMENT_POOL",
+      "fold": 4,
+      "count": 1586
+    },
+    {
+      "role": "LOCAL_FINAL_SEAL",
+      "fold": -1,
+      "count": 2000
+    }
+  ],
+  "ids_sha256": "1899ec16689e0477ac35484f5cacefc22e284a929c103400ef4f1638739aba08",
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "performance_used_for_allocation": false,
+  "prior_policy_only_replaced": true
+}

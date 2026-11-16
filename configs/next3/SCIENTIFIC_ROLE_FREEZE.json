@@ -1,0 +1,64 @@
+{
+  "status": "PRE_AUDIT_SCIENTIFIC_ROLES_FROZEN",
+  "created_utc": "2026-09-10T05:43:18.117719+00:00",
+  "roles": {
+    "FROZEN_DISTILLED": {
+      "experiment_id": "J102_SERIAL_VARIANCE_512",
+      "reference_model_directory": "artifacts/next2/canonical_deployment/DISTILLED_tree_used_v1",
+      "canonical_model_sha256": "27307b578f78bf4bcf11e8fb3011d34f82b14156eae7508b7514177cbc22b15d",
+      "model_bytes": 35180,
+      "original_five_fold_scores": [
+        0.625548994582903,
+        0.6353471840978637,
+        0.6214373863953904,
+        0.6156787076692104,
+        0.6101464788170321
+      ],
+      "original_mean": 0.62163175031248,
+      "original_median": 0.6214373863953904,
+      "original_worst_fold": 0.6101464788170321,
+      "quality_change_since_session_start": 0.0,
+      "new_scientific_fit_required_for_selection": false
+    },
+    "FROZEN_PERFORMANCE": {
+      "experiment_id": "BL2_C205_DEPENDENCE_80",
+      "reference_model_directory": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1",
+      "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+      "model_bytes": 68999,
+      "original_five_fold_scores": [
+        0.628814140424981,
+        0.6371811063970156,
+        0.6216260123520351,
+        0.618712391914872,
+        0.6100084129976436
+      ],
+      "original_mean": 0.6232684128173095,
+      "original_median": 0.6216260123520351,
+      "original_worst_fold": 0.6100084129976436,
+      "quality_change_since_session_start": 0.0,
+      "new_scientific_fit_required_for_selection": false
+    }
+  },
+  "new_performance_candidate": null,
+  "new_robustness_candidate": null,
+  "scientific_role_count": 2,
+  "generation_gate_passed": false,
+  "new_scientific_search_authorized": false,
+  "engineering_variant_provisionally_selected": "LEAN_PACKED_SHARED",
+  "engineering_selection_sha256": "fd1cc983236f5a55919963632b9514f663f184bf70fa8bab1ccc82367d373ca0",
+  "engineering_is_the_same_scientific_performance_role": true,
+  "engineering_final_acceptance_pending": [
+    "fresh_pinned_raw_training_reproduction",
+    "final_audit",
+    "actual_archive_verification"
+  ],
+  "fallback_rule": "If final engineering verification fails, preserve the scientific lock and document a return to a previously verified runtime; never substitute a rejected scientific candidate.",
+  "reference_declaration_sha256": "a40ffc35ee1091e217c1a37edcce32916681730afe0edbb1fc13bdbcfca9f2ef",
+  "finite_menu_closure_sha256": "e746492a49aafa2ddeb36d9364e32a9162a41d00ca9183e564555a93d52798bc",
+  "necessary_gate_receipt_sha256": "622ff03f13264716318aa44b877ebe8d505fe7a0018bb1828ac1723856da3ae2",
+  "all_seals_unopened": true,
+  "reduced_new_uses": 0,
+  "public_new_submissions": 0,
+  "final_audit_completed": false,
+  "scope": "Scientific role freeze only; runtime delivery acceptance remains a separately verified final-audit action."
+}

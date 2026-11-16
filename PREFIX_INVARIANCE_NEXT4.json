@@ -1,0 +1,94 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-10T19:06:46.568718+00:00",
+  "audit_started_utc": "2026-09-10T18:18:24.789125+00:00",
+  "new_seal_rows": 0,
+  "final_audit_models": {
+    "BL80": {
+      "status": "PASS",
+      "created_utc": "2026-09-10T18:30:21.069352+00:00",
+      "model": "BL80",
+      "audit_phase": true,
+      "prefix_cases": 300,
+      "prefix_changed_suffix_and_shorter_horizon_exact": true,
+      "offline_streaming_all_DEV_exact": true,
+      "all_DEV_series": 8000,
+      "all_DEV_points": 4014405,
+      "output_fingerprint_sha256": "ff9589de5e233f3939647ea348694913261b3f25c74c7ab05930363a7386bc59",
+      "first_none_before_data": true,
+      "current_point_consumption_exact": true,
+      "future_length_and_suffix_traps": true,
+      "reordered_reset_series": 20,
+      "persistent_inference_write_attempts": 0,
+      "new_fits": 0,
+      "seal_rows": 0,
+      "state_array_bytes_min": 16925,
+      "state_array_bytes_max": 16925,
+      "source_sha256": "4faa79084a3cc73a3858a8b9385f6bc8bc3c51df5cc689c2c7f6b4bf3fd72684",
+      "entry_sha256": "768a02c063234ce587ef8f5d10d31a21cc14fce9512c2d52081d07b58a56ade9",
+      "files_sha256": {
+        "PREFIX_CASES.json": "f09f2a1202b84e827c5341aa9a5096f66db1838387bc567c32ebd9824df4a872"
+      }
+    },
+    "B2": {
+      "status": "PASS",
+      "created_utc": "2026-09-10T18:34:56.162127+00:00",
+      "model": "B2",
+      "audit_phase": true,
+      "prefix_cases": 300,
+      "prefix_changed_suffix_and_shorter_horizon_exact": true,
+      "offline_streaming_all_DEV_exact": true,
+      "all_DEV_series": 8000,
+      "all_DEV_points": 4014405,
+      "output_fingerprint_sha256": "a29e993dbeba37065e3816f7f568479b525bd1146e357349b053cecc7d821df4",
+      "first_none_before_data": true,
+      "current_point_consumption_exact": true,
+      "future_length_and_suffix_traps": true,
+      "reordered_reset_series": 20,
+      "persistent_inference_write_attempts": 0,
+      "new_fits": 0,
+      "seal_rows": 0,
+      "state_array_bytes_min": 35029,
+      "state_array_bytes_max": 35029,
+      "source_sha256": "4faa79084a3cc73a3858a8b9385f6bc8bc3c51df5cc689c2c7f6b4bf3fd72684",
+      "entry_sha256": "fe9a0c148c23773c453a321de1e34c3a4bf437bdada1d858711209c2298be028",
+      "files_sha256": {
+        "PREFIX_CASES.json": "38daf2a8d82db365a98f8edff81a29b83d691917aa13c8979f5b5e21ca47d43e"
+      }
+    },
+    "D2_DISCRETE_SCALE_MIXTURE": {
+      "status": "PASS",
+      "created_utc": "2026-09-10T18:39:19.144961+00:00",
+      "model": "D2_DISCRETE_SCALE_MIXTURE",
+      "audit_phase": true,
+      "prefix_cases": 300,
+      "prefix_changed_suffix_and_shorter_horizon_exact": true,
+      "offline_streaming_all_DEV_exact": true,
+      "all_DEV_series": 8000,
+      "all_DEV_points": 4014405,
+      "output_fingerprint_sha256": "c350ea294f92bc0465b80e87fcde4d04f71c4ba74d60b40ce5cb7224289dcfea",
+      "first_none_before_data": true,
+      "current_point_consumption_exact": true,
+      "future_length_and_suffix_traps": true,
+      "reordered_reset_series": 20,
+      "persistent_inference_write_attempts": 0,
+      "new_fits": 0,
+      "seal_rows": 0,
+      "state_array_bytes_min": 25821,
+      "state_array_bytes_max": 25821,
+      "source_sha256": "4faa79084a3cc73a3858a8b9385f6bc8bc3c51df5cc689c2c7f6b4bf3fd72684",
+      "entry_sha256": "7e9e3c3f4ca567ef72024c8b86a098368b15ccb092d6e2aae9f89479d129d341",
+      "files_sha256": {
+        "PREFIX_CASES.json": "2df12cc3c9844de6300e90bdb6661b9f70045f02ac7309b38d125aaf57d161af"
+      }
+    }
+  },
+  "new_feature_family_checks": "Completed final full suite includes original >=100-case feature-prefix tests and mathematical oracles; exact test definitions are included in tests/.",
+  "finalist_minimum_cases": 300,
+  "future_suffix_and_final_length_access_trapped": true,
+  "evidence_sha256": {
+    "artifacts/next4/final_audit/final_v1/API_BL80/RESULTS.json": "fed0d7ea47cb79e640421205d6e2625426c51238ac8ea8f00857badddf78b0e6",
+    "artifacts/next4/final_audit/final_v1/API_B2/RESULTS.json": "9ef2553a9168327dd30e8e4328e6d9e3c5c3316f3441448adc831be4aaee2dbb",
+    "artifacts/next4/final_audit/final_v1/API_D2_DISCRETE_SCALE_MIXTURE/RESULTS.json": "e9b66f4c612bdbe8da5fa807567826d01c678cbaf5737686f9865ee51ef2b925"
+  }
+}

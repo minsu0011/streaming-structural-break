@@ -1,0 +1,152 @@
+{
+  "created_utc": "2026-09-10T03:55:24.118168+00:00",
+  "generator_sha256": "ce6a413b3e9c3e2eab7ea8db64b262c95d9eac76c0d2eec1af7ead4550b30cd3",
+  "generated_source_sha256": "fc4b5494f4cddc396ac41649349af4bd24c7802a3eab9f8ea9a203426405ca23",
+  "definitions": [
+    {
+      "source": "src/next/fast_variance_initialization.py",
+      "name": "conditional_replay_only",
+      "original_source_sha256": "5fb809fb78f2bad042e35b6f2fd1abe72cd39307ea13e8f7f4db425728ba1e22",
+      "original_definition_sha256": "841ab69279dd6cc8d373ff3835c111d64e47f19ab018f0daf5b07430e3fd24dd",
+      "generated_definition_sha256": "841ab69279dd6cc8d373ff3835c111d64e47f19ab018f0daf5b07430e3fd24dd",
+      "change": "none"
+    },
+    {
+      "source": "src/next/fast_variance_initialization.py",
+      "name": "fast_variance_parameters",
+      "original_source_sha256": "5fb809fb78f2bad042e35b6f2fd1abe72cd39307ea13e8f7f4db425728ba1e22",
+      "original_definition_sha256": "5081ad2f8b4b219110933463ee831741aba6f8ace8426c53db95d0f0ddc762ef",
+      "generated_definition_sha256": "5081ad2f8b4b219110933463ee831741aba6f8ace8426c53db95d0f0ddc762ef",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/pruned_runtime.py",
+      "name": "pair_channel_update",
+      "original_source_sha256": "d79b6a5110d3c3ec9826eb0418d4702359c1649d7280a88f9522805ad3828533",
+      "original_definition_sha256": "64b24b0e480b9b23ccffbaf7bc2e914ac9de0aa6059d0d8bf85842df8b0c65e4",
+      "generated_definition_sha256": "68f9d44c6181a805f20aaf2c977087dd59046c54e0516fb55c1079864516ef70",
+      "change": "disk-cache decorator only"
+    },
+    {
+      "source": "src/next2/pruned_runtime.py",
+      "name": "historical_pair",
+      "original_source_sha256": "d79b6a5110d3c3ec9826eb0418d4702359c1649d7280a88f9522805ad3828533",
+      "original_definition_sha256": "a267b7b03c907798c13dbbdab84311261fa255c93faf63d4386b6f73b27dba31",
+      "generated_definition_sha256": "55747060b9b1ed900ac6715e84b1d13407a7ae8638abad622f13f53fa033d293",
+      "change": "disk-cache decorator only"
+    },
+    {
+      "source": "src/next2/dependence_runtime.py",
+      "name": "historical_z",
+      "original_source_sha256": "49a7c098664db68f7f076270f6bd1acd0654a05e81ed1eda4c2a5f14eb44fa22",
+      "original_definition_sha256": "ae09ac8f43e500b10292794546b065c2923ae5c79913f1f01bf60e52e69398e1",
+      "generated_definition_sha256": "ae09ac8f43e500b10292794546b065c2923ae5c79913f1f01bf60e52e69398e1",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/dependence_runtime.py",
+      "name": "evidence",
+      "original_source_sha256": "49a7c098664db68f7f076270f6bd1acd0654a05e81ed1eda4c2a5f14eb44fa22",
+      "original_definition_sha256": "05ca91ce0eb6cc580c1b4a07f98bc47a59b28ed389dca185c76ab7b8d8c261b1",
+      "generated_definition_sha256": "05ca91ce0eb6cc580c1b4a07f98bc47a59b28ed389dca185c76ab7b8d8c261b1",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/used_feature_runtime.py",
+      "name": "dependencies",
+      "original_source_sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f",
+      "original_definition_sha256": "764a9ce252ca9c164d3573b9fa711615ad28eda2306aed3f1a4d7cfe10d4409c",
+      "generated_definition_sha256": "764a9ce252ca9c164d3573b9fa711615ad28eda2306aed3f1a4d7cfe10d4409c",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/used_feature_runtime.py",
+      "name": "used_old_update",
+      "original_source_sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f",
+      "original_definition_sha256": "f1ad995af82a1612e1abf7342d7566d8044e2a0b88befab29e14d38e280d63f7",
+      "generated_definition_sha256": "f1ad995af82a1612e1abf7342d7566d8044e2a0b88befab29e14d38e280d63f7",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/used_feature_runtime.py",
+      "name": "replay_old",
+      "original_source_sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f",
+      "original_definition_sha256": "7ebeaecdc23dfab613da4fb8342b73eabe2b6d0f73f68ac6098d1c6b58e17577",
+      "generated_definition_sha256": "7ebeaecdc23dfab613da4fb8342b73eabe2b6d0f73f68ac6098d1c6b58e17577",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/used_feature_runtime.py",
+      "name": "UsedOldState",
+      "original_source_sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f",
+      "original_definition_sha256": "2cfd21df242d74a0ed9909873a1b09a7b04abaa4e41a82d97ba468dc52b43d20",
+      "generated_definition_sha256": "2cfd21df242d74a0ed9909873a1b09a7b04abaa4e41a82d97ba468dc52b43d20",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/used_feature_runtime.py",
+      "name": "used_arch_step",
+      "original_source_sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f",
+      "original_definition_sha256": "7d682c832703e6fd3f86791a8a38a758207d21dbc23b4d20af62efe5ccbd536a",
+      "generated_definition_sha256": "7d682c832703e6fd3f86791a8a38a758207d21dbc23b4d20af62efe5ccbd536a",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/shared_blend_runtime.py",
+      "name": "shared_step",
+      "original_source_sha256": "6d714341f3af65c7a6fc7df54df44b4feb322ecf56f821f3ad2ed62b39683ec1",
+      "original_definition_sha256": "5e6d3e001e911b9ce1815d53c99571385085755185f4f29511860db223d542a9",
+      "generated_definition_sha256": "5e6d3e001e911b9ce1815d53c99571385085755185f4f29511860db223d542a9",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/shared_blend_runtime.py",
+      "name": "SharedChannels",
+      "original_source_sha256": "6d714341f3af65c7a6fc7df54df44b4feb322ecf56f821f3ad2ed62b39683ec1",
+      "original_definition_sha256": "18fae638a404341fcb4e4814fabc11dd59ea0433eacd88dc7ee5b64af39c726a",
+      "generated_definition_sha256": "18fae638a404341fcb4e4814fabc11dd59ea0433eacd88dc7ee5b64af39c726a",
+      "change": "none"
+    },
+    {
+      "source": "src/next2/shared_blend_runtime.py",
+      "name": "shared_feature_step",
+      "original_source_sha256": "6d714341f3af65c7a6fc7df54df44b4feb322ecf56f821f3ad2ed62b39683ec1",
+      "original_definition_sha256": "c77495c1537ba2b5efa8a77b148e1adddf109890dd542f0d2dfc47c937821529",
+      "generated_definition_sha256": "c77495c1537ba2b5efa8a77b148e1adddf109890dd542f0d2dfc47c937821529",
+      "change": "none"
+    },
+    {
+      "source": "src/next3/packed_shared_runtime.py",
+      "name": "packed_model_step",
+      "original_source_sha256": "06520c80ae7ea885bdfa1fb9f6227f1bb4d7dee72b262dab97e43bd9c5c311d3",
+      "original_definition_sha256": "effe61bc44f96498c7039a18f0063c5019f90ca3ce2f072e3e8cdc36b223fc72",
+      "generated_definition_sha256": "effe61bc44f96498c7039a18f0063c5019f90ca3ce2f072e3e8cdc36b223fc72",
+      "change": "none"
+    },
+    {
+      "source": "src/next3/packed_shared_runtime.py",
+      "name": "packed_kernel",
+      "original_source_sha256": "06520c80ae7ea885bdfa1fb9f6227f1bb4d7dee72b262dab97e43bd9c5c311d3",
+      "original_definition_sha256": "1c18ae4f48814f174f516d34669b0d169667753c3493e987000ae911bd25066f",
+      "generated_definition_sha256": "1c18ae4f48814f174f516d34669b0d169667753c3493e987000ae911bd25066f",
+      "change": "none"
+    },
+    {
+      "source": "src/next/fused_runtime.py",
+      "name": "_resident_class",
+      "original_source_sha256": "32df0c51d048a18cf27b888bd60f594197bffb1f23f076f8b1023638dc0015fa",
+      "original_definition_sha256": "276c1bb6e6e8ac61f35eefd227ee581b474b1e263260343ed80172231019516d",
+      "generated_definition_sha256": "276c1bb6e6e8ac61f35eefd227ee581b474b1e263260343ed80172231019516d",
+      "change": "none"
+    },
+    {
+      "source": "src/next/fused_runtime.py",
+      "name": "unique_array_bytes",
+      "original_source_sha256": "32df0c51d048a18cf27b888bd60f594197bffb1f23f076f8b1023638dc0015fa",
+      "original_definition_sha256": "78237d448c414bf5c1061fc373e482b3740516bb6de7a8344be018b7d99e5a1e",
+      "generated_definition_sha256": "78237d448c414bf5c1061fc373e482b3740516bb6de7a8344be018b7d99e5a1e",
+      "change": "none"
+    }
+  ],
+  "permitted_transformation": "Exact source extraction; cache=True decorator becomes cache=False only"
+}

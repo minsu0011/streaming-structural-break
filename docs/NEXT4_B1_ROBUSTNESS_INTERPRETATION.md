@@ -1,0 +1,15 @@
+# B1 강건성 근거와 범위
+
+이 문서는 `B1_SPLIT_ENERGY_BRANCHES`의 완료된 진단을 설명한다. 최종 선택·승격 또는 최종 감사 완료 증명이 아니다.
+
+원래 5-fold 평균은 **0.6238162402238500**, BL80 대비 **+0.0005478274065406**이다. 전체 paired 95% CI는 **[-0.0008354519673212, +0.0020489439932407]**, P(Δ>0)는 **0.778**이다. 따라서 PERFORMANCE 승격 조건은 충족하지 않는다. SCALE 132개 변화 시계열에서는 **+0.0102654908105867**, CI **[+0.0006411400027951, +0.0209102137163001]**로, 고정한 강건성 1차 조건을 통과했다. [원본 forensic 결과](../artifacts/next4/forensic/B1_SPLIT_ENERGY_BRANCHES/RESULTS.json)
+
+ALT_1/2/3의 전체 평균 개선은 각각 약 +0.000759, +0.001131, +0.001004이다. 모두 점 추정치는 양수이지만 각 CI는 0을 포함한다. H 구간 제외 검증의 전체 평균 개선은 +0.0012488974, 최저 matched fold 차이는 -0.0016744785이다. **같은 H 제외 검증에서 SCALE 차이는 -0.0034776806이며, CI [-0.026151966, +0.006778414]로 넓다.** 전체 평균의 양수를 SCALE 일반화 성공으로 바꾸어 해석하지 않는다. [ALT/H](../artifacts/next4/robustness/B1_SPLIT_ENERGY_BRANCHES/RESULTS.json), [SCALE 세부 진단](../artifacts/next4/robustness_forensic/B1_SPLIT_ENERGY_BRANCHES/RESULTS.json)
+
+고정된 원래 fold-0 학습 모델의 합성 검증에서는 V3/V4의 차이가 각각 +0.02717810, +0.04615525이고, heavy-tail 분산 감소 CB_N3_070/050은 +0.02510618, +0.03314206이다. 후자의 0.5 조건 CI는 [+0.02437476, +0.04161967]이다. 반면 X1 혼합 변화는 -0.01436372, D1 의존성 변화는 -0.00387378이다. 이 값들은 같은 학습 범위의 BL80과 비교한 결과이며, all-DEV 학습 B2의 합성 점수와 직접 순위를 매기는 근거가 아니다. [고정 합성 결과](../artifacts/next4/synthetic/candidates/B1_SPLIT_ENERGY_BRANCHES_full_fold0/RESULTS.json)
+
+이상치 기억은 한 방향으로 개선되지 않았다. 고정된 256쌍의 O1 단발 이상치에서는 이후 256점 평균 score excess의 BL80 대비 차이가 **-0.01016352**, CI [-0.01248820, -0.00786581]로 작아졌다. 16점 연속 이상치 OB16에서는 같은 차이가 **+0.01379073**, CI [+0.01219168, +0.01533968]로 커졌다. 마지막 64점 차이는 +0.00269889, CI [-0.00023490, +0.00558594]다. 따라서 B1을 전반적인 이상치 회복 개선 모델이라고 부를 수 없다. [paired 이상치 진단](../artifacts/next4/memory_diagnostics/B1_SPLIT_ENERGY_BRANCHES_full_fold0/PAIRED_OUTLIER_EXCESS.csv)
+
+별도의 고정된 첫 128개 generating seed에 대한 TreeSHAP 진단은 원래 margin 가산성과 cached score를 확인했다. 이 128개 표본은 위 256쌍 통계의 분모와 다르다. 결과는 입력 feature 변화와 score 변화를 설명하는 분해이며, feature를 제거해 재학습한 인과적 ablation이 아니다. [분해 검증](../artifacts/next4/outlier_attribution/B1_SPLIT_ENERGY_BRANCHES_full_fold0/RESULTS.json)
+
+강건성 역할은 원래 SCALE CI 하한 우선순위에 따라 다른 후보의 완료된 근거까지 비교한 뒤 정한다. B1의 통과한 개별 조건과 H-SCALE·반복 이상치 한계를 모두 남긴다. 결과를 본 뒤 문턱, seed, 반례, 혼합 비율을 바꾸지 않는다.

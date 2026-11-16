@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-09-11T18:43:08.123889+00:00",
+  "status": "FROZEN_NEXT5_FINAL_ROLES",
+  "roles": {
+    "FROZEN_PRIMARY": {
+      "experiment_id": "BL2_C205_DEPENDENCE_80",
+      "entry": "next2_shared_performance_main.py",
+      "model_directory": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1",
+      "model_file": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1/model.sbnext2",
+      "model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+      "model_bytes": 68999,
+      "retained_existing_role": true,
+      "new_NEXT5_fit": false,
+      "original_DEV_score_is_historical": true,
+      "original_primary": {
+        "mean": 0.6232684128173095,
+        "median": 0.6216260123520351,
+        "worst_fold": 0.6100084129976436,
+        "fold_scores": [
+          0.628814140424981,
+          0.6371811063970156,
+          0.6216260123520351,
+          0.618712391914872,
+          0.6100084129976436
+        ]
+      },
+      "NEXT5_fresh_raw_training_reproduction_required": false,
+      "scope": "Original primary retained"
+    },
+    "NEXT4_ROBUSTNESS": {
+      "experiment_id": "D2_DISCRETE_SCALE_MIXTURE",
+      "entry": "next4_robustness_main.py",
+      "model_directory": "artifacts/next4/refits/D2_DISCRETE_SCALE_MIXTURE/nominated_all_dev_v1",
+      "model_file": "artifacts/next4/refits/D2_DISCRETE_SCALE_MIXTURE/nominated_all_dev_v1/model.joblib",
+      "model_sha256": "ce04a393a127506291c1d7ee7bff75a11781dac435fc9dee89684a69c754568c",
+      "model_bytes": 275891,
+      "retained_existing_role": true,
+      "new_NEXT5_fit": false,
+      "original_DEV_score_is_historical": true,
+      "original_primary": {
+        "mean": 0.6235961690191665,
+        "median": 0.621325451505788,
+        "worst_fold": 0.6103136378823955,
+        "fold_scores": [
+          0.6288927015007282,
+          0.639007947929381,
+          0.621325451505788,
+          0.6184411062775395,
+          0.6103136378823955
+        ],
+        "mean_delta": 0.00032775620185694355
+      },
+      "NEXT5_fresh_raw_training_reproduction_required": false,
+      "scope": "Original SCALE auxiliary only; not primary and not a repeated-outlier guarantee"
+    }
+  },
+  "new_NEXT5_roles": [],
+  "selected_primary": "FROZEN_PRIMARY",
+  "new_adopted_primary_estimated_increment": 0.0,
+  "increment_interpretation": "No NEXT5 improvement is adopted or claimed; not a new hidden-test estimate",
+  "best_observed_ResearchPool_candidate": "X2_SCALE_TAIL",
+  "best_observed_ResearchPool_mean": 0.6215608600890692,
+  "best_observed_ResearchPool_delta": 0.0011956500192103591,
+  "best_observed_candidate_is_selected": false,
+  "new_generation": false,
+  "B2_role": "Historical exploratory near-miss only, never a deployment champion",
+  "finalist_manifest_sha256": "b3939f97d0b015251bb4304b69939ab6dc7cbecea2705b02e4743917f735ed97",
+  "frozen_reference_receipt_sha256": "b06c2144d3343543e37ea583d22c2e3c826a52d3708538dba0dd782a13e26327",
+  "shadow_status": "CLOSED",
+  "new_seal_rows": 0,
+  "new_reduced_uses": 0,
+  "new_public_submissions": 0,
+  "new_cloud_submissions": 0,
+  "fresh_raw_reproduction": "NOT_REQUIRED_NO_NEW_NEXT5_ROLE",
+  "engineering_audit_and_final_delivery_still_required": true
+}

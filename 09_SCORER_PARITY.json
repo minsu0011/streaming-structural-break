@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "random_cases": 128,
+  "canonical_parity_comparisons": 256,
+  "max_abs_error": 0.0,
+  "tolerance": 1e-12,
+  "official_source_sha256": "c7c95be8b5159d8b932955c62bbfa7a978ab6e847d7637fbbd7d073019585e4b",
+  "official_code_executed": true,
+  "io_only_monkeypatched": true,
+  "raw_official_unsorted_max_delta": 0.13455075615300982,
+  "ordering_policy": "sort (id,time) before both scorers; raw official score() trusts row order",
+  "data_scope": "SYNTHETIC_ENGINEERING_ONLY"
+}

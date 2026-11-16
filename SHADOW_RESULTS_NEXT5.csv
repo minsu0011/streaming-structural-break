@@ -1,0 +1,2 @@
+status,finalists,evaluations,candidate,TS_AUC,delta_vs_BL80,reason
+NOT_EVALUATED_CLOSED,0,0,,,,All 19 full candidates fail the original mean delta >= 0.0012 requirement; M2 failed screen. No rounding or robustness-only exception.

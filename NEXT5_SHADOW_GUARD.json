@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-11T05:05:05.947238+00:00",
+  "research_series": 6400,
+  "shadow_series": 1600,
+  "seal_series": 2000,
+  "blocked_admissions": {
+    "Shadow:training": true,
+    "LOCAL_SEAL:training": true,
+    "Shadow:validation": true,
+    "LOCAL_SEAL:validation": true,
+    "Shadow:feature cache": true,
+    "LOCAL_SEAL:feature cache": true,
+    "Shadow:OOF": true,
+    "LOCAL_SEAL:OOF": true,
+    "Shadow:candidate selection": true,
+    "LOCAL_SEAL:candidate selection": true,
+    "Shadow:bootstrap selection": true,
+    "LOCAL_SEAL:bootstrap selection": true,
+    "Shadow:label access": true,
+    "LOCAL_SEAL:label access": true
+  },
+  "default_loader_scope": "NEXT5_RESEARCH_POOL_ONLY",
+  "shadow_labels_loaded": false,
+  "application_guard_not_OS_sandbox": true,
+  "guard_source_sha256": "e728e39826b512a9a7fb6398e45feb8880cfd580f67590e3f87344c466590bf0",
+  "data_source_sha256": "7242868517871cabd24d66887a31fdf84600d2ce83d4e186b20643778e119ec1",
+  "completed_tests": 56,
+  "finalized_utc": "2026-09-11T05:27:07.470342+00:00",
+  "preflight_sha256": "378415db522106495ab57f5e020f54865e729f8ac1150c580f833c43b4d0c77c",
+  "labels_before_ID_admission_rejected": true
+}

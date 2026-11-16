@@ -1,0 +1,134 @@
+{
+  "status": "FROZEN_NEXT4_DEV_SELECTION",
+  "created_utc": "2026-09-10T18:18:23.961234+00:00",
+  "roles": {
+    "FROZEN_PERFORMANCE": {
+      "experiment_id": "BL2_C205_DEPENDENCE_80",
+      "entry": "next2_shared_performance_main.py",
+      "model_directory": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1",
+      "model_file": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1/model.sbnext2",
+      "model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+      "model_bytes": 68999,
+      "original_primary": {
+        "mean": 0.6232684128173095,
+        "median": 0.6216260123520351,
+        "worst_fold": 0.6100084129976436,
+        "fold_scores": [
+          0.628814140424981,
+          0.6371811063970156,
+          0.6216260123520351,
+          0.618712391914872,
+          0.6100084129976436
+        ]
+      },
+      "delta_vs_session_start": 0.0,
+      "retained_frozen_role": true,
+      "new_fit": false
+    },
+    "NEXT4_ROBUSTNESS": {
+      "experiment_id": "D2_DISCRETE_SCALE_MIXTURE",
+      "entry": "next4_robustness_main.py",
+      "model_directory": "artifacts/next4/refits/D2_DISCRETE_SCALE_MIXTURE/nominated_all_dev_v1",
+      "model_file": "artifacts/next4/refits/D2_DISCRETE_SCALE_MIXTURE/nominated_all_dev_v1/model.joblib",
+      "model_sha256": "ce04a393a127506291c1d7ee7bff75a11781dac435fc9dee89684a69c754568c",
+      "model_bytes": 275891,
+      "original_primary": {
+        "mean": 0.6235961690191665,
+        "median": 0.621325451505788,
+        "worst_fold": 0.6103136378823955,
+        "fold_scores": [
+          0.6288927015007282,
+          0.639007947929381,
+          0.621325451505788,
+          0.6184411062775395,
+          0.6103136378823955
+        ],
+        "mean_delta": 0.00032775620185694355
+      },
+      "paired_all_time": {
+        "estimate_mean_delta": 0.00032775620185698795,
+        "bootstrap_mean_delta": 0.0003147415121916414,
+        "bootstrap_median_delta": 0.0003085262061808258,
+        "ci_2_5": -0.0002732549352961494,
+        "ci_97_5": 0.0009092635580546484,
+        "probability_delta_positive": 0.8545,
+        "estimate_median_of_folds_delta": -0.0003005608462470777,
+        "median_of_folds_delta_ci_2_5": -0.0014635920496865768,
+        "median_of_folds_delta_ci_97_5": 0.00222441217928085,
+        "replicates": 2000
+      },
+      "paired_SCALE": {
+        "candidate": "D2_DISCRETE_SCALE_MIXTURE",
+        "reference": "BL2_C205_DEPENDENCE_80",
+        "scope": "mechanism_SCALE_DOMINANT",
+        "candidate_mean": 0.7857069343899911,
+        "reference_mean": 0.7767711061756154,
+        "candidate_median": 0.7835649090011478,
+        "candidate_worst": 0.747813563275585,
+        "supported": true,
+        "break_series": 132,
+        "null_series": 4056,
+        "points": 2087825,
+        "estimate_mean_delta": 0.008935828214375663,
+        "bootstrap_mean_delta": 0.008924385268276299,
+        "bootstrap_median_delta": 0.008845012625578685,
+        "ci_2_5": 0.005362693965775369,
+        "ci_97_5": 0.012762924906609895,
+        "probability_delta_positive": 1.0,
+        "estimate_median_of_folds_delta": 0.004132401140517938,
+        "median_of_folds_delta_ci_2_5": -0.0008179304062397668,
+        "median_of_folds_delta_ci_97_5": 0.01847708186794318,
+        "replicates": 2000
+      },
+      "canonical_reference_reused": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1",
+      "direct_runtime_median_ratios": {
+        "ten_million_ratio": 1.8760807062020808,
+        "scalar_median_ratio": 1.8840579710144927,
+        "amortized_ratio": 1.678413980429725
+      },
+      "original_primary_performance_gate_passed": false,
+      "fresh_raw_reproduction_required_in_separate_audit": true,
+      "scope": "Supported SCALE robustness role only; not a new primary performance champion or generation."
+    }
+  },
+  "role_count": 2,
+  "maximum_roles": 4,
+  "primary_champion": "BL2_C205_DEPENDENCE_80",
+  "primary_score": 0.6232684128173095,
+  "primary_delta_vs_session_start": 0.0,
+  "new_performance_promotion": false,
+  "new_generation": false,
+  "robustness_role_nominated_for_final_audit": true,
+  "session_outcome": "NEXT4_ROBUSTNESS_ONLY_NO_PERFORMANCE_PROMOTION",
+  "final_audit_completion_claimed": false,
+  "deployment_release_requires_final_audit_PASS": true,
+  "best_exploratory": {
+    "candidate": "B2_LOG_ENERGY_SEMITAIL",
+    "mean": 0.6245720862584431,
+    "delta": 0.0013036734411336682,
+    "not_selected_reason": "Original primary paired CI lower endpoint is negative. No ALT, runtime or synthetic override."
+  },
+  "unfilled_roles": [
+    "NEXT4_PERFORMANCE",
+    "NEXT4_EXPERIMENTAL_GENERATION"
+  ],
+  "runtime_rejections": [],
+  "evidence_sha256": {
+    "artifacts/next4/gate_reviews/research_final/RESULTS.json": "c9a77928ae683588a640727def8c39d32fa7c4e97514ef2eb01981f11fb0bff9",
+    "docs/NEXT4_FINAL_TRANSFER_REVIEW.md": "eff604080f0a33afff03f0b62358bf9ea9d72f81924e54ff4b7ede6938457bf5",
+    "artifacts/next4/preflight/FROZEN_REFERENCES.json": "e2b0fe6e22d5f8a7832dd0892aa53069744774fcef6fd163a9eecae6c5fb3230",
+    "artifacts/next4/synthetic/candidates/D2_DISCRETE_SCALE_MIXTURE_all_dev/RESULTS.json": "468ceede40ad1927c70822afa56eb34ac13eb1fd7fc0a52e0873429d5232c41c",
+    "artifacts/next4/refits/D2_DISCRETE_SCALE_MIXTURE/nominated_all_dev_v1/RESULTS.json": "ae9e922c2b1a96dd90e82e23594d4fa56dd430c7a9292589f4841a14bb58d1d3",
+    "artifacts/next4/finalist_validation/D2_DISCRETE_SCALE_MIXTURE/API_D2_DISCRETE_SCALE_MIXTURE/RESULTS.json": "3dbcdd1cf9c1fbfb52aeb7ba1b9e68cd53fb08706cf8d4dd3397c0304839e436",
+    "artifacts/next4/finalist_validation/D2_DISCRETE_SCALE_MIXTURE/COLD/RESULTS.json": "ae97bc680536484bbfa377967ae7db4433c1970522524a78519685818b64651d",
+    "artifacts/next4/latency/D2_DISCRETE_SCALE_MIXTURE_DIRECT/RESULTS.json": "1104ce4f53293fc5204599cb718bd6304503b5c382c7e9a325166c166e15dddf",
+    "artifacts/next4/experiments/D2_DISCRETE_SCALE_MIXTURE/full/RESULTS.json": "a52b9dd371958441be1ed6168822795fa82373485ff6504c09c8de10aed54859",
+    "artifacts/next4/bootstrap/D2_DISCRETE_SCALE_MIXTURE/RESULTS.json": "a94375a94f9fcb538cb7cafbed85b324fcee0504f4d9248efdce0c2c9123741f",
+    "artifacts/next4/forensic/D2_DISCRETE_SCALE_MIXTURE/RESULTS.json": "e47659be70c087a058b5d49824ec84920055f7eff887582880108ebd3a377cba"
+  },
+  "source_sha256": "4686912804193aec1cd04aacbad2fcd9b29236b603221e64f1b8bd572dbf3fc7",
+  "all_seals_unopened": true,
+  "new_reduced_usage": 0,
+  "new_public_submission": 0,
+  "new_cloud_submission": 0
+}

@@ -1,0 +1,15 @@
+{
+  "status": "FROZEN_BEFORE_NEXT5_SCORES",
+  "created_utc": "2026-09-11T05:02:10.810012+00:00",
+  "model_seed": 20260908,
+  "bootstrap_seed_base": 20260908,
+  "bootstrap_seed_rule": "base + frozen fold index",
+  "bootstrap_replicates": 2000,
+  "prefix_seed": 20260908,
+  "label_permutation_seed": 20260908,
+  "pair_sampling_seed": 20260908,
+  "synthetic_seed": 2026090902,
+  "shadow_allocation_salt": "StructuralBreak_NEXT5_prospective_shadow_v1_20260911",
+  "new_seed_or_reseed_after_score_permitted": false,
+  "synthetic_protocol": "Keep original NEXT4 fixed DGP seeds and parameters; training scope will be ResearchPool only."
+}

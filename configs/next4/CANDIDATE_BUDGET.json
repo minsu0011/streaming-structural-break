@@ -1,0 +1,12 @@
+{
+  "status": "FROZEN_BEFORE_NEXT4_SCORES",
+  "created_utc": "2026-09-10T11:54:27.490772+00:00",
+  "major_families_max": 8,
+  "new_full_candidates_max": 24,
+  "named_slots": 18,
+  "per_family_default_max": 4,
+  "candidate_identity": "One frozen model/feature/learner/prediction-combination recipe; every separately selected blend or learner is a candidate.",
+  "standalone_diagnostic_not_separately_selectable": true,
+  "fit_count_separate": "Every attempted/completed training operation is recorded; cache reuse is zero new fits.",
+  "family_lock_sha256": "cd7a80fbe01828508ea0529c8ed7bd8bbbf4330f1bb235577af2610b69b0374e"
+}

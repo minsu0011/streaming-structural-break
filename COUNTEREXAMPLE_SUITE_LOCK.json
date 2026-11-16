@@ -1,0 +1,278 @@
+{
+  "version": "NEXT2_COUNTEREXAMPLES_V1",
+  "created_utc": "2026-09-09T07:58:58.185041+00:00",
+  "seed": 2026090902,
+  "rng": "numpy PCG64 SeedSequence([seed, partition, scenario ordinal, series index])",
+  "historical_length": 2048,
+  "burn_in": 1024,
+  "online_length": 1024,
+  "tau_cycle": [
+    128,
+    256,
+    512
+  ],
+  "calibration_null_series_per_regime": 1000,
+  "evaluation_series_per_scenario": 512,
+  "partitions": {
+    "calibration": 0,
+    "counterexamples": 1,
+    "long_null": 2
+  },
+  "variance_factor_means": "multiply stationary innovation variance; multiply innovations by sqrt(factor), not factor",
+  "ar_scaling": "innovation long-run variance = 1-phi^2 so AR stationary marginal variance is 1 before interventions",
+  "arch_scaling": "omega=(1-alpha)*(1-phi^2)*variance_factor, carry state through transition",
+  "student_t": "unit variance standardization sqrt((df-2)/df)",
+  "outlier": "at scheduled tau add alternating sign 20 stationary SD, labels remain null",
+  "scenarios": [
+    {
+      "id": "N0",
+      "description": "Gaussian null",
+      "phi_before": 0.0,
+      "phi_after": 0.0,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "N1",
+      "description": "AR null",
+      "phi_before": 0.6,
+      "phi_after": 0.6,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "N2",
+      "description": "ARCH null",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.65,
+      "arch_after": 0.65,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "N3",
+      "description": "heavy-tail null",
+      "phi_before": -0.4,
+      "phi_after": -0.4,
+      "arch_before": 0.4,
+      "arch_after": 0.4,
+      "t_df_before": 5,
+      "t_df_after": 5,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "M1",
+      "description": "mean increase",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.5
+    },
+    {
+      "id": "M2",
+      "description": "mean decrease",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": -0.5
+    },
+    {
+      "id": "V1",
+      "description": "variance increase x1.5",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.65,
+      "arch_after": 0.65,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.5,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "V2",
+      "description": "variance increase x2",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.65,
+      "arch_after": 0.65,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 2.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "V3",
+      "description": "variance decrease x0.7",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.65,
+      "arch_after": 0.65,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 0.7,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "V4",
+      "description": "variance decrease x0.5",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.65,
+      "arch_after": 0.65,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 0.5,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "A1",
+      "description": "ARCH persistence increase",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.2,
+      "arch_after": 0.85,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "A2",
+      "description": "ARCH persistence decrease",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.85,
+      "arch_after": 0.2,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "T1",
+      "description": "Gaussian to Student t3",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": 3,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "T2",
+      "description": "Student t3 to Gaussian",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": 3,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "D1",
+      "description": "positive autocorrelation change",
+      "phi_before": 0.0,
+      "phi_after": 0.6,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "D2",
+      "description": "autocorrelation sign reversal",
+      "phi_before": 0.6,
+      "phi_after": -0.6,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "O1",
+      "description": "single giant outlier, no persistent break",
+      "phi_before": 0.3,
+      "phi_after": 0.3,
+      "arch_before": 0.0,
+      "arch_after": 0.0,
+      "t_df_before": null,
+      "t_df_after": null,
+      "variance_factor": 1.0,
+      "mean_shift_stationary_sd": 0.0
+    },
+    {
+      "id": "X1",
+      "description": "variance decrease and dependence",
+      "phi_before": 0.2,
+      "phi_after": 0.7,
+      "arch_before": 0.4,
+      "arch_after": 0.4,
+      "t_df_before": 5,
+      "t_df_after": 5,
+      "variance_factor": 0.5,
+      "mean_shift_stationary_sd": 0.0
+    }
+  ],
+  "variance_direction_backgrounds": [
+    "Gaussian(phi=0,alpha=0)",
+    "AR(phi=.6,alpha=0)",
+    "ARCH(phi=.3,alpha=.65)",
+    "heavy(phi=-.4,alpha=.4,t5)"
+  ],
+  "long_null": {
+    "horizons": [
+      1024,
+      4096,
+      16384
+    ],
+    "series_per_regime": 512,
+    "regimes": [
+      "N0",
+      "N1",
+      "N2",
+      "N3"
+    ],
+    "quantiles": [
+      0.5,
+      0.9,
+      0.95,
+      0.99,
+      0.999
+    ],
+    "threshold_alphas": [
+      0.01,
+      0.05
+    ],
+    "rule": "strict > split-conformal order statistic of disjoint 1024-point calibration maxima; no retuning by horizon"
+  },
+  "models": "frozen all-DEV J102/Y001/B104 plus explicitly identified new all-DEV finalists; never mix fold-0 and all-DEV claims",
+  "diagnostic_only": true
+}

@@ -1,0 +1,9 @@
+# Ranking objective rationale
+
+TS-AUC compares positive and negative series at the same absolute online time. The official evaluation weights time-specific AUCs by their positive-negative pair counts. All NEXT evaluation and whole-series bootstrap calculations use that exact score after float32 prediction conversion.
+
+Weighted binary loss (W3) gives each training row its opposite-class count at the same training time. The sampled RankNet objectives use 8 or 32 negatives per positive, with inverse sampling weights. The new histogram objective groups current training margins into 64 or 128 cells within each time and computes positive-negative centroid interactions. This approximates the all-pairs logistic gradient while avoiding a quadratic pair matrix. It is exact for common margins and for noncolliding score cells; separate tests compare it with explicit pair enumeration. The optimized objective is a surrogate, not an exact derivative of AUC.
+
+LightGBM's built-in ranking API accepts query sizes through `group`. Its ranking losses target NDCG-related objectives, so the fixed `rank_xendcg` and truncated LambdaRank experiments are exploratory and judged solely by actual DEV TS-AUC. A binary model with the same query-sorted training order is included as a control. See the [official LGBMRanker API](https://lightgbm.readthedocs.io/en/stable/pythonapi/lightgbm.LGBMRanker.html) and [official parameter definitions](https://github.com/lightgbm-org/LightGBM/blob/main/docs/Parameters.rst).
+
+No validation target, validation prevalence, seal row, reduced data or leaderboard result defines training queries, pair weights or gradients. Ranking forests are exported as raw margins followed by a fixed sigmoid for the required score range; this is a monotone link, not posterior calibration. Native/compact prediction parity is tested. Only the compact forest and native booster are persisted, excluding the large temporary training-pair objects.

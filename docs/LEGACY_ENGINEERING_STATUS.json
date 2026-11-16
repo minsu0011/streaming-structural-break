@@ -1,0 +1,43 @@
+{
+  "status": "BLOCKED_AUTH",
+  "timestamp": "2026-09-07T17:22:45.681128+00:00",
+  "git_commit": "28f7b39fe01977da07742c3b87a3631345b61485",
+  "competition": "structural-break-real-time",
+  "competition_data_acquired": false,
+  "series_count": null,
+  "break_ratio": null,
+  "scorer_parity": "PASS",
+  "leakage_guard": "PASS",
+  "tests_passed": 68,
+  "feature_count": 57,
+  "feature_families": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "Q_missing_flag"
+  ],
+  "supervised_models_engineering_tested": [
+    "M1_logistic",
+    "M2_ridge",
+    "M3_histgb",
+    "M4_lightgbm",
+    "M5_xgboost"
+  ],
+  "competition_cv_performed": false,
+  "champion": null,
+  "seal_opened": false,
+  "seal_ids_allocated": false,
+  "reduced_scored_uses": 0,
+  "determinism": "PASS_SYNTHETIC_PROTOCOL",
+  "official_protocol_smoke": "PASS_SYNTHETIC",
+  "full_official_runner_smoke": "PASS_SYNTHETIC_SUBPROCESS",
+  "authenticated_crunch_tools_test": "NOT_RUN_AUTH_REQUIRED",
+  "submitted": false,
+  "requested_run_hours": 10,
+  "ten_hour_real_data_research_completed": false,
+  "limitation": "Autonomous foundation work completed within available unauthenticated scope; real-data experiments cannot proceed without a valid Crunch setup.",
+  "elapsed_minutes_at_handoff": 45.981387166666664
+}

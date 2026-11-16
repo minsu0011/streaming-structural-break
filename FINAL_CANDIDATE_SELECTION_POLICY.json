@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-09-08T09:03:00.492674+00:00",
+  "status": "POLICY_FROZEN_DURING_DEV_RESEARCH_BEFORE_FINAL_DIAGNOSTICS",
+  "primary": "The promoted candidate under the existing median +0.001, worst loss <=0.002, and latency gate; no reduced or seal selection.",
+  "backup_robust": "Among other completed candidates with mean >= primary mean -0.005 and median >= primary median -0.005, maximize worst-fold TS-AUC, then minimize fold standard deviation.",
+  "backup_fast": "Among other completed candidates with mean >= primary mean -0.010 and worst >= primary worst -0.010, shortlist at most five by existing native latency. Select lowest measured isolated production latency; report the score sacrifice explicitly.",
+  "eligibility": "All five frozen folds complete, deterministic serialized predictor, deployable supported contract; no partial-fold selection.",
+  "selection_uncertainty": "Adaptive DEV selection among many candidates; group bootstrap is conditional on selected OOF predictions and does not correct selection bias.",
+  "fallback": "If a distinct robust or fast candidate does not qualify, record none instead of inventing a backup.",
+  "maximum_candidates": 3,
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_scores_consulted": false,
+  "latency_evidence_clarification": {
+    "timestamp": "2026-09-08T09:57:28.909694+00:00",
+    "document": "docs/PRODUCTION_LATENCY_POLICY_UPDATE.md",
+    "meaning": "Use the best numerically verified production path for each candidate when shortlisting fast backups, including compact/fused XGBoost. Existing score gates and score tolerance thresholds are unchanged."
+  }
+}

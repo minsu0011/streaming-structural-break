@@ -1,0 +1,304 @@
+{
+  "status": "FROZEN_DEV_SELECTION",
+  "created_utc": "2026-09-09T05:34:25.412946+00:00",
+  "clock": {
+    "created_utc": "2026-09-09T05:34:24.235242+00:00",
+    "research_elapsed_seconds": 44663.2953097,
+    "minimum_research_seconds": 36000,
+    "minimum_research_met": true,
+    "remaining_research_seconds": 0.0,
+    "final_audit_started": true,
+    "final_audit_elapsed_seconds": 26.325536999998803,
+    "handoff_time_gate_pass": false
+  },
+  "roles": {
+    "PRIMARY_DEV_CANDIDATE": "J102_SERIAL_VARIANCE_512",
+    "ROBUST_DEV_CANDIDATE": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+    "FAST_DEV_CANDIDATE": "F101_VARIANCE_TREES50"
+  },
+  "candidates": [
+    {
+      "role": "PRIMARY_DEV_CANDIDATE",
+      "experiment_id": "J102_SERIAL_VARIANCE_512",
+      "candidate": {
+        "experiment_id": "J102_SERIAL_VARIANCE_512",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": 18,
+        "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+        "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+        "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+        "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+        "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "serial_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "serial_variance__raw_energy_current",
+          "serial_variance__raw_energy_ewma8",
+          "serial_variance__raw_energy_ewma32",
+          "serial_variance__raw_energy_ewma128",
+          "serial_variance__raw_energy_cusum_positive",
+          "serial_variance__raw_energy_cusum_negative",
+          "serial_variance__raw_energy_glr_max",
+          "serial_variance__raw_energy_glr_logmean",
+          "serial_variance__raw_energy_glr_logage",
+          "serial_variance__raw_energy_bayes025",
+          "serial_variance__raw_energy_bayes1",
+          "serial_variance__raw_energy_memory_max",
+          "serial_variance__raw_energy_memory_decay",
+          "serial_variance__log_variance_forecast_current",
+          "serial_variance__log_variance_forecast_ewma8",
+          "serial_variance__log_variance_forecast_ewma32",
+          "serial_variance__log_variance_forecast_ewma128",
+          "serial_variance__log_variance_forecast_cusum_positive",
+          "serial_variance__log_variance_forecast_cusum_negative",
+          "serial_variance__log_variance_forecast_glr_max",
+          "serial_variance__log_variance_forecast_glr_logmean",
+          "serial_variance__log_variance_forecast_glr_logage",
+          "serial_variance__log_variance_forecast_bayes025",
+          "serial_variance__log_variance_forecast_bayes1",
+          "serial_variance__log_variance_forecast_memory_max",
+          "serial_variance__log_variance_forecast_memory_decay"
+        ],
+        "extension_registration": {
+          "kind": "serial_variance",
+          "module": "serial_variance_evidence"
+        },
+        "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+      },
+      "primary_cv_mean": 0.62163175031248,
+      "median": 0.6214373863953904,
+      "worst_fold": 0.6101464788170321,
+      "fold_scores": [
+        0.625548994582903,
+        0.6353471840978637,
+        0.6214373863953904,
+        0.6156787076692104,
+        0.6101464788170321
+      ],
+      "new_generation_seal_worthy": true,
+      "model_sha256": "dbce67d2cf6a89bfa8544780b784fd643212a5141726e8c503870d26b1b605ab",
+      "descriptor_sha256": "876d4853345ce07541f7259842012942ce0b9fee45e3c7c5efe97ccc2be57f84",
+      "source_model_directory": "artifacts/next/refits/J102_SERIAL_VARIANCE_512/cache_research_v1",
+      "entrypoint": "next_serial_main.py",
+      "runtime": "serial_variance_fast_h",
+      "specification": "configs/next_roles/PRIMARY_DEV_CANDIDATE.json",
+      "engineering_report_sha256": "a86454cdfc1eaec84bad510bfcd56082e4fe0025d689af4637f5c39c83205d5e",
+      "delivery_model_directory": "artifacts/next/deployment/final/PRIMARY_DEV_CANDIDATE",
+      "delivery_descriptor_sha256": "ff530ac467fc34cc84f006a94d525acf74c65df7341f43640dfbc34ff934c7ca",
+      "final_training_report": "artifacts/next/final_training/PRIMARY_DEV_CANDIDATE/RESULTS.json"
+    },
+    {
+      "role": "ROBUST_DEV_CANDIDATE",
+      "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+      "candidate": {
+        "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": 17,
+        "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+        "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+        "change": "Remove explicit GLR and GLR memory features; retain local and Bayes evidence.",
+        "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+        "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1"
+        ]
+      },
+      "primary_cv_mean": 0.6214890347069302,
+      "median": 0.6201193885482584,
+      "worst_fold": 0.6114405720853687,
+      "fold_scores": [
+        0.6236246865642514,
+        0.6329773184495837,
+        0.6192832078871886,
+        0.6201193885482584,
+        0.6114405720853687
+      ],
+      "new_generation_seal_worthy": true,
+      "model_sha256": "56390986dfd3f4577b36bc316fed983cdb8924634e390b41341baf6d4d360c1e",
+      "descriptor_sha256": "e4e494177aa46781ae4a909644090f0560c01370b9e35b8e27369b61194f4b26",
+      "source_model_directory": "artifacts/next/refits/B104_LONG_VARIANCE_NO_GLR_MEMORY/cache_research_v1",
+      "entrypoint": "next_readonly_main.py",
+      "runtime": "pruned_variance_fast_h",
+      "specification": "configs/next_roles/ROBUST_DEV_CANDIDATE.json",
+      "engineering_report_sha256": "604151dd3bf61c6b0f6e35b47e1d322410b51699f6c5ae09bf4688d76ebbdf9f",
+      "delivery_model_directory": "artifacts/next/deployment/final/ROBUST_DEV_CANDIDATE",
+      "delivery_descriptor_sha256": "2168cd55d1c9bbfe022b98f75ca42bafdba2493febe79be0821b67c0d25b8219",
+      "final_training_report": "artifacts/next/final_training/ROBUST_DEV_CANDIDATE/RESULTS.json"
+    },
+    {
+      "role": "FAST_DEV_CANDIDATE",
+      "experiment_id": "F101_VARIANCE_TREES50",
+      "candidate": {
+        "experiment_id": "F101_VARIANCE_TREES50",
+        "parent_id": "V007_VARIANCE_FORECAST",
+        "generation": 13,
+        "phase": "VARIANCE_TREE_BUDGET",
+        "hypothesis": "The two-channel variance improvement may permit a smaller tree ensemble while retaining most of its DEV gain.",
+        "change": "Only n_estimators changes from 100 to 50; exact same 77 features, H model, W3 weights and tree structure constraints.",
+        "expected_effect": "Reduce scalar tree prediction cost and artifact size.",
+        "risks": "Underfitting may reduce mean or collapse a fold. The fixed screen and every NEXT promotion gate remain unchanged.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {
+          "n_estimators": 50
+        },
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 128
+          }
+        },
+        "extension_frozen_hash": "b2d93cefaec8a10223f0ff5b1d95e9249cf9cfdc262b5acba97715561fce9f05",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ]
+      },
+      "primary_cv_mean": 0.6171824646565767,
+      "median": 0.6178571134418307,
+      "worst_fold": 0.6072673445305061,
+      "fold_scores": [
+        0.6209064077902702,
+        0.6280194158844881,
+        0.6178571134418307,
+        0.6118620416357886,
+        0.6072673445305061
+      ],
+      "new_generation_seal_worthy": true,
+      "model_sha256": "da8fc92233c6802704e3706c2c6881e6a701c961a8fd52804467e4ba6cd2da29",
+      "descriptor_sha256": "efc6c99738c756b4fe372a646795ec41713d33d1376f21026af18a9a3b0e80ad",
+      "source_model_directory": "artifacts/next/refits/F101_VARIANCE_TREES50/cache_research_v1",
+      "entrypoint": "next_readonly_main.py",
+      "runtime": "pruned_variance_fast_h",
+      "specification": "configs/next_roles/FAST_DEV_CANDIDATE.json",
+      "engineering_report_sha256": "03fcf2feb4c754cf299a9efb05c7f928888fc4bd16cc8524597d29e49c831c23",
+      "delivery_model_directory": "artifacts/next/deployment/final/FAST_DEV_CANDIDATE",
+      "delivery_descriptor_sha256": "6a8a3d8749c1917c733cec382980bb9a0ec4746cde5533663bfc450fbea3a5fd",
+      "final_training_report": "artifacts/next/final_training/FAST_DEV_CANDIDATE/RESULTS.json"
+    }
+  ],
+  "substantive_research_seconds": 36903.78548599999,
+  "substantive_research_report_sha256": "a044ca1b2b8f2c76ee82c5270894007f8d0f343fecb7dcc232878488f2d87281",
+  "maximum_final_candidates": 3,
+  "role_policy_sha256": "994aef28253ff0e33fa1eb0385951ec08ef722706a3df17aa13b02dc453f5cfb",
+  "evidence_snapshot": "artifacts\\next\\evidence_snapshots\\final_audit_v1",
+  "evidence_snapshot_sha256": "380b71c1b51d73e6ef3b58bd08f0909c3b09138380ed0c41e9976e8ba8bdeb17",
+  "specification_files_sha256": {
+    "configs/next_roles/PRIMARY_DEV_CANDIDATE.json": "cad96347e183a26d94618bae7a6ec5fd84ab6fb824a6506c461206c86bb2b7e8",
+    "configs/next_serial_deployment.json": "cad96347e183a26d94618bae7a6ec5fd84ab6fb824a6506c461206c86bb2b7e8",
+    "configs/next_roles/ROBUST_DEV_CANDIDATE.json": "95fd03c6a4c49ba28e811cf13f280973eb46dc94ee73faa6b7434c965962dac7",
+    "configs/next_deployment.json": "95fd03c6a4c49ba28e811cf13f280973eb46dc94ee73faa6b7434c965962dac7",
+    "configs/next_roles/FAST_DEV_CANDIDATE.json": "9ecd8b0160bf8e1a36a396945fa9e3343b2d598d1c135aa529233f1a74a781fc"
+  },
+  "selector_sha256": "00470d027940551e2396e8c507fbf51610f48a24d7097f777ea801f898bef0bd",
+  "seal_opened": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false
+  },
+  "reduced_new_uses": 0,
+  "public_submissions": 0,
+  "selection_uncertainty": "Conditional on adaptively searched DEV; no independent seal evaluation or post-selection coverage claim.",
+  "frozen_selection_report_sha256": "d29e0275f366033b3514687d6efa9732a5bd1da92cbc699cf6954173b5287bb4",
+  "delivery_note": "Roles and weights remain frozen; delivery paths reference exact raw-iterator reproductions."
+}

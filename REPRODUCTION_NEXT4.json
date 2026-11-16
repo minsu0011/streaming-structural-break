@@ -1,0 +1,127 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-10T19:06:46.568718+00:00",
+  "audit_started_utc": "2026-09-10T18:18:24.789125+00:00",
+  "new_seal_rows": 0,
+  "new_promoted_candidate": "D2_DISCRETE_SCALE_MIXTURE",
+  "fresh_raw_training": {
+    "status": "PASS",
+    "created_utc": "2026-09-10T18:40:16.729249+00:00",
+    "candidate": "D2_DISCRETE_SCALE_MIXTURE",
+    "new_fits": 1,
+    "training": {
+      "training_scope": "ALL_DEV_8000_NOMINATED_ROBUSTNESS",
+      "training_series": 8000,
+      "training_rows": 4014405,
+      "validation_rows": 0,
+      "validation_series": 0,
+      "new_fits": 1,
+      "frozen_base_new_fits": 0,
+      "feature_count": 36,
+      "retained_columns": 36,
+      "weighting": "W3",
+      "weight_statistics_training_only": true,
+      "native_compact_max_abs_difference": 0.0,
+      "seal_rows": 0,
+      "fresh_raw_reproduction": true,
+      "real_in_sample_quality_score_computed": false
+    },
+    "nomination_sha256": "d7bd160b5725e3c30972a79f7989ea8445e361cb92a3cf0f6c07cdb5b0d62094",
+    "registration_sha256": "658e08ebd9297becb67e6b995fc9a7abb032475033b1e7461e76b7d944782761",
+    "all_DEV_prediction_sha256": "41db49e451e161f9e6ec925c03ac3b77acfa41ffc7ad77d08c9dd9a1793a9e5f",
+    "prediction_points": 4014405,
+    "all_DEV_series": 8000,
+    "save_load_all_DEV_exact": true,
+    "scalar_batch_exact_series": 20,
+    "frozen_base_new_fits": 0,
+    "seal_rows": 0,
+    "fresh_raw_reproduction": true,
+    "fresh_raw_feature_and_inference_exact": true,
+    "quality_selection_uses_original_heldout_scores_only": true,
+    "real_in_sample_quality_score_computed": false,
+    "cache_identity": {
+      "candidate_id": "D2_DISCRETE_SCALE_MIXTURE",
+      "scope": "full",
+      "feature_config": {
+        "version": "discrete_likelihood_v1",
+        "kind": "scale_mixture"
+      },
+      "raw_sha256": {
+        "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+        "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+      },
+      "feature_source_sha256": "835ea9b79072435bccda4840d1625999b5ae37122ac684b478788f5c7639b284",
+      "cache_source_sha256": "3d4288a08ca7f852b975d4321d2b66363293ddda4dca28e18308ced333b9aa6c",
+      "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+      "seal_lock_sha256": "8f166eefb4d4bde3523681167f54b42c9e0c4f54b8606ad1e30eb805d8faac55",
+      "global_rows_sha256": "9bad44255c2d5f0be879632856d56163e5f2bcb2fc30873fea99bcb95f0ddea5",
+      "registration_sha256": "658e08ebd9297becb67e6b995fc9a7abb032475033b1e7461e76b7d944782761"
+    },
+    "raw_sha256_checked_for_reproduction": {
+      "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+      "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+    },
+    "files_sha256": {
+      "model.joblib": "929b4efdf740f532c83505e82fe148a668b57889a4a7ae91fa10182d31e97fd8"
+    }
+  },
+  "frozen_model_refitted": false,
+  "B2_cached_diagnostic_refit_is_fresh_raw_reproduction": false,
+  "copied_raw_free_inference_validation": {
+    "status": "PASS",
+    "created_utc": "2026-09-10T18:53:00.771317+00:00",
+    "records": [
+      {
+        "model": "BL80",
+        "fresh_copied_payload_process": true,
+        "matching_existing_prediction_sha256": "869f7bfea4565ecedf4846b16d9b7a1ea34529db0a649ef2aa3f53e2c782eca0",
+        "worker_result_sha256": "abb62368a860e154b1b1e721883d2161f97b987b9db6cdff9f265d90e1a1f2d5",
+        "reference_result_sha256": "5dafc6a17eeae0815d4ca1238da7ed522be6a83fd136c24cab42e0f55f7023b7",
+        "source_script_sha256": "dc227d1fb2afd646be8410f00c857ec895fb217b5f2fc60904a6ace2910d9b7c",
+        "new_fits": 0
+      },
+      {
+        "model": "B2",
+        "fresh_copied_payload_process": true,
+        "matching_existing_prediction_sha256": "36741348a661af08613a520a0d8c7b8e82d4618f1d5be9cf9a48b5a56cd7df84",
+        "worker_result_sha256": "09288a26c6e3c9178d299ed0a88356e13a32e8a7b752dc74af34bac94619b2db",
+        "reference_result_sha256": "d9cef06907aeae406a9000a68a3bd73599a1ac5665522a4a72f9a0f5924e3ce9",
+        "source_script_sha256": "2ac27b9c601cc8c4d8aa7f632fe93b8dc14439885133e5174a6dfaebecb8bdad",
+        "new_fits": 0
+      },
+      {
+        "model": "D2_DISCRETE_SCALE_MIXTURE",
+        "fresh_copied_payload_process": true,
+        "matching_existing_prediction_sha256": "26c83904f8e9a8482b59126d5ed61ec5b860ac829a770016045e86d7b751906a",
+        "worker_result_sha256": "3eea81e36647c24380d837ce6aeff610a82d8cca0ae13322320c5fecc1836496",
+        "reference_result_sha256": "3231d54c30fa2eaed1d377c252f2798dba17ebd739016e97b9f3e5fc960085a4",
+        "source_script_sha256": "4faa79084a3cc73a3858a8b9385f6bc8bc3c51df5cc689c2c7f6b4bf3fd72684",
+        "new_fits": 0
+      }
+    ],
+    "copied_files": 7708,
+    "copy_manifest_sha256": "61cad8fd38a73bff0d456814f0ed659a32a4387677f2c78d21e034402ff68713",
+    "all_copied_file_sha256_verified": true,
+    "raw_competition_data_present": false,
+    "separate_source_and_model_directory": true,
+    "fresh_Python_processes": 3,
+    "original_pinned_interpreter_environment_reused": true,
+    "new_environment_installation": false,
+    "fresh_raw_training_reproduction": false,
+    "new_fits": 0,
+    "real_or_seal_rows": 0,
+    "scope": "Moved source/model inference replay with synthetic fixed observations and original exact pinned environment. This is not an independent raw-to-training reproduction.",
+    "source_sha256": "e5f503d304803379ac56b440924682bd0ea332c072a5adc81a2690a9c94b5214",
+    "files_sha256": {
+      "B2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "B2_cold.json": "09288a26c6e3c9178d299ed0a88356e13a32e8a7b752dc74af34bac94619b2db",
+      "BL80.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "BL80_cold.json": "abb62368a860e154b1b1e721883d2161f97b987b9db6cdff9f265d90e1a1f2d5",
+      "COPY_MANIFEST.json": "61cad8fd38a73bff0d456814f0ed659a32a4387677f2c78d21e034402ff68713",
+      "D2_DISCRETE_SCALE_MIXTURE.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "D2_DISCRETE_SCALE_MIXTURE_cold.json": "3eea81e36647c24380d837ce6aeff610a82d8cca0ae13322320c5fecc1836496"
+    }
+  },
+  "independent_environment_installed": false,
+  "interpretation": "A promoted robustness artifact has exact raw->new feature->same training->inference reproduction; without a new role no redundant frozen refit is required."
+}

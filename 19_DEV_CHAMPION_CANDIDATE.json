@@ -1,0 +1,263 @@
+{
+  "status": "FROZEN_FOR_FINAL_DIAGNOSTICS",
+  "timestamp": "2026-09-08T14:26:36.372485+00:00",
+  "primary_id": "M7_cross_order_AR4_LGB_AR8_HGB_equal",
+  "robust_id": "M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae",
+  "fast_shortlist": [
+    "M4_lightgbm_ABCD_S3_122668fc55e8",
+    "M3_histgb_ABCD_S3_29d6e9efea0a",
+    "M4_lightgbm_ABCD_S3_7c139a8d06f3",
+    "M4_lightgbm_ABCD_S3_94b82a2579da",
+    "M3_histgb_ABCD_S3_b66ff8b9551e"
+  ],
+  "benchmark_candidates": [
+    "M7_cross_order_AR4_LGB_AR8_HGB_equal",
+    "M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae",
+    "M4_lightgbm_ABCD_S3_122668fc55e8",
+    "M3_histgb_ABCD_S3_29d6e9efea0a",
+    "M4_lightgbm_ABCD_S3_7c139a8d06f3",
+    "M4_lightgbm_ABCD_S3_94b82a2579da",
+    "M3_histgb_ABCD_S3_b66ff8b9551e"
+  ],
+  "benchmark_modes": {
+    "M7_cross_order_AR4_LGB_AR8_HGB_equal": "fused",
+    "M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae": "fused",
+    "M4_lightgbm_ABCD_S3_122668fc55e8": "fused",
+    "M3_histgb_ABCD_S3_29d6e9efea0a": "fused",
+    "M4_lightgbm_ABCD_S3_7c139a8d06f3": "fused",
+    "M4_lightgbm_ABCD_S3_94b82a2579da": "fused",
+    "M3_histgb_ABCD_S3_b66ff8b9551e": "fused"
+  },
+  "policy_sha256": "29f8895a70859bb6d8dbd10de684992c99d61faf7901970c84c41cc14b2eb00f",
+  "selection_state_sha256": "52ce1c70423e6deb7f1022904cd270e56ddb0fcfd716f9cb7137865ca0f0e056",
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_scores_consulted": false,
+  "freeze_timestamp": "2026-09-08T14:26:37.236222+00:00",
+  "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "candidates": {
+    "PRIMARY_DEV_CANDIDATE": {
+      "experiment_id": "M7_cross_order_AR4_LGB_AR8_HGB_equal",
+      "model": "M7_cross_order_equal",
+      "candidate": {
+        "model": "M7_cross_order_equal",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {},
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "AR8 HistGB improved every fold while a different AR order and tree learner may leave complementary errors. Test one equal average; do not fit weights or a stacking model.",
+        "phase": "cross_order_fixed_average",
+        "representation": "cross_order_ar4_ar8_equal"
+      },
+      "feature_hash": "29d43a0936bbd0d56114e1f5095663ace46218837991c267a5b6841d3e7a4ba4",
+      "fold_scores": [
+        0.6057469121023034,
+        0.6278833674453808,
+        0.6099585400267096,
+        0.6164640827673485,
+        0.5964105295150426
+      ],
+      "mean": 0.611292686371357,
+      "median": 0.6099585400267096,
+      "std": 0.010545218732606963,
+      "worst_fold": 0.5964105295150426,
+      "time_profile": {
+        "0-9": 0.5101816967000972,
+        "10-24": 0.5232765023780269,
+        "100-199": 0.5988390536513186,
+        "200-399": 0.6191768662921302,
+        "25-49": 0.5281610803866423,
+        "400+": 0.631476384564244,
+        "50-99": 0.565380763619106
+      },
+      "age_profile": {
+        "0-4": 0.5229968095818216,
+        "10-19": 0.53971914085271,
+        "20-49": 0.5640211927190533,
+        "5-9": 0.5309360706166231,
+        "50+": 0.631589007638024
+      },
+      "specification_path": "configs\\deployment.json",
+      "specification_sha256": "a2fc6dada332c90eb04a4f7c807740be2661122eae76b918168d03fce2ddbbe9",
+      "model_directory": "artifacts/deployment/final/PRIMARY_DEV_CANDIDATE",
+      "benchmark": {
+        "path": "artifacts\\real\\latency\\final_selection\\M7_cross_order_AR4_LGB_AR8_HGB_equal_fused_fast_init.json",
+        "sha256": "b67943267fa58bc62131f063c2038df2a0b34ba86bce19075fdc6beb31fe9b92",
+        "us_per_point": 5.388313010000003,
+        "amortized_10m_seconds": 163.84157524791667
+      }
+    },
+    "BACKUP_ROBUST_CANDIDATE": {
+      "experiment_id": "M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae",
+      "model": "M3_histgb",
+      "candidate": {
+        "model": "M3_histgb",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {},
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "Across all DEV historical segments, 17.225 percent of AR8 squared residual sequences retain lag1 correlation above 0.1. Divide each innovation by a frozen historical ARCH1 forecast using only its previous innovation, then retain the original calibrated feature bank and S3 learner.",
+        "phase": "conditional_variance_input",
+        "representation": "ar8_arch1_historical_median_mad"
+      },
+      "feature_hash": "1cb5e51ac7ae68c1e1fddbdb7250aefd15015cd41346994daf0156e434dbc7a3",
+      "fold_scores": [
+        0.6061248416605743,
+        0.6301506008398907,
+        0.6059552663270921,
+        0.6192424817563347,
+        0.5987739285832101
+      ],
+      "mean": 0.6120494238334204,
+      "median": 0.6061248416605743,
+      "std": 0.011205988533592821,
+      "worst_fold": 0.5987739285832101,
+      "time_profile": {
+        "0-9": 0.510310051714981,
+        "10-24": 0.5214988404094727,
+        "100-199": 0.5982352741206556,
+        "200-399": 0.6187153985374971,
+        "25-49": 0.5289573962435817,
+        "400+": 0.634940282527187,
+        "50-99": 0.5642247702274458
+      },
+      "age_profile": {
+        "0-4": 0.5233613814834359,
+        "10-19": 0.5408439462184287,
+        "20-49": 0.5636558900591595,
+        "5-9": 0.5314507804133741,
+        "50+": 0.6325477315081257
+      },
+      "specification_path": "configs\\deployment_backup_robust_candidate.json",
+      "specification_sha256": "b67b127b4b29df6a73af4d69e6feaf9af0818242fbc84a32fbb83ad870a88a31",
+      "model_directory": "artifacts/deployment/final/BACKUP_ROBUST_CANDIDATE",
+      "benchmark": {
+        "path": "artifacts\\real\\latency\\final_selection\\M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae_fused_fast_init.json",
+        "sha256": "eaa0d3b4689ee89322c6c7fbea7e07ac25758c7c357ed16e8c613588eaa36b8d",
+        "us_per_point": 4.050697339999995,
+        "amortized_10m_seconds": 92.47290677725566
+      }
+    },
+    "BACKUP_FAST_CANDIDATE": {
+      "experiment_id": "M4_lightgbm_ABCD_S3_122668fc55e8",
+      "model": "M4_lightgbm",
+      "candidate": {
+        "model": "M4_lightgbm",
+        "families": "ABCD",
+        "sampling": "S3",
+        "params": {
+          "n_estimators": 50
+        },
+        "feature_changes": {
+          "normalization": "median_mad",
+          "scales": [
+            5,
+            20,
+            160
+          ]
+        },
+        "hypothesis": "One-parameter bias/variance or latency refinement: n_estimators=50; weakest fold assessed before promotion.",
+        "phase": "shallow_refinement",
+        "representation": "ar_residual_input_historical_median_mad"
+      },
+      "feature_hash": "9f68be316ea3fe0b52ff110bde48bf5946dc3f39d017d72be109769c2d6d4edd",
+      "fold_scores": [
+        0.6038296293251191,
+        0.6205506208570296,
+        0.6049843540489439,
+        0.6103243006580183,
+        0.5955857507083809
+      ],
+      "mean": 0.6070549311194984,
+      "median": 0.6049843540489439,
+      "std": 0.008234735928295461,
+      "worst_fold": 0.5955857507083809,
+      "time_profile": {
+        "0-9": 0.5080271244594896,
+        "10-24": 0.5205325380946519,
+        "100-199": 0.5983346567958412,
+        "200-399": 0.614563108897443,
+        "25-49": 0.5260548802391996,
+        "400+": 0.62409716097025,
+        "50-99": 0.5650801728352071
+      },
+      "age_profile": {
+        "0-4": 0.5228160667584083,
+        "10-19": 0.538924789851019,
+        "20-49": 0.562163836366701,
+        "5-9": 0.5307009343187684,
+        "50+": 0.626358487895482
+      },
+      "specification_path": "configs\\deployment_backup_fast_candidate.json",
+      "specification_sha256": "4d0ef621ebc535dd39547bcf17fa9efe3164ea6dbc4cb09bbb64392ced7f1792",
+      "model_directory": "artifacts/deployment/final/BACKUP_FAST_CANDIDATE",
+      "benchmark": {
+        "path": "artifacts\\real\\latency\\final_selection\\M4_lightgbm_ABCD_S3_122668fc55e8_fused_fast_init.json",
+        "sha256": "caa31427bddde7365b9f8cfb0ac5fa35873a9f6d8f4130bc788e34521bc18294",
+        "us_per_point": 3.5238531900000036,
+        "amortized_10m_seconds": 83.03845476802401
+      }
+    }
+  },
+  "benchmark_evidence": {
+    "M7_cross_order_AR4_LGB_AR8_HGB_equal": {
+      "path": "artifacts\\real\\latency\\final_selection\\M7_cross_order_AR4_LGB_AR8_HGB_equal_fused_fast_init.json",
+      "sha256": "b67943267fa58bc62131f063c2038df2a0b34ba86bce19075fdc6beb31fe9b92",
+      "us_per_point": 5.388313010000003,
+      "amortized_10m_seconds": 163.84157524791667
+    },
+    "M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae": {
+      "path": "artifacts\\real\\latency\\final_selection\\M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae_fused_fast_init.json",
+      "sha256": "eaa0d3b4689ee89322c6c7fbea7e07ac25758c7c357ed16e8c613588eaa36b8d",
+      "us_per_point": 4.050697339999995,
+      "amortized_10m_seconds": 92.47290677725566
+    },
+    "M4_lightgbm_ABCD_S3_122668fc55e8": {
+      "path": "artifacts\\real\\latency\\final_selection\\M4_lightgbm_ABCD_S3_122668fc55e8_fused_fast_init.json",
+      "sha256": "caa31427bddde7365b9f8cfb0ac5fa35873a9f6d8f4130bc788e34521bc18294",
+      "us_per_point": 3.5238531900000036,
+      "amortized_10m_seconds": 83.03845476802401
+    },
+    "M3_histgb_ABCD_S3_29d6e9efea0a": {
+      "path": "artifacts\\real\\latency\\final_selection\\M3_histgb_ABCD_S3_29d6e9efea0a_fused_fast_init.json",
+      "sha256": "1a13c01b3d15137e3c7d4c79fd6685e4f213fad2258740c312d29b850522e33c",
+      "us_per_point": 3.5761851800000004,
+      "amortized_10m_seconds": 83.5372852656361
+    },
+    "M4_lightgbm_ABCD_S3_7c139a8d06f3": {
+      "path": "artifacts\\real\\latency\\final_selection\\M4_lightgbm_ABCD_S3_7c139a8d06f3_fused_fast_init.json",
+      "sha256": "cb814430fb6968ce1969bedca066a3f65c921fa97218f869a48eb056cfdbee83",
+      "us_per_point": 3.755445629999998,
+      "amortized_10m_seconds": 86.14949735670805
+    },
+    "M4_lightgbm_ABCD_S3_94b82a2579da": {
+      "path": "artifacts\\real\\latency\\final_selection\\M4_lightgbm_ABCD_S3_94b82a2579da_fused_fast_init.json",
+      "sha256": "284f68c6daabdddf45b4043588d3f3b8cd8e39aa9d2315dd4157edd6dd032ee8",
+      "us_per_point": 3.7969808800000013,
+      "amortized_10m_seconds": 86.14107392509844
+    },
+    "M3_histgb_ABCD_S3_b66ff8b9551e": {
+      "path": "artifacts\\real\\latency\\final_selection\\M3_histgb_ABCD_S3_b66ff8b9551e_fused_fast_init.json",
+      "sha256": "d5c93a791953dec51b33436a72b5138226d4e036549a9413e0a18c1c3cfde1bd",
+      "us_per_point": 3.853646829999999,
+      "amortized_10m_seconds": 93.21640273782036
+    }
+  },
+  "selection_uncertainty": "Adaptive DEV selection; scores and conditional OOF bootstrap are not independent or selection-adjusted estimates.",
+  "PRIMARY_DEV_CANDIDATE": "M7_cross_order_AR4_LGB_AR8_HGB_equal",
+  "BACKUP_ROBUST_CANDIDATE": "M3_histgb_AR8_ARCH1_ABCD_S3_1cb5e51ac7ae",
+  "BACKUP_FAST_CANDIDATE": "M4_lightgbm_ABCD_S3_122668fc55e8"
+}

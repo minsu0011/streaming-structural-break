@@ -1,0 +1,9 @@
+# One bounded follow-up to the C205 scale-down counterexample
+
+The fixed C205 amplitude-product complement improves dependence-change ranking but reduces scale-down TS-AUC in all five existing fitted-model comparisons. Its 80/20 blend improves real DEV by 0.00163666 but worsens the original V3 and V4 synthetic cases. A follow-up is justified by that specific counterexample rather than by another learner search.
+
+Register exactly one new standalone complement, C210_SIGN_DEPENDENCE. Replace the conditional-normalized innovation by its sign before constructing the same lag-1/2/4/8 centered products. Retain the historical AR/ARCH fitting, lag initialization, H-only channel calibration, two EWMAs, two CUSUMs and two Bayes summaries from C205. There are still 24 features, one 100-tree fixed LightGBM and W3 weights. No model hyperparameters, thresholds, age grids or blend weights are tuned. Sign conversion removes amplitude from each normalized innovation; it does not guarantee that fitted residual signs are invariant to every change in the data-generating process.
+
+Use the unchanged two-fold 3,000-series screen and full five-fold DEV gate for standalone complements: mean TS-AUC greater than 0.54 and matched within-time rank correlation below 0.95. A failed screen stops the candidate. If eligible, evaluate only the already fixed 90/10, 80/20, 67/33 and 50/50 J102/C210 weights. Every blend retains the original performance, alternate-split, bootstrap and H-regime requirements. Synthetic improvement cannot waive a failed real-DEV gate. Record failed cases and all named trials; do not rename C205 or overwrite any prior model/source/configuration.
+
+This is an adaptive hypothesis after the C205 diagnostics. Any resulting fixed-OOF bootstrap remains conditional and does not remove adaptive selection uncertainty. There is no seal access, reduced test or public submission.

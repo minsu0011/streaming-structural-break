@@ -1,0 +1,573 @@
+{
+  "status": "PASS",
+  "primary_basis": "Contemporaneous isolated actual all-DEV model artifacts",
+  "measurements": {
+    "B104_LONG_VARIANCE_NO_GLR_MEMORY": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:17:29.103415+00:00",
+      "identity": {
+        "candidate": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\B104_LONG_VARIANCE_NO_GLR_MEMORY\\cache_research_v1",
+        "model_sha256": "56390986dfd3f4577b36bc316fed983cdb8924634e390b41341baf6d4d360c1e",
+        "descriptor_sha256": "e4e494177aa46781ae4a909644090f0560c01370b9e35b8e27369b61194f4b26",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "runtime_source_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e"
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": "a8f626d62c7db6a43518f5fa94a99bda66a520f25ff2586d68ec42533a900826"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.007233700001961552,
+      "first_history_and_jit_seconds": 13.904308500001207,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 7.9,
+        "p95": 11.1,
+        "p99": 39.95999999999985,
+        "mean": 10.155665919043042,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.011596621875,
+        "median_seconds": 0.0100869,
+        "p95_seconds": 0.022356004999999984,
+        "p99_seconds": 0.047230711000000036,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 2.2137966999999996,
+        "amortized_us_per_point": 33.77727987061534,
+        "one_million_amortized_seconds": 33.77727987061534,
+        "ten_million_amortized_seconds": 337.77279870615337
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 102.27897130000011,
+        "measured_first_million_seconds": 7.918575999999998,
+        "microseconds_per_point": 10.227897130000011,
+        "wall_seconds_including_checks": 103.82516670000041,
+        "output_sha256": "212e31a945cff507f4bab45934fca8584fc3408e67c1632981f5cff2c1826754",
+        "state_array_bytes_before": 29189,
+        "state_array_bytes_after": 29189,
+        "rss_before_bytes": 404774912,
+        "rss_peak_bytes": 404774912,
+        "rss_after_bytes": 422678528
+      },
+      "real_prefix_state_array_bytes_maximum": 29189,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "59a27e00f4dc2218a64462947ca1d8e4c90c0f3823016af1715fe9d3bf38e635",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "F101_VARIANCE_TREES50": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:09:15.933151+00:00",
+      "identity": {
+        "candidate": "F101_VARIANCE_TREES50",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\F101_VARIANCE_TREES50\\cache_research_v1",
+        "model_sha256": "da8fc92233c6802704e3706c2c6881e6a701c961a8fd52804467e4ba6cd2da29",
+        "descriptor_sha256": "efc6c99738c756b4fe372a646795ec41713d33d1376f21026af18a9a3b0e80ad",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "runtime_source_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e"
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": "77ccd34017b323c9a7d6d726552630fce94f52e30655ea50c560a488a53cd580"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.005585699997027405,
+      "first_history_and_jit_seconds": 14.35301089999848,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 6.7,
+        "p95": 7.5,
+        "p99": 9.1,
+        "mean": 6.971735249691033,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.009193160156250001,
+        "median_seconds": 0.00931075,
+        "p95_seconds": 0.013455159999999999,
+        "p99_seconds": 0.014308494,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.6802215,
+        "amortized_us_per_point": 25.636189560732976,
+        "one_million_amortized_seconds": 25.636189560732976,
+        "ten_million_amortized_seconds": 256.36189560732976
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 67.44434690000003,
+        "measured_first_million_seconds": 7.0274562,
+        "microseconds_per_point": 6.744434690000003,
+        "wall_seconds_including_checks": 68.68750850000652,
+        "output_sha256": "ae1ff51c0cdc61679b76f1c4a5d3451508cc85d7d70bac5c0f5689e75bc073e6",
+        "state_array_bytes_before": 10845,
+        "state_array_bytes_after": 10845,
+        "rss_before_bytes": 403922944,
+        "rss_peak_bytes": 403922944,
+        "rss_after_bytes": 421335040
+      },
+      "real_prefix_state_array_bytes_maximum": 10845,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "08fb95f993ca416a3545a10ffe3355b9617e8bab9e340042fd6f182de13a7138",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "F201_LONG_VARIANCE_TREES50": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:20:46.424484+00:00",
+      "identity": {
+        "candidate": "F201_LONG_VARIANCE_TREES50",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\F201_LONG_VARIANCE_TREES50\\cache_research_v1",
+        "model_sha256": "5aeb473a4d4fa1861cf2147121c0d4b0bb30d33c6e322ad0c963e7839018f7f5",
+        "descriptor_sha256": "7935ad70652d6a5eb9755a4f7f78952af253c6168b773acd5765d01a8a17232b",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "runtime_source_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e"
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": "44c546e4079145434d1012ebd7d569a57c4b3384e1af0cfd440a4d7329c6bb28"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.006427200001780875,
+      "first_history_and_jit_seconds": 14.35111789999064,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 6.9,
+        "p95": 7.8,
+        "p99": 10.3,
+        "mean": 7.263732625379533,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.009791819531249999,
+        "median_seconds": 0.0097525,
+        "p95_seconds": 0.014489794999999996,
+        "p99_seconds": 0.02611345200000001,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.7767924000000002,
+        "amortized_us_per_point": 27.1096321386613,
+        "one_million_amortized_seconds": 27.1096321386613,
+        "ten_million_amortized_seconds": 271.096321386613
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 70.75984119999987,
+        "measured_first_million_seconds": 7.0400797,
+        "microseconds_per_point": 7.075984119999987,
+        "wall_seconds_including_checks": 72.01355590000458,
+        "output_sha256": "50c4221fee93be4d940bf6b0affd17883c0bbc06ed708522d51ebd5c5710cf61",
+        "state_array_bytes_before": 29309,
+        "state_array_bytes_after": 29309,
+        "rss_before_bytes": 406126592,
+        "rss_peak_bytes": 406126592,
+        "rss_after_bytes": 422813696
+      },
+      "real_prefix_state_array_bytes_maximum": 29309,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "8386591be6891d4073132a6f692e52009c083f40c579e374ae13d747fc9ec969",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "J102_SERIAL_VARIANCE_512": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:24:08.477971+00:00",
+      "identity": {
+        "candidate": "J102_SERIAL_VARIANCE_512",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\J102_SERIAL_VARIANCE_512\\cache_research_v1",
+        "model_sha256": "dbce67d2cf6a89bfa8544780b784fd643212a5141726e8c503870d26b1b605ab",
+        "descriptor_sha256": "876d4853345ce07541f7259842012942ce0b9fee45e3c7c5efe97ccc2be57f84",
+        "policy_sha256": "2072ae8855967e06ffd0bba857744f369463009b9d7a87937a820282d0bb56e2",
+        "runtime_receipt": {
+          "runtime_source_sha256": "d29d61198a1c9e7a02c769b1c9e4f41ae6e636c67eb0fcfdac68195244aeaad7"
+        },
+        "driver_sha256": "fa909f5b7c129cebff36ec16b35b977a735e3e86a1d432b54ccab86a8d5e9b23",
+        "contract_report_sha256": "d04c2e38797c714d0af49a0c25efe0422cd2b1f5c870c4a32f0544941987910a"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.008309999990160577,
+      "first_history_and_jit_seconds": 15.159177299996372,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 7.7,
+        "p95": 8.4,
+        "p99": 10.2,
+        "mean": 7.819026258372622,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.01018895703125,
+        "median_seconds": 0.010312100000000001,
+        "p95_seconds": 0.014923865,
+        "p99_seconds": 0.016038115000000002,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.8609712999999999,
+        "amortized_us_per_point": 28.39400222761325,
+        "one_million_amortized_seconds": 28.39400222761325,
+        "ten_million_amortized_seconds": 283.9400222761325
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 76.33694390000016,
+        "measured_first_million_seconds": 7.631442399999997,
+        "microseconds_per_point": 7.6336943900000165,
+        "wall_seconds_including_checks": 77.49211639999703,
+        "output_sha256": "a40f7a65160b2cc70d00b717d7669730a893567d0067e59ef89c6fd88668eadb",
+        "state_array_bytes_before": 29789,
+        "state_array_bytes_after": 29789,
+        "rss_before_bytes": 412258304,
+        "rss_peak_bytes": 412258304,
+        "rss_after_bytes": 420163584
+      },
+      "real_prefix_state_array_bytes_maximum": 29789,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "abf96a4eb80edb507e8b6c7edcfe5714fbb6e5fb7729b124e5694329407895cf",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "PRIMARY": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:02:20.926069+00:00",
+      "identity": {
+        "candidate": "PRIMARY",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\deployment\\final\\PRIMARY_DEV_CANDIDATE",
+        "model_sha256": "897f6f8eb8e66fdba1c9c9967192ade1cce066196036116922e4a2569ecf8a6f",
+        "descriptor_sha256": "25eb753aef26c555dd1d29a331089ac575fea2b40232b90d9c73d7e52065c619",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "fused_source_hash": "a883756b2e8327402feebcb66bc3e1b69395b622ca03b2176ea1906c174c3d4e",
+          "initialization_source_hash": "5a1dac3263940f22fae038a4c1d38569980a1b46c37d88e1383ab8e823a51a0b",
+          "ar_fused_source_hash": "ba57111ba2b1d386157e85d36196515d2cd65bb0d52493c48f53483c95a99e04",
+          "cross_order_fused_source_hash": "60de51bc6f66f3cbd952c2e88ec9a4b3b3845f01355c0e0e0540bfcbcbc1aaa6",
+          "arch_fused_source_hash": null
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": null
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.01626340000075288,
+      "first_history_and_jit_seconds": 11.57597619999433,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 8.5,
+        "p95": 9.9,
+        "p99": 12.9,
+        "mean": 8.913243618498345,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.00931915078125,
+        "median_seconds": 0.009063600000000002,
+        "p95_seconds": 0.01454709,
+        "p99_seconds": 0.016168466000000006,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.8200738,
+        "amortized_us_per_point": 27.77000350925375,
+        "one_million_amortized_seconds": 27.77000350925375,
+        "ten_million_amortized_seconds": 277.7000350925375
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 88.39572229999989,
+        "measured_first_million_seconds": 8.790069699999998,
+        "microseconds_per_point": 8.83957222999999,
+        "wall_seconds_including_checks": 89.54329709999729,
+        "output_sha256": "6c44a15fa841c61f7744d4c94e26bf8cb0b772929a489fceb157592994671dc6",
+        "state_array_bytes_before": 4858,
+        "state_array_bytes_after": 4858,
+        "rss_before_bytes": 396513280,
+        "rss_peak_bytes": 396513280,
+        "rss_after_bytes": 399564800
+      },
+      "real_prefix_state_array_bytes_maximum": 4858,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "f80337e84e98c9f63451095814995245f10c22cea7122aaea3548baeac1cb0c7",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "Q005_VARIANCE_NO_MEMORY": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:07:41.828070+00:00",
+      "identity": {
+        "candidate": "Q005_VARIANCE_NO_MEMORY",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\Q005_VARIANCE_NO_MEMORY\\cache_research_v1",
+        "model_sha256": "97ed9d672c87bfd834c8214764bd8cd2f3d4b3e6237742adea3277d99197de7f",
+        "descriptor_sha256": "6c5fe16f255e6a50aa103edf4018b5ac8f5be8c7c6ad08060fd7af3d31eb3003",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "runtime_source_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e"
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": "f6013f9c8d056800c986a2d72c0c675246d993a42b2b0a23aa7c163db3b9d327"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.005871000001206994,
+      "first_history_and_jit_seconds": 16.031937399995513,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 7.9,
+        "p95": 9.2,
+        "p99": 12.3,
+        "mean": 8.305961154086756,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.010432972656250001,
+        "median_seconds": 0.01093935,
+        "p95_seconds": 0.01593723,
+        "p99_seconds": 0.017110176,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.9299849,
+        "amortized_us_per_point": 29.446985856181627,
+        "one_million_amortized_seconds": 29.446985856181627,
+        "ten_million_amortized_seconds": 294.4698585618163
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 81.39645450000006,
+        "measured_first_million_seconds": 8.077435400000002,
+        "microseconds_per_point": 8.139645450000007,
+        "wall_seconds_including_checks": 82.57812679999915,
+        "output_sha256": "d951620157fe5943e4084d92b102b9507b853de178d15ddc1ff34513b54546c0",
+        "state_array_bytes_before": 10797,
+        "state_array_bytes_after": 10797,
+        "rss_before_bytes": 404742144,
+        "rss_peak_bytes": 404742144,
+        "rss_after_bytes": 418357248
+      },
+      "real_prefix_state_array_bytes_maximum": 10797,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "0bbf9f35980e8ce75379d8e91b9423b420617e54dd70cbd1131693aece84bca3",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "V007_VARIANCE_FORECAST": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:04:04.179572+00:00",
+      "identity": {
+        "candidate": "V007_VARIANCE_FORECAST",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\V007_VARIANCE_FORECAST\\cache_research_v1",
+        "model_sha256": "a4d2d4f6dc5e192ebf298e7d601ddfcdb3ead6a4e4c393373cf5b92c6396d32d",
+        "descriptor_sha256": "c4c4d3b27f3e70dbee7fe451163f45ae2f3f369f5a11c415608b0cf15f274005",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "runtime_source_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e"
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": "4566dfdaf86598563fb967039a5cc9e23ad917fac03b86356b992a5412465f26"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.005934199987677857,
+      "first_history_and_jit_seconds": 15.082050700002583,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 7.8,
+        "p95": 9.1,
+        "p99": 11.8,
+        "mean": 8.162032925954746,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.01013843984375,
+        "median_seconds": 0.010178699999999999,
+        "p95_seconds": 0.016613374999999996,
+        "p99_seconds": 0.017590304,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.8821634999999999,
+        "amortized_us_per_point": 28.71734486809783,
+        "one_million_amortized_seconds": 28.71734486809783,
+        "ten_million_amortized_seconds": 287.1734486809783
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 76.51077859999994,
+        "measured_first_million_seconds": 7.717947699999996,
+        "microseconds_per_point": 7.651077859999994,
+        "wall_seconds_including_checks": 77.63592630000494,
+        "output_sha256": "6b6ae1b4750b517ac58b665c8564e5190ddfd064bf9a3d2e75971cdf15b01ca2",
+        "state_array_bytes_before": 10845,
+        "state_array_bytes_after": 10845,
+        "rss_before_bytes": 403161088,
+        "rss_peak_bytes": 403161088,
+        "rss_after_bytes": 418467840
+      },
+      "real_prefix_state_array_bytes_maximum": 10845,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "35c35e7563eb5d6efd68c13485ba4b5020872621639a21669ee8683ff74f9eff",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "Y001_LONG_VARIANCE_ARCH1": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:05:51.911025+00:00",
+      "identity": {
+        "candidate": "Y001_LONG_VARIANCE_ARCH1",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\Y001_LONG_VARIANCE_ARCH1\\cache_research_v1",
+        "model_sha256": "dc0772fd96cf973c0bd930045ad4b2ba6ce5a8b5fb72d4931100ccc86c658383",
+        "descriptor_sha256": "5ad6d81cc8cc2d2f4a2975fa2565fc8e0f62990f97bcd198b5560b4c0a1d2a02",
+        "policy_sha256": "d61adb0af019d08e9a16d0496d4ba6c366564078ef8593a79754367e77ccc339",
+        "runtime_receipt": {
+          "runtime_source_sha256": "3e3444c41d20ff458519047bb4a9420c6c7fc0391ef77e3b51b0c0533213346e"
+        },
+        "driver_sha256": "a201fd92e130e9acec74a57e0cca1a95ae35662c8eb2843b60632fafbf8e4a63",
+        "contract_report_sha256": "9203c33fd5fabd2d29207b02562ce4eeb3649ea19b4bfec0e337deb9bfd43361"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.005789699993329123,
+      "first_history_and_jit_seconds": 12.780558200000087,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 7.8,
+        "p95": 9.2,
+        "p99": 13.5,
+        "mean": 8.930283334096213,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.00993705859375,
+        "median_seconds": 0.009013400000000001,
+        "p95_seconds": 0.014206429999999999,
+        "p99_seconds": 0.019165591000000006,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.9088743000000001,
+        "amortized_us_per_point": 29.12488823789689,
+        "one_million_amortized_seconds": 29.12488823789689,
+        "ten_million_amortized_seconds": 291.2488823789689
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 82.44361040000003,
+        "measured_first_million_seconds": 7.924022499999999,
+        "microseconds_per_point": 8.244361040000003,
+        "wall_seconds_including_checks": 83.60972709998896,
+        "output_sha256": "e11fac9349dc71405504cc726a38e9dcef443e351a1e860f85cba1b8ef517e19",
+        "state_array_bytes_before": 29309,
+        "state_array_bytes_after": 29309,
+        "rss_before_bytes": 402784256,
+        "rss_peak_bytes": 402784256,
+        "rss_after_bytes": 417529856
+      },
+      "real_prefix_state_array_bytes_maximum": 29309,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "749af5e168ba24dd17c1bfd57423766983253f411e4ee5c9734e852ce19f19d7",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    },
+    "Z001_LOG_ENERGY_CURRENT": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T02:13:21.227329+00:00",
+      "identity": {
+        "candidate": "Z001_LOG_ENERGY_CURRENT",
+        "model_kind": "ALL_DEV_REFIT_ARTIFACT",
+        "model_directory": "artifacts\\next\\refits\\Z001_LOG_ENERGY_CURRENT\\cache_research_v1",
+        "model_sha256": "64688596ac8d158108f631a3635d6cded91b0773ac98266db9782baf57a17b90",
+        "descriptor_sha256": "30ff13789d779faff5c558e116dbbf5af351addabc41b70688fe19c919ccb4ca",
+        "policy_sha256": "63c763d5e92265965c7f47de303584e7405d0666bcaa836b4d4f7698d1d4c88d",
+        "runtime_receipt": {
+          "runtime_source_sha256": "f48220113dbb8ff1fc73e990aa3da84b433ab7b3ce879232c47e217fe1cc2204"
+        },
+        "driver_sha256": "0e27479d0afb458c68ea72f729d85f2e7866c4e64ca0b69ceff4826efc07885a",
+        "contract_report_sha256": "aa3dc94cc8edca5eed770b29528951ba2d6eb4daf0ff1c84f9b3982100448205"
+      },
+      "isolated_from_workspace_research_workers": true,
+      "model_load_seconds": 0.008132600007229485,
+      "first_history_and_jit_seconds": 14.341194300010102,
+      "point_distribution_us": {
+        "samples": 65541,
+        "median": 7.7,
+        "p95": 8.7,
+        "p99": 10.9,
+        "mean": 7.9836773927770395,
+        "includes_per_point_timer_and_float32_store": true
+      },
+      "real_history_initialization": {
+        "series": 128,
+        "mean_seconds": 0.00877348828125,
+        "median_seconds": 0.0089529,
+        "p95_seconds": 0.01283804,
+        "p99_seconds": 0.013379209999999999,
+        "historical_length_min": 1040,
+        "historical_length_max": 4917,
+        "actual_online_points": 65541,
+        "aggregate_h_and_online_seconds": 1.6933255,
+        "amortized_us_per_point": 25.836125478707984,
+        "one_million_amortized_seconds": 25.836125478707984,
+        "ten_million_amortized_seconds": 258.3612547870798
+      },
+      "continuous_stream": {
+        "points": 10000000,
+        "measured_prediction_seconds": 86.98895649999999,
+        "measured_first_million_seconds": 7.6711862,
+        "microseconds_per_point": 8.698895649999999,
+        "wall_seconds_including_checks": 88.29595739999786,
+        "output_sha256": "272f66f7f6075475ee72e06d961da051d33e94f80397f3cc57605f9dfd4348dc",
+        "state_array_bytes_before": 6101,
+        "state_array_bytes_after": 6101,
+        "rss_before_bytes": 405045248,
+        "rss_peak_bytes": 405045248,
+        "rss_after_bytes": 409407488
+      },
+      "real_prefix_state_array_bytes_maximum": 6101,
+      "all_sampled_predictions_bitwise_equal_to_scalar_bundle": true,
+      "sample_prediction_sha256": "a632beeb72bb3aec050ffb6f311fa8b5e7303f5071696c7c87add2adab5bd9f5",
+      "quality_score_computed": false,
+      "seal_rows": 0,
+      "reduced_new_uses": 0,
+      "limitations": "Same-policy complete-DEV artifact timings, not CV predictions. Excludes file/socket/cloud overhead and cannot control ordinary OS load or power state. Continuous timing repeats a bounded real-value buffer; quality is not evaluated. Amortized extrapolations assume the sampled H/online-length mixture."
+    }
+  },
+  "cv_reference_measurements_directory": "artifacts/next/latency/research_v1",
+  "observed_cv_timing_anomaly_note": "artifacts/next/latency/MEASUREMENT_NOTES.json",
+  "timed_boundary": "Prepared scalar detector.predict_one, including per-point timer and float32 store. The infer generator validation and file/socket/cloud overhead are outside this point-call timing. API/wire correctness is audited separately.",
+  "memory_measurement_boundary": "State-array bytes are checked before/after 10M. rss_peak_bytes is the maximum sampled at million-point checkpoints, not an OS-recorded absolute high-water mark; transient allocation peaks can be missed. rss_after_bytes is collected after untimed scalar-reference validation and may exceed the sampled timing peak.",
+  "note": "10M uses repeated fixed DEV buffers for memory and speed, not a new quality estimate. Native deployment/cloud timings were not measured."
+}

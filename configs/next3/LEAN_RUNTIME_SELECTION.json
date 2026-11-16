@@ -1,0 +1,39 @@
+{
+  "status": "PROVISIONAL_ENGINEERING_ELIGIBLE",
+  "variant": "LEAN_PACKED_SHARED",
+  "runtime_sha256": "3664a4457b7e9b1430ece66e1c6e750328e35649c9ce92bda357465e03ddc6c9",
+  "created_utc": "2026-09-10T04:09:00.543896+00:00",
+  "fixed_gates_required": [
+    "cold_cost",
+    "all_dev",
+    "oof",
+    "alternate_H",
+    "actual_public_api",
+    "direct_10M",
+    "fresh_raw_reproduction",
+    "final_audit"
+  ],
+  "scientific_role": "FROZEN_PERFORMANCE",
+  "scientific_quality_change": false,
+  "reviewed_utc": "2026-09-10T04:42:49.310699+00:00",
+  "core_implementation_lock_sha256": "0e571efe690f2fecb4604f3165a300e08278bdead655c81d86e14d104322138e",
+  "validation_harness_correction_sha256": "317d056b894451b6f9457dda0744a77b7a006be5d1bb89fcf7cc7d6828e5d71c",
+  "proofs_sha256": {
+    "all_dev": "e1f96c8dfa6f4d0a530ae00f4887958bc8a33d45d9331b5de8590b06cf83590b",
+    "oof": "e1b0de54d6be0536c24c8e235540561185ee5fdbb6e8b4271e858f4453256868",
+    "alternate": "e214a0a660f346a89ef45ac4bc9da6405c4075ecc71ea88314fdd00970e5d7a7",
+    "cold": "3cb346be31ed16dd18c41e40de8b25649ba18b70b3933e4c5f2d8fb1e8fba462",
+    "direct": "8acea14e004aa7a150dee277104720bc33ef7d680d09dc344b8be5ca85c951f9",
+    "public_api": "553fe2f210ffa068eb5dee85a4e46b3f86d88d8ba664c31115829043d7b274ba"
+  },
+  "median_postwarm_process_RSS_ratio_vs_E002": 0.7364912481191551,
+  "median_first_none_ratio_vs_E002": 0.9439758353275608,
+  "median_direct_10M_ratio_vs_E002": 1.000074055127283,
+  "actual_fresh_cold_trials": 6,
+  "actual_direct_10M_trials": 6,
+  "remaining_final_requirements": [
+    "fresh_pinned_raw_training_reproduction",
+    "final_audit",
+    "verified_archive_replay"
+  ]
+}

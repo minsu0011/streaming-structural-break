@@ -1,0 +1,180 @@
+{
+  "status": "FROZEN_NEXT5_RESEARCH_POLICY",
+  "created_utc": "2026-09-11T05:12:27.076124+00:00",
+  "source_sha256": "7388723e212d01afd22aa10b57168c15583d76554355b4a5a521760aae147b9d",
+  "user_specification_sha256": "18b471d6d62f65ebbbe4584e14ed289e1f33aaa5dfd3d1f301dafcbc547d3757",
+  "shadow_lock_sha256": "2bd74a19c16b18826dbe059832621f98b8a4ec01f4a96a417264c6ec579df33e",
+  "split_lock_sha256": "b582fc31bf7a120968bd9c3f9d7a5d139a12058879e985e2c0b3828e8afeeae2",
+  "randomness_lock_sha256": "73c92a3bf15e33841464348d72491a0402e3c61a165f4bcff2464eaccc475404",
+  "primary_metric": "official_TS_AUC",
+  "selection_authority": "ResearchPool grouped five-fold equally weighted mean; original full-DEV scores are historical only",
+  "learner": "M4_lightgbm",
+  "learner_params": {
+    "n_estimators": 100,
+    "num_leaves": 15,
+    "max_depth": 4,
+    "min_child_samples": 30,
+    "reg_lambda": 10,
+    "learning_rate": 0.05,
+    "n_jobs": 4,
+    "random_state": 20260908,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "weighting": "W3",
+  "default_combination": {
+    "ResearchPool_BL80": 0.9,
+    "new_specialist": 0.1
+  },
+  "screen": {
+    "mean_delta_min": -0.001,
+    "each_fold_delta_min": -0.004,
+    "folds": [
+      0,
+      4
+    ],
+    "screen_series": 2560,
+    "screen_IDS_source": "NEXT5_SPLIT_LOCK.json",
+    "M_standalone_min": 0.52
+  },
+  "performance_gate": {
+    "mean_delta_min": 0.0012,
+    "median_delta_min": 0.0,
+    "worst_delta_min": -0.001,
+    "bootstrap_probability_min": 0.9,
+    "ci_lower_strict_min": -0.0003,
+    "ALT_positive_required": 2,
+    "ALT_count": 2,
+    "minimum_matched_H_regime_delta": -0.01,
+    "leakage_prefix_determinism_required": true,
+    "maximum_runtime_ratio": 3.0
+  },
+  "strong_gate": {
+    "mean_delta_min": 0.0025,
+    "ci_lower_strict_min": 0.0,
+    "positive_folds_min": 4,
+    "no_major_collapse": true
+  },
+  "catastrophic_gate": {
+    "supported_mechanism_break_series_min": 100,
+    "supported_mechanism_delta_strict_below": -0.01,
+    "supported_H_regime_break_series_min": 100,
+    "supported_H_regime_delta_strict_below": -0.02,
+    "matched_H_exclusion_delta_strict_below": -0.01,
+    "synthetic_warning": "Report all losses; fixed outlier/long-null diagnostics do not silently replace primary TS-AUC."
+  },
+  "shadow_confirmation": {
+    "directional_delta_strict_min": 0.0,
+    "strong_delta_min": 0.001,
+    "rejection_delta_max": -0.001,
+    "no_supported_catastrophic_collapse": true,
+    "otherwise": "INCONCLUSIVE",
+    "maximum_new_finalists": 3,
+    "all_roles_require_common_research_finalist_gate": true,
+    "no_eligible_candidate": "Keep Shadow CLOSED; do not spend it to rescue a near-miss.",
+    "no_tuning_after_first_Shadow_access": true,
+    "shadow_bootstrap": "No new Shadow bootstrap; paired point estimates and predefined slice diagnostics only"
+  },
+  "finalist_roles": [
+    "PERFORMANCE",
+    "ROBUSTNESS",
+    "ORTHOGONAL"
+  ],
+  "finalist_diversity": "At most one near-identical recipe from a family; select distinct scientific questions, no mandatory three slots",
+  "winner_gap_uncertain_below": 0.0007,
+  "bootstrap": {
+    "replicates": 2000,
+    "seed_base": 20260908,
+    "unit": "whole series",
+    "new_draws_after_score": false
+  },
+  "saturation": {
+    "structural_hypotheses_min": 12,
+    "best_gain_strict_below": 0.0007,
+    "action": "Stop new scientific fits; continue meaningful ResearchPool robustness/reproduction/analysis."
+  },
+  "time_bins": [
+    [
+      0,
+      9
+    ],
+    [
+      10,
+      24
+    ],
+    [
+      25,
+      49
+    ],
+    [
+      50,
+      99
+    ],
+    [
+      100,
+      199
+    ],
+    [
+      200,
+      399
+    ],
+    [
+      400,
+      null
+    ]
+  ],
+  "age_bins": [
+    [
+      0,
+      4
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      10,
+      19
+    ],
+    [
+      20,
+      49
+    ],
+    [
+      50,
+      null
+    ]
+  ],
+  "support_break_series_min": 100,
+  "prefix_cases_per_family_min": 100,
+  "finalist_prefix_cases_min": 300,
+  "long_null_horizons": [
+    1024,
+    4096,
+    16384
+  ],
+  "outlier_impulse_lags": [
+    0,
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "minimum_productive_research_seconds": 36000,
+  "separate_final_audit_seconds_min": 3000,
+  "preferred_shadow_timing": "After >=36000 observed research seconds and all required ResearchPool selection work, at most three frozen finalists",
+  "new_fits_on_Shadow": 0,
+  "selected_model_training_scope": "ResearchPool only; fresh reproduction uses raw ResearchPool. No optional all-DEV refit in this session.",
+  "closed_exact_recipes_forbidden": [
+    "NEXT4 A/C/E/G/H recipes",
+    "NEXT3 router and scale-repair exact variants",
+    "C205 lag subset variants"
+  ]
+}

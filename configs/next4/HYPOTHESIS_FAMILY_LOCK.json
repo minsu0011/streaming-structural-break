@@ -1,0 +1,78 @@
+{
+  "status": "FROZEN_STRUCTURAL_FAMILY_PLAN_BEFORE_NEXT4_SCORES",
+  "created_utc": "2026-09-10T11:54:27.473129+00:00",
+  "families": {
+    "A": {
+      "name": "Dependence/whiteness",
+      "candidate_ids": [
+        "A1_INNOVATION_PORTMANTEAU",
+        "A2_MAGNITUDE_PORTMANTEAU",
+        "A3_SIGN_PORTMANTEAU"
+      ],
+      "principle": "H-centered aggregate short/long lag-correlation departures; nonlinear joint statistics rather than raw lag subset changes"
+    },
+    "B": {
+      "name": "Robust direction asymmetry",
+      "candidate_ids": [
+        "B1_SPLIT_ENERGY_BRANCHES",
+        "B2_LOG_ENERGY_SEMITAIL"
+      ],
+      "principle": "Keep lower/upper branches separately and preserve direction; no repeat of NEXT3 piecewise mapping followed by global recentering"
+    },
+    "C": {
+      "name": "Distribution change",
+      "candidate_ids": [
+        "C1_FIXED_BIN_HELLINGER",
+        "C2_FIXED_BIN_JS",
+        "C3_SHAPE_RATIO_DISTRIBUTION"
+      ],
+      "principle": "Fixed residual-space cells and separately retained H masses/divergences, distinct from original rank-uniform chi-square/CvM CDF bank"
+    },
+    "D": {
+      "name": "Sequential likelihood",
+      "candidate_ids": [
+        "D1_DISCRETE_MEAN_MIXTURE",
+        "D2_DISCRETE_SCALE_MIXTURE",
+        "D3_HAZARD_MIXTURE"
+      ],
+      "principle": "Bounded discrete likelihood alternatives or hazard recurrence; no nearby age-grid search"
+    },
+    "E": {
+      "name": "Metric-aligned nested combination",
+      "candidate_ids": [
+        "E1_NESTED_PAIRWISE_LINEAR",
+        "E2_NESTED_PAIRWISE_INTERACTIONS"
+      ],
+      "principle": "Same-time train-only pair differences of honest inner base OOF, distinct from old boosted rank learners and NEXT3 binary-loss gates"
+    },
+    "F": {
+      "name": "Finite multi-expert combinations",
+      "candidate_ids": [
+        "F1_FIXED_INDEPENDENT_THIRD",
+        "F2_FIXED_JOINT_NEW_EXPERTS"
+      ],
+      "principle": "Conditional on registered independent expert evidence; frozen small combinations, no dynamic gate or percent-grid"
+    },
+    "G": {
+      "name": "H-only context",
+      "candidate_ids": [
+        "G1_H_CONTEXT_BASE",
+        "G2_H_CONTEXT_NESTED_PAIRWISE"
+      ],
+      "principle": "Small immutable H summaries; distinguish direct base covariates from nested learned forecast combination"
+    },
+    "H": {
+      "name": "Compact temporal evidence",
+      "candidate_ids": [
+        "H1_FIXED_LINEAR_STATE_READOUT"
+      ],
+      "principle": "Small causal state recurrence and train-fold readout; no GRU/LSTM/Transformer"
+    }
+  },
+  "family_count": 8,
+  "named_candidate_slots": 18,
+  "family_contract": "Each family exact numeric menu/source/stop rule must be frozen before its first score; named slots may be rejected as duplicates or conditionally skipped, never silently replaced after scoring.",
+  "unused_candidates_do_not_count_as_completed_hypotheses": true,
+  "maximum_active_bottlenecks": 2,
+  "policy_sha256": "4d1b42708bc3e45aa81bbd9cf337de7d77972e4e927d73ca7786699e16328d0f"
+}

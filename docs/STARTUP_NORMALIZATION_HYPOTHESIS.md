@@ -1,0 +1,7 @@
+# Causal startup normalization
+
+The real DEV primary's mean time-bucket AUC was approximately 0.502 at online steps 0–9, compared with 0.601 at 200–399. Break-age 0–4 AUC was approximately 0.523. Historical null calibration improved total discrimination but used mostly steady-state historical feature variability. This motivates testing an analytical prefix correction before that calibration.
+
+For an IID null and EWMA coefficient alpha, put b=1-alpha. An EWMA initialized at the historical mean has variance proportional to 1-b^(2t). The engine multiplies many deviations by sqrt(n_eff(t)), where n_eff(t)=(1-b^t)/alpha. The standard deviation of those features, relative to their steady-state standard deviation, is therefore sqrt((1-b^t)(1-b^(2t))). The proposed representation divides those current deviations by this known-prefix ratio. Unscaled log-moment features use sqrt(1-b^(2t)) as a first-order approximation. Cumulative, current-point and cross-scale/memory features are unchanged.
+
+Only the already observed step count t and the authoritative configured alphas enter this correction. Tau and final online length are excluded. The variance formula is exact for an IID linear statistic; its use for nonlinear moments and dependent data is an approximation that must earn support in the same frozen DEV folds. Historical normalization parameters remain historical-only. This is a new representation, leaving official EWMA B1 unchanged.

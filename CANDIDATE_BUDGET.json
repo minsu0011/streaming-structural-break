@@ -1,0 +1,56 @@
+{
+  "status": "FROZEN_BEFORE_NEXT4_SCORES",
+  "created_utc": "2026-09-10T11:54:27.490772+00:00",
+  "major_families_max": 8,
+  "new_full_candidates_max": 24,
+  "named_slots": 18,
+  "per_family_default_max": 4,
+  "candidate_identity": "One frozen model/feature/learner/prediction-combination recipe; every separately selected blend or learner is a candidate.",
+  "standalone_diagnostic_not_separately_selectable": true,
+  "fit_count_separate": "Every attempted/completed training operation is recorded; cache reuse is zero new fits.",
+  "family_lock_sha256": "cd7a80fbe01828508ea0529c8ed7bd8bbbf4330f1bb235577af2610b69b0374e",
+  "final_usage_recorded_utc": "2026-09-10T19:06:46.502472+00:00",
+  "declared_families": 8,
+  "families_with_new_DEV_scores": 7,
+  "screen_candidates": 16,
+  "full_candidates": 14,
+  "family_screen_full_counts": {
+    "A": [
+      3,
+      3
+    ],
+    "B": [
+      2,
+      2
+    ],
+    "C": [
+      3,
+      3
+    ],
+    "D": [
+      3,
+      3
+    ],
+    "E": [
+      2,
+      1
+    ],
+    "F": [
+      0,
+      0
+    ],
+    "G": [
+      2,
+      1
+    ],
+    "H": [
+      1,
+      1
+    ]
+  },
+  "real_DEV_learner_fits": 166,
+  "new_frozen_base_fits": 0,
+  "new_selected_roles": 1,
+  "new_candidate_identity_from_diagnostics": 0,
+  "original_frozen_budget_sha256": "c803073b4fb5ab94c4a4e14f00fb6d8aad58fda1a545d635142eab4a8a49da4f"
+}

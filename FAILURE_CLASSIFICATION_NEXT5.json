@@ -1,0 +1,64 @@
+{
+  "status": "PASS_COMPLETE_FAILURE_CLASSIFICATION",
+  "records": 34,
+  "classification_counts": {
+    "BUG": 6,
+    "QUARANTINED": 8,
+    "SCREEN_FAIL": 1,
+    "FULL_FAIL": 19
+  },
+  "actual_execution_failures": 6,
+  "supervised_Python_execution_failures": 5,
+  "native_metadata_publication_failures": 1,
+  "unstarted_superseded_jobs": 8,
+  "scientific_screen_failures": 1,
+  "scientific_promotion_failures": 19,
+  "all_13_preserved_quarantines_resolved": true,
+  "historical_33_row_classification": {
+    "status": "PASS_COMPLETE_FAILURE_CLASSIFICATION",
+    "records": 33,
+    "classification_counts": {
+      "BUG": 5,
+      "QUARANTINED": 8,
+      "SCREEN_FAIL": 1,
+      "FULL_FAIL": 19
+    },
+    "actual_execution_failures": 5,
+    "supervised_Python_execution_failures": 4,
+    "native_metadata_publication_failures": 1,
+    "unstarted_superseded_jobs": 8,
+    "scientific_screen_failures": 1,
+    "scientific_promotion_failures": 19,
+    "all_12_preserved_quarantines_resolved": true,
+    "historical_32_row_classification": {
+      "status": "PASS_COMPLETE_FAILURE_CLASSIFICATION",
+      "records": 32,
+      "classification_counts": {
+        "BUG": 4,
+        "QUARANTINED": 8,
+        "SCREEN_FAIL": 1,
+        "FULL_FAIL": 19
+      },
+      "actual_execution_failures": 4,
+      "supervised_Python_execution_failures": 3,
+      "native_metadata_publication_failures": 1,
+      "unstarted_superseded_jobs": 8,
+      "scientific_screen_failures": 1,
+      "scientific_promotion_failures": 19,
+      "all_11_preserved_quarantines_resolved": true,
+      "new_fits": 0,
+      "source_sha256": "fe9b999c9be4dd30491d327cb9e8e29c07902f4cfbda7ba7f0f38db2048ce97c",
+      "scope": "Final union of the original 24 records, seven reviewed API import records and one native metadata publication failure; inspection-command and development-only edits are separate maintenance history."
+    },
+    "final_suite_original_tests": 1357,
+    "final_suite_replacement_tests": 1363,
+    "new_fits": 0,
+    "source_sha256": "94f3d0f665086841926f72ab299b8d9b39be15d671943b76e827dba050b41cc0",
+    "scope": "Original 32 queued scientific/validation and native-publication records plus one failed final-suite job. Historical monitor heartbeat and development harness exceptions are separately preserved maintenance evidence."
+  },
+  "new_fits": 0,
+  "source_sha256": "fc4a2730030b3f0d953004363d5fdd31b492977147456d2ee7c1e2636c8c5012",
+  "scope": "Prior 33 execution/scientific records plus the failed graph inventory job. Monitor and development harness exceptions remain separately documented.",
+  "created_utc": "2026-09-11T20:04:19.048567+00:00",
+  "table_sha256": "ee78bb712b0b9d8564a8a61a44e2f94d3242fa42d3f96a6db58162c8247a5871"
+}

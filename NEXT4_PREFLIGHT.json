@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-10T11:52:05.516119+00:00",
+  "restoration_sha256": "f6566fbd2d80f035fdc9307a02ce3b6e20fb9dbcb390b73f7a1b1ce9ce5e191b",
+  "frozen_reference_sha256": "e2b0fe6e22d5f8a7832dd0892aa53069744774fcef6fd163a9eecae6c5fb3230",
+  "guard_scorer_tests": {
+    "status": "PASS",
+    "tests": 53,
+    "seconds": 30.961,
+    "required_classnames": [
+      "tests.test_next_guard",
+      "tests.test_research_guards",
+      "tests.test_scorer_official_checks",
+      "tests.test_ts_auc"
+    ],
+    "report_sha256": "aeb1ea7c507914af5a4cbc653418ed59f802a2e5c55dc4c03980785e64cb2a86"
+  },
+  "frozen_performance_public_replay": {
+    "status": "PASS",
+    "created_utc": "2026-09-10T11:49:48.402387+00:00",
+    "role": "performance",
+    "series": 8000,
+    "points": 4014405,
+    "output_fingerprint_sha256": "ff9589de5e233f3939647ea348694913261b3f25c74c7ab05930363a7386bc59",
+    "expected_fingerprint_sha256": "ff9589de5e233f3939647ea348694913261b3f25c74c7ab05930363a7386bc59",
+    "reference_receipt_sha256": "e6b6a2dd76a8fcaf1708881345cb27eb38dcb3adc08b35479b861481f3560b3b",
+    "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+    "script_sha256": "d519c927dfde196960f5f91088eb244d6be892ea501f3f1ef5d25446dadfe949",
+    "elapsed_seconds": 130.86058419999608,
+    "first_none_before_data": true,
+    "one_current_point_per_output": true,
+    "future_length_and_suffix_inaccessible": true,
+    "seal_rows": 0,
+    "new_learner_fits": 0,
+    "quality_score_computed": false
+  },
+  "raw_sha256": {
+    "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+    "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+  },
+  "environment_pins": 63,
+  "DEV_series": 8000,
+  "seal_series": 2000,
+  "all_seals_unopened": true,
+  "new_reduced_uses": 0,
+  "new_public_submissions": 0,
+  "new_cloud_submissions": 0,
+  "new_fits": 0,
+  "NEXT3_stopped_status_preserved": true,
+  "scope": "Minimal NEXT4 scientific preflight; NEXT3 deployment finalization is not performed."
+}

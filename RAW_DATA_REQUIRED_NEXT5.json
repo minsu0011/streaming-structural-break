@@ -1,0 +1,20 @@
+{
+  "status": "RAW_EXCLUDED_BY_DESIGN",
+  "created_utc": "2026-09-11T20:04:19.309621+00:00",
+  "audit_started_utc": "2026-09-11T18:43:20.400601+00:00",
+  "new_NEXT5_roles": [],
+  "Shadow_opened": false,
+  "LOCAL_SEAL_rows": 0,
+  "access_counter_scope": "Admitted returned rows, caches and application training/evaluation/analysis; Arrow scanner ID predicates and returned-ID checks were used. Internal Parquet page/row-group decoding was not independently instrumented.",
+  "zero_internal_Parquet_decoding_claimed": false,
+  "expected_raw_file_sha256": {
+    "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+    "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+  },
+  "required_interpreter": "Python 3.13.2",
+  "exact_pins": "requirements-lock.txt",
+  "ResearchPool_regeneration_script": "scripts/prepare_next5_research_data.py",
+  "retraining_boundary": "Use separately supplied hash-matched raw files and frozen RP IDs/splits/registrations. Do not relax Shadow or LOCAL_SEAL admission. Finished jobs are not automatically rerun.",
+  "raw_free_capability": "Original retained BL80/B2/D2 inference and included fitted research models can be loaded with their source/metadata. Full held-out metrics require excluded raw/cache/point OOF.",
+  "raw_data_download_or_external_submission_instructions_provided": false
+}

@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-10T19:06:46.568718+00:00",
+  "audit_started_utc": "2026-09-10T18:18:24.789125+00:00",
+  "new_seal_rows": 0,
+  "evidence": {
+    "B2_diagnostic_research": {
+      "status": "PASS",
+      "created_utc": "2026-09-10T15:27:58.409629+00:00",
+      "candidate": "B2_LOG_ENERGY_SEMITAIL",
+      "promotion": false,
+      "paired_repeats": 5,
+      "summary_median_ratios": {
+        "ten_million_ratio": 2.0124336107935417,
+        "scalar_median_ratio": 1.9637305699481864,
+        "amortized_ratio": 2.23970167621863
+      },
+      "direct_runtime_within_3x": true,
+      "new_fits": 0,
+      "seal_rows": 0,
+      "load_seconds": {
+        "BL80": 0.0872073999926215,
+        "B2": 0.05670660000760108
+      },
+      "warmup_seconds": {
+        "BL80": 13.012694300006842,
+        "B2": 7.143105299997842
+      },
+      "reference_proof": {
+        "training_scope": "ALL_DEV_8000",
+        "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+        "descriptor_sha256": "7d725650d72c0837ee7e13ca27ebc9b26e90cf67f53781c78aa72908934cb8f9"
+      },
+      "source_and_policy_sha256": "d796249460cc455aa9582211a92efdf458dfbed285d064813168c5941125b47e",
+      "scope": "Contemporaneous all-DEV fitted models, unchanged direct scalar implementation, same existing 128-series sample and actual 10M continuous updates per run. No shared-state optimization; timing does not override primary statistical gate.",
+      "files_sha256": {
+        "PAIRED_RATIOS.csv": "95d459c9d50bde4c757c57907461b7584155db1409cf75cf7c3c44a372c40016",
+        "repeat_1_B2.json": "65b1a41f0be999443004822d3cb510389ba8bab5e94ed1838b6ce6f74195298e",
+        "repeat_1_BL80.json": "43e3c755095da48f1d3077c84a1e0c9437b0440e4f137c2040aa3b3294f85acb",
+        "repeat_2_B2.json": "505183df2d35368c1676b7b05cc09ed906015813b9316442accd1494170d6ab5",
+        "repeat_2_BL80.json": "19d3a112d53e528219f46d63d6d89f894792998edc03bd45e5a0db3e9d08bcfe",
+        "repeat_3_B2.json": "01ed5da719883ac7cd0a1f6a4f9319e5df86ca852d3113d5fcbe6d3567c99299",
+        "repeat_3_BL80.json": "bf2302764ebf1d8bce35ce8160a23abbe685332f58e8d8d9808ba7ff227cef7a",
+        "repeat_4_B2.json": "937bd79e434d3a97eec12c34ae179eafbc763e89e98950b14faca217d7714c87",
+        "repeat_4_BL80.json": "b13277013ce1c5e91dc79e003675a3765de20339b485f4f773cc2751dd4c2a4f",
+        "repeat_5_B2.json": "bf3a508f07cc7a3ba2349738c80c3bbfda77f955a1f449abb180a44546351a59",
+        "repeat_5_BL80.json": "e5ee6a96da4eba852467bf503a57f5382f3170cc77ee7b29917af7d1f7d6df2a",
+        "START.json": "f09cff0bb20acc3cb09a4b4330b7831c43a8ab700dcacaa9e1dd84cf7a327d54"
+      }
+    },
+    "NEXT4_ROBUSTNESS_research": {
+      "status": "PASS",
+      "created_utc": "2026-09-10T18:17:25.257145+00:00",
+      "candidate": "D2_DISCRETE_SCALE_MIXTURE",
+      "audit_phase": false,
+      "paired_repeats": 2,
+      "ratios": [
+        {
+          "paired_repeat": 1,
+          "ten_million_ratio": 1.8792199078929426,
+          "scalar_median_ratio": 1.891304347826087,
+          "amortized_ratio": 1.7056044541593454
+        },
+        {
+          "paired_repeat": 2,
+          "ten_million_ratio": 1.8729415045112192,
+          "scalar_median_ratio": 1.8768115942028984,
+          "amortized_ratio": 1.6512235067001046
+        }
+      ],
+      "summary_median_ratios": {
+        "ten_million_ratio": 1.8760807062020808,
+        "scalar_median_ratio": 1.8840579710144927,
+        "amortized_ratio": 1.678413980429725
+      },
+      "direct_runtime_within_3x": true,
+      "reference_proof": {
+        "training_scope": "ALL_DEV_8000",
+        "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+        "descriptor_sha256": "7d725650d72c0837ee7e13ca27ebc9b26e90cf67f53781c78aa72908934cb8f9"
+      },
+      "warmup_seconds": {
+        "BL80": 7.7201011999859475,
+        "ROBUSTNESS": 1.4113012999878265
+      },
+      "actual_scalar_updates": 40000000,
+      "timing_source_sha256": "1f0b54db138e0d60cbfd991d55b280b2a7577bf71de996483bc0dd9b8bb18b2f",
+      "nomination_sha256": "d7bd160b5725e3c30972a79f7989ea8445e361cb92a3cf0f6c07cdb5b0d62094",
+      "new_fits": 0,
+      "seal_rows": 0,
+      "files_sha256": {
+        "repeat_1_BL80.json": "f5ff181ee6ef6e44b4096cd3f774da1961fd3f678023a77da31a100c615bae59",
+        "repeat_1_ROBUSTNESS.json": "af17a2b2508eebad859e7962d285aa13ad654f8dcbda17c7bd34cc4e9b7ec1eb",
+        "repeat_2_BL80.json": "45574ae3571bb569e3ebcd5bd72e054a2167a6885717e1b9263c1e66f9fbe157",
+        "repeat_2_ROBUSTNESS.json": "eb37ae71db8d46dfe6871978b129e1261e46142ea52b1d5067d172f91be3be88",
+        "START.json": "220272777a27ee1d0e5dd234f944dc336bd828b0f18dbc3d8fc9cce6755a5a88"
+      }
+    },
+    "NEXT4_ROBUSTNESS_final_audit": {
+      "status": "PASS",
+      "created_utc": "2026-09-10T18:47:06.610504+00:00",
+      "candidate": "D2_DISCRETE_SCALE_MIXTURE",
+      "audit_phase": true,
+      "paired_repeats": 1,
+      "ratios": [
+        {
+          "paired_repeat": 1,
+          "ten_million_ratio": 1.9382560170342167,
+          "scalar_median_ratio": 1.9318181818181819,
+          "amortized_ratio": 1.680544951443184
+        }
+      ],
+      "summary_median_ratios": {
+        "ten_million_ratio": 1.9382560170342167,
+        "scalar_median_ratio": 1.9318181818181819,
+        "amortized_ratio": 1.680544951443184
+      },
+      "direct_runtime_within_3x": true,
+      "reference_proof": {
+        "training_scope": "ALL_DEV_8000",
+        "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+        "descriptor_sha256": "7d725650d72c0837ee7e13ca27ebc9b26e90cf67f53781c78aa72908934cb8f9"
+      },
+      "warmup_seconds": {
+        "BL80": 7.8675857999769505,
+        "ROBUSTNESS": 1.3489144000050146
+      },
+      "actual_scalar_updates": 20000000,
+      "timing_source_sha256": "1f0b54db138e0d60cbfd991d55b280b2a7577bf71de996483bc0dd9b8bb18b2f",
+      "nomination_sha256": "d7bd160b5725e3c30972a79f7989ea8445e361cb92a3cf0f6c07cdb5b0d62094",
+      "new_fits": 0,
+      "seal_rows": 0,
+      "files_sha256": {
+        "repeat_1_BL80.json": "e3942e5a220a644892510255fcb3b8d35a730c9740e68949970121cbbb10f79d",
+        "repeat_1_ROBUSTNESS.json": "2fb0064fb0b842157a4d74621fc7574afcdce166786fb02074a4e46a4e4de2c1",
+        "START.json": "2a578ab3179a4939613bc0e7ca53e93198a13fd51c5612a5078eb767fc5838e9"
+      }
+    }
+  },
+  "primary_frozen_state_array_bytes": 16925,
+  "B2_diagnostic_state_array_bytes": 35029,
+  "state_bytes_scope": "Unique mutable NumPy arrays; excludes Python overhead, immutable tree storage and total RSS.",
+  "protocol": "Original fixed 128-series sample, actual 10M scalar updates, contemporaneous matching BL80, bounded paired repetitions and process isolation.",
+  "older_90_second_records_used_for_current_ratios": false,
+  "B2_latency_does_not_override_failed_CI": true
+}

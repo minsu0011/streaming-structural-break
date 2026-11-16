@@ -1,0 +1,13 @@
+{
+  "files_sha256": {
+    "configs/features.json": "da0cec61d66137ab814e06f3c7f13c8bbfa8ffdc923781f59debf3b6fb8dd7a3",
+    "configs/arch_input.json": "14f312c838b9cea83821ace6fa37e320c724ff0b5c957047836b1d71f79cdb7e",
+    "configs/ar_residual_input.json": "ba83426822f793fae7868eaf4a1d5a27daf6c3bf00c45a3870d9098e273ff4e1",
+    "configs/historical_context.json": "7fd9cbbdde584857c1dcd24b21fb8aa8c0d1fb15be055ac878a054f8a98449ef",
+    "configs/historical_quantiles.json": "008e79cb893976d6417f6fb3778c995746b16e20be5c996e796b896422fa5f96",
+    "configs/rank_gaussian.json": "8b7f1a69ce6e65947039c8089787d06556d191a6fd60f219efc3179de9080b8f",
+    "configs/magnitude_dependence.json": "182daa7c8cc47ec31c9530257033cde4bf904c15357caf198dbe38a1ddc6b5b0",
+    "configs/next2/DEPLOYMENT_RESEARCH_PERFORMANCE.json": "cf56046cf5726bdb39d01af9cca3b79efe101c8f7c363e405c7b8a637c8b1702"
+  },
+  "scope": "Frozen configuration bytes required by pure numeric inference and its training recipe"
+}

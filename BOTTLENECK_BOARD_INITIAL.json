@@ -1,0 +1,209 @@
+{
+  "created_utc": "2026-09-10T00:38:56.309066+00:00",
+  "reason": "Initial priorities from directly restored NEXT2 artifacts; effect sizes are planning estimates",
+  "bottlenecks": [
+    {
+      "id": "B4",
+      "name": "Adaptive DEV selection uncertainty",
+      "description": "8,000 DEV series have been reused across sessions; conditional bootstrap is not independent validation.",
+      "evidence": [
+        {
+          "path": "LIMITATIONS_NEXT2.md",
+          "sha256": "692ecdd388f217601d21ade320b6b176073ebafc12405b069da72ab572c1529f"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.004,
+      "confidence": 0.95,
+      "unresolved_severity": 1.0,
+      "achievable_improvement": 0.25,
+      "overfit_risk": 0.15,
+      "engineering_cost": 0.3,
+      "runtime_cost": 0.1,
+      "next_test": "Freeze stronger gates and verify nested base OOF lineage plus limited negative controls",
+      "stop_rule": "No seal access and no small-gain promotion",
+      "status": "GUARDRAIL",
+      "priority": 0.0005776831863788385,
+      "rank": 1
+    },
+    {
+      "id": "B1",
+      "name": "DEPENDENCE gain / SCALE loss",
+      "description": "Fixed C205 weight gains dependence but reduces supported scale score.",
+      "evidence": [
+        {
+          "path": "MECHANISM_RESULTS_NEXT2.csv",
+          "sha256": "06d27d2c6d58ba458770045086816ac9a3301a378eaae8dc1b20eb370a662a76"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.003,
+      "confidence": 0.85,
+      "unresolved_severity": 0.9,
+      "achievable_improvement": 0.7,
+      "overfit_risk": 0.7,
+      "engineering_cost": 0.35,
+      "runtime_cost": 0.25,
+      "next_test": "Pair-contribution attribution and two preregistered causal heuristic routes",
+      "stop_rule": "Reject failed screens; no static weight microsearch",
+      "status": "ACTIVE",
+      "priority": 0.0005600000000000001,
+      "rank": 2
+    },
+    {
+      "id": "B8",
+      "name": "Shared runtime and deployment reliability",
+      "description": "Dual ensemble still costs more than distilled fallback; NEXT3 adds lifecycle failure modes.",
+      "evidence": [
+        {
+          "path": "RUNTIME_PRUNING_RESULTS.csv",
+          "sha256": "c4225d3191e9a507f9478fbc72a59b224c86fce3bd2c5179b90fa4402d23ae1f"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.001,
+      "confidence": 0.95,
+      "unresolved_severity": 0.7,
+      "achievable_improvement": 0.8,
+      "overfit_risk": 0.1,
+      "engineering_cost": 0.4,
+      "runtime_cost": 0.1,
+      "next_test": "Supervisor recovery/atomic writes tests and profiling of finalized inference",
+      "stop_rule": "No scientific changes presented as engineering parity",
+      "status": "MAINTENANCE",
+      "priority": 0.00031404958677685947,
+      "rank": 3
+    },
+    {
+      "id": "B3",
+      "name": "Specialist redundancy and scale sensitivity",
+      "description": "C205 has 4 lags and 6 statistic families; minimal useful complement is unknown.",
+      "evidence": [
+        {
+          "path": "COMPLEMENT_STANDALONE_RESULTS.csv",
+          "sha256": "23c9587deb4fa6156a9c4f269dd7883be681efeb0b762a1c978a281030f5ea56"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.002,
+      "confidence": 0.6,
+      "unresolved_severity": 0.8,
+      "achievable_improvement": 0.7,
+      "overfit_risk": 0.5,
+      "engineering_cost": 0.4,
+      "runtime_cost": 0.15,
+      "next_test": "Four small lag/family ablations, then two invariant alternatives only if routing fails",
+      "stop_rule": "Blend gain is authority; standalone improvement alone is insufficient",
+      "status": "QUEUED",
+      "priority": 0.00027826086956521737,
+      "rank": 4
+    },
+    {
+      "id": "B2",
+      "name": "Negative scale evidence downstream",
+      "description": "Signed current/forecast channels retain decrease information; downstream use is weak in ARCH/tail.",
+      "evidence": [
+        {
+          "path": "docs/NEXT2_SCALE_DOWN_MECHANISTIC_SYNTHESIS.md",
+          "sha256": "0823a09e3efaa680f13f109ab981ecb46966d097351ccfe504a86d0157c8db8b"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.002,
+      "confidence": 0.8,
+      "unresolved_severity": 0.9,
+      "achievable_improvement": 0.5,
+      "overfit_risk": 0.6,
+      "engineering_cost": 0.7,
+      "runtime_cost": 0.35,
+      "next_test": "Matched stage separation, sign/range/saturation, then distinct one-sided repairs",
+      "stop_rule": "Stop candidate family when synthetic improvement lacks DEV support",
+      "status": "ACTIVE",
+      "priority": 0.000196078431372549,
+      "rank": 5
+    },
+    {
+      "id": "B6",
+      "name": "Isolated outlier persistence",
+      "description": "Large isolated outlier leaves long-lived evidence and worsens blend false alarms.",
+      "evidence": [
+        {
+          "path": "COUNTEREXAMPLE_RESULTS.csv",
+          "sha256": "308485df59512bd0f36229401b9bec47719d257f4e3c70e7b71c936a19aa1df0"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.001,
+      "confidence": 0.8,
+      "unresolved_severity": 0.8,
+      "achievable_improvement": 0.5,
+      "overfit_risk": 0.5,
+      "engineering_cost": 0.4,
+      "runtime_cost": 0.25,
+      "next_test": "Impulse response through 1,024 points with age eligibility separated from expiry",
+      "stop_rule": "Minimal component change only after identified cause; DEV gates remain",
+      "status": "QUEUED",
+      "priority": 0.00012190476190476194,
+      "rank": 6
+    },
+    {
+      "id": "B5",
+      "name": "Long-horizon accumulation",
+      "description": "Eventual alarm FPR grows; decay harmed clean late detection despite rank parity.",
+      "evidence": [
+        {
+          "path": "LONG_NULL_RESULTS_NEXT2.csv",
+          "sha256": "401324aec248eb4d126c3b02efdc0f4e2956c3b14ab5e8fa2846b95b71939c21"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.0005,
+      "confidence": 0.9,
+      "unresolved_severity": 0.8,
+      "achievable_improvement": 0.3,
+      "overfit_risk": 0.4,
+      "engineering_cost": 0.5,
+      "runtime_cost": 0.6,
+      "next_test": "Only evaluate finalists/new memory changes; prioritize competition score",
+      "stop_rule": "Do not spend over 20% of total run on alarm calibration",
+      "status": "DEFERRED",
+      "priority": 3.214285714285716e-05,
+      "rank": 7
+    },
+    {
+      "id": "B7",
+      "name": "Early evidence weakness",
+      "description": "Early-age ranking is weak but overall contribution may be small.",
+      "evidence": [
+        {
+          "path": "CV_RESULTS_NEXT2.csv",
+          "sha256": "9ad375c32d3f544e81b39bfe278e03421526bde2d01b802b6230f60a40231167"
+        }
+      ],
+      "real_DEV_support": "Existing locked original/ALT/H evidence; adaptive selection limitation retained",
+      "synthetic_support": "Fixed NEXT2 counterexample evidence, diagnostic only",
+      "estimated_metric_impact": 0.0004,
+      "confidence": 0.5,
+      "unresolved_severity": 0.5,
+      "achievable_improvement": 0.3,
+      "overfit_risk": 0.6,
+      "engineering_cost": 0.4,
+      "runtime_cost": 0.2,
+      "next_test": "Measure exact pair-mass contribution before any early-only hypothesis",
+      "stop_rule": "No overall loss for early-only gain",
+      "status": "DEFERRED",
+      "priority": 1.1160714285714287e-05,
+      "rank": 8
+    }
+  ],
+  "priority_units": "Decision heuristic, not a measured attainable TS-AUC or posterior probability",
+  "primary_objective": "Official competition TS-AUC; alarm FPR is secondary",
+  "maximum_active_bottlenecks": 2
+}

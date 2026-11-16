@@ -1,0 +1,11 @@
+{
+  "status": "PROVISIONAL_ENGINEERING_ELIGIBLE",
+  "created_utc": "2026-09-10T03:44:59.416868+00:00",
+  "variant": "PACKED_SHARED",
+  "runtime_sha256": "93f76c749c57682cbd63c74af35454b161717b5e565bbb8bf943b5a857d8b5da",
+  "implementation_lock_sha256": "00928f359b6015b72e292c7cab7372e070ad1d92b816cb887b3d6dbd02305589",
+  "timing_receipt_sha256": "c2cfd16a2abf12054effaf8eb5b1dc56812520cdb52f0d6669cbe1c74c99f68c",
+  "scientific_role": "FROZEN_PERFORMANCE",
+  "scientific_quality_change": false,
+  "final_promotion": false
+}

@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN_NEXT5_BUDGET",
+  "created_utc": "2026-09-11T05:12:27.092317+00:00",
+  "families_max": 7,
+  "screens_max": 35,
+  "full_candidates_max": 20,
+  "shadow_finalists_max": 3,
+  "initial_slots": 20,
+  "family_slot_counts": {
+    "S": 4,
+    "P": 3,
+    "W": 3,
+    "E": 2,
+    "R": 3,
+    "M": 2,
+    "X": 3
+  },
+  "new_adaptive_slots_require_prior_registered_distinct_hypothesis_and_unused_hard_budget": true,
+  "reference_fit_accounting_separate_from_candidate_count": true,
+  "all_actual_reference_fits_count_in_learner_total": true
+}

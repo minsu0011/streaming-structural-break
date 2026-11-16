@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-09-08T17:20:46.773893+00:00",
+  "checks": [
+    {
+      "check": "training seal request rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "validation seal request rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "OOF seal request rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "prediction seal request rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "experiment ledger seal request rejected",
+      "status": "PASS"
+    },
+    {
+      "check": "seal target read rejected before scanner",
+      "status": "PASS"
+    }
+  ],
+  "guard_tests_passed": 12,
+  "partition_lock_sha256": "8f166eefb4d4bde3523681167f54b42c9e0c4f54b8606ad1e30eb805d8faac55",
+  "dev_series": 8000,
+  "dev_online_rows": 4014405,
+  "seal_training_validation_oof_rows": 0,
+  "seal_opened": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false
+  },
+  "reduced_new_usage": 0,
+  "public_submissions": 0,
+  "boundary": "NEXT application admission; not an OS sandbox. Original source files remain available but NEXT code must use the guard.",
+  "raw_bytes_note": "Whole-file hashes read raw training bytes; Arrow may internally decode mixed row groups. Predicate-filtered DEV rows alone are exposed to research.",
+  "elapsed_seconds": 10.146076899996842
+}

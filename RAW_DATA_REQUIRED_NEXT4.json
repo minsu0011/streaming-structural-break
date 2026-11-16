@@ -1,0 +1,22 @@
+{
+  "status": "RAW_EXCLUDED_FROM_HANDOFF",
+  "created_utc": "2026-09-10T19:06:46.614738+00:00",
+  "required_private_training_files": {
+    "X_train.parquet": {
+      "destination": "data/raw/X_train.parquet",
+      "sha256": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54"
+    },
+    "y_train_index.parquet": {
+      "destination": "data/raw/y_train_index.parquet",
+      "sha256": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+    }
+  },
+  "DEV_series": 8000,
+  "split_lock": "SPLIT_LOCK_REAL.json",
+  "seal_lock": "SEAL_PARTITION_500x4_LOCK.json",
+  "seal_rows_must_never_be_loaded": true,
+  "included_models_support_raw_free_inference": true,
+  "full_real_OOF_and_feature_caches_included": false,
+  "no_signed_URLs_or_credentials": true,
+  "retraining_requires_regenerating_excluded_caches": true
+}

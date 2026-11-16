@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-11T05:27:07.461429+00:00",
+  "tests": 56,
+  "test_failures": 0,
+  "test_errors": 0,
+  "test_skips": 0,
+  "guard_scorer_test_xml_sha256": "bfa6d1f6d221672558071cdbae69d06eac6c0eee921774f998675f36c9c1555b",
+  "cold_reference_checks": [
+    {
+      "model": "BL80",
+      "synthetic_cold_prediction_sha256": "869f7bfea4565ecedf4846b16d9b7a1ea34529db0a649ef2aa3f53e2c782eca0",
+      "current_receipt_sha256": "bae5f7143a93e0e994f7f5c889cb49f78341595820717be009dcda82535a456d",
+      "reference_receipt_sha256": "5dafc6a17eeae0815d4ca1238da7ed522be6a83fd136c24cab42e0f55f7023b7"
+    },
+    {
+      "model": "B2",
+      "synthetic_cold_prediction_sha256": "36741348a661af08613a520a0d8c7b8e82d4618f1d5be9cf9a48b5a56cd7df84",
+      "current_receipt_sha256": "5d25c40d547d5af1a11e228dc77890e2e53515a71ec05a6a4f5fe438fb8de5f6",
+      "reference_receipt_sha256": "d9cef06907aeae406a9000a68a3bd73599a1ac5665522a4a72f9a0f5924e3ce9"
+    },
+    {
+      "model": "D2",
+      "synthetic_cold_prediction_sha256": "26c83904f8e9a8482b59126d5ed61ec5b860ac829a770016045e86d7b751906a",
+      "current_receipt_sha256": "be5dbff4aad191e378020b38787d4b7edcdaebef918f7bdad9e8aa5c19769fbd",
+      "reference_receipt_sha256": "3231d54c30fa2eaed1d377c252f2798dba17ebd739016e97b9f3e5fc960085a4"
+    }
+  ],
+  "research_data": {
+    "created_utc": "2026-09-11T05:07:51.598495+00:00",
+    "directory": "data/next5/research_5d54e316ff5bf25d",
+    "manifest_sha256": "bd556027f0d9c35cb6ae009ba62a4759333c54a68ce7c834ea8b58743aa8efaf",
+    "rows": 3203157,
+    "series": 6400,
+    "shadow_rows": 0,
+    "seal_rows": 0
+  },
+  "frozen_references_sha256": "b06c2144d3343543e37ea583d22c2e3c826a52d3708538dba0dd782a13e26327",
+  "shadow_labels_loaded": false,
+  "all_seals_unopened": true,
+  "new_reduced_uses": 0,
+  "new_public_submissions": 0,
+  "new_cloud_submissions": 0,
+  "new_fits": 0,
+  "source_sha256": "d8c5d80a73111d6ee16c194a2ac9b17b969d399399e079133c58b239798d9d4f",
+  "cold_invocation_failure_preserved_and_resolved": true,
+  "recovery_receipt_sha256": "18430e7451caa7d8e1ae8d9e8bd067a06803ddbd7c06ecb413b9868cbb8ed10d",
+  "old_full_DEV_inference_replayed_in_NEXT5": false,
+  "reference_replay_scope": "Synthetic cold inference only, so no prospective Shadow features or outcomes are read."
+}

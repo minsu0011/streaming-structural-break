@@ -1,0 +1,26 @@
+{
+  "status": "FINAL_USAGE",
+  "created_utc": "2026-09-11T20:04:19.309621+00:00",
+  "audit_started_utc": "2026-09-11T18:43:20.400601+00:00",
+  "new_NEXT5_roles": [],
+  "Shadow_opened": false,
+  "LOCAL_SEAL_rows": 0,
+  "access_counter_scope": "Admitted returned rows, caches and application training/evaluation/analysis; Arrow scanner ID predicates and returned-ID checks were used. Internal Parquet page/row-group decoding was not independently instrumented.",
+  "zero_internal_Parquet_decoding_claimed": false,
+  "families": 7,
+  "screen_candidates": 20,
+  "full_candidates": 19,
+  "Shadow_finalists": 0,
+  "primitive_learner_fits": 295,
+  "fit_categories": {
+    "candidate_screen": 40,
+    "candidate_full": 95,
+    "primary_reference": 24,
+    "negative_control": 1,
+    "stability_reference": 30,
+    "stability_candidate": 105
+  },
+  "frozen_budget_sha256": "4123015ab94704616645f54e0c21776791677a8cb6cb641f9fc8ec0b7f99acaa",
+  "all_finite_scientific_recipes_closed": true,
+  "new_deployment_roles": 0
+}

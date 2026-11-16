@@ -1,0 +1,859 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-09T14:12:17.748561+00:00",
+  "roles": {
+    "DISTILLED": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T14:01:39.215333+00:00",
+      "role": "DISTILLED",
+      "source_workspace": "C:\\Users\\minsu\\Documents\\SB_NEXT2_REPRO_20260909T135550Z",
+      "canonical_model_sha256": "27307b578f78bf4bcf11e8fb3011d34f82b14156eae7508b7514177cbc22b15d",
+      "canonical_model_bytes_exact": true,
+      "all_dev_prediction_sha256": "4ecfd2248506bece0ad97a803849212fd9a8e840174a52782ebce60476ba6390",
+      "series": 8000,
+      "points": 4014405,
+      "training_comparisons": {
+        "single": {
+          "feature_matrix_sha256": true,
+          "ordered_ids_sha256": true,
+          "ordered_targets_sha256": true,
+          "training_rows": true,
+          "training_series": true
+        }
+      },
+      "new_fits": 1,
+      "seal_rows_fitted": 0,
+      "seal_values_accessed": 0,
+      "opaque_seal_series_skipped": 2000,
+      "raw_before_sha256": {
+        "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+        "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+      },
+      "raw_after_sha256": {
+        "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+        "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+      },
+      "first_none_before_data": true,
+      "one_current_point_per_yield": true,
+      "no_future_length_or_suffix_access": true,
+      "original_project_access_attempts": [],
+      "expected_reads_before_training": [],
+      "outside_workspace_write_attempts": [],
+      "network_attempts": [],
+      "guarded_read_opens": 2749,
+      "project_modules": {
+        "src": {
+          "relative": "src/__init__.py",
+          "sha256": "0bd47c41068b3c6628a482b35ff1a2c40253c4313e672c9f903b775c7d7fd32d"
+        },
+        "src.next": {
+          "relative": "src/next/__init__.py",
+          "sha256": "e169e16bb040814dbbe546a18298f37eb91220d83d07cedb95ca750b90fc8650"
+        },
+        "src.next.readonly_bootstrap": {
+          "relative": "src/next/readonly_bootstrap.py",
+          "sha256": "4a1df076b446d2661154fb218a60e323aa49244d1acf29f21e6d4b012ee7dd36"
+        },
+        "src.next2": {
+          "relative": "src/next2/__init__.py",
+          "sha256": "3d7c2a2fb10c3640277dbb20c178ccea8ad092c71aa998cf7c6074f307cb347c"
+        },
+        "src.models": {
+          "relative": "src/models/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.models.compact_trees": {
+          "relative": "src/models/compact_trees.py",
+          "sha256": "022e046e316561e606fcf6b5bb7dcee91f70c6ddff3524f590f550d105fc08e8"
+        },
+        "src.next.whitening": {
+          "relative": "src/next/whitening.py",
+          "sha256": "30d9fcd02b4462fe9a6577dd55b3bfb6fbe59e592d36c0b6f7f5693d82473bd4"
+        },
+        "src.next.normalization": {
+          "relative": "src/next/normalization.py",
+          "sha256": "d5a2f106cdaf9a5f59fb04763061ee4073fb6459be4d30343802cd72504c2a6b"
+        },
+        "src.next.engine": {
+          "relative": "src/next/engine.py",
+          "sha256": "1849557684ccd853a4ec13c607f7818420fa7ee20b96fabfaa697171a08b7411"
+        },
+        "src.features": {
+          "relative": "src/features/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.features.config": {
+          "relative": "src/features/config.py",
+          "sha256": "cbf43ad7cf6c2eafcf893cefedf3b167a62fa40c1480534853a44d393ce1a86f"
+        },
+        "src.features.streaming": {
+          "relative": "src/features/streaming.py",
+          "sha256": "fbc3e8a728d7ac34e5acdb5a2bfbb0b55c80d2a4b8c37cade81d1b41db0d5878"
+        },
+        "src.features.historical_calibration": {
+          "relative": "src/features/historical_calibration.py",
+          "sha256": "7570fc4090780c49d5370beb121ed904c5d006f4ec003050e247100ee549163f"
+        },
+        "src.features.ar_residual_input": {
+          "relative": "src/features/ar_residual_input.py",
+          "sha256": "80c4500bcaf63a72607b3de4d6d0e090ff1422f6f4b1f69694908db505f29728"
+        },
+        "src.features.ar_order_input": {
+          "relative": "src/features/ar_order_input.py",
+          "sha256": "88cb21ef0d693d31750d5b37c60b56596a3eff9526c97c69b6c2f8515a2b6062"
+        },
+        "src.features.arch_input": {
+          "relative": "src/features/arch_input.py",
+          "sha256": "05de9ce9589eff8693f3fe0eb47e847434f913535d48162151e7e5b527386908"
+        },
+        "src.next.predictor": {
+          "relative": "src/next/predictor.py",
+          "sha256": "fdc2b439bb4b17e99fbd0a268b25b81fa05a9ee822f31004d529f1a737e48df4"
+        },
+        "src.utils": {
+          "relative": "src/utils/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.utils.artifacts": {
+          "relative": "src/utils/artifacts.py",
+          "sha256": "a8d13ede8727eba24817c880ed5c3d679ef40393908f4900dc457a98e8fa3103"
+        },
+        "src.scoring": {
+          "relative": "src/scoring/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.scoring.ts_auc": {
+          "relative": "src/scoring/ts_auc.py",
+          "sha256": "b100b52db4da9e6aeffdbb565ad8ac2148615bfcea2bb837e110b6913c5263a8"
+        },
+        "src.models.learners": {
+          "relative": "src/models/learners.py",
+          "sha256": "54deb46210fdd9a012d69fda1966d74650264f92df6e430146fe2cd580acbdc2"
+        },
+        "src.models.calibrated": {
+          "relative": "src/models/calibrated.py",
+          "sha256": "57ea757e4547a92e487bfcd6f00f787b9878abf50434b8dd96dbdb9b6718df88"
+        },
+        "src.models.representations": {
+          "relative": "src/models/representations.py",
+          "sha256": "91471b36e923bc7d39ff61b616ab1f38f7993e38ad8ad9bea699e9537683bcb2"
+        },
+        "src.next.references": {
+          "relative": "src/next/references.py",
+          "sha256": "eedf24c5c1e02e5b815698126b511e8aeadf77fef140844fdc7bca7a2f277707"
+        },
+        "src.next.cache": {
+          "relative": "src/next/cache.py",
+          "sha256": "0e4e9e7acacc4614f1e701c3cb7c34bd7374efb2783f295c0e3887d19dcef947"
+        },
+        "src.next.design_selection": {
+          "relative": "src/next/design_selection.py",
+          "sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+        },
+        "src.next.extensions": {
+          "relative": "src/next/extensions.py",
+          "sha256": "a1297136d0cc75c446d62a9f91ccbd75519a50ef7e5e1f29fc9aeacf0e1958e5"
+        },
+        "src.next.registered_extensions": {
+          "relative": "src/next/registered_extensions.py",
+          "sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+        },
+        "src.next.late_blend": {
+          "relative": "src/next/late_blend.py",
+          "sha256": "ab23bafe07581c3cab053fa5b872779af027422acd4e4208f1a77e924d7a9c3a"
+        },
+        "src.next.fitting": {
+          "relative": "src/next/fitting.py",
+          "sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c"
+        },
+        "src.models.pairwise": {
+          "relative": "src/models/pairwise.py",
+          "sha256": "eae2a86afea6e47c0489e2fe3734b2dc14c03afc07d51aa640081e0f0e1583f6"
+        },
+        "src.next.ranking_objectives": {
+          "relative": "src/next/ranking_objectives.py",
+          "sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+        },
+        "src.next.candidate_io": {
+          "relative": "src/next/candidate_io.py",
+          "sha256": "919abc6138d609f3c9132d20ae21abf939e0171a33780d95d71b6eaeb5ed9274"
+        },
+        "src.next2.io": {
+          "relative": "src/next2/io.py",
+          "sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+        },
+        "src.next2.blend": {
+          "relative": "src/next2/blend.py",
+          "sha256": "e2eeccf5d03066f68f6bc1bf37aaa444f68fb3eeb10614a70fd5db39af3e0a9d"
+        },
+        "src.next2.canonical_model": {
+          "relative": "src/next2/canonical_model.py",
+          "sha256": "4e7e67bed6d0bb37482dc3e0100b5ee457c33fbf499bec9ad1117802ea3a62d6"
+        },
+        "src.next.fused_runtime": {
+          "relative": "src/next/fused_runtime.py",
+          "sha256": "32df0c51d048a18cf27b888bd60f594197bffb1f23f076f8b1023638dc0015fa"
+        },
+        "src.next.channel_evidence": {
+          "relative": "src/next/channel_evidence.py",
+          "sha256": "010be7b24e8637b41463d7d911f8cb7f51e25ed0d3b48adca78c03d1328b318d"
+        },
+        "src.next.variance_evidence": {
+          "relative": "src/next/variance_evidence.py",
+          "sha256": "adba0a8873e9937250fef58d16e494a3d533f30239e72b91fab915213102a3de"
+        },
+        "src.next.pruned_variance_runtime": {
+          "relative": "src/next/pruned_variance_runtime.py",
+          "sha256": "f71655639742604214f6b062d957f279e3e21e0f9e0609995b4e5aa6c7d8e24d"
+        },
+        "src.streaming": {
+          "relative": "src/streaming/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.features.startup_calibration": {
+          "relative": "src/features/startup_calibration.py",
+          "sha256": "9893c4569bc8c7b8b06e54c72b2b72a73e508483749c032eb6423f8f159ba4d7"
+        },
+        "src.models.compact_xgboost": {
+          "relative": "src/models/compact_xgboost.py",
+          "sha256": "6e641517236352fd3aa1c52686c93d4c946e95c84c1a8c6ffc8a1fab537eda58"
+        },
+        "src.streaming.fused": {
+          "relative": "src/streaming/fused.py",
+          "sha256": "a680ddae9f9faec3168cd6bca66d0386b0df698c72e9af7052166f129f996a26"
+        },
+        "src.streaming.fast_initialization": {
+          "relative": "src/streaming/fast_initialization.py",
+          "sha256": "93cbfdc2bec347e31e0fda4fcff3e6d63a2781b06c1fe8ace830da35211e7b9d"
+        },
+        "src.next.fast_variance_initialization": {
+          "relative": "src/next/fast_variance_initialization.py",
+          "sha256": "5fb809fb78f2bad042e35b6f2fd1abe72cd39307ea13e8f7f4db425728ba1e22"
+        },
+        "src.next.serial_channel_evidence": {
+          "relative": "src/next/serial_channel_evidence.py",
+          "sha256": "98928ab161f8ec8feae4e61a76dbcfe31c54510468f60f519b6edadff25f0308"
+        },
+        "src.next2.pruned_runtime": {
+          "relative": "src/next2/pruned_runtime.py",
+          "sha256": "d79b6a5110d3c3ec9826eb0418d4702359c1649d7280a88f9522805ad3828533"
+        },
+        "src.next2.runtime": {
+          "relative": "src/next2/runtime.py",
+          "sha256": "069a93def6c32d39b007160b368b317e1f9e8f2fd5c10e6a11c5a2fe3cadc984"
+        },
+        "src.next2.used_feature_runtime": {
+          "relative": "src/next2/used_feature_runtime.py",
+          "sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f"
+        },
+        "src.next.readonly_jit": {
+          "relative": "src/next/readonly_jit.py",
+          "sha256": "1e2db439ed1a04adb8c9d7b84929c3536990fc9b914118048e121e8a21c10232"
+        },
+        "src.next2.canonical_inference": {
+          "relative": "src/next2/canonical_inference.py",
+          "sha256": "a1f2e3053dd60b68d13f80d80c82409f98982f9c11f5be7742e47239f45f6416"
+        },
+        "next2_canonical_distilled_main": {
+          "relative": "next2_canonical_distilled_main.py",
+          "sha256": "22c84a67c0971bc26afdf51564ddb7d94402a2a544bd05fe32cd17587a20417c"
+        },
+        "src.validation": {
+          "relative": "src/validation/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.validation.splits": {
+          "relative": "src/validation/splits.py",
+          "sha256": "61cee86f8c4cc3bf0ad68170a486ef68725dac87fee113e29bb6471b46007164"
+        },
+        "src.next.guard": {
+          "relative": "src/next/guard.py",
+          "sha256": "dbbc91088b59ceeb53569ec0a9f4dfe981b389cae7b1272bc2e6a8a11a36cb95"
+        },
+        "src.data": {
+          "relative": "src/data/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.data.labels": {
+          "relative": "src/data/labels.py",
+          "sha256": "59b4cbd6c92f99b2bdff959b6370833fcf8601a6457d8756c39d05817b4cf3f6"
+        },
+        "src.next.data": {
+          "relative": "src/next/data.py",
+          "sha256": "769c73e066d0e53da1d5fcecc4812c6459a676e37a0e5a7f3029edf0435f995e"
+        },
+        "src.next2.final_fitting": {
+          "relative": "src/next2/final_fitting.py",
+          "sha256": "e81ea3a89484a8b6b7db734ede5e038b0b25beaf385282e32a6ac2ec08525144"
+        },
+        "src.next2.training": {
+          "relative": "src/next2/training.py",
+          "sha256": "5c2d76c840b61484e85bd63eebcd4726a96cd856ebc98c4d57c242a6a4fa9e13"
+        },
+        "src.next2.inference": {
+          "relative": "src/next2/inference.py",
+          "sha256": "38bc2efb1fee99b179fb24b06867277752a5aeaac99bcdc0e26025ee66f18de5"
+        },
+        "src.next2.deployment_training": {
+          "relative": "src/next2/deployment_training.py",
+          "sha256": "376f03f812003f5b7cc9259da5c415016d478e3beee3df793e551027b622dd92"
+        },
+        "src.next.serial_variance_evidence": {
+          "relative": "src/next/serial_variance_evidence.py",
+          "sha256": "7bc6c13a9bdd15947a126a57be38632e1ab5445422c74ea6d52caabeb76afcbd"
+        }
+      },
+      "pinned_versions": {
+        "ansicon": "1.89.0",
+        "blessed": "1.49.0",
+        "certifi": "2026.7.22",
+        "cffi": "2.1.1",
+        "charset-normalizer": "3.5.1",
+        "click": "8.5.0",
+        "cloudpickle": "3.1.2",
+        "colorama": "0.4.6",
+        "coloredlogs": "15.0.1",
+        "crunch-cli": "12.0.2",
+        "crunch-convert": "0.11.0",
+        "crunch-encrypt": "0.1.0",
+        "cryptography": "50.0.1",
+        "dataclasses-json": "0.6.7",
+        "decorator": "5.3.1",
+        "editor": "1.8.0",
+        "humanfriendly": "10.0",
+        "idna": "3.19",
+        "iniconfig": "2.3.0",
+        "inquirer": "3.4.1",
+        "jinxed": "2.1.0",
+        "joblib": "1.6.0",
+        "libcst": "1.9.0",
+        "lightgbm": "4.7.0",
+        "llvmlite": "0.49.0",
+        "marshmallow": "3.26.2",
+        "mypy_extensions": "1.1.0",
+        "narwhals": "2.25.0",
+        "numba": "0.67.0",
+        "numpy": "2.5.3",
+        "nvidia-ml-py": "13.610.43",
+        "packaging": "26.3",
+        "pandas": "3.0.5",
+        "pluggy": "1.6.0",
+        "psutil": "7.2.2",
+        "py": "1.11.0",
+        "pyarrow": "25.0.1",
+        "pycparser": "3.0",
+        "Pygments": "2.21.0",
+        "pyreadline3": "3.5.6",
+        "pytest": "9.1.1",
+        "python-dateutil": "2.9.0.post0",
+        "python-dotenv": "1.2.3",
+        "PyYAML": "6.0.3",
+        "PyYAML-ft": "8.0.0",
+        "readchar": "4.2.2",
+        "requests": "2.34.2",
+        "requests-toolbelt": "1.0.0",
+        "requirements-parser": "0.13.1",
+        "retry": "0.9.2",
+        "runs": "1.3.0",
+        "scikit-learn": "1.9.0",
+        "scipy": "1.18.1",
+        "six": "1.17.0",
+        "threadpoolctl": "3.6.0",
+        "tqdm": "4.70.0",
+        "typing-inspect": "0.9.0",
+        "typing_extensions": "4.16.0",
+        "tzdata": "2026.3",
+        "urllib3": "2.7.0",
+        "wcwidth": "0.8.3",
+        "xgboost": "3.4.1",
+        "xmod": "1.10.0"
+      },
+      "pin_count": 63,
+      "training_seconds": 145.46266159999504,
+      "total_seconds": 217.74661369999376,
+      "training_quality_score_computed": false,
+      "source_manifest_sha256": "e1f880015ceea6cf667b21ed6b14a236adb80d78ebd8068d81678a1ffa08eb66",
+      "script_sha256": "192eb2adcfd11bc7e7cc529b86e2c5ee337589ed8a196638cc2355206d97df89",
+      "scope": "Actual canonical public train and infer in a fresh pinned environment, from ordinary raw-byte copies and no previous feature caches. Python audit hook is not an OS sandbox."
+    },
+    "PERFORMANCE": {
+      "status": "PASS",
+      "created_utc": "2026-09-09T14:09:49.979452+00:00",
+      "role": "PERFORMANCE",
+      "source_workspace": "C:\\Users\\minsu\\Documents\\SB_NEXT2_REPRO_20260909T135550Z",
+      "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+      "canonical_model_bytes_exact": true,
+      "all_dev_prediction_sha256": "ff9589de5e233f3939647ea348694913261b3f25c74c7ab05930363a7386bc59",
+      "series": 8000,
+      "points": 4014405,
+      "training_comparisons": {
+        "primary": {
+          "feature_matrix_sha256": true,
+          "ordered_ids_sha256": true,
+          "ordered_targets_sha256": true,
+          "training_rows": true,
+          "training_series": true
+        },
+        "complement": {
+          "feature_matrix_sha256": true,
+          "ordered_ids_sha256": true,
+          "ordered_targets_sha256": true,
+          "training_rows": true,
+          "training_series": true
+        }
+      },
+      "new_fits": 2,
+      "seal_rows_fitted": 0,
+      "seal_values_accessed": 0,
+      "opaque_seal_series_skipped": 2000,
+      "raw_before_sha256": {
+        "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+        "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+      },
+      "raw_after_sha256": {
+        "X_train.parquet": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+        "y_train_index.parquet": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07"
+      },
+      "first_none_before_data": true,
+      "one_current_point_per_yield": true,
+      "no_future_length_or_suffix_access": true,
+      "original_project_access_attempts": [],
+      "expected_reads_before_training": [],
+      "outside_workspace_write_attempts": [],
+      "network_attempts": [],
+      "guarded_read_opens": 4264,
+      "project_modules": {
+        "src": {
+          "relative": "src/__init__.py",
+          "sha256": "0bd47c41068b3c6628a482b35ff1a2c40253c4313e672c9f903b775c7d7fd32d"
+        },
+        "src.next": {
+          "relative": "src/next/__init__.py",
+          "sha256": "e169e16bb040814dbbe546a18298f37eb91220d83d07cedb95ca750b90fc8650"
+        },
+        "src.next.readonly_bootstrap": {
+          "relative": "src/next/readonly_bootstrap.py",
+          "sha256": "4a1df076b446d2661154fb218a60e323aa49244d1acf29f21e6d4b012ee7dd36"
+        },
+        "src.next2": {
+          "relative": "src/next2/__init__.py",
+          "sha256": "3d7c2a2fb10c3640277dbb20c178ccea8ad092c71aa998cf7c6074f307cb347c"
+        },
+        "src.next.whitening": {
+          "relative": "src/next/whitening.py",
+          "sha256": "30d9fcd02b4462fe9a6577dd55b3bfb6fbe59e592d36c0b6f7f5693d82473bd4"
+        },
+        "src.next.normalization": {
+          "relative": "src/next/normalization.py",
+          "sha256": "d5a2f106cdaf9a5f59fb04763061ee4073fb6459be4d30343802cd72504c2a6b"
+        },
+        "src.next.engine": {
+          "relative": "src/next/engine.py",
+          "sha256": "1849557684ccd853a4ec13c607f7818420fa7ee20b96fabfaa697171a08b7411"
+        },
+        "src.features": {
+          "relative": "src/features/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.features.config": {
+          "relative": "src/features/config.py",
+          "sha256": "cbf43ad7cf6c2eafcf893cefedf3b167a62fa40c1480534853a44d393ce1a86f"
+        },
+        "src.features.streaming": {
+          "relative": "src/features/streaming.py",
+          "sha256": "fbc3e8a728d7ac34e5acdb5a2bfbb0b55c80d2a4b8c37cade81d1b41db0d5878"
+        },
+        "src.features.historical_calibration": {
+          "relative": "src/features/historical_calibration.py",
+          "sha256": "7570fc4090780c49d5370beb121ed904c5d006f4ec003050e247100ee549163f"
+        },
+        "src.features.ar_residual_input": {
+          "relative": "src/features/ar_residual_input.py",
+          "sha256": "80c4500bcaf63a72607b3de4d6d0e090ff1422f6f4b1f69694908db505f29728"
+        },
+        "src.features.ar_order_input": {
+          "relative": "src/features/ar_order_input.py",
+          "sha256": "88cb21ef0d693d31750d5b37c60b56596a3eff9526c97c69b6c2f8515a2b6062"
+        },
+        "src.features.arch_input": {
+          "relative": "src/features/arch_input.py",
+          "sha256": "05de9ce9589eff8693f3fe0eb47e847434f913535d48162151e7e5b527386908"
+        },
+        "src.next.predictor": {
+          "relative": "src/next/predictor.py",
+          "sha256": "fdc2b439bb4b17e99fbd0a268b25b81fa05a9ee822f31004d529f1a737e48df4"
+        },
+        "src.utils": {
+          "relative": "src/utils/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.utils.artifacts": {
+          "relative": "src/utils/artifacts.py",
+          "sha256": "a8d13ede8727eba24817c880ed5c3d679ef40393908f4900dc457a98e8fa3103"
+        },
+        "src.scoring": {
+          "relative": "src/scoring/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.scoring.ts_auc": {
+          "relative": "src/scoring/ts_auc.py",
+          "sha256": "b100b52db4da9e6aeffdbb565ad8ac2148615bfcea2bb837e110b6913c5263a8"
+        },
+        "src.models": {
+          "relative": "src/models/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.models.compact_trees": {
+          "relative": "src/models/compact_trees.py",
+          "sha256": "022e046e316561e606fcf6b5bb7dcee91f70c6ddff3524f590f550d105fc08e8"
+        },
+        "src.models.learners": {
+          "relative": "src/models/learners.py",
+          "sha256": "54deb46210fdd9a012d69fda1966d74650264f92df6e430146fe2cd580acbdc2"
+        },
+        "src.models.calibrated": {
+          "relative": "src/models/calibrated.py",
+          "sha256": "57ea757e4547a92e487bfcd6f00f787b9878abf50434b8dd96dbdb9b6718df88"
+        },
+        "src.models.representations": {
+          "relative": "src/models/representations.py",
+          "sha256": "91471b36e923bc7d39ff61b616ab1f38f7993e38ad8ad9bea699e9537683bcb2"
+        },
+        "src.next.references": {
+          "relative": "src/next/references.py",
+          "sha256": "eedf24c5c1e02e5b815698126b511e8aeadf77fef140844fdc7bca7a2f277707"
+        },
+        "src.next.cache": {
+          "relative": "src/next/cache.py",
+          "sha256": "0e4e9e7acacc4614f1e701c3cb7c34bd7374efb2783f295c0e3887d19dcef947"
+        },
+        "src.next.design_selection": {
+          "relative": "src/next/design_selection.py",
+          "sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+        },
+        "src.next.extensions": {
+          "relative": "src/next/extensions.py",
+          "sha256": "a1297136d0cc75c446d62a9f91ccbd75519a50ef7e5e1f29fc9aeacf0e1958e5"
+        },
+        "src.next.registered_extensions": {
+          "relative": "src/next/registered_extensions.py",
+          "sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+        },
+        "src.next.late_blend": {
+          "relative": "src/next/late_blend.py",
+          "sha256": "ab23bafe07581c3cab053fa5b872779af027422acd4e4208f1a77e924d7a9c3a"
+        },
+        "src.next.fitting": {
+          "relative": "src/next/fitting.py",
+          "sha256": "5c94d21e85803bdf197ca3ee8b0fdb637d4d5c5fc2b55f39a6d9302ac6a8382c"
+        },
+        "src.models.pairwise": {
+          "relative": "src/models/pairwise.py",
+          "sha256": "eae2a86afea6e47c0489e2fe3734b2dc14c03afc07d51aa640081e0f0e1583f6"
+        },
+        "src.next.ranking_objectives": {
+          "relative": "src/next/ranking_objectives.py",
+          "sha256": "9f3cf3daed28bb1e8b075265b4c98f58cbc2c7c0dbbee25f2b94bcd51f311cbd"
+        },
+        "src.next.candidate_io": {
+          "relative": "src/next/candidate_io.py",
+          "sha256": "919abc6138d609f3c9132d20ae21abf939e0171a33780d95d71b6eaeb5ed9274"
+        },
+        "src.next2.io": {
+          "relative": "src/next2/io.py",
+          "sha256": "6c2551fcda17f0eca0cfe2a74043a23da8b36c58ea545aeb95adbca6cbb0a24f"
+        },
+        "src.next2.blend": {
+          "relative": "src/next2/blend.py",
+          "sha256": "e2eeccf5d03066f68f6bc1bf37aaa444f68fb3eeb10614a70fd5db39af3e0a9d"
+        },
+        "src.next2.canonical_model": {
+          "relative": "src/next2/canonical_model.py",
+          "sha256": "4e7e67bed6d0bb37482dc3e0100b5ee457c33fbf499bec9ad1117802ea3a62d6"
+        },
+        "src.next.channel_evidence": {
+          "relative": "src/next/channel_evidence.py",
+          "sha256": "010be7b24e8637b41463d7d911f8cb7f51e25ed0d3b48adca78c03d1328b318d"
+        },
+        "src.next.variance_evidence": {
+          "relative": "src/next/variance_evidence.py",
+          "sha256": "adba0a8873e9937250fef58d16e494a3d533f30239e72b91fab915213102a3de"
+        },
+        "src.next.fused_runtime": {
+          "relative": "src/next/fused_runtime.py",
+          "sha256": "32df0c51d048a18cf27b888bd60f594197bffb1f23f076f8b1023638dc0015fa"
+        },
+        "src.next.pruned_variance_runtime": {
+          "relative": "src/next/pruned_variance_runtime.py",
+          "sha256": "f71655639742604214f6b062d957f279e3e21e0f9e0609995b4e5aa6c7d8e24d"
+        },
+        "src.streaming": {
+          "relative": "src/streaming/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.features.startup_calibration": {
+          "relative": "src/features/startup_calibration.py",
+          "sha256": "9893c4569bc8c7b8b06e54c72b2b72a73e508483749c032eb6423f8f159ba4d7"
+        },
+        "src.models.compact_xgboost": {
+          "relative": "src/models/compact_xgboost.py",
+          "sha256": "6e641517236352fd3aa1c52686c93d4c946e95c84c1a8c6ffc8a1fab537eda58"
+        },
+        "src.streaming.fused": {
+          "relative": "src/streaming/fused.py",
+          "sha256": "a680ddae9f9faec3168cd6bca66d0386b0df698c72e9af7052166f129f996a26"
+        },
+        "src.streaming.fast_initialization": {
+          "relative": "src/streaming/fast_initialization.py",
+          "sha256": "93cbfdc2bec347e31e0fda4fcff3e6d63a2781b06c1fe8ace830da35211e7b9d"
+        },
+        "src.next.fast_variance_initialization": {
+          "relative": "src/next/fast_variance_initialization.py",
+          "sha256": "5fb809fb78f2bad042e35b6f2fd1abe72cd39307ea13e8f7f4db425728ba1e22"
+        },
+        "src.next.serial_channel_evidence": {
+          "relative": "src/next/serial_channel_evidence.py",
+          "sha256": "98928ab161f8ec8feae4e61a76dbcfe31c54510468f60f519b6edadff25f0308"
+        },
+        "src.next2.pruned_runtime": {
+          "relative": "src/next2/pruned_runtime.py",
+          "sha256": "d79b6a5110d3c3ec9826eb0418d4702359c1649d7280a88f9522805ad3828533"
+        },
+        "src.next2.complement_bank": {
+          "relative": "src/next2/complement_bank.py",
+          "sha256": "f8da99ada1c6173e53637f08c8aa43acaa4b7629c9060bd6fc071baae3bcc4fa"
+        },
+        "src.next2.dependence_runtime": {
+          "relative": "src/next2/dependence_runtime.py",
+          "sha256": "49a7c098664db68f7f076270f6bd1acd0654a05e81ed1eda4c2a5f14eb44fa22"
+        },
+        "src.next2.used_feature_runtime": {
+          "relative": "src/next2/used_feature_runtime.py",
+          "sha256": "1a22bf9c6149b0ab83d4cfa7f14e46fa94b5d3e20ceb0b00df5e07d45d35569f"
+        },
+        "src.features.cross_order": {
+          "relative": "src/features/cross_order.py",
+          "sha256": "576b1992f4adbbe85b78b9b853ef529fe8ef42e85b87d03d1d99cebc760d3d63"
+        },
+        "src.models.ar_calibrated": {
+          "relative": "src/models/ar_calibrated.py",
+          "sha256": "1e97485878ced980d0cfc2cb4f7184803a91473d89fdc9c405d79f763bc148e2"
+        },
+        "src.models.ar_order_calibrated": {
+          "relative": "src/models/ar_order_calibrated.py",
+          "sha256": "439c5949053348e58e14cb4e6e920df4841938a29c0140bceb2f46a40682475c"
+        },
+        "src.models.cross_order": {
+          "relative": "src/models/cross_order.py",
+          "sha256": "8933b609d5ea45f7f00b134e4805d1b49b5305603ef48a2edecf1258a6688c0c"
+        },
+        "src.models.arch_calibrated": {
+          "relative": "src/models/arch_calibrated.py",
+          "sha256": "3840e0285b521da1a069c0dcabe6d09aff5b759b0a0840cd5f1e8a79ecb76021"
+        },
+        "src.streaming.prepared": {
+          "relative": "src/streaming/prepared.py",
+          "sha256": "7d463bc59dec75fa3e83008f9929b746fa00ae014ccd32273ac28852e8906aaf"
+        },
+        "src.next.runtime_components": {
+          "relative": "src/next/runtime_components.py",
+          "sha256": "a45e3c29c747412fe3f34aced68a7c08e7db30917a30433b10850b558ecfd0d5"
+        },
+        "src.next2.shared_blend_runtime": {
+          "relative": "src/next2/shared_blend_runtime.py",
+          "sha256": "6d714341f3af65c7a6fc7df54df44b4feb322ecf56f821f3ad2ed62b39683ec1"
+        },
+        "src.next.readonly_jit": {
+          "relative": "src/next/readonly_jit.py",
+          "sha256": "1e2db439ed1a04adb8c9d7b84929c3536990fc9b914118048e121e8a21c10232"
+        },
+        "src.next2.shared_inference": {
+          "relative": "src/next2/shared_inference.py",
+          "sha256": "49e20514de2e89dbdefb01e1c50d44d12df7b1a2b91e060dd80a9cfcfb467219"
+        },
+        "next2_shared_performance_main": {
+          "relative": "next2_shared_performance_main.py",
+          "sha256": "768a02c063234ce587ef8f5d10d31a21cc14fce9512c2d52081d07b58a56ade9"
+        },
+        "src.validation": {
+          "relative": "src/validation/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.validation.splits": {
+          "relative": "src/validation/splits.py",
+          "sha256": "61cee86f8c4cc3bf0ad68170a486ef68725dac87fee113e29bb6471b46007164"
+        },
+        "src.next.guard": {
+          "relative": "src/next/guard.py",
+          "sha256": "dbbc91088b59ceeb53569ec0a9f4dfe981b389cae7b1272bc2e6a8a11a36cb95"
+        },
+        "src.data": {
+          "relative": "src/data/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "src.data.labels": {
+          "relative": "src/data/labels.py",
+          "sha256": "59b4cbd6c92f99b2bdff959b6370833fcf8601a6457d8756c39d05817b4cf3f6"
+        },
+        "src.next.data": {
+          "relative": "src/next/data.py",
+          "sha256": "769c73e066d0e53da1d5fcecc4812c6459a676e37a0e5a7f3029edf0435f995e"
+        },
+        "src.next2.final_fitting": {
+          "relative": "src/next2/final_fitting.py",
+          "sha256": "e81ea3a89484a8b6b7db734ede5e038b0b25beaf385282e32a6ac2ec08525144"
+        },
+        "src.next2.training": {
+          "relative": "src/next2/training.py",
+          "sha256": "5c2d76c840b61484e85bd63eebcd4726a96cd856ebc98c4d57c242a6a4fa9e13"
+        },
+        "src.next2.runtime": {
+          "relative": "src/next2/runtime.py",
+          "sha256": "069a93def6c32d39b007160b368b317e1f9e8f2fd5c10e6a11c5a2fe3cadc984"
+        },
+        "src.next2.inference": {
+          "relative": "src/next2/inference.py",
+          "sha256": "38bc2efb1fee99b179fb24b06867277752a5aeaac99bcdc0e26025ee66f18de5"
+        },
+        "src.next2.deployment_training": {
+          "relative": "src/next2/deployment_training.py",
+          "sha256": "376f03f812003f5b7cc9259da5c415016d478e3beee3df793e551027b622dd92"
+        },
+        "src.next2.canonical_inference": {
+          "relative": "src/next2/canonical_inference.py",
+          "sha256": "a1f2e3053dd60b68d13f80d80c82409f98982f9c11f5be7742e47239f45f6416"
+        },
+        "src.next.serial_variance_evidence": {
+          "relative": "src/next/serial_variance_evidence.py",
+          "sha256": "7bc6c13a9bdd15947a126a57be38632e1ab5445422c74ea6d52caabeb76afcbd"
+        }
+      },
+      "pinned_versions": {
+        "ansicon": "1.89.0",
+        "blessed": "1.49.0",
+        "certifi": "2026.7.22",
+        "cffi": "2.1.1",
+        "charset-normalizer": "3.5.1",
+        "click": "8.5.0",
+        "cloudpickle": "3.1.2",
+        "colorama": "0.4.6",
+        "coloredlogs": "15.0.1",
+        "crunch-cli": "12.0.2",
+        "crunch-convert": "0.11.0",
+        "crunch-encrypt": "0.1.0",
+        "cryptography": "50.0.1",
+        "dataclasses-json": "0.6.7",
+        "decorator": "5.3.1",
+        "editor": "1.8.0",
+        "humanfriendly": "10.0",
+        "idna": "3.19",
+        "iniconfig": "2.3.0",
+        "inquirer": "3.4.1",
+        "jinxed": "2.1.0",
+        "joblib": "1.6.0",
+        "libcst": "1.9.0",
+        "lightgbm": "4.7.0",
+        "llvmlite": "0.49.0",
+        "marshmallow": "3.26.2",
+        "mypy_extensions": "1.1.0",
+        "narwhals": "2.25.0",
+        "numba": "0.67.0",
+        "numpy": "2.5.3",
+        "nvidia-ml-py": "13.610.43",
+        "packaging": "26.3",
+        "pandas": "3.0.5",
+        "pluggy": "1.6.0",
+        "psutil": "7.2.2",
+        "py": "1.11.0",
+        "pyarrow": "25.0.1",
+        "pycparser": "3.0",
+        "Pygments": "2.21.0",
+        "pyreadline3": "3.5.6",
+        "pytest": "9.1.1",
+        "python-dateutil": "2.9.0.post0",
+        "python-dotenv": "1.2.3",
+        "PyYAML": "6.0.3",
+        "PyYAML-ft": "8.0.0",
+        "readchar": "4.2.2",
+        "requests": "2.34.2",
+        "requests-toolbelt": "1.0.0",
+        "requirements-parser": "0.13.1",
+        "retry": "0.9.2",
+        "runs": "1.3.0",
+        "scikit-learn": "1.9.0",
+        "scipy": "1.18.1",
+        "six": "1.17.0",
+        "threadpoolctl": "3.6.0",
+        "tqdm": "4.70.0",
+        "typing-inspect": "0.9.0",
+        "typing_extensions": "4.16.0",
+        "tzdata": "2026.3",
+        "urllib3": "2.7.0",
+        "wcwidth": "0.8.3",
+        "xgboost": "3.4.1",
+        "xmod": "1.10.0"
+      },
+      "pin_count": 63,
+      "training_seconds": 197.61835979999887,
+      "total_seconds": 296.63588639999944,
+      "training_quality_score_computed": false,
+      "source_manifest_sha256": "e1f880015ceea6cf667b21ed6b14a236adb80d78ebd8068d81678a1ffa08eb66",
+      "script_sha256": "192eb2adcfd11bc7e7cc529b86e2c5ee337589ed8a196638cc2355206d97df89",
+      "scope": "Actual canonical public train and infer in a fresh pinned environment, from ordinary raw-byte copies and no previous feature caches. Python audit hook is not an OS sandbox."
+    }
+  },
+  "preparation": {
+    "status": "PREPARED",
+    "created_utc": "2026-09-09T13:57:58.224249+00:00",
+    "workspace": "C:\\Users\\minsu\\Documents\\SB_NEXT2_REPRO_20260909T135550Z",
+    "payload": "C:\\Users\\minsu\\Documents\\SB_NEXT2_REPRO_20260909T135550Z\\payload",
+    "python": "C:\\Users\\minsu\\Documents\\SB_NEXT2_REPRO_20260909T135550Z\\environment\\Scripts\\python.exe",
+    "origin": "C:\\Users\\minsu\\Documents\\Structural Break",
+    "copied_files": 187,
+    "ordinary_file_copies": true,
+    "copied_manifest_sha256": "e1f880015ceea6cf667b21ed6b14a236adb80d78ebd8068d81678a1ffa08eb66",
+    "requirements_sha256": "5f0b30ec042966d79b6a1a17a6635750b1156a76c2f88607816de844149904f7",
+    "setup_log_sha256": "d5b57952beafaee8186ca783bd5c73fc640a915b16903e785f96ac9d9e8c90df",
+    "training_fits_so_far": 0,
+    "script_sha256": "e2a226d4f1d5ad317664d033c1b04cbe1200ddeb201674f2687b7c82e0a1d95d",
+    "research_time_gate": {
+      "created_utc": "2026-09-09T13:55:50.950741+00:00",
+      "monotonic_now": 40109.1104611,
+      "elapsed_research_seconds": 21607.243523099998,
+      "minimum_research_seconds": 21600,
+      "minimum_research_met": true,
+      "remaining_research_seconds": 0.0,
+      "audit_started": true,
+      "elapsed_audit_seconds": 12.572940699996252,
+      "handoff_time_gate_pass": false
+    },
+    "protocol_sha256": "7fff59a8eea4f75e630b56c7612b85c800a9e609bcbc8f4e88bec90fc266c377",
+    "initial_preparation_receipt_sha256": "807add90bac93305c5615e9c4a1ff530b364561aa5e5aa8e45d5015018dc74aa",
+    "completion_script_sha256": "cfe719d4d3ecde6b079d44f048db772a78ea945919afc2d8e5ff473b23040639",
+    "added_dependencies": [
+      "configs/features.json",
+      "configs/arch_input.json",
+      "configs/ar_residual_input.json",
+      "configs/historical_context.json",
+      "configs/historical_quantiles.json",
+      "configs/rank_gaussian.json",
+      "configs/magnitude_dependence.json",
+      "ROBUSTNESS_SPLIT_LOCK.json"
+    ],
+    "preflight_finding": "Initial copy omitted frozen JSON defaults imported by legacy feature modules. Static dependency review found this before any child process or learner fit.",
+    "training_fits_before_completion": 0,
+    "training_or_model_source_changed": false,
+    "initial_manifest_preserved": "COPIED_SOURCE_MANIFEST_BEFORE_CONFIG_COMPLETION.json"
+  },
+  "new_learner_fits": 3,
+  "canonical_model_bytes_exact": true,
+  "all_DEV_prediction_fingerprints_exact": true,
+  "original_project_reads_denied": true,
+  "prior_feature_caches_used": false,
+  "expected_weights_inaccessible_until_training_complete": true,
+  "application_audit_hook_not_OS_sandbox": true,
+  "evidence_sha256": {
+    "artifacts/next2/independent_reproduction/DISTILLED/RESULTS.json": "2466607c19151729f36e7e57930b16434f3927bceeb2574cc4840ae084e0a165",
+    "artifacts/next2/independent_reproduction/PERFORMANCE/RESULTS.json": "028bbac1cee86fc9e98fea94a7f0d4e5c6c04a6926cccc04be8fac6c5d5c8515"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "created_utc": "2026-09-10T12:05:22.144883+00:00",
+  "reason": "NEXT4 initial board: frozen reference preflight passed; finite Family A screen began. Maintain independent-signal search and adaptive-selection uncertainty as two active priorities.",
+  "maximum_active": 2,
+  "bottlenecks": [
+    {
+      "id": "B9",
+      "title": "Missing independent causal signal",
+      "status": "ACTIVE",
+      "expected_impact": 0.003,
+      "evidence_strength": 0.7,
+      "solvability": 0.6,
+      "overfit_risk": 0.6,
+      "compute": 0.4,
+      "complexity": 0.4,
+      "next_test": "Family A joint whiteness/magnitude/sign correlation departures, then distribution and likelihood families.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 0.0004017857142857143,
+      "rank": 1
+    },
+    {
+      "id": "B4",
+      "title": "Adaptive DEV uncertainty",
+      "status": "ACTIVE",
+      "expected_impact": 0.0025,
+      "evidence_strength": 0.9,
+      "solvability": 0.4,
+      "overfit_risk": 0.9,
+      "compute": 0.3,
+      "complexity": 0.2,
+      "next_test": "Frozen effect gates, paired whole-series uncertainty and exact family counts; no promotion from small exploratory deltas.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 0.0003036437246963564,
+      "rank": 2
+    },
+    {
+      "id": "B2",
+      "title": "ARCH/tail scale-down evidence",
+      "status": "QUEUED",
+      "expected_impact": 0.002,
+      "evidence_strength": 0.8,
+      "solvability": 0.45,
+      "overfit_risk": 0.7,
+      "compute": 0.4,
+      "complexity": 0.4,
+      "next_test": "Separate energy directions without NEXT3 re-centering collapse; evaluate new source distinction before Family B freeze.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 0.00021608643457382955,
+      "rank": 3
+    },
+    {
+      "id": "B3",
+      "title": "Complement redundancy",
+      "status": "QUEUED",
+      "expected_impact": 0.0015,
+      "evidence_strength": 0.8,
+      "solvability": 0.5,
+      "overfit_risk": 0.7,
+      "compute": 0.3,
+      "complexity": 0.3,
+      "next_test": "Standalone and incremental blend scores; within-time ranking correlation versus all three frozen references.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 0.00020884093282283329,
+      "rank": 4
+    },
+    {
+      "id": "B10",
+      "title": "Metric and fitting objective mismatch",
+      "status": "QUEUED",
+      "expected_impact": 0.002,
+      "evidence_strength": 0.6,
+      "solvability": 0.6,
+      "overfit_risk": 0.7,
+      "compute": 0.5,
+      "complexity": 0.5,
+      "next_test": "Nested pairwise linear/interactions on inner base OOF; no old boosted RankNet repeat.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 0.00018823529411764704,
+      "rank": 5
+    },
+    {
+      "id": "B11",
+      "title": "H-only regime adaptation",
+      "status": "QUEUED",
+      "expected_impact": 0.0015,
+      "evidence_strength": 0.5,
+      "solvability": 0.6,
+      "overfit_risk": 0.8,
+      "compute": 0.4,
+      "complexity": 0.4,
+      "next_test": "Small H context; nested forecast combination and untouched H-regime held-out tests.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 0.00012755102040816328,
+      "rank": 6
+    },
+    {
+      "id": "B6",
+      "title": "Outlier persistence",
+      "status": "QUEUED",
+      "expected_impact": 0.001,
+      "evidence_strength": 0.9,
+      "solvability": 0.3,
+      "overfit_risk": 0.7,
+      "compute": 0.4,
+      "complexity": 0.5,
+      "next_test": "Mandatory synthetic diagnostics for new memory features; keep real TS-AUC primary.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 7.563025210084034e-05,
+      "rank": 7
+    },
+    {
+      "id": "B5",
+      "title": "Accumulating long-null alarms",
+      "status": "QUEUED",
+      "expected_impact": 0.001,
+      "evidence_strength": 0.9,
+      "solvability": 0.3,
+      "overfit_risk": 0.7,
+      "compute": 0.6,
+      "complexity": 0.4,
+      "next_test": "Fixed 1024/4096/16384 horizons for new evidence models, no threshold tuning.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 7.090336134453782e-05,
+      "rank": 8
+    },
+    {
+      "id": "B7",
+      "title": "Early evidence",
+      "status": "QUEUED",
+      "expected_impact": 0.0008,
+      "evidence_strength": 0.6,
+      "solvability": 0.4,
+      "overfit_risk": 0.7,
+      "compute": 0.3,
+      "complexity": 0.3,
+      "next_test": "Fixed 0-9/10-24/etc time fracture and 0-4/etc break-age fracture for finalists.",
+      "evidence": [
+        "artifacts/next4/preflight/FROZEN_REFERENCES.json",
+        "configs/next4/HYPOTHESIS_FAMILY_LOCK.json"
+      ],
+      "priority": 6.682909850330665e-05,
+      "rank": 9
+    }
+  ],
+  "priority_scope": "Subjective decision heuristic, not a measured or attainable TS-AUC gain"
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-10T19:06:46.568718+00:00",
+  "audit_started_utc": "2026-09-10T18:18:24.789125+00:00",
+  "new_seal_rows": 0,
+  "all_four_seals_unopened": true,
+  "DEV_series": 8000,
+  "seal_series": 2000,
+  "blocked_admissions": {
+    "training": true,
+    "validation": true,
+    "OOF": true,
+    "feature generation": true,
+    "label access": true
+  },
+  "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "seal_lock_sha256": "8f166eefb4d4bde3523681167f54b42c9e0c4f54b8606ad1e30eb805d8faac55",
+  "reduced_ledger_sha256": "50e9bc60353e211223b29fa3c05e618af11a00b60e81989aced999f19063eccf",
+  "new_reduced_usage": 0,
+  "historical_reduced_usage": "2/2 retained",
+  "new_public_submission": 0,
+  "new_cloud_submission": 0,
+  "raw_scope": "Whole-file byte hashing and DEV-predicate reads only; no seal values, labels, tau or predictions.",
+  "evidence": "artifacts/next4/final_audit/final_v1/frozen_boundary/RESULTS.json"
+}

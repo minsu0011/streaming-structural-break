@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-09-08T07:15:18.192222+00:00",
+  "data_scope": "FIRST_128_FROZEN_DEVELOPMENT_IDS",
+  "rows": 62231,
+  "series": 128,
+  "comparisons": [
+    {
+      "prediction": "official_ewma",
+      "ours": 0.5129269779349018,
+      "official": 0.5129269779349018,
+      "abs_error": 0.0
+    },
+    {
+      "prediction": "constant",
+      "ours": 0.5,
+      "official": 0.5,
+      "abs_error": 0.0
+    },
+    {
+      "prediction": "seeded_ties",
+      "ours": 0.5043691332439352,
+      "official": 0.5043691332439352,
+      "abs_error": 0.0
+    }
+  ],
+  "max_abs_error": 0.0,
+  "tolerance": 1e-12,
+  "official_source_sha256": "c7c95be8b5159d8b932955c62bbfa7a978ab6e847d7637fbbd7d073019585e4b",
+  "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "selection_rule": "ascending original ID; fixed count, no outcome selection",
+  "LOCAL_FINAL_SEAL_OPENED": false,
+  "reduced_scored_uses": 0
+}

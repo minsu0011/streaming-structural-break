@@ -1,0 +1,7 @@
+# Null evidence growth underneath bounded tree scores
+
+Revisit the unchanged partition-2 null cohorts: 512 series per N0/N1/N2/N3 background, with historical length 2,048 and online length 16,384. Use frozen all-DEV J102, Y001, B104 and C205 models. This adds internal evidence observations to the existing score-level diagnostic; it does not create new synthetic samples, fits, thresholds or candidates.
+
+For every series, replay the exact compact runtime and verify every prediction against the already recorded synthetic prediction array. Record current feature values and their prefix maxima at horizons 1,024, 4,096 and 16,384. Include the new variance/dependence inputs and any legacy CUSUM inputs consumed by the learned model. For GLR cumulative-maximum memory inputs, count any decreases over the complete path as an invariant check. Do not impose monotonicity on decayed memory, Bayes evidence or instantaneous features.
+
+Report per-feature across-series median, p90, p95 and p99 for the current value and path maximum, and paired changes from horizon 1,024. The quantities have different transformations/scales and must not be compared as interchangeable calibrated likelihood ratios. In particular, H-standardized energy, corrected Bayes approximations and tree probabilities are different objects. A bounded tree probability can hide continuing growth in unbounded evidence. This is a diagnostic description of the fixed synthetic cohorts, not an anytime false-alarm result or model-selection evidence.

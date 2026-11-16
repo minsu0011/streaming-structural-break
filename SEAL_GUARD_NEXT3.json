@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-10T06:38:26.294887+00:00",
+  "all_seals_unopened": true,
+  "seals_opened": {
+    "SEAL_A": false,
+    "SEAL_B": false,
+    "SEAL_C": false,
+    "SEAL_D": false
+  },
+  "DEV_series": 8000,
+  "seal_series": 2000,
+  "DEV_seal_overlap": 0,
+  "seal_lock_sha256": "8f166eefb4d4bde3523681167f54b42c9e0c4f54b8606ad1e30eb805d8faac55",
+  "reduced_ledger_sha256": "50e9bc60353e211223b29fa3c05e618af11a00b60e81989aced999f19063eccf",
+  "reduced_new_usage": 0,
+  "public_submission_new": 0,
+  "cloud_submission_new": 0,
+  "boundary": "Application-level predicate/ID admission; not an OS sandbox"
+}

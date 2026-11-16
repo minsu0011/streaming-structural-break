@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-09T14:12:17.751965+00:00",
+  "tests_passed": 536,
+  "tests_report_sha256": "5b0f7f5a52a35247e83fe2175bb9be805fc40958bddfc6f9862fa9400e948494",
+  "selected_roles": {
+    "DISTILLED": {
+      "model_sha256": "27307b578f78bf4bcf11e8fb3011d34f82b14156eae7508b7514177cbc22b15d",
+      "prediction_fingerprint_sha256": "4ecfd2248506bece0ad97a803849212fd9a8e840174a52782ebce60476ba6390"
+    },
+    "PERFORMANCE": {
+      "model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+      "prediction_fingerprint_sha256": "ff9589de5e233f3939647ea348694913261b3f25c74c7ab05930363a7386bc59"
+    }
+  },
+  "canonical_save_load": true,
+  "fresh_raw_training": true,
+  "full_DEV_API": true,
+  "OOF_and_alternate_runtime_parity": true,
+  "reversed_series_reset": true,
+  "one_shot_causal_online_stream": true,
+  "persistent_inference_writes": 0,
+  "evidence_sha256": {
+    "artifacts/next2/final_audit/ALL_TESTS.xml": "5b0f7f5a52a35247e83fe2175bb9be805fc40958bddfc6f9862fa9400e948494",
+    "artifacts/next2/independent_reproduction/DISTILLED/RESULTS.json": "2466607c19151729f36e7e57930b16434f3927bceeb2574cc4840ae084e0a165",
+    "artifacts/next2/independent_reproduction/PERFORMANCE/RESULTS.json": "028bbac1cee86fc9e98fea94a7f0d4e5c6c04a6926cccc04be8fac6c5d5c8515",
+    "artifacts/next2/canonical_api_all_dev/DISTILLED/RESULTS.json": "099c4aed3fc711c4b776d4b8cd22504376bce3e84be7dd4fc10c43febb0bd192",
+    "artifacts/next2/shared_public_api_all_dev/PERFORMANCE/RESULTS.json": "e6b6a2dd76a8fcaf1708881345cb27eb38dcb3adc08b35479b861481f3560b3b",
+    "artifacts/next2/alternate_runtime_v2/DISTILLED/RESULTS.json": "3b92c7a97b5390c4fac8d5d0b60c5efab171870e38af96f303b5898cc82eae30",
+    "artifacts/next2/shared_blend_runtime/all_dev/RESULTS.json": "39f75501897c090926864a9934526fc506fa3f768ae465367f54b3d113e17f26",
+    "artifacts/next2/shared_blend_runtime/oof/RESULTS.json": "3921bc4aa09576f7f39040d691db20151d9dfb571ea879ec7f90fca891c98696",
+    "artifacts/next2/shared_blend_runtime/alternate/RESULTS.json": "a2b742117da57a785c58cc206334ec6aa703d657cca70560f9642872fa577299",
+    "artifacts/next2/report_bootstrap_replay/RESULTS.json": "9d1dbebff2ef33d0557c5e22e87e68a4a6973134a59e37cdbd373cc3d51b4565"
+  },
+  "scope": "Exact specified platform, dependencies, fitted recipes and tested streams; no assertion of all-platform bitwise identity."
+}

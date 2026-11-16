@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "created_utc": "2026-09-11T20:04:19.309621+00:00",
+  "audit_started_utc": "2026-09-11T18:43:20.400601+00:00",
+  "new_NEXT5_roles": [],
+  "Shadow_opened": false,
+  "LOCAL_SEAL_rows": 0,
+  "access_counter_scope": "Admitted returned rows, caches and application training/evaluation/analysis; Arrow scanner ID predicates and returned-ID checks were used. Internal Parquet page/row-group decoding was not independently instrumented.",
+  "zero_internal_Parquet_decoding_claimed": false,
+  "research_series": 6400,
+  "shadow_series": 1600,
+  "seal_series": 2000,
+  "all_four_seals_unopened": true,
+  "new_reduced_usage": 0,
+  "historical_reduced_usage": "2/2 retained",
+  "new_public_submission": 0,
+  "new_cloud_submission": 0,
+  "evidence": "artifacts/next5/final_audit/final_v1/frozen_boundary/RESULTS.json",
+  "guard_scope": "Application admission and state checks; no OS sandbox claim"
+}

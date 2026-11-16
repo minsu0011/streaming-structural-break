@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-09-08T07:04:44.028494+00:00",
+  "status": "ACQUIRED",
+  "files": [
+    {
+      "name": "X_test.reduced.parquet",
+      "bytes": 2587435,
+      "rows": 346019,
+      "row_groups": 1,
+      "columns": [
+        "value",
+        "period",
+        "id",
+        "time"
+      ],
+      "dtypes": {
+        "value": "float",
+        "period": "int64",
+        "id": "int64",
+        "time": "int64"
+      },
+      "index_metadata": [
+        "id",
+        "time"
+      ],
+      "sha256": "af6c4e4794e7d4bb9d547a296575fcacf3515b165e217ee510c7e108141031bd",
+      "mtime_ns": 1788850586455507300
+    },
+    {
+      "name": "X_train.parquet",
+      "bytes": 218514418,
+      "rows": 35036464,
+      "row_groups": 34,
+      "columns": [
+        "value",
+        "period",
+        "id",
+        "time"
+      ],
+      "dtypes": {
+        "value": "float",
+        "period": "int64",
+        "id": "int64",
+        "time": "int64"
+      },
+      "index_metadata": [
+        "id",
+        "time"
+      ],
+      "sha256": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+      "mtime_ns": 1788850580168398900
+    },
+    {
+      "name": "y_test.reduced.parquet",
+      "bytes": 106299,
+      "rows": 50983,
+      "row_groups": 1,
+      "columns": [
+        "target",
+        "id",
+        "time"
+      ],
+      "dtypes": {
+        "target": "int64",
+        "id": "int64",
+        "time": "int64"
+      },
+      "index_metadata": [
+        "id",
+        "time"
+      ],
+      "sha256": "eeba463dd385205c42a410950d6b79c9d1304ce8b1feb919c4b6627915eed177",
+      "mtime_ns": 1788850587632503400
+    },
+    {
+      "name": "y_test_index.reduced.parquet",
+      "bytes": 3674,
+      "rows": 100,
+      "row_groups": 1,
+      "columns": [
+        "tau_index",
+        "tau",
+        "id"
+      ],
+      "dtypes": {
+        "tau_index": "int64",
+        "tau": "int64",
+        "id": "int64"
+      },
+      "index_metadata": [
+        "id"
+      ],
+      "sha256": "fa0ac72ca89c37ec482b87ee426bbf4fa0b6a3242cdbbac61f8513945cac77c7",
+      "mtime_ns": 1788850588558026700
+    },
+    {
+      "name": "y_train.parquet",
+      "bytes": 8356193,
+      "rows": 5036517,
+      "row_groups": 5,
+      "columns": [
+        "target",
+        "id",
+        "time"
+      ],
+      "dtypes": {
+        "target": "int64",
+        "id": "int64",
+        "time": "int64"
+      },
+      "index_metadata": [
+        "id",
+        "time"
+      ],
+      "sha256": "fff57b37cd0083040b46c5ec3e4d3c1da009ef18b1b1bc43096131c77c25e916",
+      "mtime_ns": 1788850583024544500
+    },
+    {
+      "name": "y_train_index.parquet",
+      "bytes": 100183,
+      "rows": 10000,
+      "row_groups": 1,
+      "columns": [
+        "tau_index",
+        "tau",
+        "id"
+      ],
+      "dtypes": {
+        "tau_index": "int64",
+        "tau": "int64",
+        "id": "int64"
+      },
+      "index_metadata": [
+        "id"
+      ],
+      "sha256": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07",
+      "mtime_ns": 1788850584196991100
+    }
+  ],
+  "raw_modified": false,
+  "immutable_identity": [
+    "name",
+    "bytes",
+    "sha256"
+  ],
+  "mtime_authority": "informational_only"
+}

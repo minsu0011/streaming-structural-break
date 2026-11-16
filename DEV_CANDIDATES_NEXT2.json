@@ -1,0 +1,3768 @@
+{
+  "status": "FROZEN_NEXT2_DEV_SELECTION",
+  "created_utc": "2026-09-09T14:12:17.739325+00:00",
+  "clock": {
+    "created_utc": "2026-09-09T14:12:16.423644+00:00",
+    "monotonic_now": 41094.5849474,
+    "elapsed_research_seconds": 21607.243523099998,
+    "minimum_research_seconds": 21600,
+    "minimum_research_met": true,
+    "remaining_research_seconds": 0.0,
+    "audit_started": true,
+    "elapsed_audit_seconds": 998.0474269999977,
+    "handoff_time_gate_pass": false
+  },
+  "performance": {
+    "role": "PERFORMANCE",
+    "experiment_id": "BL2_C205_DEPENDENCE_80",
+    "entry": "next2_shared_performance_main.py",
+    "runtime": "shared_blend_v1",
+    "runtime_variant": "BL80_SHARED_V1",
+    "model_directory": "artifacts/next2/canonical_deployment/PERFORMANCE_shared_v1",
+    "canonical_model_sha256": "1cdfcde2c715db69ab2bf91b8e9803ac1dd24a5e146bea8f94cbc7e16e7b1d90",
+    "model_bytes": 68999,
+    "descriptor_sha256": "7d725650d72c0837ee7e13ca27ebc9b26e90cf67f53781c78aa72908934cb8f9",
+    "full": {
+      "status": "COMPLETE",
+      "scope": "full",
+      "fold_scores": [
+        0.628814140424981,
+        0.6371811063970156,
+        0.6216260123520351,
+        0.618712391914872,
+        0.6100084129976436
+      ],
+      "mean": 0.6232684128173095,
+      "median": 0.6216260123520351,
+      "worst_fold": 0.6100084129976436,
+      "cv_rows": [
+        {
+          "experiment_id": "BL2_C205_DEPENDENCE_80",
+          "scope": "full",
+          "fold": 0,
+          "ts_auc": 0.628814140424981,
+          "validation_rows": 781090,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "BL2_C205_DEPENDENCE_80",
+          "scope": "full",
+          "fold": 1,
+          "ts_auc": 0.6371811063970156,
+          "validation_rows": 800315,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "BL2_C205_DEPENDENCE_80",
+          "scope": "full",
+          "fold": 2,
+          "ts_auc": 0.6216260123520351,
+          "validation_rows": 799107,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "BL2_C205_DEPENDENCE_80",
+          "scope": "full",
+          "fold": 3,
+          "ts_auc": 0.618712391914872,
+          "validation_rows": 844418,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "BL2_C205_DEPENDENCE_80",
+          "scope": "full",
+          "fold": 4,
+          "ts_auc": 0.6100084129976436,
+          "validation_rows": 789475,
+          "seal_rows": 0
+        }
+      ],
+      "feature_names": [
+        "primary_score",
+        "complement_score"
+      ],
+      "new_fits": 0
+    },
+    "gates": {
+      "checks": {
+        "simplification_mean": true,
+        "simplification_median": true,
+        "simplification_worst_fold": true,
+        "performance_mean": true,
+        "performance_median": true,
+        "performance_worst_fold": true,
+        "simplification_bootstrap": true,
+        "performance_bootstrap": true,
+        "simplification_alternates": true,
+        "performance_alternates": true,
+        "simplification_h_regime": true,
+        "performance_h_regime": true,
+        "simplification_complexity": true,
+        "engineering": true,
+        "generation_increment": false
+      },
+      "delta": {
+        "mean": 0.0016366625048295225,
+        "median": 0.00018862595664470572,
+        "worst_fold": -0.00013806581938846652
+      },
+      "distilled": {
+        "status": "PASS",
+        "failed": [],
+        "missing": []
+      },
+      "performance_scientific": {
+        "status": "PASS",
+        "failed": [],
+        "missing": []
+      },
+      "performance": {
+        "status": "PASS",
+        "failed": [],
+        "missing": []
+      },
+      "generation": {
+        "status": "FAIL",
+        "failed": [
+          "generation_increment"
+        ],
+        "missing": []
+      }
+    },
+    "prediction_fingerprint_sha256": "ff9589de5e233f3939647ea348694913261b3f25c74c7ab05930363a7386bc59",
+    "paired_all_time": {
+      "candidate": "BL2_C205_DEPENDENCE_80",
+      "reference": "J102_SERIAL_VARIANCE_512",
+      "scope": "all_time",
+      "candidate_mean": 0.6232684128173095,
+      "reference_mean": 0.62163175031248,
+      "supported": true,
+      "break_series": 3944.0,
+      "null_series": 4056.0,
+      "estimate_mean_delta": 0.0016366625048295225,
+      "bootstrap_mean_delta": 0.001641742918969389,
+      "bootstrap_median_delta": 0.001651948058189967,
+      "ci_2_5": 0.0006743151264927167,
+      "ci_97_5": 0.0025479387096717654,
+      "probability_delta_positive": 0.999,
+      "estimate_median_of_folds_delta": 0.00018862595664470572,
+      "median_of_folds_delta_ci_2_5": -0.0013934957221933219,
+      "median_of_folds_delta_ci_97_5": 0.0048014154283718006,
+      "replicates": 2000,
+      "probability_delta_above_minus_0005": 1.0
+    },
+    "alternate_splits": [
+      {
+        "split": "ALT_1",
+        "mean": 0.622572491375891,
+        "mean_delta": 0.0016474115222865349,
+        "worst": 0.6057576760552826,
+        "worst_delta": 0.0020661963822995455,
+        "minimum_matched_fold_delta": 6.57338170421129e-05,
+        "fold_scores": [
+          0.6285999261355205,
+          0.6057576760552826,
+          0.6328492721206638,
+          0.6195101468237908,
+          0.6261454357441971
+        ]
+      },
+      {
+        "split": "ALT_2",
+        "mean": 0.6211655235665667,
+        "mean_delta": 0.0011973940055212129,
+        "worst": 0.6077116382706798,
+        "worst_delta": 0.0013082797286813053,
+        "minimum_matched_fold_delta": -2.3006316784424108e-05,
+        "fold_scores": [
+          0.6077116382706798,
+          0.6386972526030478,
+          0.6257478014976133,
+          0.6178418482536677,
+          0.6158290772078252
+        ]
+      },
+      {
+        "split": "ALT_3",
+        "mean": 0.6234311259085243,
+        "mean_delta": 0.0017674721771380186,
+        "worst": 0.6009889231892857,
+        "worst_delta": 0.0011949667199965264,
+        "minimum_matched_fold_delta": 0.0011949667199965264,
+        "fold_scores": [
+          0.6306767168559748,
+          0.6325799381757049,
+          0.6009889231892857,
+          0.6327960543113206,
+          0.6201139970103354
+        ]
+      }
+    ],
+    "heldout_H": {
+      "split": "LEAVE_ONE_H_REGIME_OUT",
+      "mean": 0.6356987563234016,
+      "mean_delta": 0.0030936878443275084,
+      "worst": 0.6006542695774002,
+      "worst_delta": 0.0014374875336502502,
+      "minimum_matched_fold_delta": -0.0012063679528282467,
+      "fold_scores": [
+        0.635538161186721,
+        0.6582979108422804,
+        0.6793792402301495,
+        0.6046241997804572,
+        0.6006542695774002
+      ]
+    },
+    "weight_primary": 0.8,
+    "weight_complement": 0.2,
+    "components": [
+      "J102_SERIAL_VARIANCE_512",
+      "C205_DEPENDENCE"
+    ],
+    "scientific_feature_contract": 101,
+    "materialized_tree_inputs": 72,
+    "distilled_role_note": "Also passes literal state-or-point reduction gate versus unpruned original J102. J_USED is selected as DISTILLED because it has smaller private state, lower point latency, one ensemble and exact original quality."
+  },
+  "distilled": {
+    "role": "DISTILLED",
+    "experiment_id": "J102_SERIAL_VARIANCE_512",
+    "entry": "next2_canonical_distilled_main.py",
+    "runtime": "tree_used_v1",
+    "runtime_variant": "J_USED",
+    "model_directory": "artifacts/next2/canonical_deployment/DISTILLED_tree_used_v1",
+    "canonical_model_sha256": "27307b578f78bf4bcf11e8fb3011d34f82b14156eae7508b7514177cbc22b15d",
+    "model_bytes": 35180,
+    "descriptor_sha256": "715b636f0fcfc7922113c4eeb728c6a03b92a6d2f483a0e3b2e2cf30084ab8ee",
+    "full": {
+      "status": "COMPLETE",
+      "scope": "full",
+      "fold_scores": [
+        0.625548994582903,
+        0.6353471840978637,
+        0.6214373863953904,
+        0.6156787076692104,
+        0.6101464788170321
+      ],
+      "mean": 0.62163175031248,
+      "median": 0.6214373863953904,
+      "std": 0.008612152831486539,
+      "worst_fold": 0.6101464788170321,
+      "best_fold": 0.6353471840978637,
+      "paired_bootstrap": {
+        "estimate_mean_delta": 0.010339063941122939,
+        "bootstrap_mean_delta": 0.01039489011480677,
+        "bootstrap_median_delta": 0.010391672476342595,
+        "ci_2_5": 0.00502282855699934,
+        "ci_97_5": 0.015520129531233127,
+        "probability_delta_positive": 1.0,
+        "estimate_median_of_folds_delta": 0.011478846368680795,
+        "median_of_folds_delta_ci_2_5": -0.001377610733094628,
+        "median_of_folds_delta_ci_97_5": 0.021533484602029074,
+        "replicates": 2000
+      },
+      "cv_rows": [
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 0,
+          "ts_auc": 0.625548994582903,
+          "validation_rows": 781090,
+          "validation_series": 1571,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 1,
+          "ts_auc": 0.6353471840978637,
+          "validation_rows": 800315,
+          "validation_series": 1579,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 2,
+          "ts_auc": 0.6214373863953904,
+          "validation_rows": 799107,
+          "validation_series": 1599,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 3,
+          "ts_auc": 0.6156787076692104,
+          "validation_rows": 844418,
+          "validation_series": 1665,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 4,
+          "ts_auc": 0.6101464788170321,
+          "validation_rows": 789475,
+          "validation_series": 1586,
+          "seal_rows": 0
+        }
+      ],
+      "fractures": [
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5754840188195794
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5779748919150773
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5420459720524436
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5683329711230416
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.6170432512912861
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6298073686822565
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6499820999755118
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5261550290486022
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5350609930114315
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5521810297452023
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5765898746687155
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6467758545937061
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5655238548977211
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5669527930680843
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5487970159832346
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5670139988520071
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.6245222328753268
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6464466201116272
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6590705333348098
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5397773242021817
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5488141424274992
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5628916235403963
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5730679873984963
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6583995054308539
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5100173049586947
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5201122214210889
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5317149352942608
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5744775303860251
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.6091172533513768
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6171634379486406
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6583491680699374
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5350697351131134
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5397858314610325
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5512040667248009
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.574564596707333
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6417926205415696
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.538796004527794
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.4840477867475754
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5170345141593624
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5645112751032813
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.5967931350689665
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6180075560760427
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.643638345621051
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.515757280779858
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5215979558395887
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5258275934764811
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5522946486776094
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6416519228543808
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5061013881571816
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5162442992869554
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5463858616858919
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5618499750463375
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.5906194254498721
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6106327913996341
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6443075630729002
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5153926181912643
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5273850097537731
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5336737867165822
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5613589933458009
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6316132733396348
+        }
+      ],
+      "engineering": [
+        {
+          "training_rows": 3233315,
+          "validation_rows": 781090,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3214090,
+          "validation_rows": 800315,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3215298,
+          "validation_rows": 799107,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3169987,
+          "validation_rows": 844418,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3224930,
+          "validation_rows": 789475,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        }
+      ],
+      "feature_names": [
+        "arch8__current_z",
+        "arch8__current_abs_z",
+        "arch8__current_robust_z",
+        "arch8__cusum_positive",
+        "arch8__cusum_negative",
+        "arch8__running_mean",
+        "arch8__mean_z_5",
+        "arch8__abs_mean_z_5",
+        "arch8__log_second_ratio_5",
+        "arch8__log_variance_ratio_5",
+        "arch8__absolute_moment_delta_5",
+        "arch8__tail2_delta_5",
+        "arch8__tail3_delta_5",
+        "arch8__sign_delta_5",
+        "arch8__quantile_l1_5",
+        "arch8__lag1_delta_5",
+        "arch8__lag2_delta_5",
+        "arch8__lag4_delta_5",
+        "arch8__lag8_delta_5",
+        "arch8__ar_mean_z_5",
+        "arch8__ar_log_second_ratio_5",
+        "arch8__mean_z_20",
+        "arch8__abs_mean_z_20",
+        "arch8__log_second_ratio_20",
+        "arch8__log_variance_ratio_20",
+        "arch8__absolute_moment_delta_20",
+        "arch8__tail2_delta_20",
+        "arch8__tail3_delta_20",
+        "arch8__sign_delta_20",
+        "arch8__quantile_l1_20",
+        "arch8__lag1_delta_20",
+        "arch8__lag2_delta_20",
+        "arch8__lag4_delta_20",
+        "arch8__lag8_delta_20",
+        "arch8__ar_mean_z_20",
+        "arch8__ar_log_second_ratio_20",
+        "arch8__mean_z_160",
+        "arch8__abs_mean_z_160",
+        "arch8__log_second_ratio_160",
+        "arch8__log_variance_ratio_160",
+        "arch8__absolute_moment_delta_160",
+        "arch8__tail2_delta_160",
+        "arch8__tail3_delta_160",
+        "arch8__sign_delta_160",
+        "arch8__quantile_l1_160",
+        "arch8__lag1_delta_160",
+        "arch8__lag2_delta_160",
+        "arch8__lag4_delta_160",
+        "arch8__lag8_delta_160",
+        "arch8__ar_mean_z_160",
+        "arch8__ar_log_second_ratio_160",
+        "serial_variance__raw_energy_current",
+        "serial_variance__raw_energy_ewma8",
+        "serial_variance__raw_energy_ewma32",
+        "serial_variance__raw_energy_ewma128",
+        "serial_variance__raw_energy_cusum_positive",
+        "serial_variance__raw_energy_cusum_negative",
+        "serial_variance__raw_energy_glr_max",
+        "serial_variance__raw_energy_glr_logmean",
+        "serial_variance__raw_energy_glr_logage",
+        "serial_variance__raw_energy_bayes025",
+        "serial_variance__raw_energy_bayes1",
+        "serial_variance__raw_energy_memory_max",
+        "serial_variance__raw_energy_memory_decay",
+        "serial_variance__log_variance_forecast_current",
+        "serial_variance__log_variance_forecast_ewma8",
+        "serial_variance__log_variance_forecast_ewma32",
+        "serial_variance__log_variance_forecast_ewma128",
+        "serial_variance__log_variance_forecast_cusum_positive",
+        "serial_variance__log_variance_forecast_cusum_negative",
+        "serial_variance__log_variance_forecast_glr_max",
+        "serial_variance__log_variance_forecast_glr_logmean",
+        "serial_variance__log_variance_forecast_glr_logage",
+        "serial_variance__log_variance_forecast_bayes025",
+        "serial_variance__log_variance_forecast_bayes1",
+        "serial_variance__log_variance_forecast_memory_max",
+        "serial_variance__log_variance_forecast_memory_decay"
+      ],
+      "feature_source_identity": {
+        "extension_manifest_sha256": "0f940d1c5986e48097c1871a36dfaf1c5b13e237b5c43dc32433a1a5a48d4c24",
+        "extension_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+        "base_manifest_sha256": "28e7ac22a6923af55627b45a6bdd7968b45bce5e5254779d7cf4403a32fedffb",
+        "base_family_selection_code_sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+      },
+      "seal_rows": 0,
+      "timestamp": "2026-09-09T00:19:22.205924+00:00"
+    },
+    "gates": {
+      "checks": {
+        "simplification_mean": true,
+        "simplification_median": true,
+        "simplification_worst_fold": true,
+        "performance_mean": false,
+        "performance_median": true,
+        "performance_worst_fold": true,
+        "simplification_bootstrap": true,
+        "performance_bootstrap": false,
+        "simplification_alternates": true,
+        "performance_alternates": true,
+        "simplification_h_regime": true,
+        "performance_h_regime": true,
+        "simplification_complexity": true,
+        "engineering": true,
+        "generation_increment": false
+      },
+      "delta": {
+        "mean": 0.0,
+        "median": 0.0,
+        "worst_fold": 0.0
+      },
+      "distilled": {
+        "status": "PASS",
+        "failed": [],
+        "missing": []
+      },
+      "performance_scientific": {
+        "status": "FAIL",
+        "failed": [
+          "performance_mean",
+          "performance_bootstrap"
+        ],
+        "missing": []
+      },
+      "performance": {
+        "status": "FAIL",
+        "failed": [
+          "performance_mean",
+          "performance_bootstrap"
+        ],
+        "missing": []
+      },
+      "generation": {
+        "status": "FAIL",
+        "failed": [
+          "performance_mean",
+          "performance_bootstrap",
+          "generation_increment"
+        ],
+        "missing": []
+      }
+    },
+    "prediction_fingerprint_sha256": "4ecfd2248506bece0ad97a803849212fd9a8e840174a52782ebce60476ba6390",
+    "scientific_feature_contract": 77,
+    "materialized_tree_inputs": 48,
+    "quality_delta": 0.0,
+    "selected_name": "J102_SERIAL_VARIANCE_512_RUNTIME_TREE_USED_V1"
+  },
+  "previous_primary": {
+    "experiment_id": "J102_SERIAL_VARIANCE_512",
+    "candidate": {
+      "experiment_id": "J102_SERIAL_VARIANCE_512",
+      "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+      "generation": 18,
+      "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+      "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+      "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+      "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+      "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+      "engine_config": {
+        "order": 8,
+        "normalization": "sd",
+        "cdf_bins": 16
+      },
+      "groups": [
+        "VARIANCE_LOCAL",
+        "VARIANCE_GLR",
+        "VARIANCE_BAYES"
+      ],
+      "base": "arch8",
+      "learner": "M4_lightgbm",
+      "weighting": "W3",
+      "params": {},
+      "extension": {
+        "kind": "serial_variance",
+        "settings": {
+          "order": 8,
+          "normalization": "arch1",
+          "max_age": 512
+        }
+      },
+      "extension_frozen_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+      "base_family_selection": "ABCD",
+      "keep_names": [
+        "serial_variance__raw_energy_current",
+        "serial_variance__raw_energy_ewma8",
+        "serial_variance__raw_energy_ewma32",
+        "serial_variance__raw_energy_ewma128",
+        "serial_variance__raw_energy_cusum_positive",
+        "serial_variance__raw_energy_cusum_negative",
+        "serial_variance__raw_energy_glr_max",
+        "serial_variance__raw_energy_glr_logmean",
+        "serial_variance__raw_energy_glr_logage",
+        "serial_variance__raw_energy_bayes025",
+        "serial_variance__raw_energy_bayes1",
+        "serial_variance__raw_energy_memory_max",
+        "serial_variance__raw_energy_memory_decay",
+        "serial_variance__log_variance_forecast_current",
+        "serial_variance__log_variance_forecast_ewma8",
+        "serial_variance__log_variance_forecast_ewma32",
+        "serial_variance__log_variance_forecast_ewma128",
+        "serial_variance__log_variance_forecast_cusum_positive",
+        "serial_variance__log_variance_forecast_cusum_negative",
+        "serial_variance__log_variance_forecast_glr_max",
+        "serial_variance__log_variance_forecast_glr_logmean",
+        "serial_variance__log_variance_forecast_glr_logage",
+        "serial_variance__log_variance_forecast_bayes025",
+        "serial_variance__log_variance_forecast_bayes1",
+        "serial_variance__log_variance_forecast_memory_max",
+        "serial_variance__log_variance_forecast_memory_decay"
+      ],
+      "extension_registration": {
+        "kind": "serial_variance",
+        "module": "serial_variance_evidence"
+      },
+      "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+    },
+    "full": {
+      "status": "COMPLETE",
+      "scope": "full",
+      "fold_scores": [
+        0.625548994582903,
+        0.6353471840978637,
+        0.6214373863953904,
+        0.6156787076692104,
+        0.6101464788170321
+      ],
+      "mean": 0.62163175031248,
+      "median": 0.6214373863953904,
+      "std": 0.008612152831486539,
+      "worst_fold": 0.6101464788170321,
+      "best_fold": 0.6353471840978637,
+      "paired_bootstrap": {
+        "estimate_mean_delta": 0.010339063941122939,
+        "bootstrap_mean_delta": 0.01039489011480677,
+        "bootstrap_median_delta": 0.010391672476342595,
+        "ci_2_5": 0.00502282855699934,
+        "ci_97_5": 0.015520129531233127,
+        "probability_delta_positive": 1.0,
+        "estimate_median_of_folds_delta": 0.011478846368680795,
+        "median_of_folds_delta_ci_2_5": -0.001377610733094628,
+        "median_of_folds_delta_ci_97_5": 0.021533484602029074,
+        "replicates": 2000
+      },
+      "cv_rows": [
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 0,
+          "ts_auc": 0.625548994582903,
+          "validation_rows": 781090,
+          "validation_series": 1571,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 1,
+          "ts_auc": 0.6353471840978637,
+          "validation_rows": 800315,
+          "validation_series": 1579,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 2,
+          "ts_auc": 0.6214373863953904,
+          "validation_rows": 799107,
+          "validation_series": 1599,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 3,
+          "ts_auc": 0.6156787076692104,
+          "validation_rows": 844418,
+          "validation_series": 1665,
+          "seal_rows": 0
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "scope": "full",
+          "fold": 4,
+          "ts_auc": 0.6101464788170321,
+          "validation_rows": 789475,
+          "validation_series": 1586,
+          "seal_rows": 0
+        }
+      ],
+      "fractures": [
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5754840188195794
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5779748919150773
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5420459720524436
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5683329711230416
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.6170432512912861
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6298073686822565
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6499820999755118
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5261550290486022
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5350609930114315
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5521810297452023
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5765898746687155
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 0,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6467758545937061
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5655238548977211
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5669527930680843
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5487970159832346
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5670139988520071
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.6245222328753268
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6464466201116272
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6590705333348098
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5397773242021817
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5488141424274992
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5628916235403963
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5730679873984963
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 1,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6583995054308539
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5100173049586947
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5201122214210889
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5317149352942608
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5744775303860251
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.6091172533513768
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6171634379486406
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6583491680699374
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5350697351131134
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5397858314610325
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5512040667248009
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.574564596707333
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 2,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6417926205415696
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.538796004527794
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.4840477867475754
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5170345141593624
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5645112751032813
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.5967931350689665
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6180075560760427
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.643638345621051
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.515757280779858
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5215979558395887
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5258275934764811
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5522946486776094
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 3,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6416519228543808
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "0-9",
+          "ts_auc": 0.5061013881571816
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "10-24",
+          "ts_auc": 0.5162442992869554
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "25-49",
+          "ts_auc": 0.5463858616858919
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "50-99",
+          "ts_auc": 0.5618499750463375
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "100-199",
+          "ts_auc": 0.5906194254498721
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "200-399",
+          "ts_auc": 0.6106327913996341
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "online_time",
+          "bin": "400+",
+          "ts_auc": 0.6443075630729002
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "0-4",
+          "ts_auc": 0.5153926181912643
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "5-9",
+          "ts_auc": 0.5273850097537731
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "10-19",
+          "ts_auc": 0.5336737867165822
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "20-49",
+          "ts_auc": 0.5613589933458009
+        },
+        {
+          "experiment_id": "J102_SERIAL_VARIANCE_512",
+          "fold": 4,
+          "kind": "break_age",
+          "bin": "50+",
+          "ts_auc": 0.6316132733396348
+        }
+      ],
+      "engineering": [
+        {
+          "training_rows": 3233315,
+          "validation_rows": 781090,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3214090,
+          "validation_rows": 800315,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3215298,
+          "validation_rows": 799107,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3169987,
+          "validation_rows": 844418,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        },
+        {
+          "training_rows": 3224930,
+          "validation_rows": 789475,
+          "retained_columns": 77,
+          "constant_columns_removed": 0,
+          "native_compact_max_abs_diff_bound": 1e-12,
+          "weighting": "W3",
+          "live_cached_probe_max_abs_diff": 0.0,
+          "live_probe_series": 2
+        }
+      ],
+      "feature_names": [
+        "arch8__current_z",
+        "arch8__current_abs_z",
+        "arch8__current_robust_z",
+        "arch8__cusum_positive",
+        "arch8__cusum_negative",
+        "arch8__running_mean",
+        "arch8__mean_z_5",
+        "arch8__abs_mean_z_5",
+        "arch8__log_second_ratio_5",
+        "arch8__log_variance_ratio_5",
+        "arch8__absolute_moment_delta_5",
+        "arch8__tail2_delta_5",
+        "arch8__tail3_delta_5",
+        "arch8__sign_delta_5",
+        "arch8__quantile_l1_5",
+        "arch8__lag1_delta_5",
+        "arch8__lag2_delta_5",
+        "arch8__lag4_delta_5",
+        "arch8__lag8_delta_5",
+        "arch8__ar_mean_z_5",
+        "arch8__ar_log_second_ratio_5",
+        "arch8__mean_z_20",
+        "arch8__abs_mean_z_20",
+        "arch8__log_second_ratio_20",
+        "arch8__log_variance_ratio_20",
+        "arch8__absolute_moment_delta_20",
+        "arch8__tail2_delta_20",
+        "arch8__tail3_delta_20",
+        "arch8__sign_delta_20",
+        "arch8__quantile_l1_20",
+        "arch8__lag1_delta_20",
+        "arch8__lag2_delta_20",
+        "arch8__lag4_delta_20",
+        "arch8__lag8_delta_20",
+        "arch8__ar_mean_z_20",
+        "arch8__ar_log_second_ratio_20",
+        "arch8__mean_z_160",
+        "arch8__abs_mean_z_160",
+        "arch8__log_second_ratio_160",
+        "arch8__log_variance_ratio_160",
+        "arch8__absolute_moment_delta_160",
+        "arch8__tail2_delta_160",
+        "arch8__tail3_delta_160",
+        "arch8__sign_delta_160",
+        "arch8__quantile_l1_160",
+        "arch8__lag1_delta_160",
+        "arch8__lag2_delta_160",
+        "arch8__lag4_delta_160",
+        "arch8__lag8_delta_160",
+        "arch8__ar_mean_z_160",
+        "arch8__ar_log_second_ratio_160",
+        "serial_variance__raw_energy_current",
+        "serial_variance__raw_energy_ewma8",
+        "serial_variance__raw_energy_ewma32",
+        "serial_variance__raw_energy_ewma128",
+        "serial_variance__raw_energy_cusum_positive",
+        "serial_variance__raw_energy_cusum_negative",
+        "serial_variance__raw_energy_glr_max",
+        "serial_variance__raw_energy_glr_logmean",
+        "serial_variance__raw_energy_glr_logage",
+        "serial_variance__raw_energy_bayes025",
+        "serial_variance__raw_energy_bayes1",
+        "serial_variance__raw_energy_memory_max",
+        "serial_variance__raw_energy_memory_decay",
+        "serial_variance__log_variance_forecast_current",
+        "serial_variance__log_variance_forecast_ewma8",
+        "serial_variance__log_variance_forecast_ewma32",
+        "serial_variance__log_variance_forecast_ewma128",
+        "serial_variance__log_variance_forecast_cusum_positive",
+        "serial_variance__log_variance_forecast_cusum_negative",
+        "serial_variance__log_variance_forecast_glr_max",
+        "serial_variance__log_variance_forecast_glr_logmean",
+        "serial_variance__log_variance_forecast_glr_logage",
+        "serial_variance__log_variance_forecast_bayes025",
+        "serial_variance__log_variance_forecast_bayes1",
+        "serial_variance__log_variance_forecast_memory_max",
+        "serial_variance__log_variance_forecast_memory_decay"
+      ],
+      "feature_source_identity": {
+        "extension_manifest_sha256": "0f940d1c5986e48097c1871a36dfaf1c5b13e237b5c43dc32433a1a5a48d4c24",
+        "extension_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+        "base_manifest_sha256": "28e7ac22a6923af55627b45a6bdd7968b45bce5e5254779d7cf4403a32fedffb",
+        "base_family_selection_code_sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+      },
+      "seal_rows": 0,
+      "timestamp": "2026-09-09T00:19:22.205924+00:00"
+    },
+    "model_path": "artifacts/next/refits/J102_SERIAL_VARIANCE_512/cache_research_v1/model.joblib",
+    "model_sha256": "dbce67d2cf6a89bfa8544780b784fd643212a5141726e8c503870d26b1b605ab",
+    "descriptor_sha256": "876d4853345ce07541f7259842012942ce0b9fee45e3c7c5efe97ccc2be57f84",
+    "experiment_sha256": "8380e4db21afef86b92cf9871b308b9286bd4b6d9707a559663bca955099c508"
+  },
+  "frozen_references": {
+    "FROZEN_PRIMARY": {
+      "experiment_id": "J102_SERIAL_VARIANCE_512",
+      "candidate": {
+        "experiment_id": "J102_SERIAL_VARIANCE_512",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": 18,
+        "phase": "H_SERIAL_GLR_BAYES_CORRECTION",
+        "hypothesis": "The forecast channel is serially correlated even under a stationary null. An independent-observation sum variance can overstate long-age GLR and mean-prior Bayes evidence.",
+        "change": "Only replace age n by the H-fitted AR(1) variance of each channel sum in GLR and analytic mean-prior Bayes summaries; derived memory follows corrected GLR. Keep instantaneous, EWMA, CUSUM, H AR/ARCH fitting and old 51 features unchanged.",
+        "expected_effect": "Improve comparability across H persistence regimes and reduce spurious long-age evidence.",
+        "risks": "AR(1) is an approximation to nonlinear, clipped energy channels. Estimated H autocorrelation is noisy, and removing persistence can weaken a genuine variance shift. This is not a valid e-process or guaranteed false-alarm likelihood.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "serial_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "serial_variance__raw_energy_current",
+          "serial_variance__raw_energy_ewma8",
+          "serial_variance__raw_energy_ewma32",
+          "serial_variance__raw_energy_ewma128",
+          "serial_variance__raw_energy_cusum_positive",
+          "serial_variance__raw_energy_cusum_negative",
+          "serial_variance__raw_energy_glr_max",
+          "serial_variance__raw_energy_glr_logmean",
+          "serial_variance__raw_energy_glr_logage",
+          "serial_variance__raw_energy_bayes025",
+          "serial_variance__raw_energy_bayes1",
+          "serial_variance__raw_energy_memory_max",
+          "serial_variance__raw_energy_memory_decay",
+          "serial_variance__log_variance_forecast_current",
+          "serial_variance__log_variance_forecast_ewma8",
+          "serial_variance__log_variance_forecast_ewma32",
+          "serial_variance__log_variance_forecast_ewma128",
+          "serial_variance__log_variance_forecast_cusum_positive",
+          "serial_variance__log_variance_forecast_cusum_negative",
+          "serial_variance__log_variance_forecast_glr_max",
+          "serial_variance__log_variance_forecast_glr_logmean",
+          "serial_variance__log_variance_forecast_glr_logage",
+          "serial_variance__log_variance_forecast_bayes025",
+          "serial_variance__log_variance_forecast_bayes1",
+          "serial_variance__log_variance_forecast_memory_max",
+          "serial_variance__log_variance_forecast_memory_decay"
+        ],
+        "extension_registration": {
+          "kind": "serial_variance",
+          "module": "serial_variance_evidence"
+        },
+        "registration_source_sha256": "323064ef30930b713e4c1845b883456f62a735153211144f58b9434a2248734b"
+      },
+      "full": {
+        "status": "COMPLETE",
+        "scope": "full",
+        "fold_scores": [
+          0.625548994582903,
+          0.6353471840978637,
+          0.6214373863953904,
+          0.6156787076692104,
+          0.6101464788170321
+        ],
+        "mean": 0.62163175031248,
+        "median": 0.6214373863953904,
+        "std": 0.008612152831486539,
+        "worst_fold": 0.6101464788170321,
+        "best_fold": 0.6353471840978637,
+        "paired_bootstrap": {
+          "estimate_mean_delta": 0.010339063941122939,
+          "bootstrap_mean_delta": 0.01039489011480677,
+          "bootstrap_median_delta": 0.010391672476342595,
+          "ci_2_5": 0.00502282855699934,
+          "ci_97_5": 0.015520129531233127,
+          "probability_delta_positive": 1.0,
+          "estimate_median_of_folds_delta": 0.011478846368680795,
+          "median_of_folds_delta_ci_2_5": -0.001377610733094628,
+          "median_of_folds_delta_ci_97_5": 0.021533484602029074,
+          "replicates": 2000
+        },
+        "cv_rows": [
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "scope": "full",
+            "fold": 0,
+            "ts_auc": 0.625548994582903,
+            "validation_rows": 781090,
+            "validation_series": 1571,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "scope": "full",
+            "fold": 1,
+            "ts_auc": 0.6353471840978637,
+            "validation_rows": 800315,
+            "validation_series": 1579,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "scope": "full",
+            "fold": 2,
+            "ts_auc": 0.6214373863953904,
+            "validation_rows": 799107,
+            "validation_series": 1599,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "scope": "full",
+            "fold": 3,
+            "ts_auc": 0.6156787076692104,
+            "validation_rows": 844418,
+            "validation_series": 1665,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "scope": "full",
+            "fold": 4,
+            "ts_auc": 0.6101464788170321,
+            "validation_rows": 789475,
+            "validation_series": 1586,
+            "seal_rows": 0
+          }
+        ],
+        "fractures": [
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5754840188195794
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5779748919150773
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5420459720524436
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5683329711230416
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6170432512912861
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6298073686822565
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6499820999755118
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5261550290486022
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5350609930114315
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5521810297452023
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5765898746687155
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6467758545937061
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5655238548977211
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5669527930680843
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5487970159832346
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5670139988520071
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6245222328753268
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6464466201116272
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6590705333348098
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5397773242021817
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5488141424274992
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5628916235403963
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5730679873984963
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6583995054308539
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5100173049586947
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5201122214210889
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5317149352942608
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5744775303860251
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6091172533513768
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6171634379486406
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6583491680699374
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5350697351131134
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5397858314610325
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5512040667248009
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.574564596707333
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6417926205415696
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.538796004527794
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.4840477867475754
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5170345141593624
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5645112751032813
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.5967931350689665
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6180075560760427
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.643638345621051
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.515757280779858
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5215979558395887
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5258275934764811
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5522946486776094
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6416519228543808
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5061013881571816
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5162442992869554
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5463858616858919
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5618499750463375
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.5906194254498721
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6106327913996341
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6443075630729002
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5153926181912643
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5273850097537731
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5336737867165822
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5613589933458009
+          },
+          {
+            "experiment_id": "J102_SERIAL_VARIANCE_512",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6316132733396348
+          }
+        ],
+        "engineering": [
+          {
+            "training_rows": 3233315,
+            "validation_rows": 781090,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3214090,
+            "validation_rows": 800315,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3215298,
+            "validation_rows": 799107,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3169987,
+            "validation_rows": 844418,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3224930,
+            "validation_rows": 789475,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          }
+        ],
+        "feature_names": [
+          "arch8__current_z",
+          "arch8__current_abs_z",
+          "arch8__current_robust_z",
+          "arch8__cusum_positive",
+          "arch8__cusum_negative",
+          "arch8__running_mean",
+          "arch8__mean_z_5",
+          "arch8__abs_mean_z_5",
+          "arch8__log_second_ratio_5",
+          "arch8__log_variance_ratio_5",
+          "arch8__absolute_moment_delta_5",
+          "arch8__tail2_delta_5",
+          "arch8__tail3_delta_5",
+          "arch8__sign_delta_5",
+          "arch8__quantile_l1_5",
+          "arch8__lag1_delta_5",
+          "arch8__lag2_delta_5",
+          "arch8__lag4_delta_5",
+          "arch8__lag8_delta_5",
+          "arch8__ar_mean_z_5",
+          "arch8__ar_log_second_ratio_5",
+          "arch8__mean_z_20",
+          "arch8__abs_mean_z_20",
+          "arch8__log_second_ratio_20",
+          "arch8__log_variance_ratio_20",
+          "arch8__absolute_moment_delta_20",
+          "arch8__tail2_delta_20",
+          "arch8__tail3_delta_20",
+          "arch8__sign_delta_20",
+          "arch8__quantile_l1_20",
+          "arch8__lag1_delta_20",
+          "arch8__lag2_delta_20",
+          "arch8__lag4_delta_20",
+          "arch8__lag8_delta_20",
+          "arch8__ar_mean_z_20",
+          "arch8__ar_log_second_ratio_20",
+          "arch8__mean_z_160",
+          "arch8__abs_mean_z_160",
+          "arch8__log_second_ratio_160",
+          "arch8__log_variance_ratio_160",
+          "arch8__absolute_moment_delta_160",
+          "arch8__tail2_delta_160",
+          "arch8__tail3_delta_160",
+          "arch8__sign_delta_160",
+          "arch8__quantile_l1_160",
+          "arch8__lag1_delta_160",
+          "arch8__lag2_delta_160",
+          "arch8__lag4_delta_160",
+          "arch8__lag8_delta_160",
+          "arch8__ar_mean_z_160",
+          "arch8__ar_log_second_ratio_160",
+          "serial_variance__raw_energy_current",
+          "serial_variance__raw_energy_ewma8",
+          "serial_variance__raw_energy_ewma32",
+          "serial_variance__raw_energy_ewma128",
+          "serial_variance__raw_energy_cusum_positive",
+          "serial_variance__raw_energy_cusum_negative",
+          "serial_variance__raw_energy_glr_max",
+          "serial_variance__raw_energy_glr_logmean",
+          "serial_variance__raw_energy_glr_logage",
+          "serial_variance__raw_energy_bayes025",
+          "serial_variance__raw_energy_bayes1",
+          "serial_variance__raw_energy_memory_max",
+          "serial_variance__raw_energy_memory_decay",
+          "serial_variance__log_variance_forecast_current",
+          "serial_variance__log_variance_forecast_ewma8",
+          "serial_variance__log_variance_forecast_ewma32",
+          "serial_variance__log_variance_forecast_ewma128",
+          "serial_variance__log_variance_forecast_cusum_positive",
+          "serial_variance__log_variance_forecast_cusum_negative",
+          "serial_variance__log_variance_forecast_glr_max",
+          "serial_variance__log_variance_forecast_glr_logmean",
+          "serial_variance__log_variance_forecast_glr_logage",
+          "serial_variance__log_variance_forecast_bayes025",
+          "serial_variance__log_variance_forecast_bayes1",
+          "serial_variance__log_variance_forecast_memory_max",
+          "serial_variance__log_variance_forecast_memory_decay"
+        ],
+        "feature_source_identity": {
+          "extension_manifest_sha256": "0f940d1c5986e48097c1871a36dfaf1c5b13e237b5c43dc32433a1a5a48d4c24",
+          "extension_hash": "47bf68014de3ae3d52d5cb5848440269945762f87aee60c81aba3c810180b78e",
+          "base_manifest_sha256": "28e7ac22a6923af55627b45a6bdd7968b45bce5e5254779d7cf4403a32fedffb",
+          "base_family_selection_code_sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+        },
+        "seal_rows": 0,
+        "timestamp": "2026-09-09T00:19:22.205924+00:00"
+      },
+      "model_path": "artifacts/next/refits/J102_SERIAL_VARIANCE_512/cache_research_v1/model.joblib",
+      "model_sha256": "dbce67d2cf6a89bfa8544780b784fd643212a5141726e8c503870d26b1b605ab",
+      "descriptor_sha256": "876d4853345ce07541f7259842012942ce0b9fee45e3c7c5efe97ccc2be57f84",
+      "experiment_sha256": "8380e4db21afef86b92cf9871b308b9286bd4b6d9707a559663bca955099c508"
+    },
+    "FROZEN_SCIENTIFIC_REFERENCE": {
+      "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+      "candidate": {
+        "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+        "parent_id": "V007_VARIANCE_FORECAST",
+        "generation": 12,
+        "phase": "VARIANCE_AGE_GRID",
+        "hypothesis": "The variance-pair family gains from sequential integration. Test whether extending the fixed logarithmic age grid captures slower changes beyond 128 points.",
+        "change": "Only max_age changes from 128 to 512; add the preimplemented 256/512 ages. Same channels, H fit, learner and weighting.",
+        "expected_effect": "Stronger accumulated weak scale evidence at long break ages.",
+        "risks": "Long windows mix pre/post observations near a recent break, increase state memory and can delay a response. The original screen still decides full-CV admission.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ]
+      },
+      "full": {
+        "status": "COMPLETE",
+        "scope": "full",
+        "fold_scores": [
+          0.626800336595549,
+          0.6347184875156421,
+          0.6200164658360295,
+          0.6158260382936762,
+          0.610796021560729
+        ],
+        "mean": 0.621631469960325,
+        "median": 0.6200164658360295,
+        "std": 0.008386959257845923,
+        "worst_fold": 0.610796021560729,
+        "best_fold": 0.6347184875156421,
+        "paired_bootstrap": {
+          "estimate_mean_delta": 0.010338783588968004,
+          "bootstrap_mean_delta": 0.010409604881111967,
+          "bootstrap_median_delta": 0.010406909597193259,
+          "ci_2_5": 0.005231274461465735,
+          "ci_97_5": 0.015442647227603691,
+          "probability_delta_positive": 1.0,
+          "estimate_median_of_folds_delta": 0.010057925809319967,
+          "median_of_folds_delta_ci_2_5": -0.0019186617944071255,
+          "median_of_folds_delta_ci_97_5": 0.02174474873906808,
+          "replicates": 2000
+        },
+        "cv_rows": [
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "scope": "full",
+            "fold": 0,
+            "ts_auc": 0.626800336595549,
+            "validation_rows": 781090,
+            "validation_series": 1571,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "scope": "full",
+            "fold": 1,
+            "ts_auc": 0.6347184875156421,
+            "validation_rows": 800315,
+            "validation_series": 1579,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "scope": "full",
+            "fold": 2,
+            "ts_auc": 0.6200164658360295,
+            "validation_rows": 799107,
+            "validation_series": 1599,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "scope": "full",
+            "fold": 3,
+            "ts_auc": 0.6158260382936762,
+            "validation_rows": 844418,
+            "validation_series": 1665,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "scope": "full",
+            "fold": 4,
+            "ts_auc": 0.610796021560729,
+            "validation_rows": 789475,
+            "validation_series": 1586,
+            "seal_rows": 0
+          }
+        ],
+        "fractures": [
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5876300472698357
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5726658059641289
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5421832988606387
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5720161551992913
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6157547835883795
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6307686311842822
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6527482983495162
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5277055751938726
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5364803676247315
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5502663013874786
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5778516174088971
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6482265803021998
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5467996994850933
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5603036899056071
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5593404138753085
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5666305561738457
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6231250422775394
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.645236528966892
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6588115228764987
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5410127553095679
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5541552819861673
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5627628852186488
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5729313399168561
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6573606946704151
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.4953252576859425
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5117194429171922
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5163426888820256
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5722003239138602
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6103418558366881
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6167280466137106
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6558450725989862
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5323324606931401
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5368702881089327
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5486264910794121
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5725871982959404
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6406678618929424
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.512845320769725
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.46737768868180096
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5186652731771991
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5642163737680487
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.593359361447969
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6212863539904342
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6429085987400452
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5162443550772832
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5225270289419743
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5260374138688951
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5514784296466275
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6419342875854173
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5022283111468492
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.529893024129982
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5508225056052808
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.55353602517877
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.5897742218452756
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6114413916487345
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6474031656861472
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5176749589992853
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5296483244745261
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.535791058746097
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5603638110264404
+          },
+          {
+            "experiment_id": "Y001_LONG_VARIANCE_ARCH1",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6323443771887916
+          }
+        ],
+        "engineering": [
+          {
+            "training_rows": 3233315,
+            "validation_rows": 781090,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3214090,
+            "validation_rows": 800315,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3215298,
+            "validation_rows": 799107,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3169987,
+            "validation_rows": 844418,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3224930,
+            "validation_rows": 789475,
+            "retained_columns": 77,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          }
+        ],
+        "feature_names": [
+          "arch8__current_z",
+          "arch8__current_abs_z",
+          "arch8__current_robust_z",
+          "arch8__cusum_positive",
+          "arch8__cusum_negative",
+          "arch8__running_mean",
+          "arch8__mean_z_5",
+          "arch8__abs_mean_z_5",
+          "arch8__log_second_ratio_5",
+          "arch8__log_variance_ratio_5",
+          "arch8__absolute_moment_delta_5",
+          "arch8__tail2_delta_5",
+          "arch8__tail3_delta_5",
+          "arch8__sign_delta_5",
+          "arch8__quantile_l1_5",
+          "arch8__lag1_delta_5",
+          "arch8__lag2_delta_5",
+          "arch8__lag4_delta_5",
+          "arch8__lag8_delta_5",
+          "arch8__ar_mean_z_5",
+          "arch8__ar_log_second_ratio_5",
+          "arch8__mean_z_20",
+          "arch8__abs_mean_z_20",
+          "arch8__log_second_ratio_20",
+          "arch8__log_variance_ratio_20",
+          "arch8__absolute_moment_delta_20",
+          "arch8__tail2_delta_20",
+          "arch8__tail3_delta_20",
+          "arch8__sign_delta_20",
+          "arch8__quantile_l1_20",
+          "arch8__lag1_delta_20",
+          "arch8__lag2_delta_20",
+          "arch8__lag4_delta_20",
+          "arch8__lag8_delta_20",
+          "arch8__ar_mean_z_20",
+          "arch8__ar_log_second_ratio_20",
+          "arch8__mean_z_160",
+          "arch8__abs_mean_z_160",
+          "arch8__log_second_ratio_160",
+          "arch8__log_variance_ratio_160",
+          "arch8__absolute_moment_delta_160",
+          "arch8__tail2_delta_160",
+          "arch8__tail3_delta_160",
+          "arch8__sign_delta_160",
+          "arch8__quantile_l1_160",
+          "arch8__lag1_delta_160",
+          "arch8__lag2_delta_160",
+          "arch8__lag4_delta_160",
+          "arch8__lag8_delta_160",
+          "arch8__ar_mean_z_160",
+          "arch8__ar_log_second_ratio_160",
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_glr_max",
+          "conditional_variance__raw_energy_glr_logmean",
+          "conditional_variance__raw_energy_glr_logage",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__raw_energy_memory_max",
+          "conditional_variance__raw_energy_memory_decay",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_glr_max",
+          "conditional_variance__log_variance_forecast_glr_logmean",
+          "conditional_variance__log_variance_forecast_glr_logage",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1",
+          "conditional_variance__log_variance_forecast_memory_max",
+          "conditional_variance__log_variance_forecast_memory_decay"
+        ],
+        "feature_source_identity": {
+          "extension_manifest_sha256": "8b6cfca0ab2f1cc90ce3cf8a534f5d0396d4f71aa5c5fa146ee005f24760b582",
+          "extension_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+          "base_manifest_sha256": "28e7ac22a6923af55627b45a6bdd7968b45bce5e5254779d7cf4403a32fedffb",
+          "base_family_selection_code_sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+        },
+        "seal_rows": 0,
+        "timestamp": "2026-09-08T22:07:39.569481+00:00"
+      },
+      "model_path": "artifacts/next/refits/Y001_LONG_VARIANCE_ARCH1/cache_research_v1/model.joblib",
+      "model_sha256": "dc0772fd96cf973c0bd930045ad4b2ba6ce5a8b5fb72d4931100ccc86c658383",
+      "descriptor_sha256": "5ad6d81cc8cc2d2f4a2975fa2565fc8e0f62990f97bcd198b5560b4c0a1d2a02",
+      "experiment_sha256": "7a937f53e3d439f94c69538688c521a13fe7e593f606ed7552abc79b22a4228a"
+    },
+    "FROZEN_ROBUST_REFERENCE": {
+      "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+      "candidate": {
+        "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+        "parent_id": "Y001_LONG_VARIANCE_ARCH1",
+        "generation": 17,
+        "phase": "LONG_VARIANCE_MATCHED_ABLATION",
+        "hypothesis": "The +.00233 long-age gain over the 128-age parent needs matched attribution to GLR memory, Bayes tau integration and the forecast channel, plus a bounded speed tradeoff.",
+        "change": "Remove explicit GLR and GLR memory features; retain local and Bayes evidence.",
+        "expected_effect": "Separate useful slow-change evidence from persistent maxima and evaluate fixed smaller forests without altering online statistics.",
+        "risks": "Adaptively nominated from DEV; nested full evaluations are conditional. The same fixed screen can reject an ablation even if its unobserved full score would be useful. No failed-screen override is allowed.",
+        "engine_config": {
+          "order": 8,
+          "normalization": "sd",
+          "cdf_bins": 16
+        },
+        "groups": [
+          "VARIANCE_LOCAL",
+          "VARIANCE_GLR",
+          "VARIANCE_BAYES"
+        ],
+        "base": "arch8",
+        "learner": "M4_lightgbm",
+        "weighting": "W3",
+        "params": {},
+        "extension": {
+          "kind": "conditional_variance",
+          "settings": {
+            "order": 8,
+            "normalization": "arch1",
+            "max_age": 512
+          }
+        },
+        "extension_frozen_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+        "base_family_selection": "ABCD",
+        "keep_names": [
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1"
+        ]
+      },
+      "full": {
+        "status": "COMPLETE",
+        "scope": "full",
+        "fold_scores": [
+          0.6236246865642514,
+          0.6329773184495837,
+          0.6192832078871886,
+          0.6201193885482584,
+          0.6114405720853687
+        ],
+        "mean": 0.6214890347069302,
+        "median": 0.6201193885482584,
+        "std": 0.006989347263127941,
+        "worst_fold": 0.6114405720853687,
+        "best_fold": 0.6329773184495837,
+        "paired_bootstrap": {
+          "estimate_mean_delta": 0.010196348335573147,
+          "bootstrap_mean_delta": 0.010232949061430989,
+          "bootstrap_median_delta": 0.010274863286077685,
+          "ci_2_5": 0.005451073502906798,
+          "ci_97_5": 0.014965692001950397,
+          "probability_delta_positive": 1.0,
+          "estimate_median_of_folds_delta": 0.01016084852154886,
+          "median_of_folds_delta_ci_2_5": 0.000244803319416398,
+          "median_of_folds_delta_ci_97_5": 0.020457820502810566,
+          "replicates": 2000
+        },
+        "cv_rows": [
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "scope": "full",
+            "fold": 0,
+            "ts_auc": 0.6236246865642514,
+            "validation_rows": 781090,
+            "validation_series": 1571,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "scope": "full",
+            "fold": 1,
+            "ts_auc": 0.6329773184495837,
+            "validation_rows": 800315,
+            "validation_series": 1579,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "scope": "full",
+            "fold": 2,
+            "ts_auc": 0.6192832078871886,
+            "validation_rows": 799107,
+            "validation_series": 1599,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "scope": "full",
+            "fold": 3,
+            "ts_auc": 0.6201193885482584,
+            "validation_rows": 844418,
+            "validation_series": 1665,
+            "seal_rows": 0
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "scope": "full",
+            "fold": 4,
+            "ts_auc": 0.6114405720853687,
+            "validation_rows": 789475,
+            "validation_series": 1586,
+            "seal_rows": 0
+          }
+        ],
+        "fractures": [
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5720851188372504
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.576619569478295
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5451318774435783
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5652117108545267
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6102578143584203
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6287747078638698
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6498855673885939
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5260678601239295
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5371742872733167
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5480451012433565
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5750860865848396
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 0,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6447080340361775
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5435502293563973
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5615251339500618
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5540870053031146
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5706209506770145
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6225349743978451
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6440705262192218
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6543570428613696
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5394908967063977
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5521829605730728
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5620417655866596
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5723758124481548
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 1,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.655333431113757
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.47228116437650647
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5101150190139235
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5281946706226616
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5710592397737134
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.6079570475242008
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6152285002232805
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6562376479246983
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5307272086168145
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5329638290732395
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5445163407604188
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5713368123521989
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 2,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6404282138882522
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.5229353412671705
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.4746166765996641
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5210499478366878
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5689713410672329
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.5938855416376214
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.627896903695487
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6467647751816098
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5207382683937043
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.527292270830298
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5290363491384729
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5539229503674452
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 3,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.6466448348341256
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "0-9",
+            "ts_auc": 0.4831402046315598
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "10-24",
+            "ts_auc": 0.5247663139160686
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "25-49",
+            "ts_auc": 0.5434204921191959
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "50-99",
+            "ts_auc": 0.5606798320823111
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "100-199",
+            "ts_auc": 0.5897196943956848
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "200-399",
+            "ts_auc": 0.6107826658129466
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "online_time",
+            "bin": "400+",
+            "ts_auc": 0.6493957316741408
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "0-4",
+            "ts_auc": 0.5144146752187674
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "5-9",
+            "ts_auc": 0.5268645734768425
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "10-19",
+            "ts_auc": 0.5312793537478865
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "20-49",
+            "ts_auc": 0.5598365278790443
+          },
+          {
+            "experiment_id": "B104_LONG_VARIANCE_NO_GLR_MEMORY",
+            "fold": 4,
+            "kind": "break_age",
+            "bin": "50+",
+            "ts_auc": 0.633857361167488
+          }
+        ],
+        "engineering": [
+          {
+            "training_rows": 3233315,
+            "validation_rows": 781090,
+            "retained_columns": 67,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3214090,
+            "validation_rows": 800315,
+            "retained_columns": 67,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3215298,
+            "validation_rows": 799107,
+            "retained_columns": 67,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3169987,
+            "validation_rows": 844418,
+            "retained_columns": 67,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          },
+          {
+            "training_rows": 3224930,
+            "validation_rows": 789475,
+            "retained_columns": 67,
+            "constant_columns_removed": 0,
+            "native_compact_max_abs_diff_bound": 1e-12,
+            "weighting": "W3",
+            "live_cached_probe_max_abs_diff": 0.0,
+            "live_probe_series": 2
+          }
+        ],
+        "feature_names": [
+          "arch8__current_z",
+          "arch8__current_abs_z",
+          "arch8__current_robust_z",
+          "arch8__cusum_positive",
+          "arch8__cusum_negative",
+          "arch8__running_mean",
+          "arch8__mean_z_5",
+          "arch8__abs_mean_z_5",
+          "arch8__log_second_ratio_5",
+          "arch8__log_variance_ratio_5",
+          "arch8__absolute_moment_delta_5",
+          "arch8__tail2_delta_5",
+          "arch8__tail3_delta_5",
+          "arch8__sign_delta_5",
+          "arch8__quantile_l1_5",
+          "arch8__lag1_delta_5",
+          "arch8__lag2_delta_5",
+          "arch8__lag4_delta_5",
+          "arch8__lag8_delta_5",
+          "arch8__ar_mean_z_5",
+          "arch8__ar_log_second_ratio_5",
+          "arch8__mean_z_20",
+          "arch8__abs_mean_z_20",
+          "arch8__log_second_ratio_20",
+          "arch8__log_variance_ratio_20",
+          "arch8__absolute_moment_delta_20",
+          "arch8__tail2_delta_20",
+          "arch8__tail3_delta_20",
+          "arch8__sign_delta_20",
+          "arch8__quantile_l1_20",
+          "arch8__lag1_delta_20",
+          "arch8__lag2_delta_20",
+          "arch8__lag4_delta_20",
+          "arch8__lag8_delta_20",
+          "arch8__ar_mean_z_20",
+          "arch8__ar_log_second_ratio_20",
+          "arch8__mean_z_160",
+          "arch8__abs_mean_z_160",
+          "arch8__log_second_ratio_160",
+          "arch8__log_variance_ratio_160",
+          "arch8__absolute_moment_delta_160",
+          "arch8__tail2_delta_160",
+          "arch8__tail3_delta_160",
+          "arch8__sign_delta_160",
+          "arch8__quantile_l1_160",
+          "arch8__lag1_delta_160",
+          "arch8__lag2_delta_160",
+          "arch8__lag4_delta_160",
+          "arch8__lag8_delta_160",
+          "arch8__ar_mean_z_160",
+          "arch8__ar_log_second_ratio_160",
+          "conditional_variance__raw_energy_current",
+          "conditional_variance__raw_energy_ewma8",
+          "conditional_variance__raw_energy_ewma32",
+          "conditional_variance__raw_energy_ewma128",
+          "conditional_variance__raw_energy_cusum_positive",
+          "conditional_variance__raw_energy_cusum_negative",
+          "conditional_variance__raw_energy_bayes025",
+          "conditional_variance__raw_energy_bayes1",
+          "conditional_variance__log_variance_forecast_current",
+          "conditional_variance__log_variance_forecast_ewma8",
+          "conditional_variance__log_variance_forecast_ewma32",
+          "conditional_variance__log_variance_forecast_ewma128",
+          "conditional_variance__log_variance_forecast_cusum_positive",
+          "conditional_variance__log_variance_forecast_cusum_negative",
+          "conditional_variance__log_variance_forecast_bayes025",
+          "conditional_variance__log_variance_forecast_bayes1"
+        ],
+        "feature_source_identity": {
+          "extension_manifest_sha256": "8b6cfca0ab2f1cc90ce3cf8a534f5d0396d4f71aa5c5fa146ee005f24760b582",
+          "extension_hash": "4e4da6e741f7eaccd32e74c86b885441e10a36674ab4e906dd5f56c5ef92f7a3",
+          "base_manifest_sha256": "28e7ac22a6923af55627b45a6bdd7968b45bce5e5254779d7cf4403a32fedffb",
+          "base_family_selection_code_sha256": "602f9ae90ff308251ee35bfc75120ca0254b7bb96f73bb5b1fe6765f08745883"
+        },
+        "seal_rows": 0,
+        "timestamp": "2026-09-09T00:02:38.918502+00:00"
+      },
+      "model_path": "artifacts/next/refits/B104_LONG_VARIANCE_NO_GLR_MEMORY/cache_research_v1/model.joblib",
+      "model_sha256": "56390986dfd3f4577b36bc316fed983cdb8924634e390b41341baf6d4d360c1e",
+      "descriptor_sha256": "e4e494177aa46781ae4a909644090f0560c01370b9e35b8e27369b61194f4b26",
+      "experiment_sha256": "4e0f0814096017650b61c3a320fd145d16a33861a417ebadd432d2e44b909463"
+    }
+  },
+  "generation_level_promotion": false,
+  "formal_primary_original_artifact_preserved": true,
+  "policy_sha256": "94a68dff706bfe2c963679ccb4a1aa170bc24c285cdc7d56360123f12a1e05f7",
+  "evidence_sha256": {
+    "artifacts/next2/final_audit/ALL_TESTS.xml": "5b0f7f5a52a35247e83fe2175bb9be805fc40958bddfc6f9862fa9400e948494",
+    "artifacts/next2/independent_reproduction/DISTILLED/RESULTS.json": "2466607c19151729f36e7e57930b16434f3927bceeb2574cc4840ae084e0a165",
+    "artifacts/next2/independent_reproduction/PERFORMANCE/RESULTS.json": "028bbac1cee86fc9e98fea94a7f0d4e5c6c04a6926cccc04be8fac6c5d5c8515",
+    "artifacts/next2/canonical_api_all_dev/DISTILLED/RESULTS.json": "099c4aed3fc711c4b776d4b8cd22504376bce3e84be7dd4fc10c43febb0bd192",
+    "artifacts/next2/shared_public_api_all_dev/PERFORMANCE/RESULTS.json": "e6b6a2dd76a8fcaf1708881345cb27eb38dcb3adc08b35479b861481f3560b3b",
+    "artifacts/next2/alternate_runtime_v2/DISTILLED/RESULTS.json": "3b92c7a97b5390c4fac8d5d0b60c5efab171870e38af96f303b5898cc82eae30",
+    "artifacts/next2/shared_blend_runtime/all_dev/RESULTS.json": "39f75501897c090926864a9934526fc506fa3f768ae465367f54b3d113e17f26",
+    "artifacts/next2/shared_blend_runtime/oof/RESULTS.json": "3921bc4aa09576f7f39040d691db20151d9dfb571ea879ec7f90fca891c98696",
+    "artifacts/next2/shared_blend_runtime/alternate/RESULTS.json": "a2b742117da57a785c58cc206334ec6aa703d657cca70560f9642872fa577299",
+    "artifacts/next2/report_bootstrap_replay/RESULTS.json": "9d1dbebff2ef33d0557c5e22e87e68a4a6973134a59e37cdbd373cc3d51b4565"
+  },
+  "seal_opened": {
+    "SEAL_A": false,
+    "SEAL_B": false,
+    "SEAL_C": false,
+    "SEAL_D": false
+  },
+  "reduced_new_usage": 0,
+  "public_submission_new": 0,
+  "scope": "Final DEV roles; independent raw training and engineering verified. No seal evaluation, public submission or claim of generation-level promotion."
+}

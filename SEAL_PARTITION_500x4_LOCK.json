@@ -1,0 +1,40 @@
+{
+  "status": "LOCKED",
+  "salt": "structural-break-next-seal-500x4-v1-20260909",
+  "algorithm": "sort by SHA256(ASCII(salt + colon + integer_dataset_id)), ID tie-break; contiguous chunks of 500; files sorted numerically, LF ASCII",
+  "original_assignments_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "original_seal_count": 2000,
+  "dev_count": 8000,
+  "inputs": [
+    "frozen assignment dataset_id and role only"
+  ],
+  "labels_tau_features_predictions_used": false,
+  "seal_union_preserved": true,
+  "partitions": {
+    "SEAL_A": {
+      "count": 500,
+      "ids_file": "SEAL_A_IDS.txt",
+      "ids_sha256": "ace1a78e11e52e0b5639f8a5df62ae4c0494f8fed23e89b0ae7e5a55d33b9db4",
+      "opened": false
+    },
+    "SEAL_B": {
+      "count": 500,
+      "ids_file": "SEAL_B_IDS.txt",
+      "ids_sha256": "7d3e86b77106a9c603aeecbb7e8e2e9f30c375024e0ed99ba5297f400abeae80",
+      "opened": false
+    },
+    "SEAL_C": {
+      "count": 500,
+      "ids_file": "SEAL_C_IDS.txt",
+      "ids_sha256": "7a5093ff9c89d6010e79d9b8e0d5772983ca8560098bd3f08f920b15751a5e2b",
+      "opened": false
+    },
+    "SEAL_D": {
+      "count": 500,
+      "ids_file": "SEAL_D_IDS.txt",
+      "ids_sha256": "45f53bd6dd991ab0815c7c38ac0a8a2d37edd121cde9a9941031c19eb0440efe",
+      "opened": false
+    }
+  },
+  "opening_permitted_this_session": false
+}
