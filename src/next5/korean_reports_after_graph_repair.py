@@ -4,7 +4,7 @@ from src.next5.korean_reports_after_test_repair import documents as previous_doc
 
 def documents(context):
     result = previous_documents(context)
-    key = '01_GPT_HANDOFF_NEXT5.md'
+    key = 'RESEARCH_REPORT_NEXT5.md'
     text = result[key]
     old = '[최종 실패 분류표](FAILURE_CLASSIFICATION_NEXT5.csv)의 33개 행은 실제 실행 오류 5건(Python queue 4건과 native 기록 오류 1건), 시작 전 대체 8건, screen 탈락 1건, full 승격 기준 탈락 19건을 구분한다. 연구 단계의 32개 행에 최종 전체 suite 오류 한 건을 추가했다. 총 12개 queue quarantine은 원래 실패 상태를 보존하고 성공 근거를 연결했다.'
     new = '[최종 실패 분류표](FAILURE_CLASSIFICATION_NEXT5.csv)의 34개 행은 실제 실행 오류 6건(Python queue 5건과 native 기록 오류 1건), 시작 전 대체 8건, screen 탈락 1건, full 승격 기준 탈락 19건을 구분한다. 연구 단계의 32개 행에 최종 suite와 실행 이력 감사의 오류 두 건을 추가했다. 총 13개 queue quarantine은 원래 실패 상태를 보존하고 성공 근거를 연결했다.'

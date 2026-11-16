@@ -81,7 +81,7 @@ def main():
     saved_patch = (BASE / 'preflight/INITIAL_STAGED_PATCH.diff').read_bytes()
     patch = subprocess.check_output(['git', 'diff', '--cached', '--binary'], cwd=ROOT, stderr=subprocess.PIPE)
     assert patch == saved_patch and hashlib.sha256(patch).hexdigest() == context['staged_patch_sha256']
-    assert digest(ROOT / 'docs/USER_SPECIFICATION_NEXT5.md') == context['specification_sha256']
+    assert digest(ROOT / 'docs/RESEARCH_PROTOCOL_NEXT5.md') == context['specification_sha256']
     model_hashes = {}
     for name, role in refs['roles'].items():
         path = ROOT / role['model_file']

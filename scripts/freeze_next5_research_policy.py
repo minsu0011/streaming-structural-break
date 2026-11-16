@@ -43,7 +43,7 @@ def main():
                    'parents':'Deterministic highest full mean gain among eligible family members; ties lexicographic experiment ID',
                    'interactions':'A small explicitly registered coordinate set, never all-pairs expansion'}}}
     policy={'status':'FROZEN_NEXT5_RESEARCH_POLICY','created_utc':utc_now(),'source_sha256':digest(Path(__file__)),
-        'user_specification_sha256':digest(ROOT/'docs/USER_SPECIFICATION_NEXT5.md'),
+        'user_specification_sha256':digest(ROOT/'docs/RESEARCH_PROTOCOL_NEXT5.md'),
         'shadow_lock_sha256':digest(ROOT/'NEXT5_SHADOW_LOCK.json'),'split_lock_sha256':digest(ROOT/'NEXT5_SPLIT_LOCK.json'),
         'randomness_lock_sha256':digest(ROOT/'NEXT5_RANDOMNESS_LOCK.json'),
         'primary_metric':'official_TS_AUC','selection_authority':'ResearchPool grouped five-fold equally weighted mean; original full-DEV scores are historical only',

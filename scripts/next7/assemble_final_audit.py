@@ -155,7 +155,7 @@ def main():
             'audit_evidence_sha256':{name:digest(BASE/name) for name in paths.values()},
             'audit_outputs_sha256':{name:digest(BASE/name) for name in output_names},
             'candidate_freeze_sha256':digest(BASE/'FINAL_CANDIDATE_FREEZE_NEXT7.json'),
-            'remaining_delivery_work':['Write final45-question Korean guide and GPT handoff','Freeze completed monitor ledger',
+            'remaining_delivery_work':['Write final45-question Korean guide and research report','Freeze completed monitor ledger',
                 'Build final ZIP, verify its fresh extracted replay, copy exactly20 desktop files'],
             'no_predictive_promotion_from_synthetic_only_or_runtime_results':True})
     note('Final computation audit consolidated','No promotion; all required scientific and engineering checks complete','FINAL_AUDIT',phase='FINAL_AUDIT')

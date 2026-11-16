@@ -60,7 +60,7 @@ def deliver_twenty(final_directory, reproduction):
     folder.mkdir(exist_ok=False)
     mapping = {
         '00_먼저읽기_NEXT8_KO.md': '00_READ_FIRST_NEXT8_KO.md',
-        '01_GPT_HANDOFF_NEXT8.md': '01_GPT_HANDOFF_NEXT8.md',
+        'RESEARCH_REPORT_NEXT8.md': 'RESEARCH_REPORT_NEXT8.md',
         '03_FEATURE_CLASSIFICATION_NEXT8.csv': 'FEATURE_CLASSIFICATION_NEXT8.csv',
         '04_VARIABLE_CERTIFICATION_NEXT8.json': 'VARIABLE_CERTIFICATION_REGISTRY.json',
         '05_TARGET_DIRECTION_ATLAS_NEXT8.csv': 'TARGET_DIRECTION_ATLAS.csv',

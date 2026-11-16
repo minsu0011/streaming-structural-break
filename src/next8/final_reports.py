@@ -233,7 +233,7 @@ def build_final_reports():
         'D0_persistence_vs_H_center_limitation_included': True, 'adaptive_RP_not_independent_hidden_confirmation': True}
     atomic(out / 'FINAL_AUDIT_NEXT8.json', final)
     handoff = [
-        '# NEXT8 GPT 전달', '',
+        '# NEXT8 연구 개요', '',
         f"연구 `{BASE.name}`. 판정 **{final['scientific_status']}**. 원래 BL80 RP mean TS-AUC는 0.6203652100698587이다. "
         f"최종 승격 기준 충족 후보: {json.dumps(eligible, ensure_ascii=False)}. 기존 BL80/D2/J102 역할과 byte authority를 보존했다.", '',
         f"실질 연구 {number(clock['productive_seconds_observed'])}초, 이후 별도 감사 {number(clock['separate_audit_seconds_observed'])}초. "
@@ -258,7 +258,7 @@ def build_final_reports():
         '모든 frozen 구현/정책·등록·명시적 수리·검증 증거는 전체 ZIP의 artifacts/next8 아래에 보존한다. '
         'FULL_REPLAY v1과 final-test v1은 실행 전 발견한 소프트웨어 문제로 보존했고 실제 감사에는 명시된 v2를 사용했다. '
         '새로운 사후 아이디어는 NEXT_SESSION_PLAN_NEXT8.md의 다음 연구 가설이며 이번 outer 후보를 다시 맞추지 않는다.', '']
-    atomic(out / '01_GPT_HANDOFF_NEXT8.md', '\n\n'.join(handoff))
+    atomic(out / 'RESEARCH_REPORT_NEXT8.md', '\n\n'.join(handoff))
     atomic(out / 'NEXT_SESSION_PLAN_NEXT8.md', next_plan(science, decisions, center[0]))
     atomic(out / 'REPRODUCE_NEXT8_KO.md', reproduction_document(closure))
     atomic(out / 'REQUIREMENTS_NEXT8_REPLAY.txt', '\n'.join(n + '==' + v for n, v in closure['package_versions'].items()) + '\n')

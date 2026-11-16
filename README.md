@@ -45,22 +45,23 @@ python -m pytest tests/test_streaming.py tests/test_models.py tests/test_feature
 | --- | --- |
 | `src/` | 특징 계산, 모델, 학습·추론, 평가 구현 |
 | `configs/` | 모델 설정과 실험 선택 기준 |
+| `entrypoints/` | 후속 모델별 대회 학습·추론 진입점 |
 | `scripts/` | 단계별 학습·분석·재현 도구 |
+| `research/` | 단계별 실험 결과와 기술 메모 |
 | `tests/` | 수식, 인과적 입력 경계, 상태와 추론 테스트 |
 | `docs/` | 설계 설명과 연구 메모 |
 | `vendor/official/` | 출처가 기록된 공식 scorer·runner 참고 코드 |
 | `data/` | 데이터 준비 안내 |
 
-설계는 [모델 구조](docs/architecture.md), 단계별 변경은 [모델 발전 과정](docs/model-evolution.md), 실행 범위는 [테스트 안내](docs/testing.md)에 정리했습니다. 루트의 CSV·JSON은 당시 설정과 평가 기록입니다.
+설계는 [모델 구조](docs/architecture.md), 단계별 변경은 [모델 발전 과정](docs/model-evolution.md), 실행 범위는 [테스트 안내](docs/testing.md)에 정리했습니다. 단계별 평가 표와 설정 기록은 [research/reports](research/reports)에, 상세 기술 메모는 [research/notes](research/notes)에 있습니다.
 
 ## 학습된 모델
 
-[모델 릴리스](https://github.com/minsu0011/streaming-structural-break/releases/tag/local-freeze-20261116)에 학습 모델과 연구 단계별 동결 압축본을 보관합니다.
+[모델 릴리스](https://github.com/minsu0011/streaming-structural-break/releases/tag/local-freeze-20261116)에 학습이 완료된 모델과 복원용 메타데이터를 보관합니다.
 
-- `frozen-trained-models-20261116.zip`: 기존 최종 주력·백업 모델, NEXT2 배포 모델, NEXT8 고정 runtime 모델, NEXT9 outer-fold 학습 모델
-- NEXT6·NEXT6 확장·NEXT7·NEXT8 압축본: 해당 시점의 코드·모델·연구 기록
+- `trained-models-20261116.zip`: 기존 최종 주력·백업 모델, NEXT2 배포 모델, NEXT8 고정 runtime 모델, NEXT9 outer-fold 학습 모델
 
-`frozen-trained-models-20261116.zip`을 저장소 루트에 풀면 모델의 상대 경로가 유지됩니다. 원본 대회 데이터와 대용량 캐시는 포함하지 않습니다. 모델별 Python 패키지 버전은 잠금 파일을 참고하세요.
+`trained-models-20261116.zip`을 저장소 루트에 풀면 모델의 상대 경로가 유지됩니다. 원본 대회 데이터와 대용량 캐시는 포함하지 않습니다. 모델별 Python 패키지 버전은 잠금 파일을 참고하세요.
 
 ## 평가 범위
 

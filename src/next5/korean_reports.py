@@ -172,7 +172,7 @@ def documents(context):
         ('B2/D2 fusion 결과', family('S') + ' X 결합 결과: ' + family('X') + ' S4B의 분리 scale/tail 은행과 X 결합은 일부 RP 개선을 보였으나 새 역할을 얻지 못했다. 동일 RP B2 composite Δ +0.0011102871043433328, D2 composite Δ +0.0007385961732173874. S3 pair-rescue와 damage를 함께 기록했다. RP 최상위 X2의 고정 합성 감소 조건에서는 ' + stress_comparison('X2_SCALE_TAIL', 'V3') + '; ' + stress_comparison('X2_SCALE_TAIL', 'V4') + '. 원래 RP SCALE 구간의 양수 이득과 다른 배경의 감소 손실을 함께 보존하며, 이 범위를 신뢰구간이나 hidden-test 효과로 해석하지 않는다.'),
         ('scale likelihood 결과', 'S1 Gaussian과 S2 unit-variance Student-t5의 lower/upper likelihood를 분리했다. 후보 분산 배율은 0.5/0.7/1.5/2.0이며 표준편차 배율과 구별한다. ' + family('S') + ' 합성 반례의 다섯 고정 파일에서는 ' + stress_comparison('S4B_UNIFIED_SCALE_SPECIALIST', 'V3') + '; ' + stress_comparison('S4B_UNIFIED_SCALE_SPECIALIST', 'V4') + '; ' + stress_comparison('S4A_AUGMENTED_J_SCALE', 'CB_N3_050') + '. S4A의 유리한 첫 파일을 전체 학습 파일의 안정성으로 일반화하지 않는다. 범위는 신뢰구간이 아니다.'),
         ('robust null 결과', family('R') + ' H-only tail/PIT/self-normalization을 사용했다. 고정 합성 조건에서 ' + stress_comparison('R2_CONDITIONAL_SCALE_PIT', 'CB_N3_050') + '; ' + stress_comparison('R3_QUANTILE_SELF_NORMALIZED', 'V3') + '. 별도 학습 후보의 조건별 결과이며 변환 하나의 인과적 ablation은 아니다. H에서 추정한 종속 working null이므로 정확한 distribution-free calibration이나 anytime 보장을 주장하지 않는다.'),
-        ('persistence 결과', family('P') + ' 5개 학습 artifact별 단발/반복 충격, late genuine break, long-null을 함께 검사했다. ' + late_text + ' 조건별 평균·범위·알람 방향은 01_GPT_HANDOFF_NEXT5.md의 표에 모두 남겼다. P3는 peak와 ungated slow EWMA를 비교하며 confirmation-only 상태는 미구현이다. P3의 결과로 그 더 넓은 구조를 반증하지 않는다. 0.9 BL80 혼합의 점수 진폭 감소와 실제 expert 추가 응답을 분해했으며 낮은 raw excess만으로 회복 개선을 선언하지 않는다.'),
+        ('persistence 결과', family('P') + ' 5개 학습 artifact별 단발/반복 충격, late genuine break, long-null을 함께 검사했다. ' + late_text + ' 조건별 평균·범위·알람 방향은 RESEARCH_REPORT_NEXT5.md의 표에 모두 남겼다. P3는 peak와 ungated slow EWMA를 비교하며 confirmation-only 상태는 미구현이다. P3의 결과로 그 더 넓은 구조를 반증하지 않는다. 0.9 BL80 혼합의 점수 진폭 감소와 실제 expert 추가 응답을 분해했으며 낮은 raw excess만으로 회복 개선을 선언하지 않는다.'),
         ('windowed evidence 결과', family('W') + ' 고정 길이 recent evidence를 사용한다. trimmed W2의 장점과 감소 조건별 손실을 전체 fitted-fold 표에서 함께 확인해야 한다.'),
         ('e-process 결과', family('E') + ' E1/E2는 누적·sparse-start likelihood evidence를 ranking 특성으로 사용한다. E1은 사전등록된 unreset 누적형이며, 최근 age 1–256 제한은 별도 E2에만 적용했다. 둘은 각각 학습한 후보여서 age 제한만의 인과적 ablation은 아니다. 종속성과 H nuisance 추정 때문에 엄밀한 e-process 또는 anytime-valid alpha를 주장하지 않는다. 원래 4개 long-null 코호트에서 누적 Gaussian LR를 clipped 혁신 에너지 합으로 재현했다. 최대 산술 오차는 ' + repr(context['null_drift']['maximum_cumulative_LR_identity_absolute_error']) + '다. 양의 working likelihood 비율은 학습 모델의 알람 확률이 아니며 원인의 기여를 분리한 결과로 해석하지 않는다.'),
         ('mean specialist 결과', family('M') + ' M1은 H 제외 평균 Δ -0.0010261474, 조건부 CI [-0.0020377821,-0.0000275769]로 일반화 약점을 보였다.'),
@@ -205,9 +205,9 @@ def documents(context):
         ('다음 병목 3개', '① H/ARCH/heavy-tail 조건이 달라져도 유지되는 분산 감소 신호. ② 반복 이상치의 장기 영향과 late genuine break 검출을 함께 다루는 상태. ③ 제한된 기존 DEV에서 독립 신호의 이득을 확인할 검증력. 다음 세션에도 과거 Shadow 이력을 지우거나 이번 실패의 seed/weight 미세 탐색을 재개하지 않는다.'),
     ]
     assert len(answers) == 47
-    readfirst = '# NEXT5 GPT 전달 — 완료된 연구와 검증\n\n기존 BL80 primary를 유지한다. 새 NEXT5 역할은 없고 Shadow와 네 LOCAL SEAL은 미개봉이다.\n\n'
+    readfirst = '# NEXT5 연구 개요 — 완료된 연구와 검증\n\n기존 BL80 primary를 유지한다. 새 NEXT5 역할은 없고 Shadow와 네 LOCAL SEAL은 미개봉이다.\n\n'
     readfirst += '\n\n'.join(f'{i}. **{question}**\n\n{answer}' for i, (question, answer) in enumerate(answers, 1)) + '\n'
-    handoff = '# Structural Break Real-Time NEXT5 인계\n\n[47개 답변](00_GPT_READ_FIRST_NEXT5.md), [모델 결과](MODEL_RESULTS_NEXT5.csv), [최종 역할](DEV_CANDIDATES_NEXT5.json), [감사](FINAL_AUDIT_NEXT5.json)를 먼저 읽는다.\n\n'
+    handoff = '# Structural Break Real-Time NEXT5 인계\n\n[47개 답변](RESEARCH_OVERVIEW_NEXT5.md), [모델 결과](MODEL_RESULTS_NEXT5.csv), [최종 역할](DEV_CANDIDATES_NEXT5.json), [감사](FINAL_AUDIT_NEXT5.json)를 먼저 읽는다.\n\n'
     handoff += '7개 family, 20개 screen, 19개 full, 295개 실제 learner fit을 수행했다. X2의 RP mean은 ' + repr(best['mean']) + ', Δ는 ' + repr(best['mean_delta']) + '다. 고정 기준 +0.0012에 미달해 Shadow finalist 0개를 고정했다. 새 primary나 generation을 선언하지 않았다.\n\n'
     handoff += '기존 BL80와 D2 SCALE 보조 역할, B2 near-miss reference를 보존했다. 기존 D2 실제 파일의 반복 이상치 악화도 보존한다. NEXT5 synthetic 결과는 97개 고정 CV 학습 artifact의 검증이며 새 전체 학습 deployment artifact의 결과가 아니다.\n\n'
     handoff += '표에서 PRIMARY/screen/ALT/H 제외 학습, post-hoc mechanism, 원래 8000 DEV 점수, 고정 합성 seed 결과를 구분한다. 낮은 impulse score excess는 고정 혼합에 의한 진폭 감소일 수 있다. age/lag support, 조건부 detection delay와 censoring, 1024 calibration과 16384 평가 horizon을 함께 읽는다.\n\n'
@@ -235,4 +235,4 @@ def documents(context):
             number(row['prebreak']), number(row['detection'])]) + ' |\n'
     handoff += '\n근거는 artifacts/next5/synthetic_late_break/의 원래 15개 완료 영수증과 CSV SHA다. 기존 2,000개 seed multiplicity만 제한해서 사용했으며, 이 표에는 새로운 합산 신뢰구간을 만들지 않았다. 85개 seed는 사전 진단 support 100개 미만이고 이 사후 층화에 승격 권한은 없다.\n\n'
     handoff += '전체 ZIP은 raw competition data, seal 값/label, credentials, real point OOF, feature cache와 이전 ZIP을 제외한다. SOURCE_MANIFEST_NEXT5.json과 외부 Desktop 검증 영수증에 파일·archive SHA가 있다. Raw 없이 이전 역할의 inference를 재생할 수 있으며 학습 재현에는 별도 hash-matched raw가 필요하다.\n'
-    return {'00_GPT_READ_FIRST_NEXT5.md': readfirst, '01_GPT_HANDOFF_NEXT5.md': handoff}
+    return {'RESEARCH_OVERVIEW_NEXT5.md': readfirst, 'RESEARCH_REPORT_NEXT5.md': handoff}

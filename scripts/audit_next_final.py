@@ -208,7 +208,7 @@ def main():
     for name in REQUIRED:
         require((ROOT/name).is_file() and (ROOT/name).stat().st_size > 0, 'Missing final output: '+name)
         pin(name)
-    read_first = (ROOT/'00_GPT_READ_FIRST_NEXT.md').read_text(encoding='utf-8')
+    read_first = (ROOT/'RESEARCH_OVERVIEW_NEXT.md').read_text(encoding='utf-8')
     require(all('\n'+str(j)+'. ' in read_first for j in range(1, 27)), 'The 26 read-first requirements are incomplete')
     require('\ufffd' not in read_first, 'Korean handoff contains replacement characters')
     checks['required_final_reports_present_hashed_and_korean_read_first_complete'] = True

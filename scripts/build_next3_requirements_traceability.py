@@ -57,7 +57,7 @@ assign([71,72,73,74,79],'최종 보고·실제 배포 증거 대기','44개 한�
 def main():
     session=read_json(BASE/'SESSION.json')
     if session.get('audit_started_utc'):raise RuntimeError('This is explicitly a pre-audit traceability snapshot')
-    specification=ROOT/'docs/USER_SPECIFICATION_NEXT3.md'
+    specification=ROOT/'docs/RESEARCH_PROTOCOL_NEXT3.md'
     headings=re.findall(r'^([0-9]{1,2})\. ([^\n]+)\n=+',specification.read_text(encoding='utf-8'),re.M)
     assert [int(n) for n,_ in headings]==list(range(81))
     assert set(RULES)==set(range(81)), sorted(set(range(81))-set(RULES))

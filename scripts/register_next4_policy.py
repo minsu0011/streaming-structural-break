@@ -11,7 +11,7 @@ def main():
     original=reference['roles']['FROZEN_PERFORMANCE_BL80']
     policy={'version':'NEXT4_RESEARCH_POLICY_V1','created_utc':utc_now(),
         'reference_sha256':digest(BASE/'preflight/FROZEN_REFERENCES.json'),
-        'user_spec_sha256':digest(ROOT/'docs/USER_SPECIFICATION_NEXT4.md'),
+        'user_spec_sha256':digest(ROOT/'docs/RESEARCH_PROTOCOL_NEXT4.md'),
         'primary_metric':'official_TS_AUC','primary_reference':'BL2_C205_DEPENDENCE_80',
         'reference_mean':original['full']['mean'],'reference_folds':original['full']['fold_scores'],
         'screen':{**old['screen'],'mean_delta_min':-.001,'each_fold_delta_min':-.004,

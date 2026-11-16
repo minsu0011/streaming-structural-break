@@ -139,7 +139,7 @@ def research_read_first(science, diagnostics):
             'positive bootstrap fraction은 posterior가 아니다. 오래 반복 사용한 RP 개발셋은 독립 hidden 확인이 아니다.', '',
             'TRAIN 탈락 원인의 전체 자료는 discovery_diagnostics/SUMMARY.json, GATES.csv, DOMAIN_FAILURES.csv에 있다. '
             '시간 초반 또는 짧은 H에서 넓은 CI가 실용적 방향 반전을 배제하지 못한 경우와 실제 반전 지지를 구분한다.', '',
-            '파일 읽는 순서: 이 문서 → 01_GPT_HANDOFF_NEXT8.md → FEATURE_EXPLANATION_CARDS_KO.md → '
+            '파일 읽는 순서: 이 문서 → RESEARCH_REPORT_NEXT8.md → FEATURE_EXPLANATION_CARDS_KO.md → '
             'MODEL_COMPARISON_NEXT8.csv / VARIABLE_CERTIFICATION_REGISTRY.json → FIGURES/NEXT8_EIGHT_FIGURES.pdf → '
             'FINAL_AUDIT_NEXT8.json / REPRODUCTION_NEXT8.json.', '']
     assert diagnostics['status'] == 'COMPLETE'

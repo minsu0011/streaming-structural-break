@@ -47,7 +47,7 @@ def main():
         with (ROOT/name).open(encoding='utf-8-sig',newline='') as f:rows=list(csv.DictReader(f))
         tables[name]={'rows':len(rows),'columns':list(rows[0]) if rows else [],'sha256':digest(ROOT/name)}
     reports={}
-    for name in ('00_GPT_READ_FIRST_NEXT4.md','01_GPT_HANDOFF_NEXT4.md','LIMITATIONS_NEXT4.md','NEXT_SESSION_PLAN_NEXT4.md',
+    for name in ('RESEARCH_OVERVIEW_NEXT4.md','RESEARCH_REPORT_NEXT4.md','LIMITATIONS_NEXT4.md','NEXT_SESSION_PLAN_NEXT4.md',
                  'LEAKAGE_AUDIT_NEXT4.json','PREFIX_INVARIANCE_NEXT4.json','DETERMINISM_NEXT4.json','REPRODUCTION_NEXT4.json','LATENCY_NEXT4.json'):
         text=(ROOT/name).read_text(encoding='utf-8');reports[name]={'characters':len(text),'sha256':digest(ROOT/name)}
     pins={}

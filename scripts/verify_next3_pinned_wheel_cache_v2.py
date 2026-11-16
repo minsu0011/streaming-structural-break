@@ -53,7 +53,7 @@ def main():
         'environment_modified': False, 'SDK_executed': False, 'raw_data_read': False, 'new_fits': 0,
         'seal_values_accessed': 0, 'new_package_downloads': 0, 'repair_sha256': digest(out/'REPAIR.json'),
         'source_sha256': digest(Path(__file__)), 'metadata_helper_sha256': digest(ROOT/'src/next3/wheel_metadata.py'),
-        'package_scope': 'Wheel binaries remain in the excluded local maintenance cache; only this hash manifest belongs in GPT handoff.',
+        'package_scope': 'Wheel binaries remain in the excluded local maintenance cache; only this hash manifest belongs in research report.',
         'scope': 'Official release integrity and Windows/Python compatibility only. Fresh environment installation and pip check remain final-audit requirements.'}
     atomic_json(out/'RESULTS.json', result, immutable=True)
     atomic_json(BASE/'maintenance/PINNED_WHEEL_CACHE_SELECTION.json', {'status': 'PASS', 'created_utc': utc_now(),

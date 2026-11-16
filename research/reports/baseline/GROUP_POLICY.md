@@ -1,0 +1,41 @@
+# Historical-only grouping policy
+
+{
+  "version": 1,
+  "frozen_before_any_score": true,
+  "inputs": [
+    "historical values",
+    "integer ID for stable representatives only"
+  ],
+  "forbidden_inputs": [
+    "tau",
+    "target",
+    "online values",
+    "online length",
+    "prediction",
+    "CV score"
+  ],
+  "exact": "SHA256 of canonical little-endian float64 historical bytes including length",
+  "normalized_exact": "SHA256 of full mean/SD-normalized history rounded to 6 decimals, including length; signed zero canonicalized",
+  "fingerprint": "128 evenly spaced interpolated normalized points; seeded Gaussian projection to 12 dimensions",
+  "candidate_index": "scipy cKDTree, top 8 neighbors per series; no all-pairs distance matrix",
+  "projection_seed": 20260908,
+  "fingerprint_points": 128,
+  "projection_dimensions": 12,
+  "neighbors": 8,
+  "minimum_history_for_near": 128,
+  "near_requires_equal_length": true,
+  "normalized_rms_threshold": 0.01,
+  "normalized_max_abs_threshold": 0.1,
+  "prefix_rule": "64-value exact prefix is diagnostic only; a common short prefix alone never merges",
+  "normalization_floor": 1e-12,
+  "constant_rule": "normalized exact groups of same length are merged; absolute location is not identity",
+  "nonfinite_rule": "NaN/Inf mask must agree for near merge; normalized replacement uses finite mean",
+  "coarse_signature": "length log2 bin, historical kurtosis bin, lag1 bin, zero-scale flag; diagnostic only",
+  "component_rule": "connected components, representative minimum integer ID; conservative transitive grouping",
+  "limitations": [
+    "Top-8 projected neighbors can miss clones; no guarantee all near duplicates are detected.",
+    "Distinct realizations from one process are not merged merely for similar statistics.",
+    "Different-length clones are not near-merged; identical short prefixes are reported separately."
+  ]
+}

@@ -138,7 +138,7 @@ def main():
         'independent_training_seal_values_accessed': 0, 'scope': 'Guarded DEV-only operations and unchanged seal/quota artifacts. Full byte hashing and native Parquet row-group decoding are distinct from observing seal values.'})
     write_json(ROOT/'RAW_DATA_REQUIRED_NEXT2.json', {'status': 'EXTERNAL_INPUTS_EXCLUDED_FROM_ZIP', 'files': {
         'data/raw/'+name: {'sha256': digest, 'bytes': (ROOT/'data/raw'/name).stat().st_size} for name, digest in RAW_SHA.items()},
-        'split_sha256': guard.split.digest, 'scope': 'Raw copies were used only for guarded DEV training. No raw file or seal labels in the GPT archive.'})
+        'split_sha256': guard.split.digest, 'scope': 'Raw copies were used only for guarded DEV training. No raw file or seal labels in the research archive.'})
     write_json(ROOT/'artifacts/next2/final_audit/SELECTION_EVIDENCE.json', {'status': 'PASS', 'created_utc': utc_now(),
         'script_sha256': sha256(Path(__file__)), 'selected_model_roles': 2, 'scientific_model_rows': 80,
         'full_tests': tests, 'new_independent_fits': 3, 'total_NEXT2_learner_fits': 397,

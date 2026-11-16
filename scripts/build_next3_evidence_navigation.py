@@ -84,7 +84,7 @@ flowchart TD
     for item in records:
         text += f"| {item['title']} | [{item['id']}](../{item['path']}) | {item['scope']} |\n"
     text += '\n## 최종 전달의 authority 순서\n\n'
-    text += '1. `00_GPT_READ_FIRST_NEXT3.md`와 `01_GPT_HANDOFF_NEXT3.md`: 최종 한국어 설명과 실행 명령.\n'
+    text += '1. `RESEARCH_OVERVIEW_NEXT3.md`와 `RESEARCH_REPORT_NEXT3.md`: 최종 한국어 설명과 실행 명령.\n'
     text += '2. `DEV_CANDIDATES_NEXT3.json`과 `DEPLOYMENT_ENTRY_POINTS_NEXT3.json`: 선택 역할과 실제 모델·entry 경로.\n'
     text += '3. `FINAL_AUDIT_NEXT3.json`: 별도 최종 감사 기간에 검증한 source·raw 재학습·전체 테스트·runtime·보고서 근거.\n'
     text += '4. `SOURCE_MANIFEST_NEXT3.json`: 실제 packaging에 포함한 파일의 SHA와 크기. archive 자기 자신의 최종 SHA를 내부에 재귀적으로 넣지 않는다.\n'

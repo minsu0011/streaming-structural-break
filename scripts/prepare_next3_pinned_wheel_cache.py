@@ -80,7 +80,7 @@ def main():
         'versions': observed, 'files': files, 'total_wheel_bytes': sum(value['bytes'] for value in files.values()),
         'environment_modified': False, 'SDK_executed': False, 'raw_data_read': False, 'new_fits': 0,
         'seal_values_accessed': 0, 'source_sha256': digest(Path(__file__)),
-        'package_scope': 'Wheel binaries stay in the local maintenance cache and are excluded from GPT handoff. The hash manifest is shareable metadata.',
+        'package_scope': 'Wheel binaries stay in the local maintenance cache and are excluded from research report. The hash manifest is shareable metadata.',
         'scope': 'Official release integrity and current Windows/Python wheel compatibility. Installing and pip-checking a fresh environment remain final-audit requirements.'}, immutable=True)
     print('NEXT3 PINNED WHEEL CACHE', len(files), 'OFFICIAL SHA256 AND CRC PASS', flush=True)
 

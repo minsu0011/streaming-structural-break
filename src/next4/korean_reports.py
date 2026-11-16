@@ -94,9 +94,9 @@ def documents(context):
         ('다음 연구 병목 3개','① H/ARCH·heavy-tail 조건이 달라져도 재현되는 분산 감소 evidence. ② 반복 이상치 뒤 상태의 회복과 긴 null에서 누적 alarm 제어. ③ 제한된 DEV에서 objective/독립 신호 개선을 정직하게 확인할 검증력. 닫힌 family의 seed·weight shopping을 재개하지 않는다.')]
     answers=[(question,answer+('\n\n'+robust_details[question] if question in robust_details else '')) for question,answer in answers]
     assert len(answers)==42
-    readfirst='# NEXT4 GPT 전달 — 완료된 과정과 결과\n\n'+outcome+'\n\n주 성능 모델은 **BL2_C205_DEPENDENCE_80, '+repr(primary['mean'])+'**를 유지한다. 탐색 최고 B2의 원래 CI 실패를 유지했다. '+robust_text+'\n\n'
+    readfirst='# NEXT4 연구 개요 — 완료된 과정과 결과\n\n'+outcome+'\n\n주 성능 모델은 **BL2_C205_DEPENDENCE_80, '+repr(primary['mean'])+'**를 유지한다. 탐색 최고 B2의 원래 CI 실패를 유지했다. '+robust_text+'\n\n'
     readfirst+='\n\n'.join(f'{i}. **{question}**\n\n{answer}' for i,(question,answer) in enumerate(answers,1))+'\n'
-    handoff='# Structural Break Real-Time NEXT4 인계\n\n'+outcome+'\n\n[42개 답변](00_GPT_READ_FIRST_NEXT4.md), [실험 표](MODEL_RESULTS_NEXT4.csv), [고정 역할](DEV_CANDIDATES_NEXT4.json), [최종 감사](FINAL_AUDIT_NEXT4.json)를 먼저 읽는다.\n\n'
+    handoff='# Structural Break Real-Time NEXT4 인계\n\n'+outcome+'\n\n[42개 답변](RESEARCH_OVERVIEW_NEXT4.md), [실험 표](MODEL_RESULTS_NEXT4.csv), [고정 역할](DEV_CANDIDATES_NEXT4.json), [최종 감사](FINAL_AUDIT_NEXT4.json)를 먼저 읽는다.\n\n'
     handoff+='원래 primary metric은 grouped 5-fold official TS-AUC의 평균이다. 관측 값/시계열 ID/시간/label의 역할, screen/full, standalone/composite, 조건부 H slice/실제 H 제외 학습을 섞지 않는다. 실제 선택 근거는 고정 정책과 원래 OOF이다.\n\n'
     handoff+='실험 메뉴는 A–H 8개 family/18개 slot으로 동결했다. 16개 screen, 14개 full, E2·G1 screen 실패, F1 중복·F2 조건부 종료를 모두 보존했다. 56개 기존 nested base를 재사용했고 16개 새 meta fit은 honest inner OOF를 사용했다.\n\n'
     handoff+='B2 평균 '+repr(best['mean'])+' (Δ '+repr(best['mean_delta'])+')는 숫자 개선 문턱을 넘었으나 CI '+interval(bp)+'로 탈락했다. ALT 3/3 양수, 직접 runtime 통과가 이 결정을 바꾸지 않는다. '+robust_text+'\n'+robust_evidence+'\n'
@@ -115,5 +115,5 @@ def documents(context):
     plan+='1. 먼저 NEXT4 최종 선택과 failure/stop 기록, 원래 frozen hashes를 확인한다. B2의 CI 실패를 새 bootstrap seed나 추가 draw로 지우지 않는다.\n2. 분산 감소 evidence가 H-regime과 heavy-tail에서 다르게 작동하는 원인을 조사한다. 새로운 연구를 할 경우 한정된 가설·학습/평가 좌표·중단 조건을 새 점수 전에 고정한다. 기존 반례를 보며 분모나 조건을 바꾸지 않는다.\n3. 반복 이상치 오염과 null horizon 증가를 구별한다. reset/forgetting 모델을 연구한다면 별도 scientific identity로 등록하고, 실제 TS-AUC와 단발·반복 이상치 trade-off를 함께 확인한다.\n4. 독립 expert 또는 TS-AUC 목적함수 연구는 이번에 종료한 A/C/E/G/H 메뉴의 결과를 먼저 검토한다. 고정 split의 낮은 검증력과 높은 DEV 탐색 포화를 비용에 포함한다.\n5. 성능 champion은 BL80을 유지한다. 실제 seal/reduced/public/cloud 실행은 이번 세션의 후속 자동 작업으로 예약하지 않는다.\n\n이번 세션의 미완료 필수 작업을 다음 세션으로 넘기기 위한 문서가 아니다. 완료 evidence와 명시적 한계를 바탕으로 별도 미래 연구 방향을 적었다.\n'
     seal='# Seal 개봉 권고: NO\n\n네 seal은 모두 미개봉이다. 원래 performance/generation gate를 통과한 새 모델이 없고 DEV 탐색 포화가 높다. SCALE 강건성 역할은 제한된 지원 표본에서의 근거이며 독립 일반화 확증으로 간주하지 않는다. 이번 세션에서 실제 seal을 열거나 개봉을 예약하지 않았다.\n'
     public='# Public submission 권고: NO\n\n이번 세션에서 public/cloud submission 및 SDK test를 실행하지 않았다. 기준 성능 모델을 유지하며, 탐색 최고 B2의 원래 CI 실패가 해결되지 않았다. 새 강건성 역할이 있어도 이를 새 generation 또는 leaderboard 개선으로 주장하지 않는다.\n'
-    return {'00_GPT_READ_FIRST_NEXT4.md':readfirst,'01_GPT_HANDOFF_NEXT4.md':handoff,'LIMITATIONS_NEXT4.md':limitations,
+    return {'RESEARCH_OVERVIEW_NEXT4.md':readfirst,'RESEARCH_REPORT_NEXT4.md':handoff,'LIMITATIONS_NEXT4.md':limitations,
         'NEXT_SESSION_PLAN_NEXT4.md':plan,'SEAL_OPEN_RECOMMENDATION_NEXT4.md':seal,'PUBLIC_SUBMISSION_RECOMMENDATION_NEXT4.md':public}

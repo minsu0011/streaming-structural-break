@@ -56,7 +56,7 @@ def main():
         retention = successful_receipt(bind(report_dir/'SOURCE_RETENTION.json'))
         for name, item in retention['source_snapshots'].items():
             assert item['sha256'] == report['source_sha256'][name] == digest(bind(ROOT/item['snapshot']))
-    answers = numbered_answers((text_root/'00_GPT_READ_FIRST_NEXT3.md').read_text(encoding='utf-8'))
+    answers = numbered_answers((text_root/'RESEARCH_OVERVIEW_NEXT3.md').read_text(encoding='utf-8'))
     check = ClaimChecks()
     def number(name, stated, observed, path, location, *, atol=1e-14):
         bind(path); check.numeric(name, stated, observed, Path(path).relative_to(ROOT).as_posix(), location, atol=atol)

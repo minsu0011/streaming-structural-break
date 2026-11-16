@@ -110,10 +110,10 @@ def main():
     pd.testing.assert_frame_equal(comparable, history, check_dtype=False, check_exact=True)
     inventory_path = 'artifacts/next2/final_tables/FINAL_TRAINING_INVENTORY.json'
     inventory = json.loads((ROOT/inventory_path).read_text()); claim('learner_fits', inventory['total_NEXT2_learner_fits'], 397, inventory_path, 'total_NEXT2_learner_fits', 0.)
-    text = (ROOT/'00_GPT_READ_FIRST_NEXT2.md').read_text(encoding='utf-8')
+    text = (ROOT/'RESEARCH_OVERVIEW_NEXT2.md').read_text(encoding='utf-8')
     assert [int(x) for x in re.findall(r'(?m)^(\d+)\. \*\*', text)] == list(range(1, 36))
     assert repr(full['mean']) in text and repr(full['mean']-primary['mean']) in text
-    for path in [ROOT/p for p in ('00_GPT_READ_FIRST_NEXT2.md', '01_GPT_HANDOFF_NEXT2.md', 'CURRENT_GENERATION_COMPONENT_GRAPH.md', 'LIMITATIONS_NEXT2.md', 'NEXT_SESSION_PLAN_NEXT2.md')]:
+    for path in [ROOT/p for p in ('RESEARCH_OVERVIEW_NEXT2.md', 'RESEARCH_REPORT_NEXT2.md', 'CURRENT_GENERATION_COMPONENT_GRAPH.md', 'LIMITATIONS_NEXT2.md', 'NEXT_SESSION_PLAN_NEXT2.md')]:
         assert '\ufffd' not in path.read_text(encoding='utf-8'); sources[path.relative_to(ROOT).as_posix()] = sha256(path)
     suites = list(ET.parse(ROOT/'artifacts/next2/final_audit/ALL_TESTS.xml').getroot().iter('testsuite'))
     assert sum(int(s.attrib['tests']) for s in suites) == 536

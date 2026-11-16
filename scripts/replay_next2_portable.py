@@ -1,4 +1,4 @@
-"""Small raw-data-free public-API reproduction suitable for the GPT handoff copy."""
+"""Small raw-data-free public-API reproduction suitable for the research report copy."""
 import os
 import sys
 sys.dont_write_bytecode = True

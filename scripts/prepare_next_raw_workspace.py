@@ -1,6 +1,6 @@
 """Create a detached source checkout with copied raw inputs and hash references.
 
-This is an internal reproducibility workspace, never an early GPT handoff.
+This is an internal reproducibility workspace, never an early research report.
 No existing checkout, artifact, model, raw file, or environment is replaced.
 """
 from pathlib import Path

@@ -1,0 +1,15 @@
+{
+  "status": "EXTERNAL_INPUTS_EXCLUDED_FROM_ZIP",
+  "files": {
+    "data/raw/X_train.parquet": {
+      "sha256": "2aa61853ce0c3a8f6cdfe137ccde9a59f97cf0872779d2063b549c60a7b7ed54",
+      "bytes": 218514418
+    },
+    "data/raw/y_train_index.parquet": {
+      "sha256": "3b0ab253817b9828b8ab3393caed472125963fff3ad2a63de71ea89d12c6dd07",
+      "bytes": 100183
+    }
+  },
+  "split_sha256": "db0a562da579eac2251c2d82301de16d2211f7bcc5212bc52240f49464f5bbee",
+  "scope": "Raw copies were used only for guarded DEV training. No raw file or seal labels in the research archive."
+}

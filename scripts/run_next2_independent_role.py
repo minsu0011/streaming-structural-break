@@ -45,7 +45,7 @@ def main():
         'files_sha256': {p.relative_to(out).as_posix(): sha256(p) for p in out.rglob('*') if p.is_file()},
         'original_source_and_data_untouched': True, 'new_fits': r['new_fits']})
     checkpoint('Independent fresh-environment canonical training '+args.role,
-        ['Finish separate final audit and complete verified GPT handoff'], artifacts=[(out/'RESULTS.json').relative_to(ROOT).as_posix()])
+        ['Finish separate final audit and complete verified research report'], artifacts=[(out/'RESULTS.json').relative_to(ROOT).as_posix()])
     print('NEXT2 INDEPENDENT ROLE PASS', args.role, r['new_fits'], r['points'], flush=True)
 
 

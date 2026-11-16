@@ -55,7 +55,7 @@ def main():
         for name, sha in read_json(old / 'PORTABLE_RUNTIME_MANIFEST_NEXT8.json')['files_sha256'].items():
             assert digest(ROOT / name) == sha, name
             protected[name] = sha
-        docs = ('final_reports/00_READ_FIRST_NEXT8_KO.md', 'final_reports/01_GPT_HANDOFF_NEXT8.md',
+        docs = ('final_reports/00_READ_FIRST_NEXT8_KO.md', 'final_reports/RESEARCH_REPORT_NEXT8.md',
                 'NEXT_SESSION_PREVIOUS_MOVEMENT_HYPOTHESIS_NEXT8.json', 'BASELINE_PROVENANCE_NEXT8.json',
                 'NEXT8_PROTOCOL_LOCK.json', 'FEATURE_LINEAGE_NEXT8.csv',
                 'center_control/NORMAL.json', 'center_control/EARLY.json',

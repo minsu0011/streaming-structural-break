@@ -57,7 +57,7 @@ def main():
         'artifacts/next3/preflight/FROZEN_REFERENCES.json','artifacts/next3/SESSION.json',
         'artifacts/validation/GROUP_ASSIGNMENTS.parquet','artifacts/validation/SPLIT_LOCK_REAL.json',
         'ROBUSTNESS_SPLIT_LOCK.json','SEAL_PARTITION_500x4_LOCK.json','REDUCED_TEST_USAGE_LEDGER.json',
-        'requirements-lock.txt','docs/USER_SPECIFICATION_NEXT4.md']
+        'requirements-lock.txt','docs/RESEARCH_PROTOCOL_NEXT4.md']
     refs={'status':'FROZEN_NEXT4_SCIENTIFIC_REFERENCES','created_utc':utc_now(),'roles':roles,
         'raw_sha256':raw,'split_sha256':guard.split.digest,'seal_lock_sha256':guard.lock_sha,
         'reduced_ledger_sha256':guard.ledger_sha,'source_sha256':{n:digest(ROOT/n) for n in source_names},

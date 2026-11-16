@@ -70,9 +70,9 @@ def read_first(f, run):
         ('DEV research saturation 위험', '반복 탐색 위험은 높다. 다만 규칙의 연속 10개 screen 실패 조건은 충족하지 않아 `DEV_RESEARCH_SATURATION=NOT_FORMALLY_TRIGGERED`로 기록했다. 새 full 최고 Δ도 +0.0007 미만이며 유한 가설 계열 메뉴가 끝나 CASE G에 따라 검증·재현·비용 유지보수로 전환했다. 통과한 screen을 실패로 다시 세지 않았다. 12후보 공동 조건부 envelope도 선택 과정을 모두 보정한 CI가 아니다.'),
         ('다음 단계 3개', '(1) B4: 독립 평가 기회를 쓰기 전에 가설·최소 효과·오류 통제·중단 기준을 고정한다. (2) B2: ARCH/tail 감소 문제에서 지원된 real DEV 손실 없이 새 정보를 주는 소수 대조만 설계한다. (3) B6: legacy EWMA 등 잔류 memory의 후보 수정을 long-null·단일 이상치·늦은 변화의 clean detection과 함께 검증한다. 현재 frozen 모델과 모든 seal을 먼저 보존한다.')]
     assert len(answers) == 44
-    heading = '# Structural Break NEXT3 — GPT가 먼저 읽을 문서\n\n'
+    heading = '# Structural Break NEXT3 — 연구 개요\n\n'
     lead = f'**{label}**\n\n기존 프로젝트를 이어 수행했다. 최종 과학 역할은 두 개이며, 새 성능·robustness 후보는 없다. 선택 성능 mean **{score["mean"]!r}**, 시작 대비 Δ **0.0**. 실행 구현의 메모리 비용만 개선했다. 네 seal 미개봉, reduced/public/cloud 신규 사용 0이다.\n\n'
-    return heading+lead+'\n\n'.join(f'{number}. **{question}:** {answer}' for number, (question, answer) in enumerate(answers, 1))+'\n\n근거를 읽는 순서: `01_GPT_HANDOFF_NEXT3.md` → 최종 결과표와 `DEV_CANDIDATES_NEXT3.json` → `FINAL_AUDIT_NEXT3.json` → ZIP 외부 검증 receipt. 이전 실험의 중간 상태 문자열은 기록 당시 상태이며 최종 선택을 뜻하지 않는다.\n'
+    return heading+lead+'\n\n'.join(f'{number}. **{question}:** {answer}' for number, (question, answer) in enumerate(answers, 1))+'\n\n근거를 읽는 순서: `RESEARCH_REPORT_NEXT3.md` → 최종 결과표와 `DEV_CANDIDATES_NEXT3.json` → `FINAL_AUDIT_NEXT3.json` → ZIP 외부 검증 receipt. 이전 실험의 중간 상태 문자열은 기록 당시 상태이며 최종 선택을 뜻하지 않는다.\n'
 
 
 def handoff(f, run):
@@ -101,7 +101,7 @@ def handoff(f, run):
 
 ## 검토 및 재생
 
-먼저 `00_GPT_READ_FIRST_NEXT3.md`의 44개 답을 읽는다. 전체 과학 후보와 실패 이유는 `MODEL_RESULTS_NEXT3.csv`, 고정 fold는 `CV_RESULTS_NEXT3.csv`, 조건부 대비는 `PAIRED_BOOTSTRAP_NEXT3.csv`에 있다. `record_type`·`validation_kind`·`evidence_origin`을 함께 확인한다. 새 13개 recipe, 기존 frozen 2역할, I1 재사용, S4 보류가 17개 행으로 구분된다. 누적 ledger는 원래 213개 행의 bytes를 prefix로 보존하고 29개 기록을 추가한다. 129회 과학 fit과 별도 raw 재학습 3회는 다른 회계다.
+먼저 `RESEARCH_OVERVIEW_NEXT3.md`의 44개 답을 읽는다. 전체 과학 후보와 실패 이유는 `MODEL_RESULTS_NEXT3.csv`, 고정 fold는 `CV_RESULTS_NEXT3.csv`, 조건부 대비는 `PAIRED_BOOTSTRAP_NEXT3.csv`에 있다. `record_type`·`validation_kind`·`evidence_origin`을 함께 확인한다. 새 13개 recipe, 기존 frozen 2역할, I1 재사용, S4 보류가 17개 행으로 구분된다. 누적 ledger는 원래 213개 행의 bytes를 prefix로 보존하고 29개 기록을 추가한다. 129회 과학 fit과 별도 raw 재학습 3회는 다른 회계다.
 
 압축 해제한 디렉터리에서 Windows Python 3.13.2와 고정 의존성을 사용할 때:
 
@@ -199,8 +199,8 @@ SEAL_A/B/C/D는 각 500개이며 모두 미개봉이다. DEV 8,000개와 overlap
 
 공개 추론 API·인과적 current-point 접근·state 크기·Windows pinned 재현은 로컬에서 검증한다. 향후 다른 플랫폼의 운영 확인이 필요하다면 목적과 비용을 별도로 판단해야 한다. 이 문서는 제출 명령을 실행하거나 승인을 대신하지 않는다.
 '''
-    return {'00_GPT_READ_FIRST_NEXT3.md': read_first(f, run),
-        '01_GPT_HANDOFF_NEXT3.md': handoff(f, run),
+    return {'RESEARCH_OVERVIEW_NEXT3.md': read_first(f, run),
+        'RESEARCH_REPORT_NEXT3.md': handoff(f, run),
         'LIMITATIONS_NEXT3.md': limitations, 'NEXT_SESSION_PLAN_NEXT3.md': plan,
         'SEAL_OPEN_RECOMMENDATION_NEXT3.md': seal,
         'PUBLIC_SUBMISSION_RECOMMENDATION_NEXT3.md': public}

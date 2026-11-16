@@ -86,7 +86,7 @@ def test_twenty_file_delivery_writes_final_receipt_and_preserves_prior_files(tmp
                  'LATENCY_NEXT8.json', 'DETERMINISM_NEXT8.json', 'REPRODUCTION_NEXT8.json',
                  'VARIABLE_CERTIFICATION_REGISTRY.json', 'PREDICTIVE_FACTOR_GRAPH.json'):
         atomic(final / name, {'test_only': True})
-    for name in ('00_READ_FIRST_NEXT8_KO.md', '01_GPT_HANDOFF_NEXT8.md', 'FEATURE_EXPLANATION_CARDS_KO.md',
+    for name in ('00_READ_FIRST_NEXT8_KO.md', 'RESEARCH_REPORT_NEXT8.md', 'FEATURE_EXPLANATION_CARDS_KO.md',
                  'NEXT_SESSION_PLAN_NEXT8.md', 'SELF_HISTORY_BASELINE_LIMIT_KO.md'):
         atomic(final / name, 'Test-only document\n')
     for name in ('FEATURE_CLASSIFICATION_NEXT8.csv', 'TARGET_DIRECTION_ATLAS.csv', 'CONDITIONAL_DIRECTION_RESULTS.csv',
