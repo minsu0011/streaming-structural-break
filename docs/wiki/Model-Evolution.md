@@ -1,4 +1,4 @@
-# 모델과 누적 증거
+# 모델과 알고리즘
 
 ## 입력 표현
 
@@ -31,4 +31,12 @@ GLR 요약 = S² / (2v)
 - [decision_gates.py](../../src/next2/decision_gates.py): 역할별 조건
 - [ts_auc.py](../../src/scoring/ts_auc.py): 평가 지표
 
-설정과 학습 경로가 존재하는 것과 최종 독립 평가 통과는 다른 주장입니다.
+## 후속 연구
+
+| 단계 | 구현 범위 | 코드 |
+| --- | --- | --- |
+| NEXT3–NEXT5 | 경량 runtime, 특징 기여도, scale·sign·이상치 강건성 | [next3](../../src/next3), [next4](../../src/next4), [next5](../../src/next5) |
+| NEXT6–NEXT7 | 특징 관계와 상태 전이 | [next6](../../src/next6), [확장](../../src/next6_extension), [next7](../../src/next7) |
+| NEXT8–NEXT9 | 변수 동역학, 조건부 방향성과 자기 전이, 결합 모델 | [next8](../../src/next8), [next9](../../src/next9) |
+
+단계 번호는 구현 계보를 구분합니다. 후보의 승격 여부와 독립 평가 범위는 [평가 문서](Validation-and-Results.md)에 따릅니다.

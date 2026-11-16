@@ -1,14 +1,3 @@
-# 연구 단계
+# 설계 변경 기록
 
-| 단계 | 검토한 문제 |
-| --- | --- |
-| 기준선 | 순차 통계와 AR4/AR8 잔차로 배경 자기상관을 설명할 수 있는가 |
-| NEXT | 분산·에너지 채널의 누적 증거가 정상 상태에서 과장되는가 |
-| NEXT2 | 분산 모델에 의존성 보완 모델을 결합할 때 추가 신호가 있는가 |
-| NEXT3–NEXT5 | 반복 계산과 불필요한 특징을 줄이고, scale·sign·이상치 반례에 견디는가 |
-| NEXT6–NEXT7 | 특징 간 관계와 상태 전이가 탐지에 추가 정보를 주는가 |
-| NEXT8–NEXT9 | 변수의 움직임·조건부 방향성과 자기 전이를 구분할 수 있는가 |
-
-연구 단계는 성능 순위가 아닙니다. 새 후보가 선택 기준을 통과하지 못하면 기존 모델의 역할을 유지했습니다. 평가 범위와 분할이 다른 결과를 직접 비교하지 않습니다.
-
-기존 통계·AR·NEXT2 구조에 관한 설명은 [상세 문서](wiki/Model-Evolution.md)에 있습니다. 학습 모델과 당시 연구 기록은 [릴리스](https://github.com/minsu0011/streaming-structural-break/releases/tag/local-freeze-20261116)에서 확인할 수 있습니다.
+[단계별 개발 과정](wiki/Development-Journey.md)은 변경 배경을, [모델 구성](wiki/Model-Evolution.md)은 각 단계의 계산과 역할을 설명합니다. 평가 수치와 후보 상태는 [검증 결과](wiki/Validation-and-Results.md)에 모았습니다.

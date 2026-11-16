@@ -72,3 +72,5 @@ python -m pytest tests/test_streaming.py tests/test_models.py tests/test_feature
 ## 출처
 
 ADIA Lab / Crunch의 구조변화 탐지 문제와 공식 평가 프로토콜을 참고했습니다. 제3자 자료의 이용 조건은 [ATTRIBUTION.md](ATTRIBUTION.md)와 [NOTICE](NOTICE)를 확인하세요.
+
+[전체 문서 안내](docs/README.md)
